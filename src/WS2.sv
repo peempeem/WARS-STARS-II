@@ -77,11 +77,36 @@ module WS2 (
     assign ARDUINO_IO[13] = SPI0_SCLK;
     
     // Setup HexDrivers
-    HexDriver(1'b0, 4'bX, HEX0);
-    HexDriver(1'b0, 4'bX, HEX1);
-    HexDriver(1'b0, 4'bX, HEX2);
-    HexDriver(1'b0, 4'bX, HEX3);
-    HexDriver(1'b0, 4'bX, HEX4);
-    HexDriver(1'b0, 4'bX, HEX5);
+    HexDriver hex0 (1'b0, 4'bX, HEX0);
+    HexDriver hex1 (1'b0, 4'bX, HEX1);
+    HexDriver hex2 (1'b0, 4'bX, HEX2);
+    HexDriver hex3 (1'b0, 4'bX, HEX3);
+    HexDriver hex4 (1'b0, 4'bX, HEX4);
+    HexDriver hex5 (1'b0, 4'bX, HEX5);
+
+    // Setup LEDS
+    assign LEDS = 10'h0;
+
+    soc soc (
+        .clk_clk                (MAX10_CLK1_50),
+        .reset_reset_n          (KEY[0]),
+        .sdram_clk_clk          (DRAM_CLK),
+        .sdram_wire_addr        (DRAM_ADDR),
+        .sdram_wire_ba          (DRAM_BA),
+        .sdram_wire_cas_n       (DRAM_CAS_N),
+        .sdram_wire_cke         (DRAM_CKE),
+        .sdram_wire_cs_n        (DRAM_CS_N),
+        .sdram_wire_dq          (DRAM_DQ),
+        .sdram_wire_dqm         ({DRAM_UDQM, DRAM_LDQM}),
+        .sdram_wire_ras_n       (DRAM_RAS_N),
+        .sdram_wire_we_n        (DRAM_WE_N),
+        .spi0_MISO              (SPI0_MISO),
+        .spi0_MOSI              (SPI0_MOSI),
+        .spi0_SCLK              (SPI0_SCLK),
+        .spi0_SS_n              (SPI0_CS_N),
+        .usb_gpx_export         (USB_GPX),
+        .usb_irq_export         (USB_IRQ),
+        .usb_rst_export         (USB_RST)
+    );
     
 endmodule
