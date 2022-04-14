@@ -1,7 +1,7 @@
 module HexDriver (
-	input 	logic			En,
-	input 	logic	[3:0]	In,
-	output 	logic	[7:0]	Out
+	input logic En,
+	input logic [3:0] In,
+	output logic [7:0] Out
 );
 	
 	always_comb begin
@@ -9,9 +9,9 @@ module HexDriver (
 			Out = 8'b11111111;
 		else begin
 			unique case (In)
-				4'b0000:	Out = 8'b11000000; // '0'
-				4'b0001:	Out = 8'b11111001; // '1'
-				4'b0010:	Out = 8'b10100100; // '2'
+				4'b0000: Out = 8'b11000000; // '0'
+				4'b0001: Out = 8'b11111001; // '1'
+				4'b0010: Out = 8'b10100100; // '2'
 				4'b0011:	Out = 8'b10110000; // '3'
 				4'b0100:	Out = 8'b10011001; // '4'
 				4'b0101:	Out = 8'b10010010; // '5'
