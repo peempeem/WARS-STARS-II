@@ -106,7 +106,12 @@ module WS2 (
         .spi0_SS_n              (SPI0_CS_N),
         .usb_gpx_export         (USB_GPX),
         .usb_irq_export         (USB_IRQ),
-        .usb_rst_export         (USB_RST)
+        .usb_rst_export         (USB_RST),
+        .vga_port_red           (VGA_R),
+        .vga_port_green         (VGA_G),
+        .vga_port_blue          (VGA_B),
+        .vga_port_hs            (VGA_HS),
+        .vga_port_vs            (VGA_VS)
     );
     
 endmodule

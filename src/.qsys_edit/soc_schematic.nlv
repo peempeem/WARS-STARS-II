@@ -8,30 +8,28 @@ preplace inst soc.usb_irq -pg 1 -lvl 3 -y 910
 preplace inst soc.nios2_gen2_0.cpu -pg 1
 preplace inst soc.usb_rst -pg 1 -lvl 3 -y 1010
 preplace inst soc.usb_gpx -pg 1 -lvl 3 -y 810
-preplace inst soc.button1 -pg 1 -lvl 3 -y 230
 preplace inst soc.nios2_gen2_0 -pg 1 -lvl 2 -y 580
 preplace inst soc.jtag_uart_0 -pg 1 -lvl 3 -y 490
 preplace inst soc.clk_0 -pg 1 -lvl 1 -y 600
-preplace inst soc.switches -pg 1 -lvl 3 -y 1110
 preplace inst soc.nios2_gen2_0.clock_bridge -pg 1
 preplace inst soc -pg 1 -lvl 1 -y 40 -regy -20
 preplace inst soc.timer_0 -pg 1 -lvl 3 -y 590
 preplace inst soc.sdram_pll -pg 1 -lvl 3 -y 150
 preplace inst soc.onchip_memory2_0 -pg 1 -lvl 3 -y 330
-preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)soc.usb_rst,(SLAVE)usb_rst.external_connection) 1 0 3 NJ 1040 NJ 1040 NJ
-preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)switches.external_connection,(SLAVE)soc.switches_wire) 1 0 3 NJ 1140 NJ 1140 NJ
-preplace netloc INTERCONNECT<net_container>soc</net_container>(SLAVE)switches.reset,(MASTER)clk_0.clk_reset,(SLAVE)timer_0.reset,(SLAVE)button1.reset,(SLAVE)jtag_uart_0.reset,(SLAVE)usb_gpx.reset,(MASTER)nios2_gen2_0.debug_reset_request,(SLAVE)usb_irq.reset,(SLAVE)usb_rst.reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)nios2_gen2_0.reset,(SLAVE)sdram_pll.inclk_interface_reset,(SLAVE)sdram.reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)spi_0.reset) 1 1 2 320 520 700
-preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)usb_irq.external_connection,(SLAVE)soc.usb_irq) 1 0 3 NJ 940 NJ 940 NJ
+preplace inst soc.graphics_drawing_unit_0 -pg 1 -lvl 3 -y 230
 preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)usb_gpx.external_connection,(SLAVE)soc.usb_gpx) 1 0 3 NJ 840 NJ 840 NJ
-preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)soc.spi0,(SLAVE)spi_0.external) 1 0 3 NJ 720 NJ 720 NJ
-preplace netloc INTERCONNECT<net_container>soc</net_container>(SLAVE)switches.s1,(SLAVE)sdram.s1,(SLAVE)onchip_memory2_0.s1,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)usb_gpx.s1,(SLAVE)nios2_gen2_0.debug_mem_slave,(SLAVE)sdram_pll.pll_slave,(SLAVE)usb_rst.s1,(SLAVE)usb_irq.s1,(SLAVE)timer_0.s1,(SLAVE)spi_0.spi_control_port,(MASTER)nios2_gen2_0.data_master,(SLAVE)button1.s1,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)jtag_uart_0.avalon_jtag_slave) 1 1 2 340 540 740
-preplace netloc EXPORT<net_container>soc</net_container>(MASTER)soc.sdram_clk,(MASTER)sdram_pll.c1) 1 3 1 N
+preplace netloc FAN_OUT<net_container>soc</net_container>(SLAVE)sysid_qsys_0.clk,(SLAVE)graphics_drawing_unit_0.CLK,(SLAVE)sdram_pll.inclk_interface,(SLAVE)usb_irq.clk,(SLAVE)spi_0.clk,(SLAVE)nios2_gen2_0.clk,(SLAVE)usb_gpx.clk,(SLAVE)jtag_uart_0.clk,(SLAVE)usb_rst.clk,(SLAVE)timer_0.clk,(MASTER)clk_0.clk,(SLAVE)onchip_memory2_0.clk1) 1 1 2 310 960 710
+preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)usb_rst.external_connection,(SLAVE)soc.usb_rst) 1 0 3 NJ 1040 NJ 1040 NJ
+preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)soc.usb_irq,(SLAVE)usb_irq.external_connection) 1 0 3 NJ 940 NJ 940 NJ
 preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)soc.reset) 1 0 1 NJ
-preplace netloc POINT_TO_POINT<net_container>soc</net_container>(MASTER)sdram_pll.c0,(SLAVE)sdram.clk) 1 2 2 760 140 1000
-preplace netloc FAN_OUT<net_container>soc</net_container>(SLAVE)jtag_uart_0.irq,(SLAVE)timer_0.irq,(MASTER)nios2_gen2_0.irq,(SLAVE)spi_0.irq) 1 2 1 760
+preplace netloc INTERCONNECT<net_container>soc</net_container>(SLAVE)jtag_uart_0.reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)sdram.reset,(MASTER)clk_0.clk_reset,(SLAVE)nios2_gen2_0.reset,(SLAVE)timer_0.reset,(SLAVE)usb_gpx.reset,(MASTER)nios2_gen2_0.debug_reset_request,(SLAVE)usb_rst.reset,(SLAVE)sdram_pll.inclk_interface_reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)usb_irq.reset,(SLAVE)spi_0.reset,(SLAVE)graphics_drawing_unit_0.RESET) 1 1 2 290 1060 730
 preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)soc.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
-preplace netloc FAN_OUT<net_container>soc</net_container>(SLAVE)onchip_memory2_0.clk1,(MASTER)clk_0.clk,(SLAVE)sdram_pll.inclk_interface,(SLAVE)jtag_uart_0.clk,(SLAVE)usb_rst.clk,(SLAVE)nios2_gen2_0.clk,(SLAVE)usb_irq.clk,(SLAVE)timer_0.clk,(SLAVE)button1.clk,(SLAVE)usb_gpx.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)spi_0.clk,(SLAVE)switches.clk) 1 1 2 300 500 720
+preplace netloc FAN_OUT<net_container>soc</net_container>(SLAVE)timer_0.irq,(SLAVE)jtag_uart_0.irq,(SLAVE)spi_0.irq,(MASTER)nios2_gen2_0.irq) 1 2 1 750
+preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)spi_0.external,(SLAVE)soc.spi0) 1 0 3 NJ 720 NJ 720 NJ
+preplace netloc POINT_TO_POINT<net_container>soc</net_container>(SLAVE)sdram.clk,(MASTER)sdram_pll.c0) 1 2 2 750 140 990
+preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)soc.vga_port,(SLAVE)graphics_drawing_unit_0.VGA_port) 1 0 3 NJ 280 NJ 280 NJ
 preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)soc.sdram_wire,(SLAVE)sdram.wire) 1 0 3 NJ 100 NJ 100 NJ
-preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)button1.external_connection,(SLAVE)soc.button1_wire) 1 0 3 NJ 260 NJ 260 NJ
-levelinfo -pg 1 0 90 1110
-levelinfo -hier soc 100 130 460 810 1020
+preplace netloc EXPORT<net_container>soc</net_container>(MASTER)sdram_pll.c1,(MASTER)soc.sdram_clk) 1 3 1 N
+preplace netloc INTERCONNECT<net_container>soc</net_container>(MASTER)nios2_gen2_0.data_master,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)spi_0.spi_control_port,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)usb_rst.s1,(SLAVE)usb_irq.s1,(SLAVE)timer_0.s1,(SLAVE)nios2_gen2_0.debug_mem_slave,(SLAVE)sdram_pll.pll_slave,(SLAVE)sdram.s1,(SLAVE)usb_gpx.s1,(SLAVE)onchip_memory2_0.s1,(SLAVE)graphics_drawing_unit_0.avl_mm_slave,(SLAVE)sysid_qsys_0.control_slave) 1 1 2 330 1080 690
+levelinfo -pg 1 0 80 1100
+levelinfo -hier soc 90 120 450 800 1010

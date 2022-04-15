@@ -70,7 +70,7 @@ CHIP  "WS2"  ASSIGNED TO AN: 10M50DAF484I7G
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 GND                          : A1        : gnd    :                   :         :           :                
-LEDS[4]                      : A2        : output : 2.5 V             :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A2        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A3        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A4        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A5        :        :                   :         : 8         :                
@@ -92,7 +92,7 @@ HEX2[1]                      : A20       : output : 2.5 V             :         
 HEX2[3]                      : A21       : output : 2.5 V             :         : 6         : Y              
 GND                          : A22       : gnd    :                   :         :           :                
 VGA_R[0]                     : AA1       : output : 2.5 V             :         : 3         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA2       :        :                   :         : 3         :                
+LEDS[3]                      : AA2       : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA3       :        :                   :         : 3         :                
 GND                          : AA4       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA5       :        :                   :         : 3         :                
@@ -105,7 +105,7 @@ ARDUINO_IO[6]                : AA11      : bidir  : 2.5 V             :         
 ARDUINO_IO[7]                : AA12      : bidir  : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA13      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA14      :        :                   :         : 4         :                
-LEDS[0]                      : AA15      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA15      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA16      :        :                   :         : 4         :                
 ARDUINO_IO[9]                : AA17      : bidir  : 2.5 V             :         : 4         : Y              
 GND                          : AA18      : gnd    :                   :         :           :                
@@ -130,7 +130,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AB14      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB15      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB16      :        :                   :         : 4         :                
 ARDUINO_IO[8]                : AB17      : bidir  : 2.5 V             :         : 4         : Y              
-LEDS[6]                      : AB18      : output : 2.5 V             :         : 4         : N              
+LEDS[5]                      : AB18      : output : 2.5 V             :         : 4         : N              
 ARDUINO_IO[10]               : AB19      : bidir  : 2.5 V             :         : 4         : Y              
 ARDUINO_IO[13]               : AB20      : bidir  : 2.5 V             :         : 4         : Y              
 ARDUINO_IO[14]               : AB21      : bidir  : 2.5 V             :         : 4         : Y              
@@ -161,7 +161,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : C1        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : C2        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C3        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C4        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C5        :        :                   :         : 8         :                
+LEDS[4]                      : C5        : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C6        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C7        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C8        :        :                   :         : 8         :                
@@ -192,7 +192,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : D10       :        :                   :      
 GND                          : D11       : gnd    :                   :         :           :                
 SW[2]                        : D12       : input  : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D13       :        :                   :         : 7         :                
-LEDS[8]                      : D14       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D14       :        :                   :         : 7         :                
 HEX0[7]                      : D15       : output : 2.5 V             :         : 7         : Y              
 GND                          : D16       : gnd    :                   :         :           :                
 HEX0[5]                      : D17       : output : 2.5 V             :         : 7         : Y              
@@ -261,7 +261,7 @@ VCCIO7                       : G13       : power  :                   : 2.5V    
 VCCIO7                       : G14       : power  :                   : 2.5V    : 7         :                
 GND                          : G15       : gnd    :                   :         :           :                
 VCCD_PLL2                    : G16       : power  :                   : 1.2V    :           :                
-LEDS[9]                      : G17       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G17       :        :                   :         : 6         :                
 GND                          : G18       : gnd    :                   :         :           :                
 DRAM_DQ[14]                  : G19       : bidir  : 2.5 V             :         : 6         : Y              
 DRAM_DQ[13]                  : G20       : bidir  : 2.5 V             :         : 6         : Y              
@@ -284,12 +284,12 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : H14       :        :                   :      
 VCCA2                        : H15       : power  :                   : 2.5V    :           :                
 VCCIO6                       : H16       : power  :                   : 2.5V    : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H17       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H18       :        :                   :         : 6         :                
+LEDS[9]                      : H18       : output : 2.5 V             :         : 6         : N              
 HEX4[4]                      : H19       : output : 2.5 V             :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : H20       :        :                   :         : 6         :                
 DRAM_DQ[10]                  : H21       : bidir  : 2.5 V             :         : 6         : Y              
 DRAM_DQ[11]                  : H22       : bidir  : 2.5 V             :         : 6         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : J1        :        :                   :         : 1B        :                
+LEDS[8]                      : J1        : output : 2.5 V             :         : 1B        : N              
 GND                          : J2        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J3        :        :                   :         : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J4        :        :                   :         : 1A        :                
@@ -303,7 +303,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : J11       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : J12       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J13       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J14       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J15       :        :                   :         : 6         :                
+LEDS[0]                      : J15       : output : 2.5 V             :         : 6         : N              
 GND                          : J16       : gnd    :                   :         :           :                
 VCCIO6                       : J17       : power  :                   : 2.5V    : 6         :                
 HEX4[3]                      : J18       : output : 2.5 V             :         : 6         : Y              
@@ -325,7 +325,7 @@ VCC                          : K11       : power  :                   : 1.2V    
 GND                          : K12       : gnd    :                   :         :           :                
 VCC                          : K13       : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K14       :        :                   :         : 6         :                
-LEDS[1]                      : K15       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K15       :        :                   :         : 6         :                
 VCCIO6                       : K16       : power  :                   : 2.5V    : 6         :                
 VCCIO6                       : K17       : power  :                   : 2.5V    : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K18       :        :                   :         : 6         :                
@@ -424,7 +424,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : P22       :        :                   :      
 VGA_G[3]                     : R1        : output : 2.5 V             :         : 2         : Y              
 VGA_G[2]                     : R2        : output : 2.5 V             :         : 2         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : R3        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R4        :        :                   :         : 2         :                
+LEDS[6]                      : R4        : output : 2.5 V             :         : 2         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : R5        :        :                   :         : 2         :                
 VCCIO2                       : R6        : power  :                   : 2.5V    : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R7        :        :                   :         : 2         :                
@@ -469,7 +469,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : U1        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : U2        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U3        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U4        :        :                   :         : 2         :                
-LEDS[5]                      : U5        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U5        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U6        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U7        :        :                   :         : 3         :                
 VCCIO3                       : U8        : power  :                   : 2.5V    : 3         :                
@@ -496,7 +496,7 @@ GND                          : V6        : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : V7        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V8        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V9        :        :                   :         : 3         :                
-LEDS[3]                      : V10       : output : 2.5 V             :         : 3         : N              
+LEDS[2]                      : V10       : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : V11       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V12       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V13       :        :                   :         : 4         :                
@@ -543,10 +543,10 @@ GND                          : Y9        : gnd    :                   :         
 ARDUINO_IO[5]                : Y10       : bidir  : 2.5 V             :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y11       :        :                   :         : 4         :                
 GND                          : Y12       : gnd    :                   :         :           :                
-LEDS[2]                      : Y13       : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y13       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y14       :        :                   :         : 4         :                
 GND                          : Y15       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y16       :        :                   :         : 4         :                
+LEDS[1]                      : Y16       : output : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y17       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y18       :        :                   :         : 4         :                
 ARDUINO_IO[12]               : Y19       : bidir  : 2.5 V             :         : 4         : Y              

@@ -1,17 +1,17 @@
-Fitter Status : Successful - Thu Apr 14 12:36:06 2022
+Fitter Status : Successful - Thu Apr 14 16:42:59 2022
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : WS2
 Top-level Entity Name : WS2
 Family : MAX 10
 Device : 10M50DAF484I7G
 Timing Models : Final
-Total logic elements : 3,557 / 49,760 ( 7 % )
-    Total combinational functions : 2,980 / 49,760 ( 6 % )
-    Dedicated logic registers : 2,277 / 49,760 ( 5 % )
-Total registers : 2346
+Total logic elements : 3,712 / 49,760 ( 7 % )
+    Total combinational functions : 3,143 / 49,760 ( 6 % )
+    Dedicated logic registers : 2,358 / 49,760 ( 5 % )
+Total registers : 2427
 Total pins : 141 / 360 ( 39 % )
 Total virtual pins : 0
-Total memory bits : 11,392 / 1,677,312 ( < 1 % )
+Total memory bits : 142,464 / 1,677,312 ( 8 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
 Total PLLs : 1 / 4 ( 25 % )
 UFM blocks : 0 / 1 ( 0 % )
