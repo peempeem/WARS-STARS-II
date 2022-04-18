@@ -1,4 +1,13 @@
 
+State Machine - |WS2|soc:soc|vga_display:vga_display_0|state
+Name state.WAITING state.WRITING_1 state.WRITING state.WAIT_STATE state.READING state.DRAWING 
+state.DRAWING 0 0 0 0 0 0 
+state.READING 0 0 0 0 1 1 
+state.WAIT_STATE 0 0 0 1 0 1 
+state.WRITING 0 0 1 0 0 1 
+state.WRITING_1 0 1 0 0 0 1 
+state.WAITING 1 0 0 0 0 1 
+
 State Machine - |WS2|soc:soc|soc_sdram:sdram|m_next
 Name m_next.010000000 m_next.000010000 m_next.000001000 m_next.000000001 
 m_next.000000001 0 0 0 0 

@@ -19,10 +19,10 @@
 			usb_gpx_export   : in    std_logic                     := 'X';             -- export
 			usb_irq_export   : in    std_logic                     := 'X';             -- export
 			usb_rst_export   : out   std_logic;                                        -- export
-			vga_port_red     : out   std_logic_vector(3 downto 0);                     -- red
-			vga_port_green   : out   std_logic_vector(3 downto 0);                     -- green
 			vga_port_blue    : out   std_logic_vector(3 downto 0);                     -- blue
+			vga_port_green   : out   std_logic_vector(3 downto 0);                     -- green
 			vga_port_hs      : out   std_logic;                                        -- hs
+			vga_port_red     : out   std_logic_vector(3 downto 0);                     -- red
 			vga_port_vs      : out   std_logic                                         -- vs
 		);
 	end component soc;

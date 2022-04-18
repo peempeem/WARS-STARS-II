@@ -1,0 +1,8 @@
+.text	0x10000
+
+.globl	VGA_START
+
+VGA_FRAME_0:
+	.space	640 * 480 * 2
+VGA_FRAME_1:
+	.space	640 * 480 * 2

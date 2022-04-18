@@ -1,0 +1,7 @@
+.text  0x09000000
+
+.global _vga_mem
+vga_mem:
+    .space  640 * 480 * 2	//  frame 0
+    .space  640 * 480 * 2	//  frame 1
+    .space  2           	//  control

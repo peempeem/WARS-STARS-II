@@ -1,0 +1,12 @@
+#ifndef VGA_H
+#define VGA_H
+
+#include <stdint.h>
+#include "memory_setup.h"
+
+
+void    clearScreen();
+void    setPixel(int frame, uint32_t x, uint32_t y, uint16_t color);
+int     getFrame();
+
+#endif

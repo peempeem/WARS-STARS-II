@@ -1,0 +1,7 @@
+.sdram  0x08000000
+
+.global vga_mem
+vga_mem:
+    .space  640 * 480 * 2   //  frame 0
+    .space  640 * 480 * 2	//  frame 1
+    .space  2               //  control

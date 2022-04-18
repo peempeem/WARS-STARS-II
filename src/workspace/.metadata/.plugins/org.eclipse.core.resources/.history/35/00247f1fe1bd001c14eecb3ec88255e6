@@ -1,0 +1,4 @@
+.data	0x10000
+
+VGA_START:
+	.space	4400

@@ -1,0 +1,19 @@
+/*
+ * vga.h
+ *
+ *  Created on: Apr 17, 2022
+ *      Author: James
+ */
+
+#ifndef VGA_H
+#define VGA_H
+
+#include <stdint>
+
+struct VGA_MEMORY {
+	uint16_t
+};
+
+
+
+#endif /* VGA_H */

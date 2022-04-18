@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdint.h>
+
+int main()
+{
+  printf("Hello from Nios II!\n");
+  uint16_t* vga_mem = (uint16_t*) 0x08000000;
+
+  for (int y = 0; y < 480; y++) {
+	  uint16_t color = 0;
+	  for (int x = 0; x < 640; x++) {
+		  vga_mem[y * 640 + x] = color++;
+	  }
+  }
+  return 0;
+}

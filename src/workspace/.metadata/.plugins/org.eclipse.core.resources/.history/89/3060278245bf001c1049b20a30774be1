@@ -1,0 +1,9 @@
+#include "memory_setup.h"
+
+.sdram  VGA_START
+
+.global vga_memx
+vga_mem:
+    .space  FRAME_SIZE	//  frame 0
+    .space  FRAME_SIZE	//  frame 1
+    .space  2           //  control

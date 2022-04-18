@@ -1,0 +1,7 @@
+#include <stdio.h>
+#include "vga.h"
+
+int main() {
+    setPixel(50, 50, 0x0FFF);
+    return 0;
+}

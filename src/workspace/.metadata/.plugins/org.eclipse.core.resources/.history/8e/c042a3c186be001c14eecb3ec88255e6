@@ -1,0 +1,1 @@
+obj/default/vga.o: vga.S

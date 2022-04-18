@@ -1,0 +1,6 @@
+.text	0x10000
+
+.globl	vga_mem
+vga_mem:
+	.space	640 * 480 * 2	//	frame 0
+	.space	640 * 480 * 2	//	frame 1

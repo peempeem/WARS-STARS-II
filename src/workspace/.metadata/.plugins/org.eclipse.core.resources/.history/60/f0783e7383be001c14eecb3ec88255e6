@@ -1,0 +1,22 @@
+/*
+ * vga.h
+ *
+ *  Created on: Apr 17, 2022
+ *      Author: James
+ */
+
+#ifndef VGA_H_
+#define VGA_H_
+
+#include <stdint.h>
+
+typedef struct VGA_MEMORY {
+	uint16_t frame0[640 * 480];
+	uint16_t frame1[640 * 480];
+} vga_mem_t;
+
+extern vga_mem_t vga_mem;
+
+void setColor(uint32_t x, uint32_t y);
+
+#endif /* VGA_H_ */

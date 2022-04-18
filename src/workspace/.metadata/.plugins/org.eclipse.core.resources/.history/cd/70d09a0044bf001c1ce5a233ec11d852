@@ -1,0 +1,8 @@
+#ifndef MEMORY_SETUP_H_
+#define MEMORY_SETUP_H_
+
+
+#define VGA_START	0x08000000
+#define	FRAME_SIZE	640 * 480 * 2
+
+#endif

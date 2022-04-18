@@ -1,0 +1,22 @@
+#ifndef VGA_H
+#define VGA_H
+
+#include <stdint.h>
+
+#define SCREEN_WIDTH    640
+#define SCREEN_HEIGHT   480
+#define SCREEN_SIZE     SCREEN_WIDTH * SCREEN_HEIGHT
+
+typedef struct VGA_MEMORY {
+    uint16_t    frame0[SCREEN_SIZE];
+    uint16_t    frame1[SCREEN_SIZE];
+    uint16_t    control;
+} vga_mem_t;
+
+static vga_mem_t vga_mem;
+
+void    clearScreen();
+void    setPixel(int frame, uint32_t x, uint32_t y, uint16_t color);
+int     getFrame();
+
+#endif

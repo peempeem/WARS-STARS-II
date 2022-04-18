@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <unistd.h>
+#include "vga.h"
+
+int main() {
+    int loop = 0;
+    while (1) {
+        
+        for (int y = 0; y < SCREEN_HEIGHT; y++) {
+            uint16_t color = 0;
+            for (int x = 0; x < SCREEN_WIDTH; x++) {
+                setPixel(0, x, y, color++);
+            }
+        }
+        printf("sleeping\n");
+        usleep(1000000);
+        printf("loop %d\n", loop++);
+    }
+    
+    return 0;
+}

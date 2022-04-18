@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include "vga.h"
+
+int main()
+{
+  usleep(100000);
+
+  return 0;
+}

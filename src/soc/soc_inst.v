@@ -18,10 +18,10 @@
 		.usb_gpx_export   (<connected-to-usb_gpx_export>),   //    usb_gpx.export
 		.usb_irq_export   (<connected-to-usb_irq_export>),   //    usb_irq.export
 		.usb_rst_export   (<connected-to-usb_rst_export>),   //    usb_rst.export
-		.vga_port_red     (<connected-to-vga_port_red>),     //   vga_port.red
+		.vga_port_blue    (<connected-to-vga_port_blue>),    //   vga_port.blue
 		.vga_port_green   (<connected-to-vga_port_green>),   //           .green
-		.vga_port_blue    (<connected-to-vga_port_blue>),    //           .blue
 		.vga_port_hs      (<connected-to-vga_port_hs>),      //           .hs
+		.vga_port_red     (<connected-to-vga_port_red>),     //           .red
 		.vga_port_vs      (<connected-to-vga_port_vs>)       //           .vs
 	);
 

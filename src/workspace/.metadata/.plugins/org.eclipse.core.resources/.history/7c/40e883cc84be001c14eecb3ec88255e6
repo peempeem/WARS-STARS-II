@@ -1,0 +1,11 @@
+#include "vga.h"
+
+void setPixel(int frame, uint32_t x, uint32_t y, uint16_t color) {
+	if (x >= SCREEN_WIDTH || y >= SCREEN_HEIGHT)
+		return;
+	vga_mem
+}
+
+int current_frame() {
+	return vga_mem.control & 0x01;
+}

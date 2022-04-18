@@ -1,0 +1,4 @@
+.data	0x0
+
+VGA_START:
+	.word	614400

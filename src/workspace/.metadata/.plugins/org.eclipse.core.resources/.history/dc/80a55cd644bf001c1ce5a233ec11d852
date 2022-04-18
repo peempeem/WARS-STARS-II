@@ -1,0 +1,10 @@
+#include "memory_setup.h"
+
+.sdrams  VGA_START
+
+.global vga_memwe
+vga_mem:efwef[mo
+efwfe
+    .space  FRAME_SIZE	//  frame 0
+    .space  FRAME_SIZE	//  frame 1
+    .space  2           //  control

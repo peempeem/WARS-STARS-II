@@ -1,92 +1,32 @@
 // VGA screen is 640 by 480 pixels
+parameter VGA_START = 32'h08000000;
 
 module graphics_drawing_unit (
-    input   logic           CLK,
-                            RESET,
-    
-    input   logic           AVL_READ,
-                            AVL_WRITE,
-                            AVL_CS,
-    input   logic   [ 3:0]  AVL_BYTE_EN,
-    input   logic   [11:0]  AVL_ADDR,
-    input   logic   [31:0]  AVL_WRITEDATA,
-    output  logic   [31:0]  AVL_READDATA,
+    input   logic           clk,
+                            reset,
 
-    output  logic   [ 3:0]  red,
-                            green,
-                            blue,
-    output logic            hs,
-                            vs
+    output  logic   [31:0]  avalon_mm_master_address,
+    output  logic   [ 3:0]  avalon_mm_master_byteenable,
+    input   logic           avalon_mm_master_waitrequest,
+    output  logic           avalon_mm_master_write,
+    output  logic   [31:0]  avalon_mm_master_writedata,
+
+    input   logic   [ 9:0]  avalon_mm_slave_address,
+    input   logic   [ 3:0]  avalon_mm_slave_byteenable,
+    input   logic           avalon_mm_slave_read,
+    output  logic   [31:0]  avalon_mm_slave_readdata,
+    input   logic           avalon_mm_slave_write,
+    input   logic   [31:0]  avalon_mm_slave_writedata
 );
 
-    gdu_ram ram (
-        .address_a(AVL_ADDR),
-        .address_b(),
-        .byteena_a(AVL_BYTE_EN),
-        .clock(CLK),
-        .data_a(AVL_WRITEDATA),
-        .data_b(),
-        .wren_a(AVL_WRITE),
-        .wren_b(1'b0),
-        .q_a(AVL_READDATA),
-        .q_b()
-    );
+    enum logic [3:0] {
+        WRITING,
+        WAIT_STATE,
+        WAITING
+    } state;
 
-    logic   pixel_clk,
-            blank,
-            sync;
-    logic [9:0] DrawX,
-                DrawY;
-    
-    vga_controller vgac (
-        .Clk(CLK),
-        .Reset(RESET),
-        .hs(hs),
-        .vs(vs),
-        .pixel_clk(pixel_clk),
-        .blank(blank),
-        .sync(sync),
-        .DrawX(DrawX),
-        .DrawY(DrawY)
-    );
+    always_ff @(posedge clk) begin
 
-    logic [3:0] r, g, b;
-
-    always_ff @(posedge pixel_clk) begin
-        red     <= r;
-        green   <= g;
-        blue    <= b;
-    end
-
-    always_comb begin
-        if (blank == 1'b1) begin
-            unique case (DrawX[1:0])
-                2'b00: begin
-                    r = 4'hF;
-                    g = 4'h0;
-                    b = 4'h0;
-                end
-                2'b01: begin
-                    r = 4'h0;
-                    g = 4'hF;
-                    b = 4'h0;
-                end
-                2'b10: begin
-                    r = 4'h0;
-                    g = 4'h0;
-                    b = 4'hF;
-                end
-                2'b11: begin
-                    r = 4'hF;
-                    g = 4'hF;
-                    b = 4'hF;
-                end
-            endcase
-        end else begin
-            r = 4'h0;
-            g = 4'h0;
-            b = 4'h0;
-        end
     end
 
 endmodule
