@@ -1,12 +1,18 @@
 
+State Machine - |WS2|soc:soc|soc_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:sdram_s1_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
 State Machine - |WS2|soc:soc|vga_display:vga_display_0|state
-Name state.WAITING state.WRITING_1 state.WRITING state.WAIT_STATE state.READING state.DRAWING 
-state.DRAWING 0 0 0 0 0 0 
-state.READING 0 0 0 0 1 1 
-state.WAIT_STATE 0 0 0 1 0 1 
-state.WRITING 0 0 1 0 0 1 
-state.WRITING_1 0 1 0 0 0 1 
-state.WAITING 1 0 0 0 0 1 
+Name state.WRITING state.READING_ACK state.READING state.DRAWING state.WAITING 
+state.DRAWING 0 0 0 0 0 
+state.READING 0 0 1 1 0 
+state.READING_ACK 0 1 0 1 0 
+state.WRITING 1 0 0 1 0 
+state.WAITING 0 0 0 1 1 
 
 State Machine - |WS2|soc:soc|soc_sdram:sdram|m_next
 Name m_next.010000000 m_next.000010000 m_next.000001000 m_next.000000001 

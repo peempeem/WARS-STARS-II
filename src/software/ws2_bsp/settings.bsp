@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Apr 18, 2022 2:54:15 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1650311655641</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Apr 20, 2022 2:47:50 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1650484070998</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\James\OneDrive\Documents\ECE385\final\WARS-STARS-II\src\software\ws2_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\soc.sopcinfo</SopcDesignFile>
@@ -900,55 +900,61 @@
         </Setting>
         <MemoryMap>
                 <slaveDescriptor>onchip_memory2_0</slaveDescriptor>
-                <addressRange>0x00000000 - 0x0000FFFF</addressRange>
-                <addressSpan>65536</addressSpan>
+                <addressRange>0x00000000 - 0x00000FFF</addressRange>
+                <addressSpan>4096</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>timer_0</slaveDescriptor>
-                <addressRange>0x00011040 - 0x0001107F</addressRange>
+                <addressRange>0x00002040 - 0x0000207F</addressRange>
                 <addressSpan>64</addressSpan>
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>spi_0</slaveDescriptor>
-                <addressRange>0x000110A0 - 0x000110BF</addressRange>
+                <addressRange>0x000020A0 - 0x000020BF</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>usb_rst</slaveDescriptor>
-                <addressRange>0x00011100 - 0x0001110F</addressRange>
+                <addressRange>0x00002100 - 0x0000210F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>usb_gpx</slaveDescriptor>
-                <addressRange>0x00011110 - 0x0001111F</addressRange>
+                <addressRange>0x00002110 - 0x0000211F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>usb_irq</slaveDescriptor>
-                <addressRange>0x00011120 - 0x0001112F</addressRange>
+                <addressRange>0x00002120 - 0x0000212F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sdram_pll</slaveDescriptor>
-                <addressRange>0x00011130 - 0x0001113F</addressRange>
+                <addressRange>0x00002130 - 0x0000213F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>vga_display_0</slaveDescriptor>
+                <addressRange>0x00002158 - 0x0000215F</addressRange>
+                <addressSpan>8</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>sysid_qsys_0</slaveDescriptor>
-                <addressRange>0x00011150 - 0x00011157</addressRange>
+                <addressRange>0x00002160 - 0x00002167</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x00011158 - 0x0001115F</addressRange>
+                <addressRange>0x00002168 - 0x0000216F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
@@ -960,26 +966,26 @@
         </MemoryMap>
         <LinkerSection>
                 <sectionName>.text</sectionName>
-                <regionName>onchip_memory2_0</regionName>
+                <regionName>sdram</regionName>
         </LinkerSection>
         <LinkerSection>
                 <sectionName>.rodata</sectionName>
-                <regionName>onchip_memory2_0</regionName>
+                <regionName>sdram</regionName>
         </LinkerSection>
         <LinkerSection>
                 <sectionName>.rwdata</sectionName>
-                <regionName>onchip_memory2_0</regionName>
+                <regionName>sdram</regionName>
         </LinkerSection>
         <LinkerSection>
                 <sectionName>.bss</sectionName>
-                <regionName>onchip_memory2_0</regionName>
+                <regionName>sdram</regionName>
         </LinkerSection>
         <LinkerSection>
                 <sectionName>.heap</sectionName>
-                <regionName>onchip_memory2_0</regionName>
+                <regionName>sdram</regionName>
         </LinkerSection>
         <LinkerSection>
                 <sectionName>.stack</sectionName>
-                <regionName>onchip_memory2_0</regionName>
+                <regionName>sdram</regionName>
         </LinkerSection>
 </sch:Settings>
