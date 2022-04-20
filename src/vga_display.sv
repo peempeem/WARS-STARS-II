@@ -1,8 +1,9 @@
-`define FRAME_SIZE 32'h00025800
+`define FRAME_SIZE 32'h00096000
 
 module vga_display (
     input   logic           clk,
                             reset,
+    
     output  logic   [31:0]  avalon_master_address,
     output  logic   [ 4:0]  avalon_master_burstcount,
     output  logic           avalon_master_read,
@@ -84,6 +85,7 @@ module vga_display (
     logic   [8:0]       lb_x;
     logic   [9:0]       lb_y;
     logic   [3:0]       rd_bytes;
+    logic               frame;
 
     always_ff @(posedge clk) begin
         avalon_master_read          <= avalon_master_read;
@@ -95,6 +97,7 @@ module vga_display (
         lb_addr_a                   <= lb_addr_a;
         lb_write                    <= lb_write;
         rd_bytes                    <= rd_bytes;
+        frame                       <= frame;
         if (reset) begin
             avalon_master_read  <= 0;
             state               <= DRAWING;
@@ -105,8 +108,10 @@ module vga_display (
                     avalon_master_read  <= 0;
                     lb_x                <= 0;
                     if (blank == 0) begin
-                        if (DrawY >= 479)
+                        if (DrawY >= 479) begin
                             lb_y <= 0;
+                            frame <= registers[1][0];
+                        end
                         else
                             lb_y <= DrawY + 1;
                         state <= READING;
@@ -116,7 +121,7 @@ module vga_display (
                 end
                 READING: begin
                     if (lb_x < 320) begin
-                        if (registers[1][0])
+                        if (frame)
                             avalon_master_address <= registers[0] + `FRAME_SIZE + lb_y * 1280 + lb_x * 4;
                         else
                             avalon_master_address <= registers[0] + lb_y * 1280 + lb_x * 4;

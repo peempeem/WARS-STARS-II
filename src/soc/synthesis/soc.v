@@ -65,11 +65,11 @@ module soc (
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_read;        // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_read -> jtag_uart_0:av_read_n
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_write;       // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_write -> jtag_uart_0:av_write_n
 	wire  [31:0] mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_writedata;   // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_writedata -> jtag_uart_0:av_writedata
-	wire  [31:0] mm_interconnect_0_vga_display_0_avalon_slave_1_readdata;     // vga_display_0:avalon_slave_readdata -> mm_interconnect_0:vga_display_0_avalon_slave_1_readdata
-	wire   [0:0] mm_interconnect_0_vga_display_0_avalon_slave_1_address;      // mm_interconnect_0:vga_display_0_avalon_slave_1_address -> vga_display_0:avalon_slave_address
-	wire         mm_interconnect_0_vga_display_0_avalon_slave_1_read;         // mm_interconnect_0:vga_display_0_avalon_slave_1_read -> vga_display_0:avalon_slave_read
-	wire         mm_interconnect_0_vga_display_0_avalon_slave_1_write;        // mm_interconnect_0:vga_display_0_avalon_slave_1_write -> vga_display_0:avalon_slave_write
-	wire  [31:0] mm_interconnect_0_vga_display_0_avalon_slave_1_writedata;    // mm_interconnect_0:vga_display_0_avalon_slave_1_writedata -> vga_display_0:avalon_slave_writedata
+	wire  [31:0] mm_interconnect_0_vga_display_0_avalon_slave_readdata;       // vga_display_0:avalon_slave_readdata -> mm_interconnect_0:vga_display_0_avalon_slave_readdata
+	wire   [0:0] mm_interconnect_0_vga_display_0_avalon_slave_address;        // mm_interconnect_0:vga_display_0_avalon_slave_address -> vga_display_0:avalon_slave_address
+	wire         mm_interconnect_0_vga_display_0_avalon_slave_read;           // mm_interconnect_0:vga_display_0_avalon_slave_read -> vga_display_0:avalon_slave_read
+	wire         mm_interconnect_0_vga_display_0_avalon_slave_write;          // mm_interconnect_0:vga_display_0_avalon_slave_write -> vga_display_0:avalon_slave_write
+	wire  [31:0] mm_interconnect_0_vga_display_0_avalon_slave_writedata;      // mm_interconnect_0:vga_display_0_avalon_slave_writedata -> vga_display_0:avalon_slave_writedata
 	wire  [31:0] mm_interconnect_0_sysid_qsys_0_control_slave_readdata;       // sysid_qsys_0:readdata -> mm_interconnect_0:sysid_qsys_0_control_slave_readdata
 	wire   [0:0] mm_interconnect_0_sysid_qsys_0_control_slave_address;        // mm_interconnect_0:sysid_qsys_0_control_slave_address -> sysid_qsys_0:address
 	wire  [31:0] mm_interconnect_0_nios2_gen2_0_debug_mem_slave_readdata;     // nios2_gen2_0:debug_mem_slave_readdata -> mm_interconnect_0:nios2_gen2_0_debug_mem_slave_readdata
@@ -290,24 +290,24 @@ module soc (
 	);
 
 	vga_display vga_display_0 (
-		.clk                         (clk_clk),                                                  //          clock.clk
-		.reset                       (rst_controller_reset_out_reset),                           //          reset.reset
-		.blue                        (vga_port_blue),                                            //       vga_port.blue
-		.green                       (vga_port_green),                                           //               .green
-		.hs                          (vga_port_hs),                                              //               .hs
-		.red                         (vga_port_red),                                             //               .red
-		.vs                          (vga_port_vs),                                              //               .vs
-		.avalon_master_read          (vga_display_0_avalon_master_read),                         //  avalon_master.read
-		.avalon_master_readdata      (vga_display_0_avalon_master_readdata),                     //               .readdata
-		.avalon_master_readdatavalid (vga_display_0_avalon_master_readdatavalid),                //               .readdatavalid
-		.avalon_master_waitrequest   (vga_display_0_avalon_master_waitrequest),                  //               .waitrequest
-		.avalon_master_address       (vga_display_0_avalon_master_address),                      //               .address
-		.avalon_master_burstcount    (vga_display_0_avalon_master_burstcount),                   //               .burstcount
-		.avalon_slave_address        (mm_interconnect_0_vga_display_0_avalon_slave_1_address),   // avalon_slave_1.address
-		.avalon_slave_read           (mm_interconnect_0_vga_display_0_avalon_slave_1_read),      //               .read
-		.avalon_slave_write          (mm_interconnect_0_vga_display_0_avalon_slave_1_write),     //               .write
-		.avalon_slave_readdata       (mm_interconnect_0_vga_display_0_avalon_slave_1_readdata),  //               .readdata
-		.avalon_slave_writedata      (mm_interconnect_0_vga_display_0_avalon_slave_1_writedata)  //               .writedata
+		.clk                         (clk_clk),                                                //         clock.clk
+		.reset                       (rst_controller_reset_out_reset),                         //         reset.reset
+		.blue                        (vga_port_blue),                                          //      vga_port.blue
+		.green                       (vga_port_green),                                         //              .green
+		.hs                          (vga_port_hs),                                            //              .hs
+		.red                         (vga_port_red),                                           //              .red
+		.vs                          (vga_port_vs),                                            //              .vs
+		.avalon_master_read          (vga_display_0_avalon_master_read),                       // avalon_master.read
+		.avalon_master_readdata      (vga_display_0_avalon_master_readdata),                   //              .readdata
+		.avalon_master_readdatavalid (vga_display_0_avalon_master_readdatavalid),              //              .readdatavalid
+		.avalon_master_waitrequest   (vga_display_0_avalon_master_waitrequest),                //              .waitrequest
+		.avalon_master_address       (vga_display_0_avalon_master_address),                    //              .address
+		.avalon_master_burstcount    (vga_display_0_avalon_master_burstcount),                 //              .burstcount
+		.avalon_slave_address        (mm_interconnect_0_vga_display_0_avalon_slave_address),   //  avalon_slave.address
+		.avalon_slave_read           (mm_interconnect_0_vga_display_0_avalon_slave_read),      //              .read
+		.avalon_slave_write          (mm_interconnect_0_vga_display_0_avalon_slave_write),     //              .write
+		.avalon_slave_readdata       (mm_interconnect_0_vga_display_0_avalon_slave_readdata),  //              .readdata
+		.avalon_slave_writedata      (mm_interconnect_0_vga_display_0_avalon_slave_writedata)  //              .writedata
 	);
 
 	soc_mm_interconnect_0 mm_interconnect_0 (
@@ -392,11 +392,11 @@ module soc (
 		.usb_rst_s1_readdata                             (mm_interconnect_0_usb_rst_s1_readdata),                       //                                          .readdata
 		.usb_rst_s1_writedata                            (mm_interconnect_0_usb_rst_s1_writedata),                      //                                          .writedata
 		.usb_rst_s1_chipselect                           (mm_interconnect_0_usb_rst_s1_chipselect),                     //                                          .chipselect
-		.vga_display_0_avalon_slave_1_address            (mm_interconnect_0_vga_display_0_avalon_slave_1_address),      //              vga_display_0_avalon_slave_1.address
-		.vga_display_0_avalon_slave_1_write              (mm_interconnect_0_vga_display_0_avalon_slave_1_write),        //                                          .write
-		.vga_display_0_avalon_slave_1_read               (mm_interconnect_0_vga_display_0_avalon_slave_1_read),         //                                          .read
-		.vga_display_0_avalon_slave_1_readdata           (mm_interconnect_0_vga_display_0_avalon_slave_1_readdata),     //                                          .readdata
-		.vga_display_0_avalon_slave_1_writedata          (mm_interconnect_0_vga_display_0_avalon_slave_1_writedata)     //                                          .writedata
+		.vga_display_0_avalon_slave_address              (mm_interconnect_0_vga_display_0_avalon_slave_address),        //                vga_display_0_avalon_slave.address
+		.vga_display_0_avalon_slave_write                (mm_interconnect_0_vga_display_0_avalon_slave_write),          //                                          .write
+		.vga_display_0_avalon_slave_read                 (mm_interconnect_0_vga_display_0_avalon_slave_read),           //                                          .read
+		.vga_display_0_avalon_slave_readdata             (mm_interconnect_0_vga_display_0_avalon_slave_readdata),       //                                          .readdata
+		.vga_display_0_avalon_slave_writedata            (mm_interconnect_0_vga_display_0_avalon_slave_writedata)       //                                          .writedata
 	);
 
 	soc_irq_mapper irq_mapper (

@@ -1,6 +1,6 @@
-14:47:57 **** Build of configuration Nios II for project ws2_bsp ****
+16:06:36 **** Incremental Build of configuration Nios II for project ws2_bsp ****
 make all 
 [BSP build complete]
 
-14:47:58 Build Finished (took 694ms)
+16:06:36 Build Finished (took 688ms)
 

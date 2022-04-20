@@ -16,7 +16,7 @@ module WS2 (
     input   logic   [ 9:0]  SW,
     
     // FPGA Leds
-    output  logic   [ 9:0]  LEDS,
+    output  logic   [ 9:0]  LEDR,
     
     // HEX Displays
     output  logic   [ 7:0]  HEX0,
@@ -85,7 +85,7 @@ module WS2 (
     HexDriver hex5 (1'b0, 4'bX, HEX5);
 
     // Setup LEDS
-    assign LEDS = 10'h0;
+    assign LEDR = 10'h0;
 
     soc soc (
         .clk_clk                (MAX10_CLK1_50),

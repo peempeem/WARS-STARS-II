@@ -88,11 +88,11 @@ module soc_mm_interconnect_0 (
 		input  wire [31:0] usb_rst_s1_readdata,                             //                                          .readdata
 		output wire [31:0] usb_rst_s1_writedata,                            //                                          .writedata
 		output wire        usb_rst_s1_chipselect,                           //                                          .chipselect
-		output wire [0:0]  vga_display_0_avalon_slave_1_address,            //              vga_display_0_avalon_slave_1.address
-		output wire        vga_display_0_avalon_slave_1_write,              //                                          .write
-		output wire        vga_display_0_avalon_slave_1_read,               //                                          .read
-		input  wire [31:0] vga_display_0_avalon_slave_1_readdata,           //                                          .readdata
-		output wire [31:0] vga_display_0_avalon_slave_1_writedata           //                                          .writedata
+		output wire [0:0]  vga_display_0_avalon_slave_address,              //                vga_display_0_avalon_slave.address
+		output wire        vga_display_0_avalon_slave_write,                //                                          .write
+		output wire        vga_display_0_avalon_slave_read,                 //                                          .read
+		input  wire [31:0] vga_display_0_avalon_slave_readdata,             //                                          .readdata
+		output wire [31:0] vga_display_0_avalon_slave_writedata             //                                          .writedata
 	);
 
 	wire          vga_display_0_avalon_master_translator_avalon_universal_master_0_waitrequest;       // vga_display_0_avalon_master_agent:av_waitrequest -> vga_display_0_avalon_master_translator:uav_waitrequest
@@ -197,33 +197,33 @@ module soc_mm_interconnect_0 (
 	wire   [11:0] cmd_mux_001_src_channel;                                                            // cmd_mux_001:src_channel -> jtag_uart_0_avalon_jtag_slave_agent:cp_channel
 	wire          cmd_mux_001_src_startofpacket;                                                      // cmd_mux_001:src_startofpacket -> jtag_uart_0_avalon_jtag_slave_agent:cp_startofpacket
 	wire          cmd_mux_001_src_endofpacket;                                                        // cmd_mux_001:src_endofpacket -> jtag_uart_0_avalon_jtag_slave_agent:cp_endofpacket
-	wire   [31:0] vga_display_0_avalon_slave_1_agent_m0_readdata;                                     // vga_display_0_avalon_slave_1_translator:uav_readdata -> vga_display_0_avalon_slave_1_agent:m0_readdata
-	wire          vga_display_0_avalon_slave_1_agent_m0_waitrequest;                                  // vga_display_0_avalon_slave_1_translator:uav_waitrequest -> vga_display_0_avalon_slave_1_agent:m0_waitrequest
-	wire          vga_display_0_avalon_slave_1_agent_m0_debugaccess;                                  // vga_display_0_avalon_slave_1_agent:m0_debugaccess -> vga_display_0_avalon_slave_1_translator:uav_debugaccess
-	wire   [31:0] vga_display_0_avalon_slave_1_agent_m0_address;                                      // vga_display_0_avalon_slave_1_agent:m0_address -> vga_display_0_avalon_slave_1_translator:uav_address
-	wire    [3:0] vga_display_0_avalon_slave_1_agent_m0_byteenable;                                   // vga_display_0_avalon_slave_1_agent:m0_byteenable -> vga_display_0_avalon_slave_1_translator:uav_byteenable
-	wire          vga_display_0_avalon_slave_1_agent_m0_read;                                         // vga_display_0_avalon_slave_1_agent:m0_read -> vga_display_0_avalon_slave_1_translator:uav_read
-	wire          vga_display_0_avalon_slave_1_agent_m0_readdatavalid;                                // vga_display_0_avalon_slave_1_translator:uav_readdatavalid -> vga_display_0_avalon_slave_1_agent:m0_readdatavalid
-	wire          vga_display_0_avalon_slave_1_agent_m0_lock;                                         // vga_display_0_avalon_slave_1_agent:m0_lock -> vga_display_0_avalon_slave_1_translator:uav_lock
-	wire   [31:0] vga_display_0_avalon_slave_1_agent_m0_writedata;                                    // vga_display_0_avalon_slave_1_agent:m0_writedata -> vga_display_0_avalon_slave_1_translator:uav_writedata
-	wire          vga_display_0_avalon_slave_1_agent_m0_write;                                        // vga_display_0_avalon_slave_1_agent:m0_write -> vga_display_0_avalon_slave_1_translator:uav_write
-	wire    [2:0] vga_display_0_avalon_slave_1_agent_m0_burstcount;                                   // vga_display_0_avalon_slave_1_agent:m0_burstcount -> vga_display_0_avalon_slave_1_translator:uav_burstcount
-	wire          vga_display_0_avalon_slave_1_agent_rf_source_valid;                                 // vga_display_0_avalon_slave_1_agent:rf_source_valid -> vga_display_0_avalon_slave_1_agent_rsp_fifo:in_valid
-	wire  [114:0] vga_display_0_avalon_slave_1_agent_rf_source_data;                                  // vga_display_0_avalon_slave_1_agent:rf_source_data -> vga_display_0_avalon_slave_1_agent_rsp_fifo:in_data
-	wire          vga_display_0_avalon_slave_1_agent_rf_source_ready;                                 // vga_display_0_avalon_slave_1_agent_rsp_fifo:in_ready -> vga_display_0_avalon_slave_1_agent:rf_source_ready
-	wire          vga_display_0_avalon_slave_1_agent_rf_source_startofpacket;                         // vga_display_0_avalon_slave_1_agent:rf_source_startofpacket -> vga_display_0_avalon_slave_1_agent_rsp_fifo:in_startofpacket
-	wire          vga_display_0_avalon_slave_1_agent_rf_source_endofpacket;                           // vga_display_0_avalon_slave_1_agent:rf_source_endofpacket -> vga_display_0_avalon_slave_1_agent_rsp_fifo:in_endofpacket
-	wire          vga_display_0_avalon_slave_1_agent_rsp_fifo_out_valid;                              // vga_display_0_avalon_slave_1_agent_rsp_fifo:out_valid -> vga_display_0_avalon_slave_1_agent:rf_sink_valid
-	wire  [114:0] vga_display_0_avalon_slave_1_agent_rsp_fifo_out_data;                               // vga_display_0_avalon_slave_1_agent_rsp_fifo:out_data -> vga_display_0_avalon_slave_1_agent:rf_sink_data
-	wire          vga_display_0_avalon_slave_1_agent_rsp_fifo_out_ready;                              // vga_display_0_avalon_slave_1_agent:rf_sink_ready -> vga_display_0_avalon_slave_1_agent_rsp_fifo:out_ready
-	wire          vga_display_0_avalon_slave_1_agent_rsp_fifo_out_startofpacket;                      // vga_display_0_avalon_slave_1_agent_rsp_fifo:out_startofpacket -> vga_display_0_avalon_slave_1_agent:rf_sink_startofpacket
-	wire          vga_display_0_avalon_slave_1_agent_rsp_fifo_out_endofpacket;                        // vga_display_0_avalon_slave_1_agent_rsp_fifo:out_endofpacket -> vga_display_0_avalon_slave_1_agent:rf_sink_endofpacket
-	wire          cmd_mux_002_src_valid;                                                              // cmd_mux_002:src_valid -> vga_display_0_avalon_slave_1_agent:cp_valid
-	wire  [113:0] cmd_mux_002_src_data;                                                               // cmd_mux_002:src_data -> vga_display_0_avalon_slave_1_agent:cp_data
-	wire          cmd_mux_002_src_ready;                                                              // vga_display_0_avalon_slave_1_agent:cp_ready -> cmd_mux_002:src_ready
-	wire   [11:0] cmd_mux_002_src_channel;                                                            // cmd_mux_002:src_channel -> vga_display_0_avalon_slave_1_agent:cp_channel
-	wire          cmd_mux_002_src_startofpacket;                                                      // cmd_mux_002:src_startofpacket -> vga_display_0_avalon_slave_1_agent:cp_startofpacket
-	wire          cmd_mux_002_src_endofpacket;                                                        // cmd_mux_002:src_endofpacket -> vga_display_0_avalon_slave_1_agent:cp_endofpacket
+	wire   [31:0] vga_display_0_avalon_slave_agent_m0_readdata;                                       // vga_display_0_avalon_slave_translator:uav_readdata -> vga_display_0_avalon_slave_agent:m0_readdata
+	wire          vga_display_0_avalon_slave_agent_m0_waitrequest;                                    // vga_display_0_avalon_slave_translator:uav_waitrequest -> vga_display_0_avalon_slave_agent:m0_waitrequest
+	wire          vga_display_0_avalon_slave_agent_m0_debugaccess;                                    // vga_display_0_avalon_slave_agent:m0_debugaccess -> vga_display_0_avalon_slave_translator:uav_debugaccess
+	wire   [31:0] vga_display_0_avalon_slave_agent_m0_address;                                        // vga_display_0_avalon_slave_agent:m0_address -> vga_display_0_avalon_slave_translator:uav_address
+	wire    [3:0] vga_display_0_avalon_slave_agent_m0_byteenable;                                     // vga_display_0_avalon_slave_agent:m0_byteenable -> vga_display_0_avalon_slave_translator:uav_byteenable
+	wire          vga_display_0_avalon_slave_agent_m0_read;                                           // vga_display_0_avalon_slave_agent:m0_read -> vga_display_0_avalon_slave_translator:uav_read
+	wire          vga_display_0_avalon_slave_agent_m0_readdatavalid;                                  // vga_display_0_avalon_slave_translator:uav_readdatavalid -> vga_display_0_avalon_slave_agent:m0_readdatavalid
+	wire          vga_display_0_avalon_slave_agent_m0_lock;                                           // vga_display_0_avalon_slave_agent:m0_lock -> vga_display_0_avalon_slave_translator:uav_lock
+	wire   [31:0] vga_display_0_avalon_slave_agent_m0_writedata;                                      // vga_display_0_avalon_slave_agent:m0_writedata -> vga_display_0_avalon_slave_translator:uav_writedata
+	wire          vga_display_0_avalon_slave_agent_m0_write;                                          // vga_display_0_avalon_slave_agent:m0_write -> vga_display_0_avalon_slave_translator:uav_write
+	wire    [2:0] vga_display_0_avalon_slave_agent_m0_burstcount;                                     // vga_display_0_avalon_slave_agent:m0_burstcount -> vga_display_0_avalon_slave_translator:uav_burstcount
+	wire          vga_display_0_avalon_slave_agent_rf_source_valid;                                   // vga_display_0_avalon_slave_agent:rf_source_valid -> vga_display_0_avalon_slave_agent_rsp_fifo:in_valid
+	wire  [114:0] vga_display_0_avalon_slave_agent_rf_source_data;                                    // vga_display_0_avalon_slave_agent:rf_source_data -> vga_display_0_avalon_slave_agent_rsp_fifo:in_data
+	wire          vga_display_0_avalon_slave_agent_rf_source_ready;                                   // vga_display_0_avalon_slave_agent_rsp_fifo:in_ready -> vga_display_0_avalon_slave_agent:rf_source_ready
+	wire          vga_display_0_avalon_slave_agent_rf_source_startofpacket;                           // vga_display_0_avalon_slave_agent:rf_source_startofpacket -> vga_display_0_avalon_slave_agent_rsp_fifo:in_startofpacket
+	wire          vga_display_0_avalon_slave_agent_rf_source_endofpacket;                             // vga_display_0_avalon_slave_agent:rf_source_endofpacket -> vga_display_0_avalon_slave_agent_rsp_fifo:in_endofpacket
+	wire          vga_display_0_avalon_slave_agent_rsp_fifo_out_valid;                                // vga_display_0_avalon_slave_agent_rsp_fifo:out_valid -> vga_display_0_avalon_slave_agent:rf_sink_valid
+	wire  [114:0] vga_display_0_avalon_slave_agent_rsp_fifo_out_data;                                 // vga_display_0_avalon_slave_agent_rsp_fifo:out_data -> vga_display_0_avalon_slave_agent:rf_sink_data
+	wire          vga_display_0_avalon_slave_agent_rsp_fifo_out_ready;                                // vga_display_0_avalon_slave_agent:rf_sink_ready -> vga_display_0_avalon_slave_agent_rsp_fifo:out_ready
+	wire          vga_display_0_avalon_slave_agent_rsp_fifo_out_startofpacket;                        // vga_display_0_avalon_slave_agent_rsp_fifo:out_startofpacket -> vga_display_0_avalon_slave_agent:rf_sink_startofpacket
+	wire          vga_display_0_avalon_slave_agent_rsp_fifo_out_endofpacket;                          // vga_display_0_avalon_slave_agent_rsp_fifo:out_endofpacket -> vga_display_0_avalon_slave_agent:rf_sink_endofpacket
+	wire          cmd_mux_002_src_valid;                                                              // cmd_mux_002:src_valid -> vga_display_0_avalon_slave_agent:cp_valid
+	wire  [113:0] cmd_mux_002_src_data;                                                               // cmd_mux_002:src_data -> vga_display_0_avalon_slave_agent:cp_data
+	wire          cmd_mux_002_src_ready;                                                              // vga_display_0_avalon_slave_agent:cp_ready -> cmd_mux_002:src_ready
+	wire   [11:0] cmd_mux_002_src_channel;                                                            // cmd_mux_002:src_channel -> vga_display_0_avalon_slave_agent:cp_channel
+	wire          cmd_mux_002_src_startofpacket;                                                      // cmd_mux_002:src_startofpacket -> vga_display_0_avalon_slave_agent:cp_startofpacket
+	wire          cmd_mux_002_src_endofpacket;                                                        // cmd_mux_002:src_endofpacket -> vga_display_0_avalon_slave_agent:cp_endofpacket
 	wire   [31:0] sysid_qsys_0_control_slave_agent_m0_readdata;                                       // sysid_qsys_0_control_slave_translator:uav_readdata -> sysid_qsys_0_control_slave_agent:m0_readdata
 	wire          sysid_qsys_0_control_slave_agent_m0_waitrequest;                                    // sysid_qsys_0_control_slave_translator:uav_waitrequest -> sysid_qsys_0_control_slave_agent:m0_waitrequest
 	wire          sysid_qsys_0_control_slave_agent_m0_debugaccess;                                    // sysid_qsys_0_control_slave_agent:m0_debugaccess -> sysid_qsys_0_control_slave_translator:uav_debugaccess
@@ -516,11 +516,11 @@ module soc_mm_interconnect_0 (
 	wire   [11:0] router_004_src_channel;                                                             // router_004:src_channel -> rsp_demux_001:sink_channel
 	wire          router_004_src_startofpacket;                                                       // router_004:src_startofpacket -> rsp_demux_001:sink_startofpacket
 	wire          router_004_src_endofpacket;                                                         // router_004:src_endofpacket -> rsp_demux_001:sink_endofpacket
-	wire          vga_display_0_avalon_slave_1_agent_rp_valid;                                        // vga_display_0_avalon_slave_1_agent:rp_valid -> router_005:sink_valid
-	wire  [113:0] vga_display_0_avalon_slave_1_agent_rp_data;                                         // vga_display_0_avalon_slave_1_agent:rp_data -> router_005:sink_data
-	wire          vga_display_0_avalon_slave_1_agent_rp_ready;                                        // router_005:sink_ready -> vga_display_0_avalon_slave_1_agent:rp_ready
-	wire          vga_display_0_avalon_slave_1_agent_rp_startofpacket;                                // vga_display_0_avalon_slave_1_agent:rp_startofpacket -> router_005:sink_startofpacket
-	wire          vga_display_0_avalon_slave_1_agent_rp_endofpacket;                                  // vga_display_0_avalon_slave_1_agent:rp_endofpacket -> router_005:sink_endofpacket
+	wire          vga_display_0_avalon_slave_agent_rp_valid;                                          // vga_display_0_avalon_slave_agent:rp_valid -> router_005:sink_valid
+	wire  [113:0] vga_display_0_avalon_slave_agent_rp_data;                                           // vga_display_0_avalon_slave_agent:rp_data -> router_005:sink_data
+	wire          vga_display_0_avalon_slave_agent_rp_ready;                                          // router_005:sink_ready -> vga_display_0_avalon_slave_agent:rp_ready
+	wire          vga_display_0_avalon_slave_agent_rp_startofpacket;                                  // vga_display_0_avalon_slave_agent:rp_startofpacket -> router_005:sink_startofpacket
+	wire          vga_display_0_avalon_slave_agent_rp_endofpacket;                                    // vga_display_0_avalon_slave_agent:rp_endofpacket -> router_005:sink_endofpacket
 	wire          router_005_src_valid;                                                               // router_005:src_valid -> rsp_demux_002:sink_valid
 	wire  [113:0] router_005_src_data;                                                                // router_005:src_data -> rsp_demux_002:sink_data
 	wire          router_005_src_ready;                                                               // rsp_demux_002:sink_ready -> router_005:src_ready
@@ -1006,13 +1006,13 @@ module soc_mm_interconnect_0 (
 	wire   [33:0] avalon_st_adapter_001_out_0_data;                                                   // avalon_st_adapter_001:out_0_data -> jtag_uart_0_avalon_jtag_slave_agent:rdata_fifo_sink_data
 	wire          avalon_st_adapter_001_out_0_ready;                                                  // jtag_uart_0_avalon_jtag_slave_agent:rdata_fifo_sink_ready -> avalon_st_adapter_001:out_0_ready
 	wire    [0:0] avalon_st_adapter_001_out_0_error;                                                  // avalon_st_adapter_001:out_0_error -> jtag_uart_0_avalon_jtag_slave_agent:rdata_fifo_sink_error
-	wire          vga_display_0_avalon_slave_1_agent_rdata_fifo_src_valid;                            // vga_display_0_avalon_slave_1_agent:rdata_fifo_src_valid -> avalon_st_adapter_002:in_0_valid
-	wire   [33:0] vga_display_0_avalon_slave_1_agent_rdata_fifo_src_data;                             // vga_display_0_avalon_slave_1_agent:rdata_fifo_src_data -> avalon_st_adapter_002:in_0_data
-	wire          vga_display_0_avalon_slave_1_agent_rdata_fifo_src_ready;                            // avalon_st_adapter_002:in_0_ready -> vga_display_0_avalon_slave_1_agent:rdata_fifo_src_ready
-	wire          avalon_st_adapter_002_out_0_valid;                                                  // avalon_st_adapter_002:out_0_valid -> vga_display_0_avalon_slave_1_agent:rdata_fifo_sink_valid
-	wire   [33:0] avalon_st_adapter_002_out_0_data;                                                   // avalon_st_adapter_002:out_0_data -> vga_display_0_avalon_slave_1_agent:rdata_fifo_sink_data
-	wire          avalon_st_adapter_002_out_0_ready;                                                  // vga_display_0_avalon_slave_1_agent:rdata_fifo_sink_ready -> avalon_st_adapter_002:out_0_ready
-	wire    [0:0] avalon_st_adapter_002_out_0_error;                                                  // avalon_st_adapter_002:out_0_error -> vga_display_0_avalon_slave_1_agent:rdata_fifo_sink_error
+	wire          vga_display_0_avalon_slave_agent_rdata_fifo_src_valid;                              // vga_display_0_avalon_slave_agent:rdata_fifo_src_valid -> avalon_st_adapter_002:in_0_valid
+	wire   [33:0] vga_display_0_avalon_slave_agent_rdata_fifo_src_data;                               // vga_display_0_avalon_slave_agent:rdata_fifo_src_data -> avalon_st_adapter_002:in_0_data
+	wire          vga_display_0_avalon_slave_agent_rdata_fifo_src_ready;                              // avalon_st_adapter_002:in_0_ready -> vga_display_0_avalon_slave_agent:rdata_fifo_src_ready
+	wire          avalon_st_adapter_002_out_0_valid;                                                  // avalon_st_adapter_002:out_0_valid -> vga_display_0_avalon_slave_agent:rdata_fifo_sink_valid
+	wire   [33:0] avalon_st_adapter_002_out_0_data;                                                   // avalon_st_adapter_002:out_0_data -> vga_display_0_avalon_slave_agent:rdata_fifo_sink_data
+	wire          avalon_st_adapter_002_out_0_ready;                                                  // vga_display_0_avalon_slave_agent:rdata_fifo_sink_ready -> avalon_st_adapter_002:out_0_ready
+	wire    [0:0] avalon_st_adapter_002_out_0_error;                                                  // avalon_st_adapter_002:out_0_error -> vga_display_0_avalon_slave_agent:rdata_fifo_sink_error
 	wire          sysid_qsys_0_control_slave_agent_rdata_fifo_src_valid;                              // sysid_qsys_0_control_slave_agent:rdata_fifo_src_valid -> avalon_st_adapter_003:in_0_valid
 	wire   [33:0] sysid_qsys_0_control_slave_agent_rdata_fifo_src_data;                               // sysid_qsys_0_control_slave_agent:rdata_fifo_src_data -> avalon_st_adapter_003:in_0_data
 	wire          sysid_qsys_0_control_slave_agent_rdata_fifo_src_ready;                              // avalon_st_adapter_003:in_0_ready -> sysid_qsys_0_control_slave_agent:rdata_fifo_src_ready
@@ -1411,42 +1411,42 @@ module soc_mm_interconnect_0 (
 		.AV_WRITE_WAIT_CYCLES           (0),
 		.AV_SETUP_WAIT_CYCLES           (0),
 		.AV_DATA_HOLD_CYCLES            (0)
-	) vga_display_0_avalon_slave_1_translator (
-		.clk                    (clk_0_clk_clk),                                       //                      clk.clk
-		.reset                  (vga_display_0_reset_reset_bridge_in_reset_reset),     //                    reset.reset
-		.uav_address            (vga_display_0_avalon_slave_1_agent_m0_address),       // avalon_universal_slave_0.address
-		.uav_burstcount         (vga_display_0_avalon_slave_1_agent_m0_burstcount),    //                         .burstcount
-		.uav_read               (vga_display_0_avalon_slave_1_agent_m0_read),          //                         .read
-		.uav_write              (vga_display_0_avalon_slave_1_agent_m0_write),         //                         .write
-		.uav_waitrequest        (vga_display_0_avalon_slave_1_agent_m0_waitrequest),   //                         .waitrequest
-		.uav_readdatavalid      (vga_display_0_avalon_slave_1_agent_m0_readdatavalid), //                         .readdatavalid
-		.uav_byteenable         (vga_display_0_avalon_slave_1_agent_m0_byteenable),    //                         .byteenable
-		.uav_readdata           (vga_display_0_avalon_slave_1_agent_m0_readdata),      //                         .readdata
-		.uav_writedata          (vga_display_0_avalon_slave_1_agent_m0_writedata),     //                         .writedata
-		.uav_lock               (vga_display_0_avalon_slave_1_agent_m0_lock),          //                         .lock
-		.uav_debugaccess        (vga_display_0_avalon_slave_1_agent_m0_debugaccess),   //                         .debugaccess
-		.av_address             (vga_display_0_avalon_slave_1_address),                //      avalon_anti_slave_0.address
-		.av_write               (vga_display_0_avalon_slave_1_write),                  //                         .write
-		.av_read                (vga_display_0_avalon_slave_1_read),                   //                         .read
-		.av_readdata            (vga_display_0_avalon_slave_1_readdata),               //                         .readdata
-		.av_writedata           (vga_display_0_avalon_slave_1_writedata),              //                         .writedata
-		.av_begintransfer       (),                                                    //              (terminated)
-		.av_beginbursttransfer  (),                                                    //              (terminated)
-		.av_burstcount          (),                                                    //              (terminated)
-		.av_byteenable          (),                                                    //              (terminated)
-		.av_readdatavalid       (1'b0),                                                //              (terminated)
-		.av_waitrequest         (1'b0),                                                //              (terminated)
-		.av_writebyteenable     (),                                                    //              (terminated)
-		.av_lock                (),                                                    //              (terminated)
-		.av_chipselect          (),                                                    //              (terminated)
-		.av_clken               (),                                                    //              (terminated)
-		.uav_clken              (1'b0),                                                //              (terminated)
-		.av_debugaccess         (),                                                    //              (terminated)
-		.av_outputenable        (),                                                    //              (terminated)
-		.uav_response           (),                                                    //              (terminated)
-		.av_response            (2'b00),                                               //              (terminated)
-		.uav_writeresponsevalid (),                                                    //              (terminated)
-		.av_writeresponsevalid  (1'b0)                                                 //              (terminated)
+	) vga_display_0_avalon_slave_translator (
+		.clk                    (clk_0_clk_clk),                                     //                      clk.clk
+		.reset                  (vga_display_0_reset_reset_bridge_in_reset_reset),   //                    reset.reset
+		.uav_address            (vga_display_0_avalon_slave_agent_m0_address),       // avalon_universal_slave_0.address
+		.uav_burstcount         (vga_display_0_avalon_slave_agent_m0_burstcount),    //                         .burstcount
+		.uav_read               (vga_display_0_avalon_slave_agent_m0_read),          //                         .read
+		.uav_write              (vga_display_0_avalon_slave_agent_m0_write),         //                         .write
+		.uav_waitrequest        (vga_display_0_avalon_slave_agent_m0_waitrequest),   //                         .waitrequest
+		.uav_readdatavalid      (vga_display_0_avalon_slave_agent_m0_readdatavalid), //                         .readdatavalid
+		.uav_byteenable         (vga_display_0_avalon_slave_agent_m0_byteenable),    //                         .byteenable
+		.uav_readdata           (vga_display_0_avalon_slave_agent_m0_readdata),      //                         .readdata
+		.uav_writedata          (vga_display_0_avalon_slave_agent_m0_writedata),     //                         .writedata
+		.uav_lock               (vga_display_0_avalon_slave_agent_m0_lock),          //                         .lock
+		.uav_debugaccess        (vga_display_0_avalon_slave_agent_m0_debugaccess),   //                         .debugaccess
+		.av_address             (vga_display_0_avalon_slave_address),                //      avalon_anti_slave_0.address
+		.av_write               (vga_display_0_avalon_slave_write),                  //                         .write
+		.av_read                (vga_display_0_avalon_slave_read),                   //                         .read
+		.av_readdata            (vga_display_0_avalon_slave_readdata),               //                         .readdata
+		.av_writedata           (vga_display_0_avalon_slave_writedata),              //                         .writedata
+		.av_begintransfer       (),                                                  //              (terminated)
+		.av_beginbursttransfer  (),                                                  //              (terminated)
+		.av_burstcount          (),                                                  //              (terminated)
+		.av_byteenable          (),                                                  //              (terminated)
+		.av_readdatavalid       (1'b0),                                              //              (terminated)
+		.av_waitrequest         (1'b0),                                              //              (terminated)
+		.av_writebyteenable     (),                                                  //              (terminated)
+		.av_lock                (),                                                  //              (terminated)
+		.av_chipselect          (),                                                  //              (terminated)
+		.av_clken               (),                                                  //              (terminated)
+		.uav_clken              (1'b0),                                              //              (terminated)
+		.av_debugaccess         (),                                                  //              (terminated)
+		.av_outputenable        (),                                                  //              (terminated)
+		.uav_response           (),                                                  //              (terminated)
+		.av_response            (2'b00),                                             //              (terminated)
+		.uav_writeresponsevalid (),                                                  //              (terminated)
+		.av_writeresponsevalid  (1'b0)                                               //              (terminated)
 	);
 
 	altera_merlin_slave_translator #(
@@ -2597,50 +2597,50 @@ module soc_mm_interconnect_0 (
 		.USE_READRESPONSE          (0),
 		.USE_WRITERESPONSE         (0),
 		.ECC_ENABLE                (0)
-	) vga_display_0_avalon_slave_1_agent (
-		.clk                     (clk_0_clk_clk),                                                 //             clk.clk
-		.reset                   (vga_display_0_reset_reset_bridge_in_reset_reset),               //       clk_reset.reset
-		.m0_address              (vga_display_0_avalon_slave_1_agent_m0_address),                 //              m0.address
-		.m0_burstcount           (vga_display_0_avalon_slave_1_agent_m0_burstcount),              //                .burstcount
-		.m0_byteenable           (vga_display_0_avalon_slave_1_agent_m0_byteenable),              //                .byteenable
-		.m0_debugaccess          (vga_display_0_avalon_slave_1_agent_m0_debugaccess),             //                .debugaccess
-		.m0_lock                 (vga_display_0_avalon_slave_1_agent_m0_lock),                    //                .lock
-		.m0_readdata             (vga_display_0_avalon_slave_1_agent_m0_readdata),                //                .readdata
-		.m0_readdatavalid        (vga_display_0_avalon_slave_1_agent_m0_readdatavalid),           //                .readdatavalid
-		.m0_read                 (vga_display_0_avalon_slave_1_agent_m0_read),                    //                .read
-		.m0_waitrequest          (vga_display_0_avalon_slave_1_agent_m0_waitrequest),             //                .waitrequest
-		.m0_writedata            (vga_display_0_avalon_slave_1_agent_m0_writedata),               //                .writedata
-		.m0_write                (vga_display_0_avalon_slave_1_agent_m0_write),                   //                .write
-		.rp_endofpacket          (vga_display_0_avalon_slave_1_agent_rp_endofpacket),             //              rp.endofpacket
-		.rp_ready                (vga_display_0_avalon_slave_1_agent_rp_ready),                   //                .ready
-		.rp_valid                (vga_display_0_avalon_slave_1_agent_rp_valid),                   //                .valid
-		.rp_data                 (vga_display_0_avalon_slave_1_agent_rp_data),                    //                .data
-		.rp_startofpacket        (vga_display_0_avalon_slave_1_agent_rp_startofpacket),           //                .startofpacket
-		.cp_ready                (cmd_mux_002_src_ready),                                         //              cp.ready
-		.cp_valid                (cmd_mux_002_src_valid),                                         //                .valid
-		.cp_data                 (cmd_mux_002_src_data),                                          //                .data
-		.cp_startofpacket        (cmd_mux_002_src_startofpacket),                                 //                .startofpacket
-		.cp_endofpacket          (cmd_mux_002_src_endofpacket),                                   //                .endofpacket
-		.cp_channel              (cmd_mux_002_src_channel),                                       //                .channel
-		.rf_sink_ready           (vga_display_0_avalon_slave_1_agent_rsp_fifo_out_ready),         //         rf_sink.ready
-		.rf_sink_valid           (vga_display_0_avalon_slave_1_agent_rsp_fifo_out_valid),         //                .valid
-		.rf_sink_startofpacket   (vga_display_0_avalon_slave_1_agent_rsp_fifo_out_startofpacket), //                .startofpacket
-		.rf_sink_endofpacket     (vga_display_0_avalon_slave_1_agent_rsp_fifo_out_endofpacket),   //                .endofpacket
-		.rf_sink_data            (vga_display_0_avalon_slave_1_agent_rsp_fifo_out_data),          //                .data
-		.rf_source_ready         (vga_display_0_avalon_slave_1_agent_rf_source_ready),            //       rf_source.ready
-		.rf_source_valid         (vga_display_0_avalon_slave_1_agent_rf_source_valid),            //                .valid
-		.rf_source_startofpacket (vga_display_0_avalon_slave_1_agent_rf_source_startofpacket),    //                .startofpacket
-		.rf_source_endofpacket   (vga_display_0_avalon_slave_1_agent_rf_source_endofpacket),      //                .endofpacket
-		.rf_source_data          (vga_display_0_avalon_slave_1_agent_rf_source_data),             //                .data
-		.rdata_fifo_sink_ready   (avalon_st_adapter_002_out_0_ready),                             // rdata_fifo_sink.ready
-		.rdata_fifo_sink_valid   (avalon_st_adapter_002_out_0_valid),                             //                .valid
-		.rdata_fifo_sink_data    (avalon_st_adapter_002_out_0_data),                              //                .data
-		.rdata_fifo_sink_error   (avalon_st_adapter_002_out_0_error),                             //                .error
-		.rdata_fifo_src_ready    (vga_display_0_avalon_slave_1_agent_rdata_fifo_src_ready),       //  rdata_fifo_src.ready
-		.rdata_fifo_src_valid    (vga_display_0_avalon_slave_1_agent_rdata_fifo_src_valid),       //                .valid
-		.rdata_fifo_src_data     (vga_display_0_avalon_slave_1_agent_rdata_fifo_src_data),        //                .data
-		.m0_response             (2'b00),                                                         //     (terminated)
-		.m0_writeresponsevalid   (1'b0)                                                           //     (terminated)
+	) vga_display_0_avalon_slave_agent (
+		.clk                     (clk_0_clk_clk),                                               //             clk.clk
+		.reset                   (vga_display_0_reset_reset_bridge_in_reset_reset),             //       clk_reset.reset
+		.m0_address              (vga_display_0_avalon_slave_agent_m0_address),                 //              m0.address
+		.m0_burstcount           (vga_display_0_avalon_slave_agent_m0_burstcount),              //                .burstcount
+		.m0_byteenable           (vga_display_0_avalon_slave_agent_m0_byteenable),              //                .byteenable
+		.m0_debugaccess          (vga_display_0_avalon_slave_agent_m0_debugaccess),             //                .debugaccess
+		.m0_lock                 (vga_display_0_avalon_slave_agent_m0_lock),                    //                .lock
+		.m0_readdata             (vga_display_0_avalon_slave_agent_m0_readdata),                //                .readdata
+		.m0_readdatavalid        (vga_display_0_avalon_slave_agent_m0_readdatavalid),           //                .readdatavalid
+		.m0_read                 (vga_display_0_avalon_slave_agent_m0_read),                    //                .read
+		.m0_waitrequest          (vga_display_0_avalon_slave_agent_m0_waitrequest),             //                .waitrequest
+		.m0_writedata            (vga_display_0_avalon_slave_agent_m0_writedata),               //                .writedata
+		.m0_write                (vga_display_0_avalon_slave_agent_m0_write),                   //                .write
+		.rp_endofpacket          (vga_display_0_avalon_slave_agent_rp_endofpacket),             //              rp.endofpacket
+		.rp_ready                (vga_display_0_avalon_slave_agent_rp_ready),                   //                .ready
+		.rp_valid                (vga_display_0_avalon_slave_agent_rp_valid),                   //                .valid
+		.rp_data                 (vga_display_0_avalon_slave_agent_rp_data),                    //                .data
+		.rp_startofpacket        (vga_display_0_avalon_slave_agent_rp_startofpacket),           //                .startofpacket
+		.cp_ready                (cmd_mux_002_src_ready),                                       //              cp.ready
+		.cp_valid                (cmd_mux_002_src_valid),                                       //                .valid
+		.cp_data                 (cmd_mux_002_src_data),                                        //                .data
+		.cp_startofpacket        (cmd_mux_002_src_startofpacket),                               //                .startofpacket
+		.cp_endofpacket          (cmd_mux_002_src_endofpacket),                                 //                .endofpacket
+		.cp_channel              (cmd_mux_002_src_channel),                                     //                .channel
+		.rf_sink_ready           (vga_display_0_avalon_slave_agent_rsp_fifo_out_ready),         //         rf_sink.ready
+		.rf_sink_valid           (vga_display_0_avalon_slave_agent_rsp_fifo_out_valid),         //                .valid
+		.rf_sink_startofpacket   (vga_display_0_avalon_slave_agent_rsp_fifo_out_startofpacket), //                .startofpacket
+		.rf_sink_endofpacket     (vga_display_0_avalon_slave_agent_rsp_fifo_out_endofpacket),   //                .endofpacket
+		.rf_sink_data            (vga_display_0_avalon_slave_agent_rsp_fifo_out_data),          //                .data
+		.rf_source_ready         (vga_display_0_avalon_slave_agent_rf_source_ready),            //       rf_source.ready
+		.rf_source_valid         (vga_display_0_avalon_slave_agent_rf_source_valid),            //                .valid
+		.rf_source_startofpacket (vga_display_0_avalon_slave_agent_rf_source_startofpacket),    //                .startofpacket
+		.rf_source_endofpacket   (vga_display_0_avalon_slave_agent_rf_source_endofpacket),      //                .endofpacket
+		.rf_source_data          (vga_display_0_avalon_slave_agent_rf_source_data),             //                .data
+		.rdata_fifo_sink_ready   (avalon_st_adapter_002_out_0_ready),                           // rdata_fifo_sink.ready
+		.rdata_fifo_sink_valid   (avalon_st_adapter_002_out_0_valid),                           //                .valid
+		.rdata_fifo_sink_data    (avalon_st_adapter_002_out_0_data),                            //                .data
+		.rdata_fifo_sink_error   (avalon_st_adapter_002_out_0_error),                           //                .error
+		.rdata_fifo_src_ready    (vga_display_0_avalon_slave_agent_rdata_fifo_src_ready),       //  rdata_fifo_src.ready
+		.rdata_fifo_src_valid    (vga_display_0_avalon_slave_agent_rdata_fifo_src_valid),       //                .valid
+		.rdata_fifo_src_data     (vga_display_0_avalon_slave_agent_rdata_fifo_src_data),        //                .data
+		.m0_response             (2'b00),                                                       //     (terminated)
+		.m0_writeresponsevalid   (1'b0)                                                         //     (terminated)
 	);
 
 	altera_avalon_sc_fifo #(
@@ -2656,32 +2656,32 @@ module soc_mm_interconnect_0 (
 		.USE_STORE_FORWARD   (0),
 		.USE_ALMOST_FULL_IF  (0),
 		.USE_ALMOST_EMPTY_IF (0)
-	) vga_display_0_avalon_slave_1_agent_rsp_fifo (
-		.clk               (clk_0_clk_clk),                                                 //       clk.clk
-		.reset             (vga_display_0_reset_reset_bridge_in_reset_reset),               // clk_reset.reset
-		.in_data           (vga_display_0_avalon_slave_1_agent_rf_source_data),             //        in.data
-		.in_valid          (vga_display_0_avalon_slave_1_agent_rf_source_valid),            //          .valid
-		.in_ready          (vga_display_0_avalon_slave_1_agent_rf_source_ready),            //          .ready
-		.in_startofpacket  (vga_display_0_avalon_slave_1_agent_rf_source_startofpacket),    //          .startofpacket
-		.in_endofpacket    (vga_display_0_avalon_slave_1_agent_rf_source_endofpacket),      //          .endofpacket
-		.out_data          (vga_display_0_avalon_slave_1_agent_rsp_fifo_out_data),          //       out.data
-		.out_valid         (vga_display_0_avalon_slave_1_agent_rsp_fifo_out_valid),         //          .valid
-		.out_ready         (vga_display_0_avalon_slave_1_agent_rsp_fifo_out_ready),         //          .ready
-		.out_startofpacket (vga_display_0_avalon_slave_1_agent_rsp_fifo_out_startofpacket), //          .startofpacket
-		.out_endofpacket   (vga_display_0_avalon_slave_1_agent_rsp_fifo_out_endofpacket),   //          .endofpacket
-		.csr_address       (2'b00),                                                         // (terminated)
-		.csr_read          (1'b0),                                                          // (terminated)
-		.csr_write         (1'b0),                                                          // (terminated)
-		.csr_readdata      (),                                                              // (terminated)
-		.csr_writedata     (32'b00000000000000000000000000000000),                          // (terminated)
-		.almost_full_data  (),                                                              // (terminated)
-		.almost_empty_data (),                                                              // (terminated)
-		.in_empty          (1'b0),                                                          // (terminated)
-		.out_empty         (),                                                              // (terminated)
-		.in_error          (1'b0),                                                          // (terminated)
-		.out_error         (),                                                              // (terminated)
-		.in_channel        (1'b0),                                                          // (terminated)
-		.out_channel       ()                                                               // (terminated)
+	) vga_display_0_avalon_slave_agent_rsp_fifo (
+		.clk               (clk_0_clk_clk),                                               //       clk.clk
+		.reset             (vga_display_0_reset_reset_bridge_in_reset_reset),             // clk_reset.reset
+		.in_data           (vga_display_0_avalon_slave_agent_rf_source_data),             //        in.data
+		.in_valid          (vga_display_0_avalon_slave_agent_rf_source_valid),            //          .valid
+		.in_ready          (vga_display_0_avalon_slave_agent_rf_source_ready),            //          .ready
+		.in_startofpacket  (vga_display_0_avalon_slave_agent_rf_source_startofpacket),    //          .startofpacket
+		.in_endofpacket    (vga_display_0_avalon_slave_agent_rf_source_endofpacket),      //          .endofpacket
+		.out_data          (vga_display_0_avalon_slave_agent_rsp_fifo_out_data),          //       out.data
+		.out_valid         (vga_display_0_avalon_slave_agent_rsp_fifo_out_valid),         //          .valid
+		.out_ready         (vga_display_0_avalon_slave_agent_rsp_fifo_out_ready),         //          .ready
+		.out_startofpacket (vga_display_0_avalon_slave_agent_rsp_fifo_out_startofpacket), //          .startofpacket
+		.out_endofpacket   (vga_display_0_avalon_slave_agent_rsp_fifo_out_endofpacket),   //          .endofpacket
+		.csr_address       (2'b00),                                                       // (terminated)
+		.csr_read          (1'b0),                                                        // (terminated)
+		.csr_write         (1'b0),                                                        // (terminated)
+		.csr_readdata      (),                                                            // (terminated)
+		.csr_writedata     (32'b00000000000000000000000000000000),                        // (terminated)
+		.almost_full_data  (),                                                            // (terminated)
+		.almost_empty_data (),                                                            // (terminated)
+		.in_empty          (1'b0),                                                        // (terminated)
+		.out_empty         (),                                                            // (terminated)
+		.in_error          (1'b0),                                                        // (terminated)
+		.out_error         (),                                                            // (terminated)
+		.in_channel        (1'b0),                                                        // (terminated)
+		.out_channel       ()                                                             // (terminated)
 	);
 
 	altera_merlin_slave_agent #(
@@ -3890,19 +3890,19 @@ module soc_mm_interconnect_0 (
 	);
 
 	soc_mm_interconnect_0_router_004 router_005 (
-		.sink_ready         (vga_display_0_avalon_slave_1_agent_rp_ready),         //      sink.ready
-		.sink_valid         (vga_display_0_avalon_slave_1_agent_rp_valid),         //          .valid
-		.sink_data          (vga_display_0_avalon_slave_1_agent_rp_data),          //          .data
-		.sink_startofpacket (vga_display_0_avalon_slave_1_agent_rp_startofpacket), //          .startofpacket
-		.sink_endofpacket   (vga_display_0_avalon_slave_1_agent_rp_endofpacket),   //          .endofpacket
-		.clk                (clk_0_clk_clk),                                       //       clk.clk
-		.reset              (vga_display_0_reset_reset_bridge_in_reset_reset),     // clk_reset.reset
-		.src_ready          (router_005_src_ready),                                //       src.ready
-		.src_valid          (router_005_src_valid),                                //          .valid
-		.src_data           (router_005_src_data),                                 //          .data
-		.src_channel        (router_005_src_channel),                              //          .channel
-		.src_startofpacket  (router_005_src_startofpacket),                        //          .startofpacket
-		.src_endofpacket    (router_005_src_endofpacket)                           //          .endofpacket
+		.sink_ready         (vga_display_0_avalon_slave_agent_rp_ready),         //      sink.ready
+		.sink_valid         (vga_display_0_avalon_slave_agent_rp_valid),         //          .valid
+		.sink_data          (vga_display_0_avalon_slave_agent_rp_data),          //          .data
+		.sink_startofpacket (vga_display_0_avalon_slave_agent_rp_startofpacket), //          .startofpacket
+		.sink_endofpacket   (vga_display_0_avalon_slave_agent_rp_endofpacket),   //          .endofpacket
+		.clk                (clk_0_clk_clk),                                     //       clk.clk
+		.reset              (vga_display_0_reset_reset_bridge_in_reset_reset),   // clk_reset.reset
+		.src_ready          (router_005_src_ready),                              //       src.ready
+		.src_valid          (router_005_src_valid),                              //          .valid
+		.src_data           (router_005_src_data),                               //          .data
+		.src_channel        (router_005_src_channel),                            //          .channel
+		.src_startofpacket  (router_005_src_startofpacket),                      //          .startofpacket
+		.src_endofpacket    (router_005_src_endofpacket)                         //          .endofpacket
 	);
 
 	soc_mm_interconnect_0_router_004 router_006 (
@@ -5441,15 +5441,15 @@ module soc_mm_interconnect_0 (
 		.outUseReady     (1),
 		.outReadyLatency (0)
 	) avalon_st_adapter_002 (
-		.in_clk_0_clk   (clk_0_clk_clk),                                           // in_clk_0.clk
-		.in_rst_0_reset (vga_display_0_reset_reset_bridge_in_reset_reset),         // in_rst_0.reset
-		.in_0_data      (vga_display_0_avalon_slave_1_agent_rdata_fifo_src_data),  //     in_0.data
-		.in_0_valid     (vga_display_0_avalon_slave_1_agent_rdata_fifo_src_valid), //         .valid
-		.in_0_ready     (vga_display_0_avalon_slave_1_agent_rdata_fifo_src_ready), //         .ready
-		.out_0_data     (avalon_st_adapter_002_out_0_data),                        //    out_0.data
-		.out_0_valid    (avalon_st_adapter_002_out_0_valid),                       //         .valid
-		.out_0_ready    (avalon_st_adapter_002_out_0_ready),                       //         .ready
-		.out_0_error    (avalon_st_adapter_002_out_0_error)                        //         .error
+		.in_clk_0_clk   (clk_0_clk_clk),                                         // in_clk_0.clk
+		.in_rst_0_reset (vga_display_0_reset_reset_bridge_in_reset_reset),       // in_rst_0.reset
+		.in_0_data      (vga_display_0_avalon_slave_agent_rdata_fifo_src_data),  //     in_0.data
+		.in_0_valid     (vga_display_0_avalon_slave_agent_rdata_fifo_src_valid), //         .valid
+		.in_0_ready     (vga_display_0_avalon_slave_agent_rdata_fifo_src_ready), //         .ready
+		.out_0_data     (avalon_st_adapter_002_out_0_data),                      //    out_0.data
+		.out_0_valid    (avalon_st_adapter_002_out_0_valid),                     //         .valid
+		.out_0_ready    (avalon_st_adapter_002_out_0_ready),                     //         .ready
+		.out_0_error    (avalon_st_adapter_002_out_0_error)                      //         .error
 	);
 
 	soc_mm_interconnect_0_avalon_st_adapter_001 #(

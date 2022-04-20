@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <stdint.h>
+
+#define SCREEN_WIDTH    640
+#define SCREEN_HEIGHT   480
+#define SCREEN_SIZE     640 * 480
+
+typedef struct VGA_MEMORY {
+    uint16_t frame0[SCREEN_SIZE];
+    uint16_t frame1[SCREEN_SIZE];
+} vga_memory_t;
+
+typedef struct VGA_REGISTERS {
+    vga_memory_t*   address;
+    uint32_t        frame;
+} vga_regs_t;
+
+vga_memory_t    vga_mem;
+vga_regs_t*     vga_regs = (vga_regs_t*) 0x00002158;
+
+void setPixel(uint16_t* frame, uint32_t x, uint32_t y, uint16_t color) {
+    if (x < SCREEN_WIDTH && y < SCREEN_HEIGHT)
+        frame[y * SCREEN_WIDTH + x] = color;
+}
+
+int main() {
+    printf("Hello from Nios II!\n");
+
+    printf("Initializing VGA control registers...");
+    vga_regs->address   = &vga_mem;
+    vga_regs->frame     = 0;
+    printf("Done\n");
+
+    for (int y = 0; y < SCREEN_HEIGHT; y++) {
+        for (int x = 0; x < SCREEN_WIDTH; x++) {
+            setPixel(vga_mem.frame0, x, y, 0);
+            setPixel(vga_mem.frame1, x, y, 0);
+        }
+    }
+
+    for (int y = 0; y < SCREEN_HEIGHT / 2; y++) {
+        uint16_t color = 0;
+        for (int x = 0; x < SCREEN_WIDTH / 2; x++) {
+            setPixel(vga_mem.frame0, x, y, color++);
+        	setPixel(vga_mem.frame1, x, y, 0x0F0F);
+        }
+    }
+
+    for (int y = SCREEN_HEIGHT / 2; y < SCREEN_HEIGHT; y++) {
+        uint16_t color = 0;
+        for (int x = SCREEN_WIDTH / 2; x < SCREEN_WIDTH; x++)
+            setPixel(vga_mem.frame0, x, y, color--);
+    }
+
+    for (int i = 0; i < SCREEN_WIDTH; i++)
+        setPixel(vga_mem.frame0, i, i, 0x0FFF);
+
+    while (1) {
+        printf("Show Frame 0\n");
+        vga_regs->frame = 0;
+        usleep(250000);
+        printf("Show Frame 1\n");
+        vga_regs->frame = 1;
+        usleep(250000);
+    }
+    return 0;
+}

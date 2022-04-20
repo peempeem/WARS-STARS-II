@@ -1,5 +1,5 @@
 Flow report for WS2
-Wed Apr 20 14:41:14 2022
+Wed Apr 20 16:05:25 2022
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Apr 20 14:41:14 2022       ;
+; Flow Status                        ; Successful - Wed Apr 20 16:05:25 2022       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; WS2                                         ;
 ; Top-level Entity Name              ; WS2                                         ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484I7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 4,504 / 49,760 ( 9 % )                      ;
+; Total logic elements               ; 4,525 / 49,760 ( 9 % )                      ;
 ;     Total combinational functions  ; 3,779 / 49,760 ( 8 % )                      ;
-;     Dedicated logic registers      ; 2,877 / 49,760 ( 6 % )                      ;
-; Total registers                    ; 2946                                        ;
+;     Dedicated logic registers      ; 2,878 / 49,760 ( 6 % )                      ;
+; Total registers                    ; 2947                                        ;
 ; Total pins                         ; 141 / 360 ( 39 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 56,320 / 1,677,312 ( 3 % )                  ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/20/2022 14:39:53 ;
+; Start date & time ; 04/20/2022 16:04:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; WS2                 ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+-------------------------------------------------------+---------------+-------------------+----------------+
 ; Assignment Name                     ; Value                                                 ; Default Value ; Entity Name       ; Section Id     ;
 +-------------------------------------+-------------------------------------------------------+---------------+-------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 929355364336.165048359307772                          ; --            ; --                ; --             ;
+; COMPILER_SIGNATURE_ID               ; 929355364336.165048864607376                          ; --            ; --                ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                                     ; --            ; --                ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                       ; <None>        ; --                ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                                  ; --            ; --                ; eda_simulation ;
@@ -103,7 +103,7 @@ refer to the applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                          ; --            ; --                ; --             ;
 ; SLD_FILE                            ; soc/synthesis/soc.regmap                              ; --            ; --                ; --             ;
 ; SLD_FILE                            ; soc/synthesis/soc.debuginfo                           ; --            ; --                ; --             ;
-; SLD_INFO                            ; QSYS_NAME soc HAS_SOPCINFO 1 GENERATION_ID 1650483562 ; --            ; soc               ; --             ;
+; SLD_INFO                            ; QSYS_NAME soc HAS_SOPCINFO 1 GENERATION_ID 1650488613 ; --            ; soc               ; --             ;
 ; SOPCINFO_FILE                       ; soc/synthesis/../../soc.sopcinfo                      ; --            ; --                ; --             ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                    ; --            ; --                ; --             ;
 +-------------------------------------+-------------------------------------------------------+---------------+-------------------+----------------+
@@ -114,12 +114,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:34     ; 1.0                     ; 4985 MB             ; 00:00:53                           ;
-; Fitter               ; 00:00:28     ; 1.4                     ; 5852 MB             ; 00:00:53                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 4705 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:06     ; 2.1                     ; 4918 MB             ; 00:00:10                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4720 MB             ; 00:00:02                           ;
-; Total                ; 00:01:14     ; --                      ; --                  ; 00:02:01                           ;
+; Analysis & Synthesis ; 00:00:33     ; 1.0                     ; 4976 MB             ; 00:00:51                           ;
+; Fitter               ; 00:00:27     ; 1.4                     ; 5850 MB             ; 00:00:51                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4709 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:05     ; 2.2                     ; 4916 MB             ; 00:00:10                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4720 MB             ; 00:00:03                           ;
+; Total                ; 00:01:10     ; --                      ; --                  ; 00:01:58                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
