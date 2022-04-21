@@ -2,9 +2,9 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Apr 20, 2022 4:06:28 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1650488788987</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Users\James\OneDrive\Documents\ECE385\final\WARS-STARS-II\src\software\ws2_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>Apr 20, 2022 7:10:14 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1650499814379</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\Users\James\LOCAL\ece385\final\WARS-STARS-II\src\software\ws2_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\soc.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>

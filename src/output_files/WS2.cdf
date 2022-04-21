@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("C:/Users/James/OneDrive/Documents/ECE385/final/WARS-STARS-II/src/output_files/") File("WS2.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/output_files/") File("WS2.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

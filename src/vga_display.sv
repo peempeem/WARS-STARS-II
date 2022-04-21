@@ -188,21 +188,6 @@ module vga_display (
         green   <= 0;
         blue    <= 0;
         if (blank != 0) begin
-            /*if (state == DRAWING) begin
-                red     <= 4'h0;
-                green   <= 4'hF;
-                blue    <= 4'h0;
-            end
-            else if (state == WRITING) begin
-                red     <= 4'hF;
-                green   <= 4'h0;
-                blue    <= 4'h0;
-            end
-            else if (state == READING) begin
-                red     <= 4'h0;
-                green   <= 4'h0;
-                blue    <= 4'hF;
-            end*/
             red     <= words[DrawX[0]][11:8];
             green   <= words[DrawX[0]][ 7:4];
             blue    <= words[DrawX[0]][ 3:0];
