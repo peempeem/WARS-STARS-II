@@ -41,6 +41,7 @@ int main() {
     for (int y = 0; y < SCREEN_HEIGHT; y++) {
         for (int x = 0; x < SCREEN_WIDTH; x++) {
             setPixel(vga_mem.frame0, x, y, background_bitmap[y * background_width + x]);
+            setPixel(vga_mem.frame1, x, y, background_bitmap[y * background_width + x]);
         }
     }
 
@@ -55,8 +56,10 @@ int main() {
     for (int y = 0; y < enemyplanet_height; y++) {
         for (int x = 0; x < enemyplanet_width; x++) {
             uint16_t color = enemyplanet_bitmap[y * enemyplanet_width + x];
-            if (color & 0x1000)
+            if (color & 0x1000) {
                 setPixel(vga_mem.frame0, x - enemyplanet_width / 2 + SCREEN_WIDTH, y - enemyplanet_height / 2 + SCREEN_HEIGHT / 2, color);
+                setPixel(vga_mem.frame1, x - enemyplanet_width / 2 + SCREEN_WIDTH / 2, y - enemyplanet_height / 2 + SCREEN_HEIGHT / 2, color);
+            }
         }
     }
 
@@ -75,35 +78,13 @@ int main() {
                 setPixel(vga_mem.frame0, x - enemy_ship_width / 2 + SCREEN_WIDTH / 2, y - enemy_ship_height / 2 + SCREEN_HEIGHT / 2, color);
         }
     }
-    
 
-    /*for (int y = (SCREEN_HEIGHT / 2) - 20; y < (SCREEN_HEIGHT / 2) + 20; y++) {
-        for (int x = (SCREEN_WIDTH / 2) - 20; x < (SCREEN_WIDTH / 2) + 20; x++) {
-            setPixel(vga_mem.frame0, x, y, 0x0FFF);
-            setPixel(vga_mem.frame1, x, y, 0x0F0F);
-        }
+    while (1) {
+        vga_regs->frame = 0;
+        usleep(100000);
+        vga_regs->frame = 1;
+        usleep(100000);
     }
 
-    int offset = 0;
-    while (1) {
-        printf("background width = %d | background height = %d", background_height, background_width);
-        for (int i = 100; i < 200; i++) {
-            setPixel(vga_mem.frame1, i, offset - 2, 0);
-            setPixel(vga_mem.frame1, i, offset, 0x0FFF);
-        }
-        vga_regs->frame = 1;
-        offset++;
-        usleep(10000);
-
-        for (int i = 100; i < 200; i++) {
-            setPixel(vga_mem.frame0, i, offset - 2, 0);
-            setPixel(vga_mem.frame0, i, offset, 0x0FFF);
-        }
-        vga_regs->frame = 0;
-        offset++;
-        usleep(10000);
-        if (offset > SCREEN_HEIGHT + 10)
-            offset = 0;
-    }*/
     return 0;
 }

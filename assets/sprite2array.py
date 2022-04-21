@@ -69,9 +69,9 @@ if __name__ == '__main__':
             for x in range(width):
                 r, g, b, a = image.getpixel((x, y))
                 pxl = int(a == 255) << 4
-                pxl = pxl + int(16 * r / 255) << 4
-                pxl = (pxl + int(16 * g / 255)) << 4
-                pxl += int(16 * b / 255)
+                pxl = pxl + int(15 * r / 255) << 4
+                pxl = (pxl + int(15 * g / 255)) << 4
+                pxl += int(15 * b / 255)
                 data.append(pxl)
         name = file.split('.')[0]
         write_header(name, width, height)
