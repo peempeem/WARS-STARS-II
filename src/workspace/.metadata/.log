@@ -1764,3 +1764,1367 @@ javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
 
 !ENTRY com.altera.sbtgui.launch 1 0 2022-04-21 12:33:16.398
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2160 --id=0x0 --timestamp=1650491852 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+!SESSION 2022-04-22 13:04:13.186 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2022-04-22 13:04:54.778
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Received fatal alert: handshake_failure. ; version: 1.100.0.v20160217-0435
+!STACK 0
+javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:290)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:259)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:125)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:205)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:68)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-22 13:05:28.098
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2160 --id=0x0 --timestamp=1650491852]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-22 13:05:31.653
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2160 --id=0x0 --timestamp=1650491852 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+!SESSION 2022-04-23 18:48:09.093 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2022-04-23 18:48:21.229
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Received fatal alert: handshake_failure. ; version: 1.100.0.v20160217-0435
+!STACK 0
+javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:290)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:259)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:125)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:205)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:68)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.altera.sbtgui.launch 4 0 2022-04-24 19:20:23.499
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:555)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 4 0 2022-04-24 19:20:23.531
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:555)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:20:37.649
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650757681]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:20:40.355
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650757681 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+!SESSION 2022-04-24 19:33:23.925 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-04-24 19:33:27.221
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2022-04-24 19:33:35.220
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Received fatal alert: handshake_failure. ; version: 1.100.0.v20160217-0435
+!STACK 0
+javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:290)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:259)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:125)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:205)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:68)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:34:05.398
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650846575]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:34:08.489
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650846575 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+!SESSION 2022-04-24 19:38:11.016 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-04-24 19:38:12.351
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2022-04-24 19:38:17.771
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Received fatal alert: handshake_failure. ; version: 1.100.0.v20160217-0435
+!STACK 0
+javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:290)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:259)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:125)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:205)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:68)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:39:24.879
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650846948]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:39:27.737
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650846948 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:46:28.318
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650847431]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:46:31.079
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650847431 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:50:20.177
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650847661]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:50:23.123
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650847661 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:51:50.123
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:51:51.426
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650847661]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2022-04-24 19:51:55.144
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-1]', --device=1, --instance=0, --stop, --sidp=0x2158, --id=0x0, --timestamp=1650847661] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:51:55.473
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650847661 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:54:52.349
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2022-04-24 19:54:59.184
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: Connected system ID hash not found on target at expected base address.
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:589)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 4 0 2022-04-24 19:54:59.184
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: Connected system ID hash not found on target at expected base address.
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:589)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:55:10.986
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650847661]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:55:14.037
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650847661 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:57:35.910
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2022-04-24 19:57:42.789
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: Connected system ID hash not found on target at expected base address.
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:589)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 4 0 2022-04-24 19:57:42.789
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: Connected system ID hash not found on target at expected base address.
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:589)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:57:51.194
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650847661]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 19:57:54.285
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650847661 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 20:02:01.159
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650847661]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 20:02:04.206
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650847661 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 20:02:55.983
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2022-04-24 20:03:04.038
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: Connected system ID hash not found on target at expected base address.
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:589)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 4 0 2022-04-24 20:03:04.038
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: Connected system ID hash not found on target at expected base address.
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:589)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 20:04:35.566
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650847661]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 20:04:38.974
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650847661 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 20:18:59.488
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650849333]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 20:19:03.035
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650849333 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 20:25:23.890
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650849711]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 20:25:26.683
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650849711 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 20:36:36.132
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650850407]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 20:36:38.877
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650850407 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+!SESSION 2022-04-24 20:42:42.759 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-04-24 20:42:45.051
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2022-04-24 20:42:49.712
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Received fatal alert: handshake_failure. ; version: 1.100.0.v20160217-0435
+!STACK 0
+javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:290)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:259)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:125)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:205)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:68)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 20:43:05.681
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650850407]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-24 20:43:08.546
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650850407 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+!SESSION 2022-04-25 10:23:04.857 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-04-25 10:23:07.762
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2022-04-25 10:23:15.630
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Received fatal alert: handshake_failure. ; version: 1.100.0.v20160217-0435
+!STACK 0
+javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:290)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:259)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:125)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:205)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:68)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 10:24:04.100
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650897936]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 10:24:07.258
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650897936 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 10:33:20.392
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650900622]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 10:33:23.311
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650900622 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2022-04-25 10:44:22.301
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: System timestamp mismatch - connected: "1650901129", expected: "1650900622".
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:631)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 4 0 2022-04-25 10:44:22.313
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: System timestamp mismatch - connected: "1650901129", expected: "1650900622".
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:631)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 10:44:29.100
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650901129]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 10:44:31.969
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650901129 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+!SESSION 2022-04-25 10:54:18.841 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-04-25 10:54:21.339
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2022-04-25 10:54:26.754
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Received fatal alert: handshake_failure. ; version: 1.100.0.v20160217-0435
+!STACK 0
+javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:290)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:259)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:125)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:205)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:68)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 10:54:56.035
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650901914]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 10:54:59.332
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650901914 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 11:12:39.100
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650902963]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 11:12:41.999
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650902963 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 11:17:48.373
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650903300]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 11:17:51.196
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650903300 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 11:18:29.861
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 11:18:30.722
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650903300]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 11:18:33.511
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650903300 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 11:25:21.185
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650903711]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 11:25:24.146
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650903711 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 11:37:10.912
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650904405]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 11:37:13.464
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650904405 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 11:54:46.944
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650905507]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 11:54:49.857
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650905507 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 12:25:48.430
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650907398]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 12:25:51.352
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650907398 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+!SESSION 2022-04-25 12:36:30.958 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-04-25 12:36:34.309
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2022-04-25 12:36:39.750
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Received fatal alert: handshake_failure. ; version: 1.100.0.v20160217-0435
+!STACK 0
+javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:290)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:259)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:125)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:205)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:68)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 12:37:28.982
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650908020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 12:37:31.250
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650908020 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 12:44:35.234
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650908426]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 12:44:37.609
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650908426 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 12:51:49.934
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650908956]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 12:51:52.266
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650908956 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 13:02:32.626
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650909600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 13:02:35.479
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650909600 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 16:26:12.984
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650921813]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 16:26:15.799
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650921813 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 16:30:13.952
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650922029]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 16:30:16.419
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650922029 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 16:50:28.523
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650923248]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 16:50:31.126
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650923248 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:42:42.929
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650926355]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:42:45.700
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650926355 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:45:06.653
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:45:07.509
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650926355]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:45:09.947
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650926355 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:45:43.387
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:45:44.114
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650926355]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:45:46.729
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650926355 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:49:39.574
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:49:40.323
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650926355]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:49:43.098
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650926355 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:52:03.396
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:52:04.257
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650926355]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:52:07.027
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650926355 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:56:19.156
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:56:20.068
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650926355]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:56:22.502
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650926355 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:57:01.833
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:57:02.559
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650926355]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 17:57:04.921
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650926355 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 18:10:50.247
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650928081]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 18:10:52.878
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650928081 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 18:15:32.361
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650928081]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 18:15:34.959
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650928081 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+!SESSION 2022-04-25 18:26:22.102 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-04-25 18:26:24.345
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2022-04-25 18:26:30.413
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Received fatal alert: handshake_failure. ; version: 1.100.0.v20160217-0435
+!STACK 0
+javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:290)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:259)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:125)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:205)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:68)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 18:26:42.796
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650928955]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 18:26:45.122
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650928955 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 18:33:32.345
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650928955]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 18:33:34.882
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650928955 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 18:34:14.482
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 18:34:15.321
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650928955]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 18:34:17.982
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650928955 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 18:35:56.495
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 18:35:57.204
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650928955]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 18:35:59.778
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650928955 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 18:47:47.722
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650930322]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-25 18:47:50.266
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650930322 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:10:36.059
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650949664]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:10:39.407
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650949664 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+!SESSION 2022-04-26 00:11:49.331 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-04-26 00:11:52.493
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2022-04-26 00:12:01.524
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Received fatal alert: handshake_failure. ; version: 1.100.0.v20160217-0435
+!STACK 0
+javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:290)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:259)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:125)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:205)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:68)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:12:12.096
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650949664]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:12:15.031
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650949664 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:26:49.472
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650950646]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:26:52.603
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650950646 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:28:10.330
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:28:11.334
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650950646]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:28:14.425
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650950646 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:28:59.127
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:28:59.936
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650950646]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:29:02.989
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650950646 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:29:25.924
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:29:26.854
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650950646]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:29:30.031
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650950646 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:30:00.803
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:30:01.613
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650950646]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:30:04.512
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650950646 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:31:01.326
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:31:02.447
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650950646]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:31:05.999
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650950646 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:32:05.759
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:32:06.714
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650950646]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:32:10.164
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650950646 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:33:00.034
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650950646]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:33:03.354
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650950646 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:34:54.379
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:34:55.439
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650950646]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:34:58.804
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650950646 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:42:15.190
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650951516]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:42:18.593
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650951516 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:53:01.198
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650951516]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 00:53:05.379
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650951516 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:01:15.284
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650952613]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:01:18.630
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650952613 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:05:09.830
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650952613]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:05:13.198
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650952613 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:05:38.029
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:05:39.015
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650952613]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:05:42.381
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650952613 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:07:02.016
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:07:02.985
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650952613]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:07:06.772
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650952613 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:07:41.901
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:07:42.983
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650952613]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:07:46.320
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650952613 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:08:47.622
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:08:48.590
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650952613]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:08:52.093
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650952613 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:09:47.620
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:09:48.613
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650952613]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:09:51.859
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650952613 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:10:16.421
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:10:17.391
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650952613]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:10:20.931
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650952613 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:11:47.126
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:11:48.209
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650952613]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:11:51.673
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650952613 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:15:01.871
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:15:02.849
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650952613]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:15:05.611
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650952613 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:15:52.623
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:15:53.688
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650952613]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:15:56.575
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650952613 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:18:36.186
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:18:37.067
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650952613]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:18:39.930
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650952613 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:23:08.533
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:23:09.616
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650952613]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:23:12.604
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650952613 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:30:42.567
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:30:43.492
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650952613]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:30:46.300
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650952613 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:31:51.393
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:31:52.285
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650952613]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:31:55.077
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650952613 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:35:49.112
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:35:50.163
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650952613]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:35:53.711
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650952613 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:38:47.773
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:38:48.849
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650952613]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:38:52.320
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650952613 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:52:16.049
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650955756]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:52:19.329
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650955756 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:53:02.932
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:53:03.893
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650955756]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 01:53:07.414
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650955756 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:16:22.085
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650993154]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:16:25.207
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650993154 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:17:51.168
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:17:51.976
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650993154]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:17:55.014
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650993154 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:19:19.321
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:19:20.131
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650993154]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:19:23.402
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650993154 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:21:00.648
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:21:01.494
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650993154]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:21:04.425
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650993154 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:25:17.342
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:25:18.145
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650993154]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:25:21.048
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650993154 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:37:36.949
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650994453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:37:39.974
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650994453 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:45:21.087
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650994926]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:45:23.876
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650994926 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:47:19.616
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:47:20.520
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650994926]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:47:23.425
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650994926 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:49:47.770
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:49:48.625
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650994926]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:49:51.636
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650994926 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:52:52.473
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:52:53.411
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650994926]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:52:56.061
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650994926 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:57:28.244
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650995653]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 12:57:31.253
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650995653 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+!SESSION 2022-04-26 13:01:38.257 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-04-26 13:01:41.489
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2022-04-26 13:01:50.770
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Received fatal alert: handshake_failure. ; version: 1.100.0.v20160217-0435
+!STACK 0
+javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:290)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:259)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:125)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:205)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:68)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:02:38.984
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650995939]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:02:42.066
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650995939 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:10:46.066
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:10:46.895
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650995939]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:10:49.996
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650995939 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:12:35.626
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:12:36.466
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650995939]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:12:39.361
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650995939 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:20:44.540
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:20:45.408
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650995939]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:20:48.364
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650995939 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:24:13.282
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650997271]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:24:16.165
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650997271 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:27:40.463
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650997494]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:27:43.016
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650997494 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+!SESSION 2022-04-26 13:32:20.133 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-04-26 13:32:24.099
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2022-04-26 13:32:35.418
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Received fatal alert: handshake_failure. ; version: 1.100.0.v20160217-0435
+!STACK 0
+javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:290)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:259)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:125)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:205)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:68)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:32:59.373
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650997801]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:33:02.116
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650997801 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:36:41.480
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:36:42.228
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x2158 --id=0x0 --timestamp=1650997801]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-04-26 13:36:44.861
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x2158 --id=0x0 --timestamp=1650997801 /cygdrive/c/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2/ws2.elf]

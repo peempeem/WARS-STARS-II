@@ -1,4 +1,4 @@
-12:33:08 **** Incremental Build of configuration Nios II for project ws2 ****
+13:36:37 **** Incremental Build of configuration Nios II for project ws2 ****
 make all 
 Info: Building ../ws2_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
@@ -6,17 +6,43 @@ C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-dir
 Info: Compiling main.c to obj/default/main.o
 nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
 main.c: In function 'main':
-main.c:84:9: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+main.c:33:17: warning: passing argument 1 of 'construct_sprite' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+                 &blitter->sprite,
+                 ^
+In file included from main.c:4:0:
+gdu.h:28:9: note: expected 'sprite_t * {aka struct SPRITE *}' but argument is of type 'volatile sprite_t * {aka volatile struct SPRITE *}'
+ void    construct_sprite(sprite_t* sprite, const uint16_t* address, uint16_t w, uint16_t h, uint16_t dx, uint16_t dy, uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey);
+         ^
+main.c:49:17: warning: passing argument 1 of 'construct_sprite' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+                 &blitter->sprite,
+                 ^
+In file included from main.c:4:0:
+gdu.h:28:9: note: expected 'sprite_t * {aka struct SPRITE *}' but argument is of type 'volatile sprite_t * {aka volatile struct SPRITE *}'
+ void    construct_sprite(sprite_t* sprite, const uint16_t* address, uint16_t w, uint16_t h, uint16_t dx, uint16_t dy, uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey);
+         ^
+main.c:65:17: warning: passing argument 1 of 'construct_sprite' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+                 &blitter->sprite,
+                 ^
+In file included from main.c:4:0:
+gdu.h:28:9: note: expected 'sprite_t * {aka struct SPRITE *}' but argument is of type 'volatile sprite_t * {aka volatile struct SPRITE *}'
+ void    construct_sprite(sprite_t* sprite, const uint16_t* address, uint16_t w, uint16_t h, uint16_t dx, uint16_t dy, uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey);
+         ^
+main.c:109:9: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
          usleep(100000);
          ^
+In file included from main.c:4:0:
+main.c: At top level:
+gdu.h:23:31: warning: 'gdu_mem' defined but not used [-Wunused-variable]
+ static volatile gdu_memory_t* gdu_mem = (gdu_memory_t*) GDU_MEM_LOCATION;
+                               ^
 Info: Linking ws2.elf
-nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/main.o -lm -msys-lib=m
-nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2160 --timestamp 1650491852 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
-Info: (ws2.elf) 2708 KBytes program size (code + initialized data).
-Info:           62821 KBytes free for stack + heap.
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/gdu.o obj/default/main.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2158 --timestamp 1650997801 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 3554 KBytes program size (code + initialized data).
+Info:           61975 KBytes free for stack + heap.
 Info: Creating ws2.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
 [ws2 build complete]
 
-12:33:12 Build Finished (took 4s.325ms)
+13:36:41 Build Finished (took 3s.902ms)
 

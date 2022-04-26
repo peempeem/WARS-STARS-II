@@ -1,6 +1,8 @@
 	component soc is
 		port (
 			clk_clk          : in    std_logic                     := 'X';             -- clk
+			out1_out1        : out   std_logic_vector(15 downto 0);                    -- out1
+			out2_out2        : out   std_logic_vector(3 downto 0);                     -- out2
 			reset_reset_n    : in    std_logic                     := 'X';             -- reset_n
 			sdram_clk_clk    : out   std_logic;                                        -- clk
 			sdram_wire_addr  : out   std_logic_vector(12 downto 0);                    -- addr

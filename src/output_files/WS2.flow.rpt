@@ -1,5 +1,5 @@
 Flow report for WS2
-Wed Apr 20 18:59:51 2022
+Tue Apr 26 13:32:06 2022
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,21 +40,21 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Apr 20 18:59:51 2022       ;
+; Flow Status                        ; Successful - Tue Apr 26 13:32:06 2022       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; WS2                                         ;
 ; Top-level Entity Name              ; WS2                                         ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484I7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 4,502 / 49,760 ( 9 % )                      ;
-;     Total combinational functions  ; 3,781 / 49,760 ( 8 % )                      ;
-;     Dedicated logic registers      ; 2,878 / 49,760 ( 6 % )                      ;
-; Total registers                    ; 2947                                        ;
+; Total logic elements               ; 6,198 / 49,760 ( 12 % )                     ;
+;     Total combinational functions  ; 5,036 / 49,760 ( 10 % )                     ;
+;     Dedicated logic registers      ; 3,920 / 49,760 ( 8 % )                      ;
+; Total registers                    ; 3989                                        ;
 ; Total pins                         ; 141 / 360 ( 39 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 56,320 / 1,677,312 ( 3 % )                  ;
-; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
+; Embedded Multiplier 9-bit elements ; 4 / 288 ( 1 % )                             ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
 ; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
 ; ADC blocks                         ; 0 / 2 ( 0 % )                               ;
@@ -66,45 +66,53 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/20/2022 18:58:24 ;
+; Start date & time ; 04/26/2022 13:30:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; WS2                 ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                 ;
-+-------------------------------------+-------------------------------------------------------+---------------+-------------------+----------------+
-; Assignment Name                     ; Value                                                 ; Default Value ; Entity Name       ; Section Id     ;
-+-------------------------------------+-------------------------------------------------------+---------------+-------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 929355364336.165049910419412                          ; --            ; --                ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                                     ; --            ; --                ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                       ; <None>        ; --                ; --             ;
-; EDA_TIME_SCALE                      ; 1 ps                                                  ; --            ; --                ; eda_simulation ;
-; MAX_CORE_JUNCTION_TEMP              ; 100                                                   ; --            ; --                ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; -40                                                   ; --            ; --                ; --             ;
-; MISC_FILE                           ; soc/synthesis/../soc.cmp                              ; --            ; --                ; --             ;
-; MISC_FILE                           ; soc/synthesis/../../soc.qsys                          ; --            ; --                ; --             ;
-; MISC_FILE                           ; line_buffer_bb.v                                      ; --            ; --                ; --             ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                     ; --            ; --                ; --             ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                     ; --            ; --                ; --             ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                            ; --            ; --                ; --             ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                            ; --            ; --                ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family)                ; --            ; DE10_LITE_Default ; Top            ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family)                ; --            ; --                ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                ; --            ; DE10_LITE_Default ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                ; --            ; --                ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                ; --            ; DE10_LITE_Default ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                ; --            ; --                ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                   ; --            ; --                ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                 ; --            ; --                ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                                          ; --            ; --                ; --             ;
-; SLD_FILE                            ; soc/synthesis/soc.regmap                              ; --            ; --                ; --             ;
-; SLD_FILE                            ; soc/synthesis/soc.debuginfo                           ; --            ; --                ; --             ;
-; SLD_INFO                            ; QSYS_NAME soc HAS_SOPCINFO 1 GENERATION_ID 1650491852 ; --            ; soc               ; --             ;
-; SOPCINFO_FILE                       ; soc/synthesis/../../soc.sopcinfo                      ; --            ; --                ; --             ;
-; SYNTHESIS_ONLY_QIP                  ; On                                                    ; --            ; --                ; --             ;
-+-------------------------------------+-------------------------------------------------------+---------------+-------------------+----------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                  ;
++--------------------------------------+-------------------------------------------------------+---------------+-------------------+----------------+
+; Assignment Name                      ; Value                                                 ; Default Value ; Entity Name       ; Section Id     ;
++--------------------------------------+-------------------------------------------------------+---------------+-------------------+----------------+
+; COMPILER_SIGNATURE_ID                ; 929355364336.165099783113720                          ; --            ; --                ; --             ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                    ; --            ; --                ; testbench      ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; testbench                                             ; --            ; --                ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                                     ; --            ; --                ; eda_simulation ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)                       ; <None>        ; --                ; --             ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                                       ; --            ; --                ; eda_simulation ;
+; EDA_TEST_BENCH_FILE                  ; testbench.sv                                          ; --            ; --                ; testbench      ;
+; EDA_TEST_BENCH_MODULE_NAME           ; testbench                                             ; --            ; --                ; testbench      ;
+; EDA_TEST_BENCH_NAME                  ; testbench                                             ; --            ; --                ; eda_simulation ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 2000 ns                                               ; --            ; --                ; testbench      ;
+; EDA_TIME_SCALE                       ; 1 ps                                                  ; --            ; --                ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP               ; 100                                                   ; --            ; --                ; --             ;
+; MIN_CORE_JUNCTION_TEMP               ; -40                                                   ; --            ; --                ; --             ;
+; MISC_FILE                            ; soc/synthesis/../soc.cmp                              ; --            ; --                ; --             ;
+; MISC_FILE                            ; soc/synthesis/../../soc.qsys                          ; --            ; --                ; --             ;
+; MISC_FILE                            ; line_buffer_bb.v                                      ; --            ; --                ; --             ;
+; MISC_FILE                            ; gdu_ram_bb.v                                          ; --            ; --                ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS       ; Half Signal Swing                                     ; --            ; --                ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS       ; Half Signal Swing                                     ; --            ; --                ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS      ; Half Vccio                                            ; --            ; --                ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS      ; Half Vccio                                            ; --            ; --                ; --             ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family)                ; --            ; DE10_LITE_Default ; Top            ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family)                ; --            ; --                ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)                ; --            ; DE10_LITE_Default ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)                ; --            ; --                ; Top            ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)                ; --            ; DE10_LITE_Default ; Top            ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)                ; --            ; --                ; Top            ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                                   ; --            ; --                ; --             ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                 ; --            ; --                ; --             ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                                          ; --            ; --                ; --             ;
+; SLD_FILE                             ; soc/synthesis/soc.regmap                              ; --            ; --                ; --             ;
+; SLD_FILE                             ; soc/synthesis/soc.debuginfo                           ; --            ; --                ; --             ;
+; SLD_INFO                             ; QSYS_NAME soc HAS_SOPCINFO 1 GENERATION_ID 1650997801 ; --            ; soc               ; --             ;
+; SOPCINFO_FILE                        ; soc/synthesis/../../soc.sopcinfo                      ; --            ; --                ; --             ;
+; SYNTHESIS_ONLY_QIP                   ; On                                                    ; --            ; --                ; --             ;
++--------------------------------------+-------------------------------------------------------+---------------+-------------------+----------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -112,12 +120,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:40     ; 1.0                     ; 4983 MB             ; 00:01:00                           ;
-; Fitter               ; 00:00:27     ; 1.4                     ; 5852 MB             ; 00:00:52                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4704 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:05     ; 2.1                     ; 4914 MB             ; 00:00:10                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4720 MB             ; 00:00:02                           ;
-; Total                ; 00:01:18     ; --                      ; --                  ; 00:02:07                           ;
+; Analysis & Synthesis ; 00:00:39     ; 1.0                     ; 5011 MB             ; 00:00:59                           ;
+; Fitter               ; 00:00:35     ; 1.5                     ; 5878 MB             ; 00:01:11                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 4711 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:06     ; 2.3                     ; 4932 MB             ; 00:00:12                           ;
+; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4742 MB             ; 00:00:03                           ;
+; Total                ; 00:01:27     ; --                      ; --                  ; 00:02:28                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

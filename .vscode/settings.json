@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "playerplanet.h": "c",
-        "enemy_ship.h": "c"
+        "enemy_ship.h": "c",
+        "background.h": "c",
+        "enemyplanet.h": "c"
     }
 }

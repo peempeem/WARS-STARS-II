@@ -9,6 +9,22 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element Blitter_0
+   {
+      datum _sortIndex
+      {
+         value = "13";
+         type = "int";
+      }
+   }
+   element Blitter_0.avalon_slave
+   {
+      datum baseAddress
+      {
+         value = "16384";
+         type = "String";
+      }
+   }
    element clk_0
    {
       datum _sortIndex
@@ -29,7 +45,7 @@
    {
       datum baseAddress
       {
-         value = "8552";
+         value = "8544";
          type = "String";
       }
    }
@@ -55,6 +71,14 @@
       {
          value = "12";
          type = "int";
+      }
+   }
+   element onchip_memory2_0.reset1
+   {
+      datum _tags
+      {
+         value = "";
+         type = "String";
       }
    }
    element onchip_memory2_0.s1
@@ -98,7 +122,175 @@
    {
       datum baseAddress
       {
-         value = "8496";
+         value = "8512";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element soc
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
          type = "String";
       }
    }
@@ -527,7 +719,7 @@
       }
       datum baseAddress
       {
-         value = "8352";
+         value = "8384";
          type = "String";
       }
    }
@@ -543,7 +735,7 @@
    {
       datum baseAddress
       {
-         value = "8544";
+         value = "8536";
          type = "String";
       }
    }
@@ -559,7 +751,7 @@
    {
       datum baseAddress
       {
-         value = "8256";
+         value = "8320";
          type = "String";
       }
    }
@@ -580,7 +772,7 @@
       }
       datum baseAddress
       {
-         value = "8464";
+         value = "8480";
          type = "String";
       }
    }
@@ -601,7 +793,7 @@
       }
       datum baseAddress
       {
-         value = "8480";
+         value = "8496";
          type = "String";
       }
    }
@@ -622,7 +814,7 @@
       }
       datum baseAddress
       {
-         value = "8448";
+         value = "8464";
          type = "String";
       }
    }
@@ -636,9 +828,14 @@
    }
    element vga_display_0.avalon_slave
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "8536";
+         value = "8192";
          type = "String";
       }
    }
@@ -664,10 +861,13 @@
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
+ <interface name="out1" internal="Blitter_0.out1" type="conduit" dir="end" />
+ <interface name="out2" internal="Blitter_0.out2" type="conduit" dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <interface name="sdram_clk" internal="sdram_pll.c1" type="clock" dir="start" />
  <interface name="sdram_wire" internal="sdram.wire" type="conduit" dir="end" />
  <interface name="spi0" internal="spi_0.external" type="conduit" dir="end" />
+ <interface name="state_out" internal="Blitter_0.state_out" />
  <interface
    name="usb_gpx"
    internal="usb_gpx.external_connection"
@@ -688,6 +888,7 @@
    internal="vga_display_0.vga_port"
    type="conduit"
    dir="end" />
+ <module name="Blitter_0" kind="Blitter" version="1.0" enabled="1" />
  <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -737,7 +938,7 @@
   <parameter name="dataAddrWidth" value="28" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x1000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x1800' end='0x2000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='timer_0.s1' start='0x2040' end='0x2080' type='altera_avalon_timer.s1' /><slave name='spi_0.spi_control_port' start='0x20A0' end='0x20C0' type='altera_avalon_spi.spi_control_port' /><slave name='usb_rst.s1' start='0x2100' end='0x2110' type='altera_avalon_pio.s1' /><slave name='usb_gpx.s1' start='0x2110' end='0x2120' type='altera_avalon_pio.s1' /><slave name='usb_irq.s1' start='0x2120' end='0x2130' type='altera_avalon_pio.s1' /><slave name='sdram_pll.pll_slave' start='0x2130' end='0x2140' type='altpll.pll_slave' /><slave name='vga_display_0.avalon_slave' start='0x2158' end='0x2160' type='vga_display.avalon_slave' /><slave name='sysid_qsys_0.control_slave' start='0x2160' end='0x2168' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x2168' end='0x2170' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sdram.s1' start='0x8000000' end='0xC000000' type='altera_avalon_new_sdram_controller.s1' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x1000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x1800' end='0x2000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='vga_display_0.avalon_slave' start='0x2000' end='0x2008' type='vga_display.avalon_slave' /><slave name='timer_0.s1' start='0x2080' end='0x20C0' type='altera_avalon_timer.s1' /><slave name='spi_0.spi_control_port' start='0x20C0' end='0x20E0' type='altera_avalon_spi.spi_control_port' /><slave name='usb_rst.s1' start='0x2110' end='0x2120' type='altera_avalon_pio.s1' /><slave name='usb_gpx.s1' start='0x2120' end='0x2130' type='altera_avalon_pio.s1' /><slave name='usb_irq.s1' start='0x2130' end='0x2140' type='altera_avalon_pio.s1' /><slave name='sdram_pll.pll_slave' start='0x2140' end='0x2150' type='altpll.pll_slave' /><slave name='sysid_qsys_0.control_slave' start='0x2158' end='0x2160' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x2160' end='0x2168' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='Blitter_0.avalon_slave' start='0x4000' end='0x4020' type='Blitter.avalon_slave' /><slave name='sdram.s1' start='0x8000000' end='0xC000000' type='altera_avalon_new_sdram_controller.s1' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -776,7 +977,7 @@
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
   <parameter name="instAddrWidth" value="28" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x1000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x1800' end='0x2000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='timer_0.s1' start='0x2040' end='0x2080' type='altera_avalon_timer.s1' /><slave name='spi_0.spi_control_port' start='0x20A0' end='0x20C0' type='altera_avalon_spi.spi_control_port' /><slave name='usb_rst.s1' start='0x2100' end='0x2110' type='altera_avalon_pio.s1' /><slave name='usb_gpx.s1' start='0x2110' end='0x2120' type='altera_avalon_pio.s1' /><slave name='usb_irq.s1' start='0x2120' end='0x2130' type='altera_avalon_pio.s1' /><slave name='sdram_pll.pll_slave' start='0x2130' end='0x2140' type='altpll.pll_slave' /><slave name='vga_display_0.avalon_slave' start='0x2158' end='0x2160' type='vga_display.avalon_slave' /><slave name='sysid_qsys_0.control_slave' start='0x2160' end='0x2168' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x2168' end='0x2170' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sdram.s1' start='0x8000000' end='0xC000000' type='altera_avalon_new_sdram_controller.s1' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x1000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x1800' end='0x2000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='vga_display_0.avalon_slave' start='0x2000' end='0x2008' type='vga_display.avalon_slave' /><slave name='timer_0.s1' start='0x2080' end='0x20C0' type='altera_avalon_timer.s1' /><slave name='spi_0.spi_control_port' start='0x20C0' end='0x20E0' type='altera_avalon_spi.spi_control_port' /><slave name='usb_rst.s1' start='0x2110' end='0x2120' type='altera_avalon_pio.s1' /><slave name='usb_gpx.s1' start='0x2120' end='0x2130' type='altera_avalon_pio.s1' /><slave name='usb_irq.s1' start='0x2130' end='0x2140' type='altera_avalon_pio.s1' /><slave name='sdram_pll.pll_slave' start='0x2140' end='0x2150' type='altpll.pll_slave' /><slave name='sysid_qsys_0.control_slave' start='0x2158' end='0x2160' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x2160' end='0x2168' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='Blitter_0.avalon_slave' start='0x4000' end='0x4020' type='Blitter.avalon_slave' /><slave name='sdram.s1' start='0x8000000' end='0xC000000' type='altera_avalon_new_sdram_controller.s1' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="instructionMasterHighPerformanceMapParam" value="" />
   <parameter name="instruction_master_high_performance_paddr_base" value="0" />
@@ -970,10 +1171,10 @@
   <parameter name="CLK1_DUTY_CYCLE" value="50" />
   <parameter name="CLK1_MULTIPLY_BY" value="3" />
   <parameter name="CLK1_PHASE_SHIFT" value="-963" />
-  <parameter name="CLK2_DIVIDE_BY" value="" />
-  <parameter name="CLK2_DUTY_CYCLE" value="" />
-  <parameter name="CLK2_MULTIPLY_BY" value="" />
-  <parameter name="CLK2_PHASE_SHIFT" value="" />
+  <parameter name="CLK2_DIVIDE_BY" value="1" />
+  <parameter name="CLK2_DUTY_CYCLE" value="50" />
+  <parameter name="CLK2_MULTIPLY_BY" value="2" />
+  <parameter name="CLK2_PHASE_SHIFT" value="0" />
   <parameter name="CLK3_DIVIDE_BY" value="" />
   <parameter name="CLK3_DUTY_CYCLE" value="" />
   <parameter name="CLK3_MULTIPLY_BY" value="" />
@@ -1027,15 +1228,15 @@
   <parameter name="FEEDBACK_SOURCE" value="" />
   <parameter name="GATE_LOCK_COUNTER" value="" />
   <parameter name="GATE_LOCK_SIGNAL" value="" />
-  <parameter name="HIDDEN_CONSTANTS">CT#PORT_clk5 PORT_UNUSED CT#PORT_clk4 PORT_UNUSED CT#PORT_clk3 PORT_UNUSED CT#PORT_clk2 PORT_UNUSED CT#PORT_clk1 PORT_USED CT#PORT_clk0 PORT_USED CT#CLK0_MULTIPLY_BY 3 CT#PORT_SCANWRITE PORT_UNUSED CT#PORT_SCANACLR PORT_UNUSED CT#PORT_PFDENA PORT_UNUSED CT#PORT_PLLENA PORT_UNUSED CT#PORT_SCANDATA PORT_UNUSED CT#PORT_SCANCLKENA PORT_UNUSED CT#WIDTH_CLOCK 5 CT#PORT_SCANDATAOUT PORT_UNUSED CT#LPM_TYPE altpll CT#PLL_TYPE AUTO CT#CLK0_PHASE_SHIFT 0 CT#CLK1_DUTY_CYCLE 50 CT#PORT_PHASEDONE PORT_UNUSED CT#OPERATION_MODE NORMAL CT#PORT_CONFIGUPDATE PORT_UNUSED CT#CLK1_MULTIPLY_BY 3 CT#COMPENSATE_CLOCK CLK0 CT#PORT_CLKSWITCH PORT_UNUSED CT#INCLK0_INPUT_FREQUENCY 20000 CT#PORT_SCANDONE PORT_UNUSED CT#PORT_CLKLOSS PORT_UNUSED CT#PORT_INCLK1 PORT_UNUSED CT#AVALON_USE_SEPARATE_SYSCLK NO CT#PORT_INCLK0 PORT_USED CT#PORT_clkena5 PORT_UNUSED CT#PORT_clkena4 PORT_UNUSED CT#PORT_clkena3 PORT_UNUSED CT#PORT_clkena2 PORT_UNUSED CT#PORT_clkena1 PORT_UNUSED CT#PORT_clkena0 PORT_UNUSED CT#CLK1_PHASE_SHIFT -963 CT#PORT_ARESET PORT_UNUSED CT#BANDWIDTH_TYPE AUTO CT#INTENDED_DEVICE_FAMILY {MAX 10} CT#PORT_SCANREAD PORT_UNUSED CT#PORT_PHASESTEP PORT_UNUSED CT#PORT_SCANCLK PORT_UNUSED CT#PORT_CLKBAD1 PORT_UNUSED CT#PORT_CLKBAD0 PORT_UNUSED CT#PORT_FBIN PORT_UNUSED CT#PORT_PHASEUPDOWN PORT_UNUSED CT#PORT_extclk3 PORT_UNUSED CT#PORT_extclk2 PORT_UNUSED CT#PORT_extclk1 PORT_UNUSED CT#PORT_PHASECOUNTERSELECT PORT_UNUSED CT#PORT_extclk0 PORT_UNUSED CT#PORT_ACTIVECLOCK PORT_UNUSED CT#CLK0_DUTY_CYCLE 50 CT#CLK0_DIVIDE_BY 1 CT#CLK1_DIVIDE_BY 1 CT#PORT_LOCKED PORT_UNUSED</parameter>
+  <parameter name="HIDDEN_CONSTANTS">CT#CLK2_DIVIDE_BY 1 CT#PORT_clk5 PORT_UNUSED CT#PORT_clk4 PORT_UNUSED CT#PORT_clk3 PORT_UNUSED CT#PORT_clk2 PORT_USED CT#PORT_clk1 PORT_USED CT#PORT_clk0 PORT_USED CT#CLK0_MULTIPLY_BY 3 CT#PORT_SCANWRITE PORT_UNUSED CT#PORT_SCANACLR PORT_UNUSED CT#PORT_PFDENA PORT_UNUSED CT#PORT_PLLENA PORT_UNUSED CT#PORT_SCANDATA PORT_UNUSED CT#PORT_SCANCLKENA PORT_UNUSED CT#WIDTH_CLOCK 5 CT#PORT_SCANDATAOUT PORT_UNUSED CT#LPM_TYPE altpll CT#PLL_TYPE AUTO CT#CLK0_PHASE_SHIFT 0 CT#CLK1_DUTY_CYCLE 50 CT#PORT_PHASEDONE PORT_UNUSED CT#OPERATION_MODE NORMAL CT#PORT_CONFIGUPDATE PORT_UNUSED CT#CLK1_MULTIPLY_BY 3 CT#COMPENSATE_CLOCK CLK0 CT#PORT_CLKSWITCH PORT_UNUSED CT#INCLK0_INPUT_FREQUENCY 20000 CT#PORT_SCANDONE PORT_UNUSED CT#PORT_CLKLOSS PORT_UNUSED CT#PORT_INCLK1 PORT_UNUSED CT#AVALON_USE_SEPARATE_SYSCLK NO CT#PORT_INCLK0 PORT_USED CT#PORT_clkena5 PORT_UNUSED CT#PORT_clkena4 PORT_UNUSED CT#PORT_clkena3 PORT_UNUSED CT#PORT_clkena2 PORT_UNUSED CT#PORT_clkena1 PORT_UNUSED CT#PORT_clkena0 PORT_UNUSED CT#CLK1_PHASE_SHIFT -963 CT#PORT_ARESET PORT_UNUSED CT#BANDWIDTH_TYPE AUTO CT#CLK2_MULTIPLY_BY 2 CT#INTENDED_DEVICE_FAMILY {MAX 10} CT#PORT_SCANREAD PORT_UNUSED CT#CLK2_DUTY_CYCLE 50 CT#PORT_PHASESTEP PORT_UNUSED CT#PORT_SCANCLK PORT_UNUSED CT#PORT_CLKBAD1 PORT_UNUSED CT#PORT_CLKBAD0 PORT_UNUSED CT#PORT_FBIN PORT_UNUSED CT#PORT_PHASEUPDOWN PORT_UNUSED CT#PORT_extclk3 PORT_UNUSED CT#PORT_extclk2 PORT_UNUSED CT#PORT_extclk1 PORT_UNUSED CT#PORT_PHASECOUNTERSELECT PORT_UNUSED CT#PORT_extclk0 PORT_UNUSED CT#PORT_ACTIVECLOCK PORT_UNUSED CT#CLK2_PHASE_SHIFT 0 CT#CLK0_DUTY_CYCLE 50 CT#CLK0_DIVIDE_BY 1 CT#CLK1_DIVIDE_BY 1 CT#PORT_LOCKED PORT_UNUSED</parameter>
   <parameter name="HIDDEN_CUSTOM_ELABORATION">altpll_avalon_elaboration</parameter>
   <parameter name="HIDDEN_CUSTOM_POST_EDIT">altpll_avalon_post_edit</parameter>
   <parameter name="HIDDEN_IF_PORTS">IF#phasecounterselect {input 3} IF#locked {output 0} IF#reset {input 0} IF#clk {input 0} IF#phaseupdown {input 0} IF#scandone {output 0} IF#readdata {output 32} IF#write {input 0} IF#scanclk {input 0} IF#phasedone {output 0} IF#c4 {output 0} IF#c3 {output 0} IF#c2 {output 0} IF#address {input 2} IF#c1 {output 0} IF#c0 {output 0} IF#writedata {input 32} IF#read {input 0} IF#areset {input 0} IF#scanclkena {input 0} IF#scandataout {output 0} IF#configupdate {input 0} IF#phasestep {input 0} IF#scandata {input 0}</parameter>
   <parameter name="HIDDEN_IS_FIRST_EDIT" value="0" />
-  <parameter name="HIDDEN_IS_NUMERIC">IN#WIDTH_CLOCK 1 IN#CLK0_DUTY_CYCLE 1 IN#PLL_TARGET_HARCOPY_CHECK 1 IN#CLK1_MULTIPLY_BY 1 IN#SWITCHOVER_COUNT_EDIT 1 IN#INCLK0_INPUT_FREQUENCY 1 IN#PLL_LVDS_PLL_CHECK 1 IN#PLL_AUTOPLL_CHECK 1 IN#PLL_FASTPLL_CHECK 1 IN#CLK1_DUTY_CYCLE 1 IN#PLL_ENHPLL_CHECK 1 IN#DIV_FACTOR1 1 IN#DIV_FACTOR0 1 IN#LVDS_MODE_DATA_RATE_DIRTY 1 IN#GLOCK_COUNTER_EDIT 1 IN#CLK0_DIVIDE_BY 1 IN#MULT_FACTOR1 1 IN#MULT_FACTOR0 1 IN#CLK0_MULTIPLY_BY 1 IN#USE_MIL_SPEED_GRADE 1 IN#CLK1_DIVIDE_BY 1</parameter>
+  <parameter name="HIDDEN_IS_NUMERIC">IN#WIDTH_CLOCK 1 IN#CLK0_DUTY_CYCLE 1 IN#CLK2_DIVIDE_BY 1 IN#PLL_TARGET_HARCOPY_CHECK 1 IN#CLK1_MULTIPLY_BY 1 IN#SWITCHOVER_COUNT_EDIT 1 IN#INCLK0_INPUT_FREQUENCY 1 IN#PLL_LVDS_PLL_CHECK 1 IN#PLL_AUTOPLL_CHECK 1 IN#PLL_FASTPLL_CHECK 1 IN#CLK1_DUTY_CYCLE 1 IN#PLL_ENHPLL_CHECK 1 IN#CLK2_MULTIPLY_BY 1 IN#DIV_FACTOR2 1 IN#DIV_FACTOR1 1 IN#DIV_FACTOR0 1 IN#LVDS_MODE_DATA_RATE_DIRTY 1 IN#GLOCK_COUNTER_EDIT 1 IN#CLK2_DUTY_CYCLE 1 IN#CLK0_DIVIDE_BY 1 IN#MULT_FACTOR2 1 IN#MULT_FACTOR1 1 IN#MULT_FACTOR0 1 IN#CLK0_MULTIPLY_BY 1 IN#USE_MIL_SPEED_GRADE 1 IN#CLK1_DIVIDE_BY 1</parameter>
   <parameter name="HIDDEN_MF_PORTS">MF#areset 1 MF#clk 1 MF#locked 1 MF#inclk 1</parameter>
-  <parameter name="HIDDEN_PRIVATES">PT#GLOCKED_FEATURE_ENABLED 0 PT#SPREAD_FEATURE_ENABLED 0 PT#BANDWIDTH_FREQ_UNIT MHz PT#CUR_DEDICATED_CLK c0 PT#INCLK0_FREQ_EDIT 50.000 PT#BANDWIDTH_PRESET Low PT#PLL_LVDS_PLL_CHECK 0 PT#BANDWIDTH_USE_PRESET 0 PT#AVALON_USE_SEPARATE_SYSCLK NO PT#PLL_ENHPLL_CHECK 0 PT#OUTPUT_FREQ_UNIT1 MHz PT#OUTPUT_FREQ_UNIT0 MHz PT#PHASE_RECONFIG_FEATURE_ENABLED 1 PT#CREATE_CLKBAD_CHECK 0 PT#CLKSWITCH_CHECK 0 PT#INCLK1_FREQ_EDIT 100.000 PT#NORMAL_MODE_RADIO 1 PT#SRC_SYNCH_COMP_RADIO 0 PT#PLL_ARESET_CHECK 0 PT#LONG_SCAN_RADIO 1 PT#SCAN_FEATURE_ENABLED 1 PT#PHASE_RECONFIG_INPUTS_CHECK 0 PT#USE_CLK1 1 PT#USE_CLK0 1 PT#PRIMARY_CLK_COMBO inclk0 PT#BANDWIDTH 1.000 PT#GLOCKED_COUNTER_EDIT_CHANGED 1 PT#PLL_FASTPLL_CHECK 0 PT#SPREAD_FREQ_UNIT KHz PT#PLL_AUTOPLL_CHECK 1 PT#LVDS_PHASE_SHIFT_UNIT1 deg PT#LVDS_PHASE_SHIFT_UNIT0 deg PT#OUTPUT_FREQ_MODE1 1 PT#SWITCHOVER_FEATURE_ENABLED 0 PT#MIG_DEVICE_SPEED_GRADE Any PT#OUTPUT_FREQ_MODE0 1 PT#BANDWIDTH_FEATURE_ENABLED 1 PT#INCLK0_FREQ_UNIT_COMBO MHz PT#ZERO_DELAY_RADIO 0 PT#OUTPUT_FREQ1 150.00000000 PT#OUTPUT_FREQ0 150.00000000 PT#SHORT_SCAN_RADIO 0 PT#LVDS_MODE_DATA_RATE_DIRTY 0 PT#CUR_FBIN_CLK c0 PT#PLL_ADVANCED_PARAM_CHECK 0 PT#CLKBAD_SWITCHOVER_CHECK 0 PT#PHASE_SHIFT_STEP_ENABLED_CHECK 0 PT#DEVICE_SPEED_GRADE Any PT#PLL_FBMIMIC_CHECK 0 PT#LVDS_MODE_DATA_RATE {Not Available} PT#LOCKED_OUTPUT_CHECK 0 PT#SPREAD_PERCENT 0.500 PT#PHASE_SHIFT1 -52.00000000 PT#PHASE_SHIFT0 0.00000000 PT#DIV_FACTOR1 1 PT#DIV_FACTOR0 1 PT#CNX_NO_COMPENSATE_RADIO 0 PT#USE_CLKENA1 0 PT#USE_CLKENA0 0 PT#CREATE_INCLK1_CHECK 0 PT#GLOCK_COUNTER_EDIT 1048575 PT#INCLK1_FREQ_UNIT_COMBO MHz PT#EFF_OUTPUT_FREQ_VALUE1 150.000000 PT#EFF_OUTPUT_FREQ_VALUE0 150.000000 PT#SPREAD_FREQ 50.000 PT#USE_MIL_SPEED_GRADE 0 PT#EXPLICIT_SWITCHOVER_COUNTER 0 PT#STICKY_CLK4 0 PT#STICKY_CLK3 0 PT#STICKY_CLK2 0 PT#STICKY_CLK1 1 PT#STICKY_CLK0 1 PT#EXT_FEEDBACK_RADIO 0 PT#MIRROR_CLK1 0 PT#MIRROR_CLK0 0 PT#SWITCHOVER_COUNT_EDIT 1 PT#SELF_RESET_LOCK_LOSS 0 PT#PLL_PFDENA_CHECK 0 PT#INT_FEEDBACK__MODE_RADIO 1 PT#INCLK1_FREQ_EDIT_CHANGED 1 PT#CLKLOSS_CHECK 0 PT#SYNTH_WRAPPER_GEN_POSTFIX 0 PT#PHASE_SHIFT_UNIT1 deg PT#PHASE_SHIFT_UNIT0 ns PT#BANDWIDTH_USE_AUTO 1 PT#HAS_MANUAL_SWITCHOVER 1 PT#MULT_FACTOR1 1 PT#MULT_FACTOR0 1 PT#SPREAD_USE 0 PT#GLOCKED_MODE_CHECK 0 PT#SACN_INPUTS_CHECK 0 PT#DUTY_CYCLE1 50.00000000 PT#INTENDED_DEVICE_FAMILY {MAX 10} PT#DUTY_CYCLE0 50.00000000 PT#PLL_TARGET_HARCOPY_CHECK 0 PT#INCLK1_FREQ_UNIT_CHANGED 1 PT#RECONFIG_FILE ALTPLL1646952676686724.mif PT#ACTIVECLK_CHECK 0</parameter>
-  <parameter name="HIDDEN_USED_PORTS">UP#locked used UP#c1 used UP#c0 used UP#areset used UP#inclk0 used</parameter>
+  <parameter name="HIDDEN_PRIVATES">PT#GLOCKED_FEATURE_ENABLED 0 PT#SPREAD_FEATURE_ENABLED 0 PT#BANDWIDTH_FREQ_UNIT MHz PT#CUR_DEDICATED_CLK c0 PT#INCLK0_FREQ_EDIT 50.000 PT#BANDWIDTH_PRESET Low PT#PLL_LVDS_PLL_CHECK 0 PT#BANDWIDTH_USE_PRESET 0 PT#AVALON_USE_SEPARATE_SYSCLK NO PT#PLL_ENHPLL_CHECK 0 PT#OUTPUT_FREQ_UNIT2 MHz PT#OUTPUT_FREQ_UNIT1 MHz PT#OUTPUT_FREQ_UNIT0 MHz PT#PHASE_RECONFIG_FEATURE_ENABLED 1 PT#CREATE_CLKBAD_CHECK 0 PT#CLKSWITCH_CHECK 0 PT#INCLK1_FREQ_EDIT 100.000 PT#NORMAL_MODE_RADIO 1 PT#SRC_SYNCH_COMP_RADIO 0 PT#PLL_ARESET_CHECK 0 PT#LONG_SCAN_RADIO 1 PT#SCAN_FEATURE_ENABLED 1 PT#USE_CLK2 1 PT#PHASE_RECONFIG_INPUTS_CHECK 0 PT#USE_CLK1 1 PT#USE_CLK0 1 PT#PRIMARY_CLK_COMBO inclk0 PT#BANDWIDTH 1.000 PT#GLOCKED_COUNTER_EDIT_CHANGED 1 PT#PLL_FASTPLL_CHECK 0 PT#SPREAD_FREQ_UNIT KHz PT#PLL_AUTOPLL_CHECK 1 PT#LVDS_PHASE_SHIFT_UNIT2 deg PT#LVDS_PHASE_SHIFT_UNIT1 deg PT#OUTPUT_FREQ_MODE2 1 PT#LVDS_PHASE_SHIFT_UNIT0 deg PT#OUTPUT_FREQ_MODE1 1 PT#SWITCHOVER_FEATURE_ENABLED 0 PT#MIG_DEVICE_SPEED_GRADE Any PT#OUTPUT_FREQ_MODE0 1 PT#BANDWIDTH_FEATURE_ENABLED 1 PT#INCLK0_FREQ_UNIT_COMBO MHz PT#ZERO_DELAY_RADIO 0 PT#OUTPUT_FREQ2 100.00000000 PT#OUTPUT_FREQ1 150.00000000 PT#OUTPUT_FREQ0 150.00000000 PT#SHORT_SCAN_RADIO 0 PT#LVDS_MODE_DATA_RATE_DIRTY 0 PT#CUR_FBIN_CLK c0 PT#PLL_ADVANCED_PARAM_CHECK 0 PT#CLKBAD_SWITCHOVER_CHECK 0 PT#PHASE_SHIFT_STEP_ENABLED_CHECK 0 PT#DEVICE_SPEED_GRADE Any PT#PLL_FBMIMIC_CHECK 0 PT#LVDS_MODE_DATA_RATE {Not Available} PT#LOCKED_OUTPUT_CHECK 0 PT#SPREAD_PERCENT 0.500 PT#PHASE_SHIFT2 0.00000000 PT#PHASE_SHIFT1 -52.00000000 PT#DIV_FACTOR2 1 PT#PHASE_SHIFT0 0.00000000 PT#DIV_FACTOR1 1 PT#DIV_FACTOR0 1 PT#CNX_NO_COMPENSATE_RADIO 0 PT#USE_CLKENA2 0 PT#USE_CLKENA1 0 PT#USE_CLKENA0 0 PT#CREATE_INCLK1_CHECK 0 PT#GLOCK_COUNTER_EDIT 1048575 PT#INCLK1_FREQ_UNIT_COMBO MHz PT#EFF_OUTPUT_FREQ_VALUE2 100.000000 PT#EFF_OUTPUT_FREQ_VALUE1 150.000000 PT#EFF_OUTPUT_FREQ_VALUE0 150.000000 PT#SPREAD_FREQ 50.000 PT#USE_MIL_SPEED_GRADE 0 PT#EXPLICIT_SWITCHOVER_COUNTER 0 PT#STICKY_CLK4 0 PT#STICKY_CLK3 0 PT#STICKY_CLK2 1 PT#STICKY_CLK1 1 PT#STICKY_CLK0 1 PT#EXT_FEEDBACK_RADIO 0 PT#MIRROR_CLK2 0 PT#MIRROR_CLK1 0 PT#SWITCHOVER_COUNT_EDIT 1 PT#MIRROR_CLK0 0 PT#SELF_RESET_LOCK_LOSS 0 PT#PLL_PFDENA_CHECK 0 PT#INT_FEEDBACK__MODE_RADIO 1 PT#INCLK1_FREQ_EDIT_CHANGED 1 PT#SYNTH_WRAPPER_GEN_POSTFIX 0 PT#CLKLOSS_CHECK 0 PT#PHASE_SHIFT_UNIT2 deg PT#PHASE_SHIFT_UNIT1 deg PT#PHASE_SHIFT_UNIT0 ns PT#BANDWIDTH_USE_AUTO 1 PT#HAS_MANUAL_SWITCHOVER 1 PT#MULT_FACTOR2 1 PT#MULT_FACTOR1 1 PT#MULT_FACTOR0 1 PT#SPREAD_USE 0 PT#GLOCKED_MODE_CHECK 0 PT#DUTY_CYCLE2 50.00000000 PT#SACN_INPUTS_CHECK 0 PT#DUTY_CYCLE1 50.00000000 PT#INTENDED_DEVICE_FAMILY {MAX 10} PT#DUTY_CYCLE0 50.00000000 PT#PLL_TARGET_HARCOPY_CHECK 0 PT#INCLK1_FREQ_UNIT_CHANGED 1 PT#RECONFIG_FILE ALTPLL1646952676686724.mif PT#ACTIVECLK_CHECK 0</parameter>
+  <parameter name="HIDDEN_USED_PORTS">UP#locked used UP#c2 used UP#c1 used UP#c0 used UP#areset used UP#inclk0 used</parameter>
   <parameter name="INCLK0_INPUT_FREQUENCY" value="20000" />
   <parameter name="INCLK1_INPUT_FREQUENCY" value="" />
   <parameter name="INTENDED_DEVICE_FAMILY" value="MAX 10" />
@@ -1078,7 +1279,7 @@
   <parameter name="PORT_VCOUNDERRANGE" value="" />
   <parameter name="PORT_clk0" value="PORT_USED" />
   <parameter name="PORT_clk1" value="PORT_USED" />
-  <parameter name="PORT_clk2" value="PORT_UNUSED" />
+  <parameter name="PORT_clk2" value="PORT_USED" />
   <parameter name="PORT_clk3" value="PORT_UNUSED" />
   <parameter name="PORT_clk4" value="PORT_UNUSED" />
   <parameter name="PORT_clk5" value="PORT_UNUSED" />
@@ -1213,10 +1414,19 @@
  <connection
    kind="avalon"
    version="18.1"
+   start="Blitter_0.avalon_master"
+   end="sdram.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x08000000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
    start="nios2_gen2_0.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2168" />
+  <parameter name="baseAddress" value="0x2160" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1225,7 +1435,16 @@
    start="nios2_gen2_0.data_master"
    end="vga_display_0.avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2158" />
+  <parameter name="baseAddress" value="0x2000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios2_gen2_0.data_master"
+   end="Blitter_0.avalon_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x4000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1234,7 +1453,7 @@
    start="nios2_gen2_0.data_master"
    end="sysid_qsys_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2160" />
+  <parameter name="baseAddress" value="0x2158" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1252,7 +1471,7 @@
    start="nios2_gen2_0.data_master"
    end="sdram_pll.pll_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2130" />
+  <parameter name="baseAddress" value="0x2140" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1261,7 +1480,7 @@
    start="nios2_gen2_0.data_master"
    end="usb_irq.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2120" />
+  <parameter name="baseAddress" value="0x2130" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1270,7 +1489,7 @@
    start="nios2_gen2_0.data_master"
    end="usb_gpx.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2110" />
+  <parameter name="baseAddress" value="0x2120" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1279,7 +1498,7 @@
    start="nios2_gen2_0.data_master"
    end="usb_rst.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2100" />
+  <parameter name="baseAddress" value="0x2110" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1288,7 +1507,7 @@
    start="nios2_gen2_0.data_master"
    end="timer_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2040" />
+  <parameter name="baseAddress" value="0x2080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1315,7 +1534,7 @@
    start="nios2_gen2_0.data_master"
    end="spi_0.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20a0" />
+  <parameter name="baseAddress" value="0x20c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1324,7 +1543,7 @@
    start="nios2_gen2_0.instruction_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2168" />
+  <parameter name="baseAddress" value="0x2160" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1333,7 +1552,16 @@
    start="nios2_gen2_0.instruction_master"
    end="vga_display_0.avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2158" />
+  <parameter name="baseAddress" value="0x2000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios2_gen2_0.instruction_master"
+   end="Blitter_0.avalon_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x4000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1342,7 +1570,7 @@
    start="nios2_gen2_0.instruction_master"
    end="sysid_qsys_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2160" />
+  <parameter name="baseAddress" value="0x2158" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1360,7 +1588,7 @@
    start="nios2_gen2_0.instruction_master"
    end="sdram_pll.pll_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2130" />
+  <parameter name="baseAddress" value="0x2140" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1369,7 +1597,7 @@
    start="nios2_gen2_0.instruction_master"
    end="usb_irq.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2120" />
+  <parameter name="baseAddress" value="0x2130" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1378,7 +1606,7 @@
    start="nios2_gen2_0.instruction_master"
    end="usb_gpx.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2110" />
+  <parameter name="baseAddress" value="0x2120" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1387,7 +1615,7 @@
    start="nios2_gen2_0.instruction_master"
    end="usb_rst.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2100" />
+  <parameter name="baseAddress" value="0x2110" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1396,7 +1624,7 @@
    start="nios2_gen2_0.instruction_master"
    end="timer_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2040" />
+  <parameter name="baseAddress" value="0x2080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1423,10 +1651,11 @@
    start="nios2_gen2_0.instruction_master"
    end="spi_0.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20a0" />
+  <parameter name="baseAddress" value="0x20c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="18.1" start="sdram_pll.c0" end="sdram.clk" />
+ <connection kind="clock" version="18.1" start="sdram_pll.c0" end="Blitter_0.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="nios2_gen2_0.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="sysid_qsys_0.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="jtag_uart_0.clk" />
@@ -1522,6 +1751,11 @@
    kind="reset"
    version="18.1"
    start="clk_0.clk_reset"
+   end="Blitter_0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
    end="onchip_memory2_0.reset1" />
  <connection
    kind="reset"
@@ -1573,6 +1807,11 @@
    version="18.1"
    start="nios2_gen2_0.debug_reset_request"
    end="vga_display_0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="nios2_gen2_0.debug_reset_request"
+   end="Blitter_0.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />

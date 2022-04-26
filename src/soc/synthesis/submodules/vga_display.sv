@@ -35,7 +35,7 @@ module vga_display (
                 avalon_slave_readdata <= registers[avalon_slave_address];
             else if (avalon_slave_write)
                 registers[avalon_slave_address] <= avalon_slave_writedata;
-        end 
+        end
     end
 
     logic       pixel_clk,
@@ -74,7 +74,7 @@ module vga_display (
         .q_b(lb_read)
     );
 
-    enum logic [3:0] {
+    enum logic [2:0] {
         DRAWING,
         READING,
         READING_ACK,
@@ -119,6 +119,7 @@ module vga_display (
                     else                    
                         state <= DRAWING;
                 end
+
                 READING: begin
                     if (lb_x < 320) begin
                         if (frame)
@@ -134,6 +135,7 @@ module vga_display (
                         state <= WAITING;
                     end
                 end
+
                 READING_ACK: begin
                     if (avalon_master_waitrequest)
                         state <= READING_ACK;
@@ -142,6 +144,7 @@ module vga_display (
                         state               <= WRITING;
                     end
                 end
+
                 WRITING: begin
                     if (avalon_master_readdatavalid) begin
                         lb_x        <= lb_x + 1;
@@ -149,7 +152,7 @@ module vga_display (
                         lb_addr_a   <= lb_x;
                         lb_write    <= avalon_master_readdata;
                         rd_bytes    <= rd_bytes - 1;
-                        if (rd_bytes - 1 == 0)
+                        if (rd_bytes == 1)
                             state <= READING;
                         else
                             state <= WRITING;
@@ -157,6 +160,7 @@ module vga_display (
                     else
                         state <= WRITING;
                 end
+
                 WAITING: begin
                     avalon_master_read  <= 0;
                     lb_x                <= 0;
@@ -165,6 +169,7 @@ module vga_display (
                     else
                         state <= DRAWING;
                 end
+                
                 default: begin
                     avalon_master_read  <= 0;
                     lb_x                <= 0;
@@ -188,21 +193,6 @@ module vga_display (
         green   <= 0;
         blue    <= 0;
         if (blank != 0) begin
-            /*if (state == DRAWING) begin
-                red     <= 4'h0;
-                green   <= 4'hF;
-                blue    <= 4'h0;
-            end
-            else if (state == WRITING) begin
-                red     <= 4'hF;
-                green   <= 4'h0;
-                blue    <= 4'h0;
-            end
-            else if (state == READING) begin
-                red     <= 4'h0;
-                green   <= 4'h0;
-                blue    <= 4'hF;
-            end*/
             red     <= words[DrawX[0]][11:8];
             green   <= words[DrawX[0]][ 7:4];
             blue    <= words[DrawX[0]][ 3:0];

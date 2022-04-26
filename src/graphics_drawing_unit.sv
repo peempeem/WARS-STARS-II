@@ -1,7 +1,5 @@
 // VGA screen is 640 by 480 pixels
-`define DATA_OFFSET 2
-`define NUM_SPRITES 32
-`define SPRITE_DATA 5
+`define NUM_SPRITES     32
 
 module graphics_drawing_unit (
     input   logic           clk,
@@ -9,6 +7,7 @@ module graphics_drawing_unit (
 
     output  logic   [31:0]  avalon_master_address,
     output  logic   [ 4:0]  avalon_master_burstcount,
+    output  logic   [ 3:0]  avalon_master_byteenable,
     output  logic           avalon_master_read,
     input   logic   [31:0]  avalon_master_readdata,
     input   logic           avalon_master_readdatavalid,
@@ -20,7 +19,9 @@ module graphics_drawing_unit (
     input   logic           avalon_slave_read,
     output  logic   [31:0]  avalon_slave_readdata,
     input   logic           avalon_slave_write,
-    input   logic   [31:0]  avalon_slave_writedata
+    input   logic   [31:0]  avalon_slave_writedata,
+
+    output  logic   [ 3:0]  state_export
 );
 
     logic   [10:0]  ram_addr;
@@ -36,7 +37,7 @@ module graphics_drawing_unit (
         .data_b(ram_write),
         .wren_a(avalon_slave_write),
         .wren_b(ram_wren),
-        .q_a(onchip_rdata),
+        .q_a(avalon_slave_readdata),
         .q_b(ram_read)
     );
 
@@ -56,6 +57,7 @@ module graphics_drawing_unit (
         .frame_address(current_frame),
         .address(avalon_master_address),
         .burstcount(avalon_master_burstcount),
+        .byteenable(avalon_master_byteenable),
         .read(avalon_master_read),
         .readdata(avalon_master_readdata),
         .readdatavalid(avalon_master_readdatavalid),
@@ -67,7 +69,6 @@ module graphics_drawing_unit (
     );
 
     // Layout of each sprite in onchip memory
-    // used
     // address
     // width, height
     // screen_x, screen_y
@@ -86,6 +87,8 @@ module graphics_drawing_unit (
         NEXT_SPRITE,
         NEXT_FRAME
     } state, return_state;
+
+    assign state_export = state;
 
     logic   [ 2:0]  data_count;
     logic   [ 7:0]  sprite_count;
@@ -119,21 +122,22 @@ module graphics_drawing_unit (
 
                 LOAD_FRAME: begin
                     current_frame   <= ram_read;
-                    ram_addr        <= `DATA_OFFSET;
+                    ram_addr        <= 2;
                     sprite_count    <= 0;
                     return_state    <= CHECK_SPRITE;
                     state           <= WAIT_STATE;
                 end
 
                 CHECK_SPRITE: begin
-                    if (ram_read[0]) begin
+                    if (ram_read != 0) begin
+                        sprite_data[0]  <= ram_read;
                         ram_addr        <= ram_addr + 1;
-                        data_count      <= 0;
-                        return_state    <= READ_SPRITE
+                        data_count      <= 1;
+                        return_state    <= READ_SPRITE;
                         state           <= WAIT_STATE;
                     end
                     else begin
-                        ram_addr        <= ram_addr + 6;
+                        ram_addr        <= ram_addr + 5;
                         sprite_count    <= sprite_count + 1;
                         state           <= NEXT_SPRITE;
                     end
@@ -143,8 +147,10 @@ module graphics_drawing_unit (
                     sprite_data[data_count] <= ram_read;
                     ram_addr                <= ram_addr + 1;
                     data_count              <= data_count + 1;
-                    if (data_count == `SPRITE_DATA - 1)
-                        state <= DISPLAY_SPRITE;
+                    if (data_count == 4) begin
+                        return_state    <= DISPLAY_SPRITE;
+                        state           <= WAIT_STATE;
+                    end
                     else begin
                         return_state    <= READ_SPRITE;
                         state           <= WAIT_STATE;
@@ -158,6 +164,7 @@ module graphics_drawing_unit (
                 DISPLAY_SPRITE: begin
                     sprite_count    <= sprite_count + 1;
                     blitter_start   <= 1;
+                    state           <= WAIT_DISPLAY_SPRITE;
                 end
 
                 WAIT_DISPLAY_SPRITE: begin
@@ -168,15 +175,18 @@ module graphics_drawing_unit (
                 end
 
                 NEXT_SPRITE: begin
-                    if (sprite_count == `NUM_SPRITES)
-                        state <= CHECK_SPRITE;
-                    else
+                    if (sprite_count >= `NUM_SPRITES)
                         state <= NEXT_FRAME;
+                    else
+                        state <= CHECK_SPRITE;
                 end
 
                 NEXT_FRAME: begin
-                    ram_addr
-                    ram_wren = 1;
+                    ram_addr        <= 0;
+                    ram_wren        <= 1;
+                    ram_write       <= 0;
+                    return_state    <= ENTRY;
+                    state           <= WAIT_STATE;
                 end
 
                 default: begin
@@ -185,34 +195,5 @@ module graphics_drawing_unit (
             endcase
         end
     end
-
-endmodule
-
-module Blitter (
-    input   logic           clk,
-                            reset,
-
-    input   logic   [31:0]  sprite_address,
-                            sprite_dims,
-                            sprite_xy
-                            sprite_startxy,
-                            sprite_endxy,
-    
-    input   logic   [31:0]  frame_address,
-    
-    output  logic   [31:0]  address,
-    output  logic   [ 4:0]  burstcount,
-    output  logic           read,
-    input   logic   [31:0]  readdata,
-    input   logic           readdatavalid,
-                            waitrequest,
-    output  logic           write,
-    output  logic   [31:0]  writedata,
-
-    input   logic           start,
-    output  logic           done
-);
-
-
 
 endmodule

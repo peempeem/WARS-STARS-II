@@ -1,1 +1,4 @@
 v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,soc:soc|Blitter:blitter_0|lpm_mult:Mult0|mult_sns:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,soc:soc|Blitter:blitter_0|lpm_mult:Mult0|mult_sns:auto_generated|mac_out4,
+PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,soc:soc|Blitter:blitter_0|lpm_mult:Mult0|mult_sns:auto_generated|mac_mult3,

@@ -77,15 +77,16 @@ module WS2 (
     assign ARDUINO_IO[13] = SPI0_SCLK;
     
     // Setup HexDrivers
-    HexDriver hex0 (1'b0, 4'bX, HEX0);
-    HexDriver hex1 (1'b0, 4'bX, HEX1);
-    HexDriver hex2 (1'b0, 4'bX, HEX2);
-    HexDriver hex3 (1'b0, 4'bX, HEX3);
+    logic   [15:0]  number;
+    HexDriver hex0 (1'b1, number[3:0], HEX0);
+    HexDriver hex1 (1'b1, number[7:4], HEX1);
+    HexDriver hex2 (1'b1, number[11:8], HEX2);
+    HexDriver hex3 (1'b1, number[15:12], HEX3);
     HexDriver hex4 (1'b0, 4'bX, HEX4);
     HexDriver hex5 (1'b0, 4'bX, HEX5);
 
     // Setup LEDS
-    assign LEDR = 10'h0;
+    assign LEDR[9:4] = 0;
 
     soc soc (
         .clk_clk                (MAX10_CLK1_50),
@@ -111,7 +112,9 @@ module WS2 (
         .vga_port_green         (VGA_G),
         .vga_port_blue          (VGA_B),
         .vga_port_hs            (VGA_HS),
-        .vga_port_vs            (VGA_VS)
+        .vga_port_vs            (VGA_VS),
+        .out1_out1              (number),
+        .out2_out2              (LEDR[3:0])
     );
     
 endmodule
