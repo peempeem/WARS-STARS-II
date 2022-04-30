@@ -1,8 +1,6 @@
 
 module soc (
 	clk_clk,
-	out1_out1,
-	out2_out2,
 	reset_reset_n,
 	sdram_clk_clk,
 	sdram_wire_addr,
@@ -28,8 +26,6 @@ module soc (
 	vga_port_vs);	
 
 	input		clk_clk;
-	output	[15:0]	out1_out1;
-	output	[3:0]	out2_out2;
 	input		reset_reset_n;
 	output		sdram_clk_clk;
 	output	[12:0]	sdram_wire_addr;

@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+#include "vga.h"
+#include "gdu.h"
+
+#include "sprites/lightspeed.h"
+#include "sprites/enemyplanet.h"
+#include "sprites/playerplanet.h"
+#include "sprites/playership.h"
+
+int game_x = 0;
+
+int main() {
+    printf("Running WarStars 2: Defense of the Homes!\n");
+    vga_init();
+    
+    int frame = 0;
+    sprite_t background = background_sprite;
+    sprite_t playerplanet = playerplanet_sprite;
+    sprite_t enemyplanet = enemyplanet_sprite;
+    sprite_t playership = playership_sprite;
+
+    while (1) {
+        background.end_x = SCREEN_WIDTH;
+        background.end_y = SCREEN_HEIGHT;
+     
+        playerplanet.screen_y = (SCREEN_HEIGHT - playerplanet.height) / 2;
+        
+        enemyplanet.screen_y = (SCREEN_HEIGHT - enemyplanet.height) / 2;
+
+        playership.screen_y = (SCREEN_HEIGHT - playership.height) / 2;
+        
+
+        for (int i = 0; i < background.width - SCREEN_WIDTH; i++) {
+            set_frame(frame);
+            gdu_set_frame(get_frame(!frame));
+
+            background.start_x   = i;
+            background.end_x     = SCREEN_WIDTH + 2 * i;
+            playerplanet.screen_x = 100 - (3 * i) / 2;
+            enemyplanet.screen_x = background.width - 100 - (3 * i) / 2;
+            playership.screen_x   = 3 * i;
+
+            push_sprite(&background, 0);
+            push_sprite(&playerplanet, 1);
+            push_sprite(&enemyplanet, 2);
+            push_sprite(&playership, 3);
+
+            gdu_run();
+            int count = 0;
+            while (gdu_is_running())
+            	count++;
+            printf("wasted %d\n", count);
+
+            frame = !frame;
+        }
+    }
+    return 0;
+}

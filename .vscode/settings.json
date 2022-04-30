@@ -3,6 +3,10 @@
         "playerplanet.h": "c",
         "enemy_ship.h": "c",
         "background.h": "c",
-        "enemyplanet.h": "c"
+        "enemyplanet.h": "c",
+        "ship.h": "c",
+        "title_button_unpressed.h": "c",
+        "lightspeed_background.h": "c",
+        "title_screen_ship.h": "c"
     }
 }

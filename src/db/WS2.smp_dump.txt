@@ -58,14 +58,35 @@ DRsize.011 0 0 1 0 0 1
 DRsize.100 0 1 0 0 0 1 
 DRsize.101 1 0 0 0 0 1 
 
-State Machine - |WS2|soc:soc|Blitter:blitter_0|state
-Name state.DONE state.NEXT state.WRITING_ACK state.WRITING state.READING_WAIT state.READING_ACK state.READING state.CHECK_BOUNDS state.START 
-state.START 0 0 0 0 0 0 0 0 0 
-state.CHECK_BOUNDS 0 0 0 0 0 0 0 1 1 
-state.READING 0 0 0 0 0 0 1 0 1 
-state.READING_ACK 0 0 0 0 0 1 0 0 1 
-state.READING_WAIT 0 0 0 0 1 0 0 0 1 
-state.WRITING 0 0 0 1 0 0 0 0 1 
-state.WRITING_ACK 0 0 1 0 0 0 0 0 1 
-state.NEXT 0 1 0 0 0 0 0 0 1 
-state.DONE 1 0 0 0 0 0 0 0 1 
+State Machine - |WS2|soc:soc|graphics_drawing_unit:graphics_drawing_unit_0|state
+Name state.DONE state.NEXT_SPRITE state.WAIT_DISPLAY_SPRITE state.DISPLAY_SPRITE state.WAIT_STATE state.READ_SPRITE state.CHECK_SPRITE state.LOAD_FRAME state.START state.ENTRY 
+state.ENTRY 0 0 0 0 0 0 0 0 0 0 
+state.START 0 0 0 0 0 0 0 0 1 1 
+state.LOAD_FRAME 0 0 0 0 0 0 0 1 0 1 
+state.CHECK_SPRITE 0 0 0 0 0 0 1 0 0 1 
+state.READ_SPRITE 0 0 0 0 0 1 0 0 0 1 
+state.WAIT_STATE 0 0 0 0 1 0 0 0 0 1 
+state.DISPLAY_SPRITE 0 0 0 1 0 0 0 0 0 1 
+state.WAIT_DISPLAY_SPRITE 0 0 1 0 0 0 0 0 0 1 
+state.NEXT_SPRITE 0 1 0 0 0 0 0 0 0 1 
+state.DONE 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |WS2|soc:soc|graphics_drawing_unit:graphics_drawing_unit_0|return_state
+Name return_state.DISPLAY_SPRITE return_state.READ_SPRITE return_state.CHECK_SPRITE return_state.LOAD_FRAME return_state.START return_state.ENTRY 
+return_state.ENTRY 0 0 0 0 0 0 
+return_state.START 0 0 0 0 1 1 
+return_state.LOAD_FRAME 0 0 0 1 0 1 
+return_state.CHECK_SPRITE 0 0 1 0 0 1 
+return_state.READ_SPRITE 0 1 0 0 0 1 
+return_state.DISPLAY_SPRITE 1 0 0 0 0 1 
+
+State Machine - |WS2|soc:soc|graphics_drawing_unit:graphics_drawing_unit_0|Blitter:blitter|state
+Name state.NEXT state.WRITING_ACK state.WRITING state.READING_WAIT state.READING_ACK state.READING state.CHECK_BOUNDS state.START 
+state.START 0 0 0 0 0 0 0 0 
+state.CHECK_BOUNDS 0 0 0 0 0 0 1 1 
+state.READING 0 0 0 0 0 1 0 1 
+state.READING_ACK 0 0 0 0 1 0 0 1 
+state.READING_WAIT 0 0 0 1 0 0 0 1 
+state.WRITING 0 0 1 0 0 0 0 1 
+state.WRITING_ACK 0 1 0 0 0 0 0 1 
+state.NEXT 1 0 0 0 0 0 0 1 

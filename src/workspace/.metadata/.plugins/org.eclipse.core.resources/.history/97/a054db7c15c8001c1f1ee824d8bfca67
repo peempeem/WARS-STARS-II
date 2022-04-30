@@ -1,0 +1,18 @@
+#ifndef TIMER_H
+#define TIMER_H
+
+#include <stdint.h>
+
+typedef struct TIMER {
+    uint32_t        last_time;
+    uint32_t        inv_rate;
+} timer_t;
+
+void        enable_master_timer();
+void        disable_master_timer();
+timer_t     create_timer(float rate);
+float       get_time();
+uint32_t    get_time32();
+int         is_ready(timer_t* timer);
+
+#endif

@@ -1,0 +1,16 @@
+Partition Merge Status : Successful - Thu Apr 28 16:31:02 2022
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : WS2
+Top-level Entity Name : WS2
+Family : MAX 10
+Total logic elements : 6,862
+    Total combinational functions : 4,843
+    Dedicated logic registers : 4,039
+Total registers : 4039
+Total pins : 141
+Total virtual pins : 0
+Total memory bits : 121,856
+Embedded Multiplier 9-bit elements : 2
+Total PLLs : 1
+UFM blocks : 0
+ADC blocks : 0

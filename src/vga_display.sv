@@ -11,7 +11,7 @@ module vga_display (
     input   logic           avalon_master_readdatavalid,
                             avalon_master_waitrequest,
     
-    input   logic           avalon_slave_address,
+    input   logic   [ 2:0]  avalon_slave_address,
     input   logic           avalon_slave_read,
     output  logic   [31:0]  avalon_slave_readdata,
     input   logic           avalon_slave_write,
@@ -23,20 +23,6 @@ module vga_display (
     output  logic           hs,
                             vs
 );
-
-    logic   [31:0] registers [2];
-
-    always_ff @(posedge clk) begin
-        avalon_slave_readdata <= avalon_slave_readdata;
-        if (reset)
-            registers <= '{default:0};
-        else begin
-            if (avalon_slave_read)
-                avalon_slave_readdata <= registers[avalon_slave_address];
-            else if (avalon_slave_write)
-                registers[avalon_slave_address] <= avalon_slave_writedata;
-        end
-    end
 
     logic       pixel_clk,
                 blank,
@@ -55,6 +41,24 @@ module vga_display (
         .DrawX(DrawX),
         .DrawY(DrawY)
     );
+
+    logic   [31:0] registers [5];
+
+    always_ff @(posedge clk) begin
+        avalon_slave_readdata <= avalon_slave_readdata;
+        if (reset)
+            registers <= '{default:0};
+        else begin
+            if (avalon_slave_read)
+                avalon_slave_readdata <= registers[avalon_slave_address];
+            else if (avalon_slave_write)
+                registers[avalon_slave_address] <= avalon_slave_writedata;
+            if (DrawY >= 480)
+                registers[4] <= 32'h1;
+            else
+                registers[4] <= 32'h0;
+        end
+    end
 
     logic   [ 8:0]  lb_addr_a,
                     lb_addr_b;
@@ -110,19 +114,18 @@ module vga_display (
                     if (blank == 0) begin
                         if (DrawY >= 479) begin
                             lb_y <= 0;
-                            frame <= registers[1][0];
                         end
                         else
                             lb_y <= DrawY + 1;
                         state <= READING;
                     end
-                    else                    
+                    else
                         state <= DRAWING;
                 end
 
                 READING: begin
                     if (lb_x < 320) begin
-                        if (frame)
+                        if (registers[1][0])
                             avalon_master_address <= registers[0] + `FRAME_SIZE + lb_y * 1280 + lb_x * 4;
                         else
                             avalon_master_address <= registers[0] + lb_y * 1280 + lb_x * 4;
@@ -164,10 +167,10 @@ module vga_display (
                 WAITING: begin
                     avalon_master_read  <= 0;
                     lb_x                <= 0;
-                    if (blank == 0)
-                        state <= WAITING;
-                    else
+                    if ((blank == 1) | (DrawY >= lb_y))
                         state <= DRAWING;
+                    else
+                        state <= WAITING;
                 end
                 
                 default: begin
@@ -179,23 +182,35 @@ module vga_display (
         end
     end
 
+    logic   [15:0]  main_color,
+                    bias_color;
+    logic   [ 7:0]  rgb_bias;
+    logic   [ 3:0]  rgb [3];
+    
+    assign bias_color   = registers[2][15:0];
+    assign rgb_bias     = registers[3][ 7:0];
+
     always_comb  begin
         lb_addr_b = 0;
         if (blank != 0)
             lb_addr_b = DrawX[9:1];
+        if (DrawX[0])
+            main_color = lb_read[31:16];
+        else
+            main_color = lb_read[15: 0];
+        rgb[0]  = main_color[ 3:0] + ((rgb_bias * (bias_color[ 3:0] - main_color[ 3:0])) / 64);
+        rgb[1]  = main_color[ 7:4] + ((rgb_bias * (bias_color[ 7:4] - main_color[ 7:4])) / 64);
+        rgb[2]  = main_color[11:8] + ((rgb_bias * (bias_color[11:8] - main_color[11:8])) / 64);
     end
-
-    logic   [1:0][15:0] words;
-    assign words = lb_read;
 
     always_ff @(posedge pixel_clk) begin
         red     <= 0;
         green   <= 0;
         blue    <= 0;
         if (blank != 0) begin
-            red     <= words[DrawX[0]][11:8];
-            green   <= words[DrawX[0]][ 7:4];
-            blue    <= words[DrawX[0]][ 3:0];
+            red     <= rgb[2];
+            green   <= rgb[1];
+            blue    <= rgb[0];
         end
     end
 

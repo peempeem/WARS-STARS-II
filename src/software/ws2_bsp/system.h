@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'soc'
  * SOPC Builder design path: ../../soc.sopcinfo
  *
- * Generated: Tue Apr 26 13:32:38 CDT 2022
+ * Generated: Sat Apr 30 13:35:23 CDT 2022
  */
 
 /*
@@ -53,20 +53,6 @@
 
 /* Include definitions from linker script generator */
 #include "linker.h"
-
-
-/*
- * Blitter_0 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_Blitter_0 Blitter
-#define BLITTER_0_BASE 0x4000
-#define BLITTER_0_IRQ -1
-#define BLITTER_0_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define BLITTER_0_NAME "/dev/Blitter_0"
-#define BLITTER_0_SPAN 32
-#define BLITTER_0_TYPE "Blitter"
 
 
 /*
@@ -156,7 +142,8 @@
 #define __ALTERA_AVALON_TIMER
 #define __ALTERA_NIOS2_GEN2
 #define __ALTPLL
-#define __BLITTER
+#define __GRAPHICS_DRAWING_UNIT
+#define __TIMER_64BIT
 #define __VGA_DISPLAY
 
 
@@ -176,24 +163,52 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x2160
+#define ALT_STDERR_BASE 0x2188
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x2160
+#define ALT_STDIN_BASE 0x2188
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x2160
+#define ALT_STDOUT_BASE 0x2188
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
 #define ALT_STDOUT_TYPE "altera_avalon_jtag_uart"
 #define ALT_SYSTEM_NAME "soc"
+
+
+/*
+ * Timer_64Bit_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_Timer_64Bit_0 Timer_64Bit
+#define TIMER_64BIT_0_BASE 0x3000
+#define TIMER_64BIT_0_IRQ -1
+#define TIMER_64BIT_0_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define TIMER_64BIT_0_NAME "/dev/Timer_64Bit_0"
+#define TIMER_64BIT_0_SPAN 16
+#define TIMER_64BIT_0_TYPE "Timer_64Bit"
+
+
+/*
+ * graphics_drawing_unit_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_graphics_drawing_unit_0 graphics_drawing_unit
+#define GRAPHICS_DRAWING_UNIT_0_BASE 0x4000
+#define GRAPHICS_DRAWING_UNIT_0_IRQ -1
+#define GRAPHICS_DRAWING_UNIT_0_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define GRAPHICS_DRAWING_UNIT_0_NAME "/dev/graphics_drawing_unit_0"
+#define GRAPHICS_DRAWING_UNIT_0_SPAN 8192
+#define GRAPHICS_DRAWING_UNIT_0_TYPE "graphics_drawing_unit"
 
 
 /*
@@ -213,7 +228,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x2160
+#define JTAG_UART_0_BASE 0x2188
 #define JTAG_UART_0_IRQ 1
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -252,6 +267,20 @@
 #define ONCHIP_MEMORY2_0_SPAN 4096
 #define ONCHIP_MEMORY2_0_TYPE "altera_avalon_onchip_memory2"
 #define ONCHIP_MEMORY2_0_WRITABLE 1
+
+
+/*
+ * pll configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_pll altpll
+#define PLL_BASE 0x2150
+#define PLL_IRQ -1
+#define PLL_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define PLL_NAME "/dev/pll"
+#define PLL_SPAN 16
+#define PLL_TYPE "altpll"
 
 
 /*
@@ -294,20 +323,6 @@
 
 
 /*
- * sdram_pll configuration
- *
- */
-
-#define ALT_MODULE_CLASS_sdram_pll altpll
-#define SDRAM_PLL_BASE 0x2140
-#define SDRAM_PLL_IRQ -1
-#define SDRAM_PLL_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define SDRAM_PLL_NAME "/dev/sdram_pll"
-#define SDRAM_PLL_SPAN 16
-#define SDRAM_PLL_TYPE "altpll"
-
-
-/*
  * spi_0 configuration
  *
  */
@@ -344,13 +359,13 @@
  */
 
 #define ALT_MODULE_CLASS_sysid_qsys_0 altera_avalon_sysid_qsys
-#define SYSID_QSYS_0_BASE 0x2158
+#define SYSID_QSYS_0_BASE 0x2180
 #define SYSID_QSYS_0_ID 0
 #define SYSID_QSYS_0_IRQ -1
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1650997801
+#define SYSID_QSYS_0_TIMESTAMP 1651343555
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 
@@ -386,7 +401,7 @@
  */
 
 #define ALT_MODULE_CLASS_usb_gpx altera_avalon_pio
-#define USB_GPX_BASE 0x2120
+#define USB_GPX_BASE 0x2130
 #define USB_GPX_BIT_CLEARING_EDGE_REGISTER 0
 #define USB_GPX_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define USB_GPX_CAPTURE 0
@@ -413,7 +428,7 @@
  */
 
 #define ALT_MODULE_CLASS_usb_irq altera_avalon_pio
-#define USB_IRQ_BASE 0x2130
+#define USB_IRQ_BASE 0x2140
 #define USB_IRQ_BIT_CLEARING_EDGE_REGISTER 0
 #define USB_IRQ_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define USB_IRQ_CAPTURE 0
@@ -440,7 +455,7 @@
  */
 
 #define ALT_MODULE_CLASS_usb_rst altera_avalon_pio
-#define USB_RST_BASE 0x2110
+#define USB_RST_BASE 0x2120
 #define USB_RST_BIT_CLEARING_EDGE_REGISTER 0
 #define USB_RST_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define USB_RST_CAPTURE 0
@@ -471,7 +486,7 @@
 #define VGA_DISPLAY_0_IRQ -1
 #define VGA_DISPLAY_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define VGA_DISPLAY_0_NAME "/dev/vga_display_0"
-#define VGA_DISPLAY_0_SPAN 8
+#define VGA_DISPLAY_0_SPAN 32
 #define VGA_DISPLAY_0_TYPE "vga_display"
 
 #endif /* __SYSTEM_H_ */

@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+#include "vga.h"
+#include "gdu.h"
+
+#include "sprites/lightspeed.h"
+#include "sprites/playership.h"
+
+int screen_x = 0;
+
+
+void start_render() {
+    static int frame = 0;
+    set_frame(frame);
+    gdu_set_frame(get_frame(!frame));
+    gdu_run();
+    frame = !frame;
+}
+
+int main() {
+    printf("Running WarStars 2: Defense of the Homes!\n");
+    vga_init();
+    gdu_reset();
+    
+    sprite_t background = lightspeed_sprite;
+    sprite_t playership = playership_sprite;
+
+    background.start_y = 0;
+    background.end_y = SCREEN_HEIGHT;
+
+    playership.screen_x = 100;
+    playership.screen_y = (SCREEN_HEIGHT - playership.height) / 2;
+
+    while (1) {
+        background.start_x = screen_x;
+        background.end_x = (SCREEN_WIDTH / 2) + screen_x;
+
+        push_sprite(&background, 0);
+        push_sprite(&playership, 1);
+
+        start_render();
+        while (gdu_is_running());
+        screen_x += 10;
+        if (screen_x >= background.width - SCREEN_WIDTH)
+            screen_x = 0;
+    }
+    return 0;
+}

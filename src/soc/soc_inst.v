@@ -1,7 +1,5 @@
 	soc u0 (
 		.clk_clk          (<connected-to-clk_clk>),          //        clk.clk
-		.out1_out1        (<connected-to-out1_out1>),        //       out1.out1
-		.out2_out2        (<connected-to-out2_out2>),        //       out2.out2
 		.reset_reset_n    (<connected-to-reset_reset_n>),    //      reset.reset_n
 		.sdram_clk_clk    (<connected-to-sdram_clk_clk>),    //  sdram_clk.clk
 		.sdram_wire_addr  (<connected-to-sdram_wire_addr>),  // sdram_wire.addr

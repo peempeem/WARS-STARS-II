@@ -1,16 +1,16 @@
-Analysis & Synthesis Status : Successful - Tue Apr 26 13:31:13 2022
+Analysis & Synthesis Status : Successful - Sat Apr 30 13:33:52 2022
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : WS2
 Top-level Entity Name : WS2
 Family : MAX 10
-Total logic elements : 6,815
-    Total combinational functions : 4,997
-    Dedicated logic registers : 3,963
-Total registers : 3963
+Total logic elements : 7,341
+    Total combinational functions : 5,190
+    Dedicated logic registers : 4,311
+Total registers : 4311
 Total pins : 141
 Total virtual pins : 0
-Total memory bits : 56,320
-Embedded Multiplier 9-bit elements : 4
+Total memory bits : 121,856
+Embedded Multiplier 9-bit elements : 8
 Total PLLs : 1
 UFM blocks : 0
 ADC blocks : 0

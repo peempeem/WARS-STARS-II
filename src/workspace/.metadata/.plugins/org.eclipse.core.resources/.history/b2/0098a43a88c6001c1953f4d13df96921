@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+#include "vga.h"
+#include "gdu.h"
+
+#include "sprites/lightspeed.h"
+#include "sprites/playership.h"
+#include "sprites/WAR_STARS_II.h"
+#include "sprites/start_button_unpressed.h"
+
+int screen_x = 0;
+
+void start_render() {
+    static int frame = 0;
+    set_frame(frame);
+    gdu_set_frame(get_frame(!frame));
+    gdu_run();
+    frame = !frame;
+}
+
+int main() {
+    printf("Running WarStars 2: Defense of the Homes!\n");
+    vga_init();
+    gdu_reset();
+    
+    sprite_t background = lightspeed_sprite;
+    sprite_t playership = playership_sprite;
+    sprite_t title_text = WAR_STARS_II_sprite;
+    sprite_t start_button = start_button_unpressed_sprite;
+
+    playership.screen_x = ((SCREEN_WIDTH / 2) - playership.width) / 2;
+    playership.screen_y = (SCREEN_HEIGHT - playership.height) / 2;
+
+    title_text.screen_x = (SCREEN_WIDTH - title_text.width) / 2;
+    title_text.screen_y = 100;
+
+    start_button.screen_x = SCREEN_WIDTH - SCREEN_WIDTH / 4 - start_button.width / 2;
+    start_button.screen_y = (SCREEN_HEIGHT - start_button.height) / 2;
+
+    push_sprite(&start_button, 0);
+    start_render();
+    while (gdu_is_running());
+    start_render();
+    while (gdu_is_running());
+
+    while (1) {
+        background.start_x = screen_x;
+        background.end_x = SCREEN_WIDTH / 2 + screen_x;
+
+        push_sprite(&background, 0);
+        push_sprite(&playership, 1);
+
+        start_render();
+        while (gdu_is_running());
+        screen_x += 10;
+        if (screen_x >= background.width - SCREEN_WIDTH)
+            screen_x = 0;
+    }
+    return 0;
+}

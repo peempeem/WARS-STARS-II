@@ -1,4 +1,4 @@
-module Blitter (
+module BlitterTest (
     input   logic           clk,
                             reset,
     
@@ -42,8 +42,6 @@ module Blitter (
     assign sprite_xy        = registers[4];
     assign sprite_startxy   = registers[5];
     assign sprite_endxy     = registers[6];
-
-    
 
     always_ff @(posedge clk) begin
         avalon_slave_readdata <= avalon_slave_readdata;

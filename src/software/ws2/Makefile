@@ -145,6 +145,10 @@ ELF := ws2.elf
 C_SRCS += main.c
 C_SRCS += gdu.c
 C_SRCS += vga.c
+C_SRCS += timer.c
+C_SRCS += game.c
+C_SRCS += levels/level1.c
+C_SRCS += levels/title_screen.c
 CXX_SRCS :=
 ASM_SRCS :=
 

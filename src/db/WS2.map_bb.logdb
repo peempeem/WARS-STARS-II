@@ -1,3 +1,5 @@
 v1
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,soc:soc|Blitter:blitter_0|lpm_mult:Mult0|mult_sns:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,soc:soc|Blitter:blitter_0|lpm_mult:Mult0|mult_sns:auto_generated|mac_out4,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,soc:soc|graphics_drawing_unit:graphics_drawing_unit_0|Blitter:blitter|lpm_mult:Mult0|mult_rns:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,soc:soc|vga_display:vga_display_0|lpm_mult:Mult0|mult_cms:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,soc:soc|vga_display:vga_display_0|lpm_mult:Mult1|mult_cms:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,soc:soc|vga_display:vga_display_0|lpm_mult:Mult2|mult_cms:auto_generated|mac_out2,

@@ -2,115 +2,93 @@
 
 #include "vga.h"
 #include "gdu.h"
+#include "timer.h"
 
-#include "sprites/background.h"
-#include "sprites/enemyplanet.h"
-#include "sprites/enemy_ship.h"
+#include "sprites/lightspeed_background.h"
+#include "sprites/title_screen_ship.h"
+#include "sprites/WAR_STARS_II.h"
+#include "sprites/start_button_unpressed.h"
 
-typedef struct Blitter {
-    uint32_t    running;
-    uint16_t*   frame_address;
-    sprite_t    sprite;
-    uint32_t    reserved;
-} blitter_t;
+int screen_x = 0;
 
-static volatile blitter_t* blitter = (blitter_t*) (0x00004000);
+void start_render() {
+    static int frame = 0;
+    while (!is_vblank());
+    set_frame(frame);
+    gdu_set_frame(get_frame(!frame));
+    gdu_run();
+    frame = !frame;
+}
 
 int main() {
-    printf("Hello from Nios II!\n");
-
-    printf("Initializing VGA control registers...");
+    printf("Running WarStars 2: Defense of the Homes!\n");
+    enable_master_timer();
     vga_init();
-    printf("Done\n");
-    int frame = 0;
+    gdu_reset();
+
+    rate_t frame_rate = create_rate(20);
+    
+    sprite_t background = lightspeed_background_sprite;
+    sprite_t playership = title_screen_ship_sprite;
+    sprite_t title_text = WAR_STARS_II_sprite;
+    sprite_t start_button = start_button_unpressed_sprite;
+
+    playership.screen_x = ((SCREEN_WIDTH / 2) - playership.width) / 2;
+    playership.screen_y = (SCREEN_HEIGHT - playership.height) / 2;
+
+    title_text.screen_x = (SCREEN_WIDTH - title_text.width) / 2;
+    title_text.screen_y = 100;
+
+    start_button.screen_x = SCREEN_WIDTH - SCREEN_WIDTH / 4 - start_button.width / 2;
+    start_button.screen_y = (SCREEN_HEIGHT - start_button.height) / 2;
+
+    int count = 0;
+    float dx = 0.0f;
+    float x = playership.screen_x;
+
+    float fade_start;
 
     while (1) {
-        for (int i = 0; i < background_width - SCREEN_WIDTH; i++) {
-            vga_regs->frame = frame;
-            blitter->frame_address = (frame) ? vga_mem.frame0 : vga_mem.frame1;
+        float start = get_time();
 
-            construct_sprite(
-                &blitter->sprite,
-                background_bitmap,
-                background_width,
-                background_height,
-                0,
-                0,
-                i,
-                0,
-                SCREEN_WIDTH + i,
-                background_height
-            );
-            blitter->frame_address = (frame) ? vga_mem.frame0 : vga_mem.frame1;
-            blitter->running = 1;
-            while (blitter->running);
-
-            construct_sprite(
-                &blitter->sprite,
-                enemyplanet_bitmap,
-                enemyplanet_width,
-                enemyplanet_height,
-                SCREEN_WIDTH - i * 2,
-                (SCREEN_HEIGHT - enemyplanet_height) / 2,
-                0,
-                0,
-                enemyplanet_width,
-                enemyplanet_height
-            );
-            blitter->frame_address = (frame) ? vga_mem.frame0 : vga_mem.frame1;
-            blitter->running = 1;
-            while (blitter->running);
-
-            construct_sprite(
-                &blitter->sprite,
-                enemy_ship_bitmap,
-                enemy_ship_width,
-                enemy_ship_height,
-                i * 3,
-                (SCREEN_HEIGHT - enemy_ship_height) / 2,
-                0,
-                0,
-                enemy_ship_width,
-                enemy_ship_height
-            );
-            
-            blitter->running = 1;
-            while (blitter->running);
-
-            frame = !frame;
+        background.start_x = screen_x;
+        background.end_x = SCREEN_WIDTH / 2 + screen_x;
+        if (count >= 400) {
+            int offset = count - 400;
+            if (offset >= SCREEN_WIDTH / 2)
+                offset = SCREEN_WIDTH / 2;
+            background.end_x += offset;
         }
-    }
 
-
-    /*for (int y = 0; y < 480; y++) {
-        for (int x = 0; x < 640; x++) {
-            if (getPixel(vga_mem.frame0, x, y) != 0)
-                printf("???\n");
+        if (count >= 600) {
+            dx += 0.2f;
+            x += dx;
+            playership.screen_x = (uint32_t) x;
         }
-    }*/
 
+        if (count == 900)
+            fade_start = get_time();
 
-    /*int index = allocate_sprite(&background_sprite);
-    if (index == -1) {
-        printf("BRUHHH");
-        return -1;
+        if (count >= 900)
+            set_aura(0x0000, (uint32_t) (64 * ((get_time() - fade_start))));
+
+        screen_x += 10;
+        if (screen_x >= background.width - SCREEN_WIDTH)
+            screen_x = 0;
+        count += 4;
+
+        while (gdu_is_running());
+
+        push_sprite(&background, 0);
+        push_sprite(&playership, 1);
+        push_sprite(&title_text, 2);
+        push_sprite(&start_button, 3);
+
+        while (!is_ready(&frame_rate));
+
+        start_render();
+        
+        printf("fps: %f\n", 1 / (get_time() - start));
     }
-
-    gdu_set_frame(vga_mem.frame0);
-    gdu_run();
-    while (gdu_is_running()) {
-        printf("waiting for gdu...\n");
-        usleep(10000);
-    }*/
-
-    while (1) {
-        vga_regs->frame = 0;
-        printf("Showing frame 0\n");
-        usleep(100000);
-        vga_regs->frame = 1;
-        printf("Showing frame 1\n");
-        usleep(100000);
-    }
-
     return 0;
 }
