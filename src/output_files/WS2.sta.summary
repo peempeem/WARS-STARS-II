@@ -3,39 +3,39 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 100C Model Setup 'soc|pll|sd1|pll7|clk[0]'
-Slack : -3.181
-TNS   : -94.754
+Slack : -3.169
+TNS   : -90.191
 
 Type  : Slow 1200mV 100C Model Setup 'soc|pll|sd1|pll7|clk[2]'
-Slack : -2.900
-TNS   : -49.015
+Slack : -2.891
+TNS   : -76.839
 
 Type  : Slow 1200mV 100C Model Setup 'clk_dram_ext'
-Slack : 2.272
+Slack : 2.287
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Setup 'MAX10_CLK1_50'
-Slack : 3.573
+Slack : 3.710
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Setup 'soc|pll|sd1|pll7|clk[3]'
-Slack : 14.138
+Slack : 14.180
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Setup 'altera_reserved_tck'
-Slack : 46.183
+Slack : 46.090
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Hold 'MAX10_CLK1_50'
-Slack : 0.215
+Slack : 0.254
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Hold 'altera_reserved_tck'
-Slack : 0.339
+Slack : 0.340
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Hold 'soc|pll|sd1|pll7|clk[0]'
-Slack : 0.341
+Slack : 0.340
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Hold 'soc|pll|sd1|pll7|clk[2]'
@@ -43,7 +43,7 @@ Slack : 0.341
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Hold 'clk_dram_ext'
-Slack : 0.472
+Slack : 0.484
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Hold 'soc|pll|sd1|pll7|clk[3]'
@@ -51,35 +51,35 @@ Slack : 0.659
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Recovery 'soc|pll|sd1|pll7|clk[0]'
-Slack : 1.766
+Slack : 2.366
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Recovery 'soc|pll|sd1|pll7|clk[2]'
-Slack : 5.923
+Slack : 4.515
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Recovery 'MAX10_CLK1_50'
-Slack : 12.587
+Slack : 13.735
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Recovery 'altera_reserved_tck'
-Slack : 47.473
+Slack : 48.205
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Removal 'altera_reserved_tck'
-Slack : 1.281
-TNS   : 0.000
-
-Type  : Slow 1200mV 100C Model Removal 'soc|pll|sd1|pll7|clk[2]'
-Slack : 2.635
+Slack : 1.312
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Removal 'soc|pll|sd1|pll7|clk[0]'
-Slack : 2.745
+Slack : 2.095
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Removal 'MAX10_CLK1_50'
-Slack : 4.263
+Slack : 3.926
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Removal 'soc|pll|sd1|pll7|clk[2]'
+Slack : 3.996
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Minimum Pulse Width 'clk_dram_ext'
@@ -91,19 +91,19 @@ Slack : 2.456
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Minimum Pulse Width 'soc|pll|sd1|pll7|clk[0]'
-Slack : 3.031
+Slack : 3.033
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Minimum Pulse Width 'soc|pll|sd1|pll7|clk[2]'
-Slack : 4.704
+Slack : 4.709
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Minimum Pulse Width 'MAX10_CLK1_50'
-Slack : 9.467
+Slack : 9.468
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.620
+Slack : 49.623
 TNS   : 0.000
 
 Type  : Slow 1200mV 100C Model Minimum Pulse Width 'soc|pll|sd1|pll7|clk[3]'
@@ -111,42 +111,42 @@ Slack : 49.724
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Setup 'soc|pll|sd1|pll7|clk[0]'
-Slack : -2.593
-TNS   : -42.386
+Slack : -2.584
+TNS   : -44.123
 
 Type  : Slow 1200mV -40C Model Setup 'soc|pll|sd1|pll7|clk[2]'
-Slack : -0.988
-TNS   : -8.575
+Slack : -0.969
+TNS   : -8.048
 
 Type  : Slow 1200mV -40C Model Setup 'clk_dram_ext'
-Slack : 2.099
+Slack : 2.111
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Setup 'MAX10_CLK1_50'
-Slack : 3.847
+Slack : 3.934
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Setup 'soc|pll|sd1|pll7|clk[3]'
-Slack : 15.113
+Slack : 15.152
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Setup 'altera_reserved_tck'
-Slack : 46.664
+Slack : 46.512
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Hold 'MAX10_CLK1_50'
-Slack : 0.200
-TNS   : 0.000
-
-Type  : Slow 1200mV -40C Model Hold 'altera_reserved_tck'
-Slack : 0.290
+Slack : 0.251
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Hold 'soc|pll|sd1|pll7|clk[0]'
-Slack : 0.291
+Slack : 0.290
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Hold 'soc|pll|sd1|pll7|clk[2]'
+Slack : 0.290
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Hold 'altera_reserved_tck'
 Slack : 0.291
 TNS   : 0.000
 
@@ -155,39 +155,39 @@ Slack : 0.573
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Hold 'clk_dram_ext'
-Slack : 0.669
+Slack : 0.676
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Recovery 'soc|pll|sd1|pll7|clk[0]'
-Slack : 2.321
+Slack : 2.828
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Recovery 'soc|pll|sd1|pll7|clk[2]'
-Slack : 6.432
+Slack : 5.108
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Recovery 'MAX10_CLK1_50'
-Slack : 13.504
+Slack : 14.399
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Recovery 'altera_reserved_tck'
-Slack : 47.708
+Slack : 48.431
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Removal 'altera_reserved_tck'
-Slack : 1.143
-TNS   : 0.000
-
-Type  : Slow 1200mV -40C Model Removal 'soc|pll|sd1|pll7|clk[2]'
-Slack : 2.277
+Slack : 1.177
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Removal 'soc|pll|sd1|pll7|clk[0]'
-Slack : 2.361
+Slack : 1.818
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Removal 'MAX10_CLK1_50'
-Slack : 3.660
+Slack : 3.378
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Removal 'soc|pll|sd1|pll7|clk[2]'
+Slack : 3.426
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Minimum Pulse Width 'clk_dram_ext'
@@ -199,11 +199,11 @@ Slack : 2.456
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Minimum Pulse Width 'soc|pll|sd1|pll7|clk[0]'
-Slack : 3.004
+Slack : 3.002
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Minimum Pulse Width 'soc|pll|sd1|pll7|clk[2]'
-Slack : 4.670
+Slack : 4.667
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Minimum Pulse Width 'MAX10_CLK1_50'
@@ -211,47 +211,47 @@ Slack : 9.497
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.659
+Slack : 49.660
 TNS   : 0.000
 
 Type  : Slow 1200mV -40C Model Minimum Pulse Width 'soc|pll|sd1|pll7|clk[3]'
-Slack : 49.705
+Slack : 49.710
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Setup 'soc|pll|sd1|pll7|clk[0]'
-Slack : -0.555
-TNS   : -8.376
+Slack : -0.550
+TNS   : -8.372
 
 Type  : Fast 1200mV -40C Model Setup 'clk_dram_ext'
-Slack : 2.111
+Slack : 2.117
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Setup 'soc|pll|sd1|pll7|clk[2]'
-Slack : 4.671
+Slack : 4.631
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Setup 'MAX10_CLK1_50'
-Slack : 6.810
+Slack : 6.964
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Setup 'soc|pll|sd1|pll7|clk[3]'
-Slack : 17.364
+Slack : 17.388
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Setup 'altera_reserved_tck'
-Slack : 48.755
+Slack : 48.658
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Hold 'MAX10_CLK1_50'
-Slack : 0.067
+Slack : 0.096
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Hold 'altera_reserved_tck'
-Slack : 0.139
+Slack : 0.140
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Hold 'soc|pll|sd1|pll7|clk[0]'
-Slack : 0.141
+Slack : 0.140
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Hold 'soc|pll|sd1|pll7|clk[2]'
@@ -259,43 +259,43 @@ Slack : 0.141
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Hold 'soc|pll|sd1|pll7|clk[3]'
-Slack : 0.232
+Slack : 0.233
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Hold 'clk_dram_ext'
-Slack : 0.323
+Slack : 0.325
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Recovery 'soc|pll|sd1|pll7|clk[0]'
-Slack : 4.482
+Slack : 4.754
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Recovery 'soc|pll|sd1|pll7|clk[2]'
-Slack : 8.051
+Slack : 7.377
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Recovery 'MAX10_CLK1_50'
-Slack : 16.422
+Slack : 16.953
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Recovery 'altera_reserved_tck'
-Slack : 49.111
+Slack : 49.457
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Removal 'altera_reserved_tck'
-Slack : 0.525
-TNS   : 0.000
-
-Type  : Fast 1200mV -40C Model Removal 'soc|pll|sd1|pll7|clk[2]'
-Slack : 1.245
+Slack : 0.538
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Removal 'soc|pll|sd1|pll7|clk[0]'
-Slack : 1.299
+Slack : 1.015
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Removal 'MAX10_CLK1_50'
-Slack : 1.962
+Slack : 1.785
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Removal 'soc|pll|sd1|pll7|clk[2]'
+Slack : 1.855
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Minimum Pulse Width 'clk_dram_ext'
@@ -311,7 +311,7 @@ Slack : 3.059
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Minimum Pulse Width 'soc|pll|sd1|pll7|clk[2]'
-Slack : 4.751
+Slack : 4.750
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Minimum Pulse Width 'MAX10_CLK1_50'
@@ -319,11 +319,11 @@ Slack : 8.558
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.434
+Slack : 49.433
 TNS   : 0.000
 
 Type  : Fast 1200mV -40C Model Minimum Pulse Width 'soc|pll|sd1|pll7|clk[3]'
-Slack : 49.777
+Slack : 49.783
 TNS   : 0.000
 
 ------------------------------------------------------------

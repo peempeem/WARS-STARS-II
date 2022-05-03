@@ -1,0 +1,17 @@
+#ifndef MOUSE_H
+#define MOUSE_H
+
+typedef struct MOUSE_DATA {
+    int x,
+        y,
+        dx,
+        dy,
+        left_click,
+        right_click
+} mouse_t;
+
+void    init_mouse();
+mouse_t new_mouse();
+int     poll_mouse(mouse_t* mouse);
+
+#endif

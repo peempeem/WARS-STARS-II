@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'soc'
  * SOPC Builder design path: ../../soc.sopcinfo
  *
- * Generated: Fri Apr 29 17:14:55 CDT 2022
+ * Generated: Sat Apr 30 23:15:52 CDT 2022
  */
 
 /*
@@ -51,7 +51,9 @@
 MEMORY
 {
     reset : ORIGIN = 0x0, LENGTH = 32
-    onchip_memory2_0 : ORIGIN = 0x20, LENGTH = 4064
+    onchip_memory2_0 : ORIGIN = 0x20, LENGTH = 2016
+    interrupt_stack : ORIGIN = 0x800, LENGTH = 1024
+    exception_stack : ORIGIN = 0xc00, LENGTH = 1024
     sdram : ORIGIN = 0x8000000, LENGTH = 67108864
 }
 
@@ -394,6 +396,18 @@ __alt_data_end = 0xc000000;
  */
 PROVIDE( __alt_stack_pointer = __alt_data_end );
 PROVIDE( __alt_stack_limit   = __alt_stack_base );
+
+/*
+ * These symbols define the location of the separate exception stack.
+ */
+PROVIDE( __alt_exception_stack_pointer = 0x1000 );
+PROVIDE( __alt_exception_stack_limit   = 0xc00 );
+
+/*
+ * These symbols define the location of the separate interrupt stack.
+ */
+PROVIDE( __alt_interrupt_stack_pointer = 0xc00 );
+PROVIDE( __alt_interrupt_stack_limit   = 0x800 );
 
 /*
  * This symbol controls where the start of the heap is.  If the stack is

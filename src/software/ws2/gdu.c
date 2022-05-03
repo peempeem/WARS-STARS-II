@@ -37,10 +37,10 @@ void gdu_set_frame(uint16_t* frame) { gdu_mem->frame_address = frame; }
 
 void convert_sprite(volatile gdu_sprite_t* gdu_sprite, sprite_t* sprite) {
     gdu_sprite->address     = (uint16_t*) sprite->address;
-    gdu_sprite->dimensions  = ((uint32_t) sprite->width     << 16) + sprite->height;
-    gdu_sprite->screen_xy   = ((uint32_t) sprite->screen_x  << 16) + sprite->screen_y;
-    gdu_sprite->start_xy    = ((uint32_t) sprite->start_x   << 16) + sprite->start_y;
-    gdu_sprite->end_xy      = ((uint32_t) sprite->end_x     << 16) + sprite->end_y;
+    gdu_sprite->dimensions  = (uint32_t) ((sprite->width     << 16) + sprite->height);
+    gdu_sprite->screen_xy   = (uint32_t) ((sprite->screen_x  << 16) + sprite->screen_y);
+    gdu_sprite->start_xy    = (uint32_t) ((sprite->start_x   << 16) + sprite->start_y);
+    gdu_sprite->end_xy      = (uint32_t) ((sprite->end_x     << 16) + sprite->end_y);
 }
 
 int push_sprite(sprite_t* sprite, uint32_t index) {

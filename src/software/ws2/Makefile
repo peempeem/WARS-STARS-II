@@ -149,6 +149,10 @@ C_SRCS += timer.c
 C_SRCS += game.c
 C_SRCS += levels/level1.c
 C_SRCS += levels/title_screen.c
+C_SRCS += mouse.c
+C_SRCS += usb_kb/HID.c
+C_SRCS += usb_kb/MAX3421E.c
+C_SRCS += usb_kb/transfer.c
 CXX_SRCS :=
 ASM_SRCS :=
 

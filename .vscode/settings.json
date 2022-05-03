@@ -7,6 +7,19 @@
         "ship.h": "c",
         "title_button_unpressed.h": "c",
         "lightspeed_background.h": "c",
-        "title_screen_ship.h": "c"
+        "title_screen_ship.h": "c",
+        "start_button_unpressed.h": "c",
+        "altera_avalon_spi.h": "c",
+        "mouse.h": "c",
+        "genericmacros.h": "c",
+        "max3421e.h": "c",
+        "alt_stdio.h": "c",
+        "project_config.h": "c",
+        "hid.h": "c",
+        "altera_avalon_timer.h": "c",
+        "alt_alarm.h": "c",
+        "usb_ch9.h": "c",
+        "title_screen.h": "c",
+        "common.h": "c"
     }
 }

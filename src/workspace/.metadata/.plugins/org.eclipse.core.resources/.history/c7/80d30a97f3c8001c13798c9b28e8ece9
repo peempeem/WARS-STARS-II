@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include "mouse.h"
+#include "vga.h"
+#include "gdu.h"
+#include "timer.h"
+
+#include "levels/title_screen.h"
+
+int main() {
+    printf("Running War Stars 2: Defense of the Homes!\n");
+    enable_master_timer();
+    vga_init();
+    gdu_reset();
+
+    run_title_screen();
+    
+    printf("Done!\n");
+    return 0;
+}

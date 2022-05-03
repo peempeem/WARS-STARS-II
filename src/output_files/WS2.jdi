@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="d17f35e6ad139c629329"/>
+    <hash md5_digest_80b="cc631bcc489664927cdd"/>
   </project>
   <file_info>
     <file device="10M50DAF484I7G" path="WS2.sof" usercode="0xFFFFFFFF"/>
@@ -139,7 +139,7 @@
   <sld_infos>
     <sld_info hpath="soc:soc" name="soc">
       <assignment_values>
-        <assignment_value text="QSYS_NAME soc HAS_SOPCINFO 1 GENERATION_ID 1651343555"/>
+        <assignment_value text="QSYS_NAME soc HAS_SOPCINFO 1 GENERATION_ID 1651386187"/>
       </assignment_values>
       <parameters/>
     </sld_info>

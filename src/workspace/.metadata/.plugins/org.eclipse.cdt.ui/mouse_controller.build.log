@@ -1,0 +1,9 @@
+20:48:15 **** Incremental Build of configuration Nios II for project mouse_controller ****
+make all 
+Info: Building ../mouse_controller_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../mouse_controller_bsp/
+[BSP build complete]
+[mouse_controller build complete]
+
+20:48:16 Build Finished (took 910ms)
+

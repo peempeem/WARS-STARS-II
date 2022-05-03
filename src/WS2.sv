@@ -68,6 +68,7 @@ module WS2 (
     assign USB_IRQ = ARDUINO_IO[9];
     
     // Setup SPI/USB communication fields
+    assign ARDUINO_IO[ 6] = 1'b1;
     assign ARDUINO_IO[ 7] = USB_RST;
     assign ARDUINO_IO[ 8] = 1'bZ;
     assign ARDUINO_IO[ 9] = 1'bZ;
@@ -75,6 +76,8 @@ module WS2 (
     assign ARDUINO_IO[11] = SPI0_MOSI;
     assign ARDUINO_IO[12] = 1'bZ;
     assign ARDUINO_IO[13] = SPI0_SCLK;
+    
+    assign ARDUINO_RESET_N = USB_RST;
     
     // Setup HexDrivers
     HexDriver hex0 (1'b1, 4'bX, HEX0);

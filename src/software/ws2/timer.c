@@ -1,6 +1,6 @@
 #include "timer.h"
 
-#define TIMER_MEM_LOCATION 0x00003000
+#define TIMER_MEM_LOCATION 0x00002170
 
 typedef struct TIMER_REGISTERS {
     uint32_t enabled;
@@ -14,6 +14,8 @@ void enable_master_timer() { timer_regs->enabled = 1; }
 void disable_master_timer() { timer_regs->enabled = 0; }
 
 float get_time() { return timer_regs->time / (float) 1e7; }
+
+uint64_t get_micros() { return timer_regs->time / 10; }
 
 rate_t create_rate(float hz) {
     rate_t rate = {

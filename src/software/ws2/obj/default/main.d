@@ -1,7 +1,7 @@
-obj/default/main.o: main.c vga.h gdu.h timer.h \
- sprites/lightspeed_background.h sprites/../gdu.h \
- sprites/title_screen_ship.h sprites/WAR_STARS_II.h \
- sprites/start_button_unpressed.h
+obj/default/main.o: main.c mouse.h vga.h gdu.h timer.h display.h game.h \
+ levels/title_screen.h levels/level1.h sprites/mouse.h sprites/../gdu.h
+
+mouse.h:
 
 vga.h:
 
@@ -9,12 +9,14 @@ gdu.h:
 
 timer.h:
 
-sprites/lightspeed_background.h:
+display.h:
+
+game.h:
+
+levels/title_screen.h:
+
+levels/level1.h:
+
+sprites/mouse.h:
 
 sprites/../gdu.h:
-
-sprites/title_screen_ship.h:
-
-sprites/WAR_STARS_II.h:
-
-sprites/start_button_unpressed.h:

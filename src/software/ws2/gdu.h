@@ -7,7 +7,7 @@
 
 typedef struct SPRITE {
     const uint16_t* address;
-    uint32_t        width,
+    int             width,
                     height,
                     screen_x,
                     screen_y,

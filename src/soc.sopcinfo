@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc" kind="soc" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2022.04.30.13:32:35 -->
+ <!-- 2022.05.01.01:23:07 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1651343555</value>
+  <value>1651386187</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -2636,7 +2636,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.BREAK_ADDR</name>
-   <value>0x00001820</value>
+   <value>0x00003020</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.CPU_ARCH_NIOS2_R1</name>
@@ -3972,7 +3972,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="breakAbsoluteAddr">
    <type>int</type>
-   <value>6176</value>
+   <value>12320</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4214,7 +4214,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="instSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x1000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x1800' end='0x2000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='vga_display_0.avalon_slave' start='0x2000' end='0x2020' type='vga_display.avalon_slave' /><slave name='timer_0.s1' start='0x2080' end='0x20C0' type='altera_avalon_timer.s1' /><slave name='spi_0.spi_control_port' start='0x20C0' end='0x20E0' type='altera_avalon_spi.spi_control_port' /><slave name='usb_rst.s1' start='0x2120' end='0x2130' type='altera_avalon_pio.s1' /><slave name='usb_gpx.s1' start='0x2130' end='0x2140' type='altera_avalon_pio.s1' /><slave name='usb_irq.s1' start='0x2140' end='0x2150' type='altera_avalon_pio.s1' /><slave name='pll.pll_slave' start='0x2150' end='0x2160' type='altpll.pll_slave' /><slave name='sysid_qsys_0.control_slave' start='0x2180' end='0x2188' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x2188' end='0x2190' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='Timer_64Bit_0.avalon_slave' start='0x3000' end='0x3010' type='Timer_64Bit.avalon_slave' /><slave name='graphics_drawing_unit_0.avalon_slave' start='0x4000' end='0x6000' type='graphics_drawing_unit.avalon_slave' /><slave name='sdram.s1' start='0x8000000' end='0xC000000' type='altera_avalon_new_sdram_controller.s1' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x1000' type='altera_avalon_onchip_memory2.s1' /><slave name='vga_display_0.avalon_slave' start='0x2000' end='0x2020' type='vga_display.avalon_slave' /><slave name='timer_0.s1' start='0x2080' end='0x20C0' type='altera_avalon_timer.s1' /><slave name='spi_0.spi_control_port' start='0x20C0' end='0x20E0' type='altera_avalon_spi.spi_control_port' /><slave name='usb_rst.s1' start='0x2130' end='0x2140' type='altera_avalon_pio.s1' /><slave name='usb_gpx.s1' start='0x2140' end='0x2150' type='altera_avalon_pio.s1' /><slave name='usb_irq.s1' start='0x2150' end='0x2160' type='altera_avalon_pio.s1' /><slave name='pll.pll_slave' start='0x2160' end='0x2170' type='altpll.pll_slave' /><slave name='Timer_64Bit_0.avalon_slave' start='0x2170' end='0x2180' type='Timer_64Bit.avalon_slave' /><slave name='sysid_qsys_0.control_slave' start='0x2190' end='0x2198' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x2198' end='0x21A0' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x3000' end='0x3800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='graphics_drawing_unit_0.avalon_slave' start='0x4000' end='0x6000' type='graphics_drawing_unit.avalon_slave' /><slave name='sdram.s1' start='0x8000000' end='0xC000000' type='altera_avalon_new_sdram_controller.s1' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4234,7 +4234,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x1000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x1800' end='0x2000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='vga_display_0.avalon_slave' start='0x2000' end='0x2020' type='vga_display.avalon_slave' /><slave name='timer_0.s1' start='0x2080' end='0x20C0' type='altera_avalon_timer.s1' /><slave name='spi_0.spi_control_port' start='0x20C0' end='0x20E0' type='altera_avalon_spi.spi_control_port' /><slave name='usb_rst.s1' start='0x2120' end='0x2130' type='altera_avalon_pio.s1' /><slave name='usb_gpx.s1' start='0x2130' end='0x2140' type='altera_avalon_pio.s1' /><slave name='usb_irq.s1' start='0x2140' end='0x2150' type='altera_avalon_pio.s1' /><slave name='pll.pll_slave' start='0x2150' end='0x2160' type='altpll.pll_slave' /><slave name='sysid_qsys_0.control_slave' start='0x2180' end='0x2188' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x2188' end='0x2190' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='Timer_64Bit_0.avalon_slave' start='0x3000' end='0x3010' type='Timer_64Bit.avalon_slave' /><slave name='graphics_drawing_unit_0.avalon_slave' start='0x4000' end='0x6000' type='graphics_drawing_unit.avalon_slave' /><slave name='sdram.s1' start='0x8000000' end='0xC000000' type='altera_avalon_new_sdram_controller.s1' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x1000' type='altera_avalon_onchip_memory2.s1' /><slave name='vga_display_0.avalon_slave' start='0x2000' end='0x2020' type='vga_display.avalon_slave' /><slave name='timer_0.s1' start='0x2080' end='0x20C0' type='altera_avalon_timer.s1' /><slave name='spi_0.spi_control_port' start='0x20C0' end='0x20E0' type='altera_avalon_spi.spi_control_port' /><slave name='usb_rst.s1' start='0x2130' end='0x2140' type='altera_avalon_pio.s1' /><slave name='usb_gpx.s1' start='0x2140' end='0x2150' type='altera_avalon_pio.s1' /><slave name='usb_irq.s1' start='0x2150' end='0x2160' type='altera_avalon_pio.s1' /><slave name='pll.pll_slave' start='0x2160' end='0x2170' type='altpll.pll_slave' /><slave name='Timer_64Bit_0.avalon_slave' start='0x2170' end='0x2180' type='Timer_64Bit.avalon_slave' /><slave name='sysid_qsys_0.control_slave' start='0x2190' end='0x2198' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x2198' end='0x21A0' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x3000' end='0x3800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='graphics_drawing_unit_0.avalon_slave' start='0x4000' end='0x6000' type='graphics_drawing_unit.avalon_slave' /><slave name='sdram.s1' start='0x8000000' end='0xC000000' type='altera_avalon_new_sdram_controller.s1' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4905,7 +4905,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>jtag_uart_0</moduleName>
     <slaveName>avalon_jtag_slave</slaveName>
     <name>jtag_uart_0.avalon_jtag_slave</name>
-    <baseAddress>8584</baseAddress>
+    <baseAddress>8600</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -4929,7 +4929,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>Timer_64Bit_0</moduleName>
     <slaveName>avalon_slave</slaveName>
     <name>Timer_64Bit_0.avalon_slave</name>
-    <baseAddress>12288</baseAddress>
+    <baseAddress>8560</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4937,7 +4937,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sysid_qsys_0</moduleName>
     <slaveName>control_slave</slaveName>
     <name>sysid_qsys_0.control_slave</name>
-    <baseAddress>8576</baseAddress>
+    <baseAddress>8592</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -4945,7 +4945,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>nios2_gen2_0</moduleName>
     <slaveName>debug_mem_slave</slaveName>
     <name>nios2_gen2_0.debug_mem_slave</name>
-    <baseAddress>6144</baseAddress>
+    <baseAddress>12288</baseAddress>
     <span>2048</span>
    </memoryBlock>
    <memoryBlock>
@@ -4953,7 +4953,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>pll</moduleName>
     <slaveName>pll_slave</slaveName>
     <name>pll.pll_slave</name>
-    <baseAddress>8528</baseAddress>
+    <baseAddress>8544</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4961,7 +4961,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>usb_irq</moduleName>
     <slaveName>s1</slaveName>
     <name>usb_irq.s1</name>
-    <baseAddress>8512</baseAddress>
+    <baseAddress>8528</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4969,7 +4969,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>usb_gpx</moduleName>
     <slaveName>s1</slaveName>
     <name>usb_gpx.s1</name>
-    <baseAddress>8496</baseAddress>
+    <baseAddress>8512</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4977,7 +4977,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>usb_rst</moduleName>
     <slaveName>s1</slaveName>
     <name>usb_rst.s1</name>
-    <baseAddress>8480</baseAddress>
+    <baseAddress>8496</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -5304,7 +5304,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>jtag_uart_0</moduleName>
     <slaveName>avalon_jtag_slave</slaveName>
     <name>jtag_uart_0.avalon_jtag_slave</name>
-    <baseAddress>8584</baseAddress>
+    <baseAddress>8600</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -5328,7 +5328,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>Timer_64Bit_0</moduleName>
     <slaveName>avalon_slave</slaveName>
     <name>Timer_64Bit_0.avalon_slave</name>
-    <baseAddress>12288</baseAddress>
+    <baseAddress>8560</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -5336,7 +5336,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sysid_qsys_0</moduleName>
     <slaveName>control_slave</slaveName>
     <name>sysid_qsys_0.control_slave</name>
-    <baseAddress>8576</baseAddress>
+    <baseAddress>8592</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -5344,7 +5344,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>nios2_gen2_0</moduleName>
     <slaveName>debug_mem_slave</slaveName>
     <name>nios2_gen2_0.debug_mem_slave</name>
-    <baseAddress>6144</baseAddress>
+    <baseAddress>12288</baseAddress>
     <span>2048</span>
    </memoryBlock>
    <memoryBlock>
@@ -5352,7 +5352,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>pll</moduleName>
     <slaveName>pll_slave</slaveName>
     <name>pll.pll_slave</name>
-    <baseAddress>8528</baseAddress>
+    <baseAddress>8544</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -5360,7 +5360,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>usb_irq</moduleName>
     <slaveName>s1</slaveName>
     <name>usb_irq.s1</name>
-    <baseAddress>8512</baseAddress>
+    <baseAddress>8528</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -5368,7 +5368,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>usb_gpx</moduleName>
     <slaveName>s1</slaveName>
     <name>usb_gpx.s1</name>
-    <baseAddress>8496</baseAddress>
+    <baseAddress>8512</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -5376,7 +5376,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>usb_rst</moduleName>
     <slaveName>s1</slaveName>
     <name>usb_rst.s1</name>
-    <baseAddress>8480</baseAddress>
+    <baseAddress>8496</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -10816,7 +10816,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1651343555</value>
+   <value>1651386187</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -10836,7 +10836,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1651343555</value>
+   <value>1651386187</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -10852,7 +10852,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1651343555</value>
+   <value>1651386187</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -15350,7 +15350,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x2188</value>
+   <value>0x2198</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -15503,7 +15503,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x3000</value>
+   <value>0x2170</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -15554,7 +15554,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x2180</value>
+   <value>0x2190</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -15605,7 +15605,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x1800</value>
+   <value>0x3000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -15656,7 +15656,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x2150</value>
+   <value>0x2160</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -15707,7 +15707,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x2140</value>
+   <value>0x2150</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -15758,7 +15758,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x2130</value>
+   <value>0x2140</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -15809,7 +15809,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x2120</value>
+   <value>0x2130</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -16064,7 +16064,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x2188</value>
+   <value>0x2198</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -16217,7 +16217,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x3000</value>
+   <value>0x2170</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -16268,7 +16268,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x2180</value>
+   <value>0x2190</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -16319,7 +16319,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x1800</value>
+   <value>0x3000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -16370,7 +16370,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x2150</value>
+   <value>0x2160</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -16421,7 +16421,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x2140</value>
+   <value>0x2150</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -16472,7 +16472,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x2130</value>
+   <value>0x2140</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -16523,7 +16523,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x2120</value>
+   <value>0x2130</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>

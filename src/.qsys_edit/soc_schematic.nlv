@@ -1,39 +1,39 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
-preplace inst soc.sysid_qsys_0 -pg 1 -lvl 4 -y 460
+preplace inst soc.sysid_qsys_0 -pg 1 -lvl 4 -y 510
 preplace inst soc.sdram -pg 1 -lvl 4 -y 30
-preplace inst soc.spi_0 -pg 1 -lvl 4 -y 740
+preplace inst soc.spi_0 -pg 1 -lvl 4 -y 790
 preplace inst soc.nios2_gen2_0.reset_bridge -pg 1
-preplace inst soc.usb_irq -pg 1 -lvl 4 -y 970
+preplace inst soc.usb_irq -pg 1 -lvl 4 -y 1010
 preplace inst soc.nios2_gen2_0.cpu -pg 1
-preplace inst soc.usb_rst -pg 1 -lvl 4 -y 1070
-preplace inst soc.usb_gpx -pg 1 -lvl 4 -y 870
-preplace inst soc.nios2_gen2_0 -pg 1 -lvl 2 -y 560
-preplace inst soc.vga_display_0 -pg 1 -lvl 2 -y 780
-preplace inst soc.jtag_uart_0 -pg 1 -lvl 4 -y 540
+preplace inst soc.usb_rst -pg 1 -lvl 4 -y 1110
+preplace inst soc.usb_gpx -pg 1 -lvl 4 -y 910
+preplace inst soc.nios2_gen2_0 -pg 1 -lvl 2 -y 550
+preplace inst soc.vga_display_0 -pg 1 -lvl 2 -y 700
+preplace inst soc.jtag_uart_0 -pg 1 -lvl 4 -y 590
 preplace inst soc.clk_0 -pg 1 -lvl 1 -y 660
 preplace inst soc.nios2_gen2_0.clock_bridge -pg 1
-preplace inst soc -pg 1 -lvl 1 -y 40 -regy -20
-preplace inst soc.timer_0 -pg 1 -lvl 4 -y 640
-preplace inst soc.onchip_memory2_0 -pg 1 -lvl 4 -y 380
-preplace inst soc.Timer_64Bit_0 -pg 1 -lvl 4 -y 280
-preplace inst soc.pll -pg 1 -lvl 3 -y 140
-preplace inst soc.graphics_drawing_unit_0 -pg 1 -lvl 4 -y 140
-preplace netloc FAN_OUT<net_container>soc</net_container>(MASTER)nios2_gen2_0.irq,(SLAVE)spi_0.irq,(SLAVE)jtag_uart_0.irq,(SLAVE)timer_0.irq) 1 2 2 NJ 650 1110
-preplace netloc INTERCONNECT<net_container>soc</net_container>(SLAVE)sdram.s1,(SLAVE)timer_0.s1,(SLAVE)vga_display_0.avalon_slave,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)onchip_memory2_0.s1,(SLAVE)spi_0.spi_control_port,(SLAVE)usb_irq.s1,(MASTER)graphics_drawing_unit_0.avalon_master,(SLAVE)usb_gpx.s1,(MASTER)vga_display_0.avalon_master,(SLAVE)usb_rst.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)nios2_gen2_0.debug_mem_slave,(SLAVE)sysid_qsys_0.control_slave,(MASTER)nios2_gen2_0.data_master,(SLAVE)Timer_64Bit_0.avalon_slave,(SLAVE)pll.pll_slave,(SLAVE)graphics_drawing_unit_0.avalon_slave) 1 1 4 330 890 730 590 1090 270 1320
-preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)soc.usb_rst,(SLAVE)usb_rst.external_connection) 1 0 4 NJ 1100 NJ 1100 NJ 1100 NJ
+preplace inst soc -pg 1 -lvl 1 -y 40 -regml 6 -regy -20
+preplace inst soc.timer_0 -pg 1 -lvl 4 -y 690
+preplace inst soc.onchip_memory2_0 -pg 1 -lvl 4 -y 430
+preplace inst soc.Timer_64Bit_0 -pg 1 -lvl 4 -y 330
+preplace inst soc.pll -pg 1 -lvl 3 -y 130
+preplace inst soc.graphics_drawing_unit_0 -pg 1 -lvl 4 -y 130
 preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)soc.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
-preplace netloc POINT_TO_POINT<net_container>soc</net_container>(SLAVE)sdram.clk,(MASTER)pll.c0) 1 3 1 1010
-preplace netloc EXPORT<net_container>soc</net_container>(MASTER)soc.sdram_clk,(MASTER)pll.c1) 1 3 2 NJ 250 NJ
-preplace netloc INTERCONNECT<net_container>soc</net_container>(SLAVE)nios2_gen2_0.reset,(MASTER)nios2_gen2_0.debug_reset_request,(SLAVE)Timer_64Bit_0.reset,(SLAVE)pll.inclk_interface_reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)jtag_uart_0.reset,(MASTER)clk_0.clk_reset,(SLAVE)usb_rst.reset,(SLAVE)graphics_drawing_unit_0.reset,(SLAVE)timer_0.reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)spi_0.reset,(SLAVE)usb_gpx.reset,(SLAVE)usb_irq.reset,(SLAVE)vga_display_0.reset,(SLAVE)sdram.reset) 1 1 3 310 520 710 280 1050
-preplace netloc FAN_OUT<net_container>soc</net_container>(SLAVE)vga_display_0.clock,(SLAVE)usb_gpx.clk,(SLAVE)pll.inclk_interface,(SLAVE)Timer_64Bit_0.clk0,(SLAVE)onchip_memory2_0.clk1,(SLAVE)nios2_gen2_0.clk,(SLAVE)usb_rst.clk,(MASTER)clk_0.clk,(SLAVE)graphics_drawing_unit_0.clk0,(SLAVE)spi_0.clk,(SLAVE)jtag_uart_0.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)usb_irq.clk,(SLAVE)timer_0.clk) 1 1 3 290 260 770 260 1070
-preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)soc.usb_irq,(SLAVE)usb_irq.external_connection) 1 0 4 NJ 910 NJ 910 NJ 880 NJ
-preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)soc.spi0,(SLAVE)spi_0.external) 1 0 4 NJ 770 NJ 770 NJ 770 NJ
-preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)soc.vga_port,(SLAVE)vga_display_0.vga_port) 1 0 2 NJ 850 NJ
-preplace netloc POINT_TO_POINT<net_container>soc</net_container>(MASTER)pll.c2,(SLAVE)graphics_drawing_unit_0.clk1) 1 3 1 N
-preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)soc.usb_gpx,(SLAVE)usb_gpx.external_connection) 1 0 4 NJ 960 NJ 960 NJ 900 NJ
+preplace netloc FAN_OUT<net_container>soc</net_container>(SLAVE)pll.inclk_interface,(SLAVE)usb_rst.clk,(SLAVE)nios2_gen2_0.clk,(SLAVE)spi_0.clk,(SLAVE)vga_display_0.clock,(SLAVE)usb_gpx.clk,(SLAVE)Timer_64Bit_0.clk0,(SLAVE)onchip_memory2_0.clk1,(SLAVE)timer_0.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)usb_irq.clk,(SLAVE)jtag_uart_0.clk,(MASTER)clk_0.clk,(SLAVE)graphics_drawing_unit_0.clk0) 1 1 3 330 240 730 240 1110
+preplace netloc POINT_TO_POINT<net_container>soc</net_container>(SLAVE)graphics_drawing_unit_0.clk1,(MASTER)pll.c2) 1 3 1 N
+preplace netloc POINT_TO_POINT<net_container>soc</net_container>(SLAVE)sdram.clk,(MASTER)pll.c0) 1 3 1 1030
+preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)usb_irq.external_connection,(SLAVE)soc.usb_irq) 1 0 4 NJ 910 NJ 910 NJ 880 NJ
+preplace netloc EXPORT<net_container>soc</net_container>(MASTER)soc.sdram_clk,(MASTER)pll.c1) 1 3 3 NJ 280 NJ 280 NJ
+preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)usb_gpx.external_connection,(SLAVE)soc.usb_gpx) 1 0 4 NJ 860 NJ 860 NJ 860 NJ
+preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)usb_rst.external_connection,(SLAVE)soc.usb_rst) 1 0 4 NJ 1140 NJ 1140 NJ 1140 NJ
+preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)soc.spi0,(SLAVE)spi_0.external) 1 0 4 NJ 730 NJ 690 NJ 820 NJ
+preplace netloc FAN_OUT<net_container>soc</net_container>(SLAVE)timer_0.irq,(SLAVE)spi_0.irq,(SLAVE)jtag_uart_0.irq,(MASTER)nios2_gen2_0.irq) 1 2 2 NJ 640 1090
+preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)soc.vga_port,(SLAVE)vga_display_0.vga_port) 1 0 2 NJ 770 NJ
 preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)clk_0.clk_in,(SLAVE)soc.clk) 1 0 1 NJ
-preplace netloc POINT_TO_POINT<net_container>soc</net_container>(MASTER)pll.c3,(SLAVE)Timer_64Bit_0.clk1) 1 3 1 1010
+preplace netloc INTERCONNECT<net_container>soc</net_container>(SLAVE)vga_display_0.reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)sysid_qsys_0.reset,(SLAVE)graphics_drawing_unit_0.reset,(SLAVE)usb_rst.reset,(SLAVE)spi_0.reset,(MASTER)nios2_gen2_0.debug_reset_request,(SLAVE)timer_0.reset,(SLAVE)Timer_64Bit_0.reset,(SLAVE)jtag_uart_0.reset,(SLAVE)nios2_gen2_0.reset,(MASTER)clk_0.clk_reset,(SLAVE)usb_gpx.reset,(SLAVE)usb_irq.reset,(SLAVE)sdram.reset,(SLAVE)pll.inclk_interface_reset) 1 1 3 290 510 710 260 1050
+preplace netloc POINT_TO_POINT<net_container>soc</net_container>(MASTER)pll.c3,(SLAVE)Timer_64Bit_0.clk1) 1 3 1 1030
+preplace netloc INTERCONNECT<net_container>soc</net_container>(SLAVE)sdram.s1,(SLAVE)usb_irq.s1,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)timer_0.s1,(SLAVE)usb_rst.s1,(SLAVE)graphics_drawing_unit_0.avalon_slave,(SLAVE)onchip_memory2_0.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave,(MASTER)graphics_drawing_unit_0.avalon_master,(MASTER)nios2_gen2_0.data_master,(SLAVE)spi_0.spi_control_port,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)nios2_gen2_0.debug_mem_slave,(SLAVE)vga_display_0.avalon_slave,(SLAVE)Timer_64Bit_0.avalon_slave,(SLAVE)pll.pll_slave,(MASTER)vga_display_0.avalon_master,(SLAVE)usb_gpx.s1) 1 1 4 350 810 750 590 1070 300 1320
 preplace netloc EXPORT<net_container>soc</net_container>(SLAVE)soc.sdram_wire,(SLAVE)sdram.wire) 1 0 4 NJ 100 NJ 100 NJ 100 NJ
-levelinfo -pg 1 0 80 1430
-levelinfo -hier soc 90 120 470 820 1160 1340
+levelinfo -pg 1 0 80 1590
+levelinfo -hier soc 90 120 470 820 1160 1480 1500

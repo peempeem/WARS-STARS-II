@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'soc'
  * SOPC Builder design path: ../../soc.sopcinfo
  *
- * Generated: Fri Apr 29 17:14:55 CDT 2022
+ * Generated: Sat Apr 30 23:15:52 CDT 2022
  */
 
 /*
@@ -65,8 +65,12 @@
  *
  */
 
+#define EXCEPTION_STACK_REGION_BASE 0xc00
+#define EXCEPTION_STACK_REGION_SPAN 1024
+#define INTERRUPT_STACK_REGION_BASE 0x800
+#define INTERRUPT_STACK_REGION_SPAN 1024
 #define ONCHIP_MEMORY2_0_REGION_BASE 0x20
-#define ONCHIP_MEMORY2_0_REGION_SPAN 4064
+#define ONCHIP_MEMORY2_0_REGION_SPAN 2016
 #define RESET_REGION_BASE 0x0
 #define RESET_REGION_SPAN 32
 #define SDRAM_REGION_BASE 0x8000000
@@ -99,5 +103,21 @@
  */
 
 #define ALT_LOAD_COPY_RWDATA
+
+
+/*
+ * Use a separate exception stack
+ *
+ */
+
+#define ALT_EXCEPTION_STACK
+
+
+/*
+ * Use a separate interrupt stack
+ *
+ */
+
+#define ALT_INTERRUPT_STACK
 
 #endif /* __LINKER_H_ */

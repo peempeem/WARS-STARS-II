@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Apr 30, 2022 1:35:22 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1651343722879</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>May 1, 2022 1:26:20 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1651386380649</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\James\LOCAL\ece385\final\WARS-STARS-II\src\software\ws2_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\soc.sopcinfo</SopcDesignFile>
@@ -122,7 +122,7 @@
                 <SettingName>hal.linker.enable_exception_stack</SettingName>
                 <Identifier>none</Identifier>
                 <Type>Boolean</Type>
-                <Value>0</Value>
+                <Value>1</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>none</DestinationFile>
                 <Description>Enables use of a separate exception stack. If true, defines the macro ALT_EXCEPTION_STACK in linker.h, adds a memory region called exception_stack to linker.x, and provides the symbols __alt_exception_stack_pointer and __alt_exception_stack_limit in linker.x.</Description>
@@ -158,7 +158,7 @@
                 <SettingName>hal.linker.enable_interrupt_stack</SettingName>
                 <Identifier>none</Identifier>
                 <Type>Boolean</Type>
-                <Value>0</Value>
+                <Value>1</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>none</DestinationFile>
                 <Description>Enables use of a separate interrupt stack. If true, defines the macro ALT_INTERRUPT_STACK in linker.h, adds a memory region called interrupt_stack to linker.x, and provides the symbols __alt_interrupt_stack_pointer and __alt_interrupt_stack_limit in linker.x.</Description>
@@ -924,45 +924,45 @@
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>usb_rst</slaveDescriptor>
-                <addressRange>0x00002120 - 0x0000212F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>usb_gpx</slaveDescriptor>
                 <addressRange>0x00002130 - 0x0000213F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>usb_irq</slaveDescriptor>
+                <slaveDescriptor>usb_gpx</slaveDescriptor>
                 <addressRange>0x00002140 - 0x0000214F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>pll</slaveDescriptor>
+                <slaveDescriptor>usb_irq</slaveDescriptor>
                 <addressRange>0x00002150 - 0x0000215F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>pll</slaveDescriptor>
+                <addressRange>0x00002160 - 0x0000216F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>Timer_64Bit_0</slaveDescriptor>
+                <addressRange>0x00002170 - 0x0000217F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>sysid_qsys_0</slaveDescriptor>
-                <addressRange>0x00002180 - 0x00002187</addressRange>
+                <addressRange>0x00002190 - 0x00002197</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x00002188 - 0x0000218F</addressRange>
+                <addressRange>0x00002198 - 0x0000219F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>Timer_64Bit_0</slaveDescriptor>
-                <addressRange>0x00003000 - 0x0000300F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>graphics_drawing_unit_0</slaveDescriptor>

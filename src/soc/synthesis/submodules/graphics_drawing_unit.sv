@@ -282,10 +282,12 @@ module Blitter (
                 end
 
                 CHECK_BOUNDS: begin
-                    if ((dx < 640) & (dy < 480))
-                        state <= READING;
+                    if (dy >= 480) begin
+                        done    <= 1;
+                        state   <= START;
+                    end
                     else
-                        state <= NEXT;
+                        state <= READING;
                 end
 
                 READING: begin
@@ -328,7 +330,10 @@ module Blitter (
                 WRITING: begin
                     address     <= frame_address + (dy * 320 + (dx >> 1)) * 4;
                     burstcount  <= 1;
-                    write       <= 1;
+                    if (dx >= 640)
+                        write <= 0;
+                    else
+                        write <= 1;
                     writedata   <= buffer[buffer_idx];
                     state       <= WRITING_ACK;
                     unique case (transparency)
@@ -345,7 +350,11 @@ module Blitter (
                     else begin
                         buffer_idx <= buffer_idx + 1;
                         dx <= dx + 2;
-                        if ((buffer_idx + 1 >= write_bytes)  | (dx >= 640)) begin
+                        if (dx >= 640)
+                            write <= 0;
+                        else
+                            write <= 1;
+                        if (buffer_idx + 1 >= write_bytes) begin
                             write <= 0;
                             state <= NEXT;
                         end
@@ -356,12 +365,12 @@ module Blitter (
 
                 NEXT: begin
                     state <= CHECK_BOUNDS;
-                    if ((sx >= (sprite_endxy[31:16] & 16'hFFFE)) | (dx >= 640)) begin
+                    if (sx >= (sprite_endxy[31:16] & 16'hFFFE)) begin
                         dx <= sprite_xy[31:16] & 16'hFFFE;
                         sx <= sprite_startxy[31:16] & 16'hFFFE;
                         dy <= dy + 1;
                         sy <= sy + 1;
-                        if (sy + 1 >= sprite_endxy[15:0]) begin
+                        if ((sy + 1 >= sprite_endxy[15:0]) | (dy >= 479)) begin
                             done    <= 1;
                             state   <= START;
                         end
