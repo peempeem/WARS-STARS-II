@@ -5,10 +5,16 @@
 ////////////////////////////////////////
 
 
+
+
+
 module WS2 (
     // Master Clock
     input   logic           MAX10_CLK1_50,
+								    MAX10_CLK2_50,
     
+	 output  logic   [ 1:0] aud_mclk_ctr,
+	 
     // FPGA Input Buttons
     input   logic   [ 1:0]  KEY,
     
@@ -86,7 +92,19 @@ module WS2 (
 
     // Setup LEDS
     assign LEDS = 10'h0;
+	 
+	 assign i2c_serial_ARDUINO_IO[15]_in = arduino_adc_ARDUINO_IO[15];
+	 assign arduino_ado_ARDUINO_IO[15]   = i2c_serial_ARDUINO_IO[15]_oe ? 1'b0 : 1 'bz;
 
+	 assign i2c_serial_ARDUINO_IO[14]_in = arduino_adc_ARDUINO_IO[14];
+	 assign arduino_adc_ARDUINO_IO[14]   = i2c_serial_ARDUINO_IO[14]_oe ? 1'b0 : 1'bz;
+
+	 assign ARDUINO_IO[3] = aud_mclk_ctr[1];	//generate 12.5MHz CODEC mclk
+		
+	 always_ff @(posedge MAX10_CLK2_50) begin
+aud_mclk_ctr <= aud_mclk_ctr + 1;
+		end
+	 
     soc soc (
         .clk_clk                (MAX10_CLK1_50),
         .reset_reset_n          (KEY[0]),
@@ -115,3 +133,4 @@ module WS2 (
     );
     
 endmodule
+

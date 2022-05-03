@@ -44,7 +44,7 @@
 
 module soc_mm_interconnect_0_router_001_default_decode
   #(
-     parameter DEFAULT_CHANNEL = 0,
+     parameter DEFAULT_CHANNEL = 9,
                DEFAULT_WR_CHANNEL = -1,
                DEFAULT_RD_CHANNEL = -1,
                DEFAULT_DESTID = 4 
@@ -205,19 +205,19 @@ module soc_mm_interconnect_0_router_001
 
     // ( 0x0 .. 0x10000 )
     if ( {address[RG:PAD0],{PAD0{1'b0}}} == 28'h0   ) begin
-            src_channel = 11'b01000000000;
+            src_channel = 11'b00100000000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
     end
 
     // ( 0x10800 .. 0x11000 )
     if ( {address[RG:PAD1],{PAD1{1'b0}}} == 28'h10800   ) begin
-            src_channel = 11'b00000001000;
+            src_channel = 11'b00000000001;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
     end
 
     // ( 0x11040 .. 0x11080 )
     if ( {address[RG:PAD2],{PAD2{1'b0}}} == 28'h11040   ) begin
-            src_channel = 11'b00100000000;
+            src_channel = 11'b00010000000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 7;
     end
 
@@ -229,25 +229,25 @@ module soc_mm_interconnect_0_router_001
 
     // ( 0x11100 .. 0x11110 )
     if ( {address[RG:PAD4],{PAD4{1'b0}}} == 28'h11100   ) begin
-            src_channel = 11'b00010000000;
+            src_channel = 11'b00001000000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 10;
     end
 
     // ( 0x11110 .. 0x11120 )
     if ( {address[RG:PAD5],{PAD5{1'b0}}} == 28'h11110  && read_transaction  ) begin
-            src_channel = 11'b00001000000;
+            src_channel = 11'b00000100000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 8;
     end
 
     // ( 0x11120 .. 0x11130 )
     if ( {address[RG:PAD6],{PAD6{1'b0}}} == 28'h11120  && read_transaction  ) begin
-            src_channel = 11'b00000100000;
+            src_channel = 11'b00000010000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 9;
     end
 
     // ( 0x11130 .. 0x11140 )
     if ( {address[RG:PAD7],{PAD7{1'b0}}} == 28'h11130   ) begin
-            src_channel = 11'b00000010000;
+            src_channel = 11'b00000001000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
     end
 
@@ -265,7 +265,7 @@ module soc_mm_interconnect_0_router_001
 
     // ( 0x8000000 .. 0xc000000 )
     if ( {address[RG:PAD10],{PAD10{1'b0}}} == 28'h8000000   ) begin
-            src_channel = 11'b00000000001;
+            src_channel = 11'b01000000000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 4;
     end
 

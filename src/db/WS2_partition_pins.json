@@ -4,6 +4,14 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "aud_mclk_ctr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "aud_mclk_ctr[1]",
+					"strict" : false
+				},
+				{
 					"name" : "DRAM_ADDR[0]",
 					"strict" : false
 				},
@@ -208,6 +216,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "ARDUINO_IO[3]",
+					"strict" : false
+				},
+				{
 					"name" : "ARDUINO_IO[7]",
 					"strict" : false
 				},
@@ -229,6 +241,10 @@
 				},
 				{
 					"name" : "ARDUINO_IO[13]",
+					"strict" : false
+				},
+				{
+					"name" : "MAX10_CLK2_50",
 					"strict" : false
 				},
 				{

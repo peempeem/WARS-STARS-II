@@ -190,11 +190,15 @@ module soc_mm_interconnect_0_router_004
 
 
         if (destid == 0 ) begin
-            src_channel = 11'b01;
+            src_channel = 11'b001;
         end
 
-        if (destid == 1  && read_transaction) begin
-            src_channel = 11'b10;
+        if (destid == 1 ) begin
+            src_channel = 11'b010;
+        end
+
+        if (destid == 2  && read_transaction) begin
+            src_channel = 11'b100;
         end
 
 

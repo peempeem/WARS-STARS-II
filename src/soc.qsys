@@ -9,6 +9,14 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element I2C
+   {
+      datum _sortIndex
+      {
+         value = "13";
+         type = "int";
+      }
+   }
    element clk_0
    {
       datum _sortIndex
@@ -584,6 +592,7 @@
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
+ <interface name="i2c" internal="I2C.conduit_end" type="conduit" dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <interface name="sdram_clk" internal="sdram_pll.c1" type="clock" dir="start" />
  <interface name="sdram_wire" internal="sdram.wire" type="conduit" dir="end" />
@@ -608,6 +617,16 @@
    internal="vga_display_0.vga_port"
    type="conduit"
    dir="end" />
+ <module
+   name="I2C"
+   kind="altera_i2cslave_to_avlmm_bridge"
+   version="18.1"
+   enabled="1">
+  <parameter name="ADDRESS_STEALING" value="0" />
+  <parameter name="BYTE_ADDRESSING" value="2" />
+  <parameter name="I2C_SLAVE_ADDRESS" value="85" />
+  <parameter name="READ_ONLY" value="0" />
+ </module>
  <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -1124,6 +1143,15 @@
  <connection
    kind="avalon"
    version="18.1"
+   start="I2C.avalon_master"
+   end="nios2_gen2_0.debug_mem_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00010800" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
    start="vga_display_0.avalon_master"
    end="sdram.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -1347,6 +1375,7 @@
    version="18.1"
    start="clk_0.clk"
    end="vga_display_0.clock" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="I2C.clock" />
  <connection
    kind="clock"
    version="18.1"
@@ -1420,6 +1449,7 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="vga_display_0.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="I2C.reset" />
  <connection
    kind="reset"
    version="18.1"

@@ -4,38 +4,45 @@
 
 `timescale 1 ps / 1 ps
 module soc (
-		input  wire        clk_clk,          //        clk.clk
-		input  wire        reset_reset_n,    //      reset.reset_n
-		output wire        sdram_clk_clk,    //  sdram_clk.clk
-		output wire [12:0] sdram_wire_addr,  // sdram_wire.addr
-		output wire [1:0]  sdram_wire_ba,    //           .ba
-		output wire        sdram_wire_cas_n, //           .cas_n
-		output wire        sdram_wire_cke,   //           .cke
-		output wire        sdram_wire_cs_n,  //           .cs_n
-		inout  wire [15:0] sdram_wire_dq,    //           .dq
-		output wire [1:0]  sdram_wire_dqm,   //           .dqm
-		output wire        sdram_wire_ras_n, //           .ras_n
-		output wire        sdram_wire_we_n,  //           .we_n
-		input  wire        spi0_MISO,        //       spi0.MISO
-		output wire        spi0_MOSI,        //           .MOSI
-		output wire        spi0_SCLK,        //           .SCLK
-		output wire        spi0_SS_n,        //           .SS_n
-		input  wire        usb_gpx_export,   //    usb_gpx.export
-		input  wire        usb_irq_export,   //    usb_irq.export
-		output wire        usb_rst_export,   //    usb_rst.export
-		output wire [3:0]  vga_port_blue,    //   vga_port.blue
-		output wire [3:0]  vga_port_green,   //           .green
-		output wire        vga_port_hs,      //           .hs
-		output wire [3:0]  vga_port_red,     //           .red
-		output wire        vga_port_vs       //           .vs
+		input  wire        clk_clk,             //        clk.clk
+		input  wire        i2c_conduit_data_in, //        i2c.conduit_data_in
+		input  wire        i2c_conduit_clk_in,  //           .conduit_clk_in
+		output wire        i2c_conduit_data_oe, //           .conduit_data_oe
+		output wire        i2c_conduit_clk_oe,  //           .conduit_clk_oe
+		input  wire        reset_reset_n,       //      reset.reset_n
+		output wire        sdram_clk_clk,       //  sdram_clk.clk
+		output wire [12:0] sdram_wire_addr,     // sdram_wire.addr
+		output wire [1:0]  sdram_wire_ba,       //           .ba
+		output wire        sdram_wire_cas_n,    //           .cas_n
+		output wire        sdram_wire_cke,      //           .cke
+		output wire        sdram_wire_cs_n,     //           .cs_n
+		inout  wire [15:0] sdram_wire_dq,       //           .dq
+		output wire [1:0]  sdram_wire_dqm,      //           .dqm
+		output wire        sdram_wire_ras_n,    //           .ras_n
+		output wire        sdram_wire_we_n,     //           .we_n
+		input  wire        spi0_MISO,           //       spi0.MISO
+		output wire        spi0_MOSI,           //           .MOSI
+		output wire        spi0_SCLK,           //           .SCLK
+		output wire        spi0_SS_n,           //           .SS_n
+		input  wire        usb_gpx_export,      //    usb_gpx.export
+		input  wire        usb_irq_export,      //    usb_irq.export
+		output wire        usb_rst_export,      //    usb_rst.export
+		output wire [3:0]  vga_port_blue,       //   vga_port.blue
+		output wire [3:0]  vga_port_green,      //           .green
+		output wire        vga_port_hs,         //           .hs
+		output wire [3:0]  vga_port_red,        //           .red
+		output wire        vga_port_vs          //           .vs
 	);
 
 	wire         sdram_pll_c0_clk;                                            // sdram_pll:c0 -> [mm_interconnect_0:sdram_pll_c0_clk, rst_controller_002:clk, sdram:clk]
-	wire  [31:0] vga_display_0_avalon_master_readdata;                        // mm_interconnect_0:vga_display_0_avalon_master_readdata -> vga_display_0:avalon_master_readdata
-	wire         vga_display_0_avalon_master_waitrequest;                     // mm_interconnect_0:vga_display_0_avalon_master_waitrequest -> vga_display_0:avalon_master_waitrequest
-	wire         vga_display_0_avalon_master_read;                            // vga_display_0:avalon_master_read -> mm_interconnect_0:vga_display_0_avalon_master_read
-	wire  [31:0] vga_display_0_avalon_master_address;                         // vga_display_0:avalon_master_address -> mm_interconnect_0:vga_display_0_avalon_master_address
-	wire         vga_display_0_avalon_master_readdatavalid;                   // mm_interconnect_0:vga_display_0_avalon_master_readdatavalid -> vga_display_0:avalon_master_readdatavalid
+	wire  [31:0] i2c_avalon_master_readdata;                                  // mm_interconnect_0:I2C_avalon_master_readdata -> I2C:readdata
+	wire         i2c_avalon_master_waitrequest;                               // mm_interconnect_0:I2C_avalon_master_waitrequest -> I2C:waitrequest
+	wire  [31:0] i2c_avalon_master_address;                                   // I2C:address -> mm_interconnect_0:I2C_avalon_master_address
+	wire         i2c_avalon_master_read;                                      // I2C:read -> mm_interconnect_0:I2C_avalon_master_read
+	wire   [3:0] i2c_avalon_master_byteenable;                                // I2C:byteenable -> mm_interconnect_0:I2C_avalon_master_byteenable
+	wire         i2c_avalon_master_readdatavalid;                             // mm_interconnect_0:I2C_avalon_master_readdatavalid -> I2C:readdatavalid
+	wire         i2c_avalon_master_write;                                     // I2C:write -> mm_interconnect_0:I2C_avalon_master_write
+	wire  [31:0] i2c_avalon_master_writedata;                                 // I2C:writedata -> mm_interconnect_0:I2C_avalon_master_writedata
 	wire  [31:0] nios2_gen2_0_data_master_readdata;                           // mm_interconnect_0:nios2_gen2_0_data_master_readdata -> nios2_gen2_0:d_readdata
 	wire         nios2_gen2_0_data_master_waitrequest;                        // mm_interconnect_0:nios2_gen2_0_data_master_waitrequest -> nios2_gen2_0:d_waitrequest
 	wire         nios2_gen2_0_data_master_debugaccess;                        // nios2_gen2_0:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:nios2_gen2_0_data_master_debugaccess
@@ -48,15 +55,19 @@ module soc (
 	wire         nios2_gen2_0_instruction_master_waitrequest;                 // mm_interconnect_0:nios2_gen2_0_instruction_master_waitrequest -> nios2_gen2_0:i_waitrequest
 	wire  [27:0] nios2_gen2_0_instruction_master_address;                     // nios2_gen2_0:i_address -> mm_interconnect_0:nios2_gen2_0_instruction_master_address
 	wire         nios2_gen2_0_instruction_master_read;                        // nios2_gen2_0:i_read -> mm_interconnect_0:nios2_gen2_0_instruction_master_read
-	wire         mm_interconnect_0_sdram_s1_chipselect;                       // mm_interconnect_0:sdram_s1_chipselect -> sdram:az_cs
-	wire  [15:0] mm_interconnect_0_sdram_s1_readdata;                         // sdram:za_data -> mm_interconnect_0:sdram_s1_readdata
-	wire         mm_interconnect_0_sdram_s1_waitrequest;                      // sdram:za_waitrequest -> mm_interconnect_0:sdram_s1_waitrequest
-	wire  [24:0] mm_interconnect_0_sdram_s1_address;                          // mm_interconnect_0:sdram_s1_address -> sdram:az_addr
-	wire         mm_interconnect_0_sdram_s1_read;                             // mm_interconnect_0:sdram_s1_read -> sdram:az_rd_n
-	wire   [1:0] mm_interconnect_0_sdram_s1_byteenable;                       // mm_interconnect_0:sdram_s1_byteenable -> sdram:az_be_n
-	wire         mm_interconnect_0_sdram_s1_readdatavalid;                    // sdram:za_valid -> mm_interconnect_0:sdram_s1_readdatavalid
-	wire         mm_interconnect_0_sdram_s1_write;                            // mm_interconnect_0:sdram_s1_write -> sdram:az_wr_n
-	wire  [15:0] mm_interconnect_0_sdram_s1_writedata;                        // mm_interconnect_0:sdram_s1_writedata -> sdram:az_data
+	wire  [31:0] vga_display_0_avalon_master_readdata;                        // mm_interconnect_0:vga_display_0_avalon_master_readdata -> vga_display_0:avalon_master_readdata
+	wire         vga_display_0_avalon_master_waitrequest;                     // mm_interconnect_0:vga_display_0_avalon_master_waitrequest -> vga_display_0:avalon_master_waitrequest
+	wire         vga_display_0_avalon_master_read;                            // vga_display_0:avalon_master_read -> mm_interconnect_0:vga_display_0_avalon_master_read
+	wire  [31:0] vga_display_0_avalon_master_address;                         // vga_display_0:avalon_master_address -> mm_interconnect_0:vga_display_0_avalon_master_address
+	wire         vga_display_0_avalon_master_readdatavalid;                   // mm_interconnect_0:vga_display_0_avalon_master_readdatavalid -> vga_display_0:avalon_master_readdatavalid
+	wire  [31:0] mm_interconnect_0_nios2_gen2_0_debug_mem_slave_readdata;     // nios2_gen2_0:debug_mem_slave_readdata -> mm_interconnect_0:nios2_gen2_0_debug_mem_slave_readdata
+	wire         mm_interconnect_0_nios2_gen2_0_debug_mem_slave_waitrequest;  // nios2_gen2_0:debug_mem_slave_waitrequest -> mm_interconnect_0:nios2_gen2_0_debug_mem_slave_waitrequest
+	wire         mm_interconnect_0_nios2_gen2_0_debug_mem_slave_debugaccess;  // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_debugaccess -> nios2_gen2_0:debug_mem_slave_debugaccess
+	wire   [8:0] mm_interconnect_0_nios2_gen2_0_debug_mem_slave_address;      // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_address -> nios2_gen2_0:debug_mem_slave_address
+	wire         mm_interconnect_0_nios2_gen2_0_debug_mem_slave_read;         // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_read -> nios2_gen2_0:debug_mem_slave_read
+	wire   [3:0] mm_interconnect_0_nios2_gen2_0_debug_mem_slave_byteenable;   // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_byteenable -> nios2_gen2_0:debug_mem_slave_byteenable
+	wire         mm_interconnect_0_nios2_gen2_0_debug_mem_slave_write;        // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_write -> nios2_gen2_0:debug_mem_slave_write
+	wire  [31:0] mm_interconnect_0_nios2_gen2_0_debug_mem_slave_writedata;    // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_writedata -> nios2_gen2_0:debug_mem_slave_writedata
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_chipselect;  // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_chipselect -> jtag_uart_0:av_chipselect
 	wire  [31:0] mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_readdata;    // jtag_uart_0:av_readdata -> mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_readdata
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_waitrequest; // jtag_uart_0:av_waitrequest -> mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_waitrequest
@@ -66,14 +77,6 @@ module soc (
 	wire  [31:0] mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_writedata;   // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_writedata -> jtag_uart_0:av_writedata
 	wire  [31:0] mm_interconnect_0_sysid_qsys_0_control_slave_readdata;       // sysid_qsys_0:readdata -> mm_interconnect_0:sysid_qsys_0_control_slave_readdata
 	wire   [0:0] mm_interconnect_0_sysid_qsys_0_control_slave_address;        // mm_interconnect_0:sysid_qsys_0_control_slave_address -> sysid_qsys_0:address
-	wire  [31:0] mm_interconnect_0_nios2_gen2_0_debug_mem_slave_readdata;     // nios2_gen2_0:debug_mem_slave_readdata -> mm_interconnect_0:nios2_gen2_0_debug_mem_slave_readdata
-	wire         mm_interconnect_0_nios2_gen2_0_debug_mem_slave_waitrequest;  // nios2_gen2_0:debug_mem_slave_waitrequest -> mm_interconnect_0:nios2_gen2_0_debug_mem_slave_waitrequest
-	wire         mm_interconnect_0_nios2_gen2_0_debug_mem_slave_debugaccess;  // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_debugaccess -> nios2_gen2_0:debug_mem_slave_debugaccess
-	wire   [8:0] mm_interconnect_0_nios2_gen2_0_debug_mem_slave_address;      // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_address -> nios2_gen2_0:debug_mem_slave_address
-	wire         mm_interconnect_0_nios2_gen2_0_debug_mem_slave_read;         // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_read -> nios2_gen2_0:debug_mem_slave_read
-	wire   [3:0] mm_interconnect_0_nios2_gen2_0_debug_mem_slave_byteenable;   // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_byteenable -> nios2_gen2_0:debug_mem_slave_byteenable
-	wire         mm_interconnect_0_nios2_gen2_0_debug_mem_slave_write;        // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_write -> nios2_gen2_0:debug_mem_slave_write
-	wire  [31:0] mm_interconnect_0_nios2_gen2_0_debug_mem_slave_writedata;    // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_writedata -> nios2_gen2_0:debug_mem_slave_writedata
 	wire  [31:0] mm_interconnect_0_sdram_pll_pll_slave_readdata;              // sdram_pll:readdata -> mm_interconnect_0:sdram_pll_pll_slave_readdata
 	wire   [1:0] mm_interconnect_0_sdram_pll_pll_slave_address;               // mm_interconnect_0:sdram_pll_pll_slave_address -> sdram_pll:address
 	wire         mm_interconnect_0_sdram_pll_pll_slave_read;                  // mm_interconnect_0:sdram_pll_pll_slave_read -> sdram_pll:read
@@ -100,6 +103,15 @@ module soc (
 	wire         mm_interconnect_0_onchip_memory2_0_s1_write;                 // mm_interconnect_0:onchip_memory2_0_s1_write -> onchip_memory2_0:write
 	wire  [31:0] mm_interconnect_0_onchip_memory2_0_s1_writedata;             // mm_interconnect_0:onchip_memory2_0_s1_writedata -> onchip_memory2_0:writedata
 	wire         mm_interconnect_0_onchip_memory2_0_s1_clken;                 // mm_interconnect_0:onchip_memory2_0_s1_clken -> onchip_memory2_0:clken
+	wire         mm_interconnect_0_sdram_s1_chipselect;                       // mm_interconnect_0:sdram_s1_chipselect -> sdram:az_cs
+	wire  [15:0] mm_interconnect_0_sdram_s1_readdata;                         // sdram:za_data -> mm_interconnect_0:sdram_s1_readdata
+	wire         mm_interconnect_0_sdram_s1_waitrequest;                      // sdram:za_waitrequest -> mm_interconnect_0:sdram_s1_waitrequest
+	wire  [24:0] mm_interconnect_0_sdram_s1_address;                          // mm_interconnect_0:sdram_s1_address -> sdram:az_addr
+	wire         mm_interconnect_0_sdram_s1_read;                             // mm_interconnect_0:sdram_s1_read -> sdram:az_rd_n
+	wire   [1:0] mm_interconnect_0_sdram_s1_byteenable;                       // mm_interconnect_0:sdram_s1_byteenable -> sdram:az_be_n
+	wire         mm_interconnect_0_sdram_s1_readdatavalid;                    // sdram:za_valid -> mm_interconnect_0:sdram_s1_readdatavalid
+	wire         mm_interconnect_0_sdram_s1_write;                            // mm_interconnect_0:sdram_s1_write -> sdram:az_wr_n
+	wire  [15:0] mm_interconnect_0_sdram_s1_writedata;                        // mm_interconnect_0:sdram_s1_writedata -> sdram:az_data
 	wire         mm_interconnect_0_spi_0_spi_control_port_chipselect;         // mm_interconnect_0:spi_0_spi_control_port_chipselect -> spi_0:spi_select
 	wire  [15:0] mm_interconnect_0_spi_0_spi_control_port_readdata;           // spi_0:data_to_cpu -> mm_interconnect_0:spi_0_spi_control_port_readdata
 	wire   [2:0] mm_interconnect_0_spi_0_spi_control_port_address;            // mm_interconnect_0:spi_0_spi_control_port_address -> spi_0:mem_addr
@@ -110,15 +122,37 @@ module soc (
 	wire         irq_mapper_receiver1_irq;                                    // timer_0:irq -> irq_mapper:receiver1_irq
 	wire         irq_mapper_receiver2_irq;                                    // spi_0:irq -> irq_mapper:receiver2_irq
 	wire  [31:0] nios2_gen2_0_irq_irq;                                        // irq_mapper:sender_irq -> nios2_gen2_0:irq
-	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [jtag_uart_0:rst_n, mm_interconnect_0:vga_display_0_reset_reset_bridge_in_reset_reset, sdram_pll:reset, spi_0:reset_n, sysid_qsys_0:reset_n, timer_0:reset_n, usb_gpx:reset_n, usb_irq:reset_n, usb_rst:reset_n, vga_display_0:reset]
-	wire         nios2_gen2_0_debug_reset_request_reset;                      // nios2_gen2_0:debug_reset_request -> [rst_controller:reset_in1, rst_controller_002:reset_in1]
-	wire         rst_controller_001_reset_out_reset;                          // rst_controller_001:reset_out -> [irq_mapper:reset, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, onchip_memory2_0:reset]
-	wire         rst_controller_001_reset_out_reset_req;                      // rst_controller_001:reset_req -> [nios2_gen2_0:reset_req, onchip_memory2_0:reset_req, rst_translator:reset_req_in]
+	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [I2C:rst_n, irq_mapper:reset, mm_interconnect_0:I2C_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, onchip_memory2_0:reset, rst_translator:in_reset]
+	wire         rst_controller_reset_out_reset_req;                          // rst_controller:reset_req -> [nios2_gen2_0:reset_req, onchip_memory2_0:reset_req, rst_translator:reset_req_in]
+	wire         rst_controller_001_reset_out_reset;                          // rst_controller_001:reset_out -> [jtag_uart_0:rst_n, mm_interconnect_0:vga_display_0_reset_reset_bridge_in_reset_reset, sdram_pll:reset, spi_0:reset_n, sysid_qsys_0:reset_n, timer_0:reset_n, usb_gpx:reset_n, usb_irq:reset_n, usb_rst:reset_n, vga_display_0:reset]
+	wire         nios2_gen2_0_debug_reset_request_reset;                      // nios2_gen2_0:debug_reset_request -> [rst_controller_001:reset_in1, rst_controller_002:reset_in1]
 	wire         rst_controller_002_reset_out_reset;                          // rst_controller_002:reset_out -> [mm_interconnect_0:sdram_reset_reset_bridge_in_reset_reset, sdram:reset_n]
+
+	altera_i2cslave_to_avlmm_bridge #(
+		.I2C_SLAVE_ADDRESS (7'b1010101),
+		.BYTE_ADDRESSING   (2),
+		.ADDRESS_STEALING  (0),
+		.READ_ONLY         (0)
+	) i2c (
+		.clk           (clk_clk),                         //         clock.clk
+		.address       (i2c_avalon_master_address),       // avalon_master.address
+		.read          (i2c_avalon_master_read),          //              .read
+		.readdata      (i2c_avalon_master_readdata),      //              .readdata
+		.readdatavalid (i2c_avalon_master_readdatavalid), //              .readdatavalid
+		.waitrequest   (i2c_avalon_master_waitrequest),   //              .waitrequest
+		.write         (i2c_avalon_master_write),         //              .write
+		.byteenable    (i2c_avalon_master_byteenable),    //              .byteenable
+		.writedata     (i2c_avalon_master_writedata),     //              .writedata
+		.rst_n         (~rst_controller_reset_out_reset), //         reset.reset_n
+		.i2c_data_in   (i2c_conduit_data_in),             //   conduit_end.conduit_data_in
+		.i2c_clk_in    (i2c_conduit_clk_in),              //              .conduit_clk_in
+		.i2c_data_oe   (i2c_conduit_data_oe),             //              .conduit_data_oe
+		.i2c_clk_oe    (i2c_conduit_clk_oe)               //              .conduit_clk_oe
+	);
 
 	soc_jtag_uart_0 jtag_uart_0 (
 		.clk            (clk_clk),                                                     //               clk.clk
-		.rst_n          (~rst_controller_reset_out_reset),                             //             reset.reset_n
+		.rst_n          (~rst_controller_001_reset_out_reset),                         //             reset.reset_n
 		.av_chipselect  (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_chipselect),  // avalon_jtag_slave.chipselect
 		.av_address     (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_address),     //                  .address
 		.av_read_n      (~mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_read),       //                  .read_n
@@ -131,8 +165,8 @@ module soc (
 
 	soc_nios2_gen2_0 nios2_gen2_0 (
 		.clk                                 (clk_clk),                                                    //                       clk.clk
-		.reset_n                             (~rst_controller_001_reset_out_reset),                        //                     reset.reset_n
-		.reset_req                           (rst_controller_001_reset_out_reset_req),                     //                          .reset_req
+		.reset_n                             (~rst_controller_reset_out_reset),                            //                     reset.reset_n
+		.reset_req                           (rst_controller_reset_out_reset_req),                         //                          .reset_req
 		.d_address                           (nios2_gen2_0_data_master_address),                           //               data_master.address
 		.d_byteenable                        (nios2_gen2_0_data_master_byteenable),                        //                          .byteenable
 		.d_read                              (nios2_gen2_0_data_master_read),                              //                          .read
@@ -167,8 +201,8 @@ module soc (
 		.readdata   (mm_interconnect_0_onchip_memory2_0_s1_readdata),   //       .readdata
 		.writedata  (mm_interconnect_0_onchip_memory2_0_s1_writedata),  //       .writedata
 		.byteenable (mm_interconnect_0_onchip_memory2_0_s1_byteenable), //       .byteenable
-		.reset      (rst_controller_001_reset_out_reset),               // reset1.reset
-		.reset_req  (rst_controller_001_reset_out_reset_req),           //       .reset_req
+		.reset      (rst_controller_reset_out_reset),                   // reset1.reset
+		.reset_req  (rst_controller_reset_out_reset_req),               //       .reset_req
 		.freeze     (1'b0)                                              // (terminated)
 	);
 
@@ -197,7 +231,7 @@ module soc (
 
 	soc_sdram_pll sdram_pll (
 		.clk                (clk_clk),                                         //       inclk_interface.clk
-		.reset              (rst_controller_reset_out_reset),                  // inclk_interface_reset.reset
+		.reset              (rst_controller_001_reset_out_reset),              // inclk_interface_reset.reset
 		.read               (mm_interconnect_0_sdram_pll_pll_slave_read),      //             pll_slave.read
 		.write              (mm_interconnect_0_sdram_pll_pll_slave_write),     //                      .write
 		.address            (mm_interconnect_0_sdram_pll_pll_slave_address),   //                      .address
@@ -224,7 +258,7 @@ module soc (
 
 	soc_spi_0 spi_0 (
 		.clk           (clk_clk),                                             //              clk.clk
-		.reset_n       (~rst_controller_reset_out_reset),                     //            reset.reset_n
+		.reset_n       (~rst_controller_001_reset_out_reset),                 //            reset.reset_n
 		.data_from_cpu (mm_interconnect_0_spi_0_spi_control_port_writedata),  // spi_control_port.writedata
 		.data_to_cpu   (mm_interconnect_0_spi_0_spi_control_port_readdata),   //                 .readdata
 		.mem_addr      (mm_interconnect_0_spi_0_spi_control_port_address),    //                 .address
@@ -240,14 +274,14 @@ module soc (
 
 	soc_sysid_qsys_0 sysid_qsys_0 (
 		.clock    (clk_clk),                                               //           clk.clk
-		.reset_n  (~rst_controller_reset_out_reset),                       //         reset.reset_n
+		.reset_n  (~rst_controller_001_reset_out_reset),                   //         reset.reset_n
 		.readdata (mm_interconnect_0_sysid_qsys_0_control_slave_readdata), // control_slave.readdata
 		.address  (mm_interconnect_0_sysid_qsys_0_control_slave_address)   //              .address
 	);
 
 	soc_timer_0 timer_0 (
 		.clk        (clk_clk),                                 //   clk.clk
-		.reset_n    (~rst_controller_reset_out_reset),         // reset.reset_n
+		.reset_n    (~rst_controller_001_reset_out_reset),     // reset.reset_n
 		.address    (mm_interconnect_0_timer_0_s1_address),    //    s1.address
 		.writedata  (mm_interconnect_0_timer_0_s1_writedata),  //      .writedata
 		.readdata   (mm_interconnect_0_timer_0_s1_readdata),   //      .readdata
@@ -258,7 +292,7 @@ module soc (
 
 	soc_usb_gpx usb_gpx (
 		.clk      (clk_clk),                               //                 clk.clk
-		.reset_n  (~rst_controller_reset_out_reset),       //               reset.reset_n
+		.reset_n  (~rst_controller_001_reset_out_reset),   //               reset.reset_n
 		.address  (mm_interconnect_0_usb_gpx_s1_address),  //                  s1.address
 		.readdata (mm_interconnect_0_usb_gpx_s1_readdata), //                    .readdata
 		.in_port  (usb_gpx_export)                         // external_connection.export
@@ -266,7 +300,7 @@ module soc (
 
 	soc_usb_gpx usb_irq (
 		.clk      (clk_clk),                               //                 clk.clk
-		.reset_n  (~rst_controller_reset_out_reset),       //               reset.reset_n
+		.reset_n  (~rst_controller_001_reset_out_reset),   //               reset.reset_n
 		.address  (mm_interconnect_0_usb_irq_s1_address),  //                  s1.address
 		.readdata (mm_interconnect_0_usb_irq_s1_readdata), //                    .readdata
 		.in_port  (usb_irq_export)                         // external_connection.export
@@ -274,7 +308,7 @@ module soc (
 
 	soc_usb_rst usb_rst (
 		.clk        (clk_clk),                                 //                 clk.clk
-		.reset_n    (~rst_controller_reset_out_reset),         //               reset.reset_n
+		.reset_n    (~rst_controller_001_reset_out_reset),     //               reset.reset_n
 		.address    (mm_interconnect_0_usb_rst_s1_address),    //                  s1.address
 		.write_n    (~mm_interconnect_0_usb_rst_s1_write),     //                    .write_n
 		.writedata  (mm_interconnect_0_usb_rst_s1_writedata),  //                    .writedata
@@ -285,7 +319,7 @@ module soc (
 
 	vga_display vga_display_0 (
 		.clk                         (clk_clk),                                   //         clock.clk
-		.reset                       (rst_controller_reset_out_reset),            //         reset.reset
+		.reset                       (rst_controller_001_reset_out_reset),        //         reset.reset
 		.blue                        (vga_port_blue),                             //      vga_port.blue
 		.green                       (vga_port_green),                            //              .green
 		.hs                          (vga_port_hs),                               //              .hs
@@ -301,9 +335,17 @@ module soc (
 	soc_mm_interconnect_0 mm_interconnect_0 (
 		.clk_0_clk_clk                                   (clk_clk),                                                     //                                 clk_0_clk.clk
 		.sdram_pll_c0_clk                                (sdram_pll_c0_clk),                                            //                              sdram_pll_c0.clk
-		.nios2_gen2_0_reset_reset_bridge_in_reset_reset  (rst_controller_001_reset_out_reset),                          //  nios2_gen2_0_reset_reset_bridge_in_reset.reset
+		.I2C_reset_reset_bridge_in_reset_reset           (rst_controller_reset_out_reset),                              //           I2C_reset_reset_bridge_in_reset.reset
 		.sdram_reset_reset_bridge_in_reset_reset         (rst_controller_002_reset_out_reset),                          //         sdram_reset_reset_bridge_in_reset.reset
-		.vga_display_0_reset_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),                              // vga_display_0_reset_reset_bridge_in_reset.reset
+		.vga_display_0_reset_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),                          // vga_display_0_reset_reset_bridge_in_reset.reset
+		.I2C_avalon_master_address                       (i2c_avalon_master_address),                                   //                         I2C_avalon_master.address
+		.I2C_avalon_master_waitrequest                   (i2c_avalon_master_waitrequest),                               //                                          .waitrequest
+		.I2C_avalon_master_byteenable                    (i2c_avalon_master_byteenable),                                //                                          .byteenable
+		.I2C_avalon_master_read                          (i2c_avalon_master_read),                                      //                                          .read
+		.I2C_avalon_master_readdata                      (i2c_avalon_master_readdata),                                  //                                          .readdata
+		.I2C_avalon_master_readdatavalid                 (i2c_avalon_master_readdatavalid),                             //                                          .readdatavalid
+		.I2C_avalon_master_write                         (i2c_avalon_master_write),                                     //                                          .write
+		.I2C_avalon_master_writedata                     (i2c_avalon_master_writedata),                                 //                                          .writedata
 		.nios2_gen2_0_data_master_address                (nios2_gen2_0_data_master_address),                            //                  nios2_gen2_0_data_master.address
 		.nios2_gen2_0_data_master_waitrequest            (nios2_gen2_0_data_master_waitrequest),                        //                                          .waitrequest
 		.nios2_gen2_0_data_master_byteenable             (nios2_gen2_0_data_master_byteenable),                         //                                          .byteenable
@@ -382,75 +424,12 @@ module soc (
 	);
 
 	soc_irq_mapper irq_mapper (
-		.clk           (clk_clk),                            //       clk.clk
-		.reset         (rst_controller_001_reset_out_reset), // clk_reset.reset
-		.receiver0_irq (irq_mapper_receiver0_irq),           // receiver0.irq
-		.receiver1_irq (irq_mapper_receiver1_irq),           // receiver1.irq
-		.receiver2_irq (irq_mapper_receiver2_irq),           // receiver2.irq
-		.sender_irq    (nios2_gen2_0_irq_irq)                //    sender.irq
-	);
-
-	altera_reset_controller #(
-		.NUM_RESET_INPUTS          (2),
-		.OUTPUT_RESET_SYNC_EDGES   ("deassert"),
-		.SYNC_DEPTH                (2),
-		.RESET_REQUEST_PRESENT     (0),
-		.RESET_REQ_WAIT_TIME       (1),
-		.MIN_RST_ASSERTION_TIME    (3),
-		.RESET_REQ_EARLY_DSRT_TIME (1),
-		.USE_RESET_REQUEST_IN0     (0),
-		.USE_RESET_REQUEST_IN1     (0),
-		.USE_RESET_REQUEST_IN2     (0),
-		.USE_RESET_REQUEST_IN3     (0),
-		.USE_RESET_REQUEST_IN4     (0),
-		.USE_RESET_REQUEST_IN5     (0),
-		.USE_RESET_REQUEST_IN6     (0),
-		.USE_RESET_REQUEST_IN7     (0),
-		.USE_RESET_REQUEST_IN8     (0),
-		.USE_RESET_REQUEST_IN9     (0),
-		.USE_RESET_REQUEST_IN10    (0),
-		.USE_RESET_REQUEST_IN11    (0),
-		.USE_RESET_REQUEST_IN12    (0),
-		.USE_RESET_REQUEST_IN13    (0),
-		.USE_RESET_REQUEST_IN14    (0),
-		.USE_RESET_REQUEST_IN15    (0),
-		.ADAPT_RESET_REQUEST       (0)
-	) rst_controller (
-		.reset_in0      (~reset_reset_n),                         // reset_in0.reset
-		.reset_in1      (nios2_gen2_0_debug_reset_request_reset), // reset_in1.reset
-		.clk            (clk_clk),                                //       clk.clk
-		.reset_out      (rst_controller_reset_out_reset),         // reset_out.reset
-		.reset_req      (),                                       // (terminated)
-		.reset_req_in0  (1'b0),                                   // (terminated)
-		.reset_req_in1  (1'b0),                                   // (terminated)
-		.reset_in2      (1'b0),                                   // (terminated)
-		.reset_req_in2  (1'b0),                                   // (terminated)
-		.reset_in3      (1'b0),                                   // (terminated)
-		.reset_req_in3  (1'b0),                                   // (terminated)
-		.reset_in4      (1'b0),                                   // (terminated)
-		.reset_req_in4  (1'b0),                                   // (terminated)
-		.reset_in5      (1'b0),                                   // (terminated)
-		.reset_req_in5  (1'b0),                                   // (terminated)
-		.reset_in6      (1'b0),                                   // (terminated)
-		.reset_req_in6  (1'b0),                                   // (terminated)
-		.reset_in7      (1'b0),                                   // (terminated)
-		.reset_req_in7  (1'b0),                                   // (terminated)
-		.reset_in8      (1'b0),                                   // (terminated)
-		.reset_req_in8  (1'b0),                                   // (terminated)
-		.reset_in9      (1'b0),                                   // (terminated)
-		.reset_req_in9  (1'b0),                                   // (terminated)
-		.reset_in10     (1'b0),                                   // (terminated)
-		.reset_req_in10 (1'b0),                                   // (terminated)
-		.reset_in11     (1'b0),                                   // (terminated)
-		.reset_req_in11 (1'b0),                                   // (terminated)
-		.reset_in12     (1'b0),                                   // (terminated)
-		.reset_req_in12 (1'b0),                                   // (terminated)
-		.reset_in13     (1'b0),                                   // (terminated)
-		.reset_req_in13 (1'b0),                                   // (terminated)
-		.reset_in14     (1'b0),                                   // (terminated)
-		.reset_req_in14 (1'b0),                                   // (terminated)
-		.reset_in15     (1'b0),                                   // (terminated)
-		.reset_req_in15 (1'b0)                                    // (terminated)
+		.clk           (clk_clk),                        //       clk.clk
+		.reset         (rst_controller_reset_out_reset), // clk_reset.reset
+		.receiver0_irq (irq_mapper_receiver0_irq),       // receiver0.irq
+		.receiver1_irq (irq_mapper_receiver1_irq),       // receiver1.irq
+		.receiver2_irq (irq_mapper_receiver2_irq),       // receiver2.irq
+		.sender_irq    (nios2_gen2_0_irq_irq)            //    sender.irq
 	);
 
 	altera_reset_controller #(
@@ -478,13 +457,76 @@ module soc (
 		.USE_RESET_REQUEST_IN14    (0),
 		.USE_RESET_REQUEST_IN15    (0),
 		.ADAPT_RESET_REQUEST       (0)
+	) rst_controller (
+		.reset_in0      (~reset_reset_n),                     // reset_in0.reset
+		.clk            (clk_clk),                            //       clk.clk
+		.reset_out      (rst_controller_reset_out_reset),     // reset_out.reset
+		.reset_req      (rst_controller_reset_out_reset_req), //          .reset_req
+		.reset_req_in0  (1'b0),                               // (terminated)
+		.reset_in1      (1'b0),                               // (terminated)
+		.reset_req_in1  (1'b0),                               // (terminated)
+		.reset_in2      (1'b0),                               // (terminated)
+		.reset_req_in2  (1'b0),                               // (terminated)
+		.reset_in3      (1'b0),                               // (terminated)
+		.reset_req_in3  (1'b0),                               // (terminated)
+		.reset_in4      (1'b0),                               // (terminated)
+		.reset_req_in4  (1'b0),                               // (terminated)
+		.reset_in5      (1'b0),                               // (terminated)
+		.reset_req_in5  (1'b0),                               // (terminated)
+		.reset_in6      (1'b0),                               // (terminated)
+		.reset_req_in6  (1'b0),                               // (terminated)
+		.reset_in7      (1'b0),                               // (terminated)
+		.reset_req_in7  (1'b0),                               // (terminated)
+		.reset_in8      (1'b0),                               // (terminated)
+		.reset_req_in8  (1'b0),                               // (terminated)
+		.reset_in9      (1'b0),                               // (terminated)
+		.reset_req_in9  (1'b0),                               // (terminated)
+		.reset_in10     (1'b0),                               // (terminated)
+		.reset_req_in10 (1'b0),                               // (terminated)
+		.reset_in11     (1'b0),                               // (terminated)
+		.reset_req_in11 (1'b0),                               // (terminated)
+		.reset_in12     (1'b0),                               // (terminated)
+		.reset_req_in12 (1'b0),                               // (terminated)
+		.reset_in13     (1'b0),                               // (terminated)
+		.reset_req_in13 (1'b0),                               // (terminated)
+		.reset_in14     (1'b0),                               // (terminated)
+		.reset_req_in14 (1'b0),                               // (terminated)
+		.reset_in15     (1'b0),                               // (terminated)
+		.reset_req_in15 (1'b0)                                // (terminated)
+	);
+
+	altera_reset_controller #(
+		.NUM_RESET_INPUTS          (2),
+		.OUTPUT_RESET_SYNC_EDGES   ("deassert"),
+		.SYNC_DEPTH                (2),
+		.RESET_REQUEST_PRESENT     (0),
+		.RESET_REQ_WAIT_TIME       (1),
+		.MIN_RST_ASSERTION_TIME    (3),
+		.RESET_REQ_EARLY_DSRT_TIME (1),
+		.USE_RESET_REQUEST_IN0     (0),
+		.USE_RESET_REQUEST_IN1     (0),
+		.USE_RESET_REQUEST_IN2     (0),
+		.USE_RESET_REQUEST_IN3     (0),
+		.USE_RESET_REQUEST_IN4     (0),
+		.USE_RESET_REQUEST_IN5     (0),
+		.USE_RESET_REQUEST_IN6     (0),
+		.USE_RESET_REQUEST_IN7     (0),
+		.USE_RESET_REQUEST_IN8     (0),
+		.USE_RESET_REQUEST_IN9     (0),
+		.USE_RESET_REQUEST_IN10    (0),
+		.USE_RESET_REQUEST_IN11    (0),
+		.USE_RESET_REQUEST_IN12    (0),
+		.USE_RESET_REQUEST_IN13    (0),
+		.USE_RESET_REQUEST_IN14    (0),
+		.USE_RESET_REQUEST_IN15    (0),
+		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller_001 (
 		.reset_in0      (~reset_reset_n),                         // reset_in0.reset
+		.reset_in1      (nios2_gen2_0_debug_reset_request_reset), // reset_in1.reset
 		.clk            (clk_clk),                                //       clk.clk
 		.reset_out      (rst_controller_001_reset_out_reset),     // reset_out.reset
-		.reset_req      (rst_controller_001_reset_out_reset_req), //          .reset_req
+		.reset_req      (),                                       // (terminated)
 		.reset_req_in0  (1'b0),                                   // (terminated)
-		.reset_in1      (1'b0),                                   // (terminated)
 		.reset_req_in1  (1'b0),                                   // (terminated)
 		.reset_in2      (1'b0),                                   // (terminated)
 		.reset_req_in2  (1'b0),                                   // (terminated)
