@@ -28,6 +28,7 @@ void SPI_init(BYTE sync_mode, BYTE bus_mode, BYTE smp_phase) {
 //writes single byte to MAX3421E via SPI, simultanously reads status register and returns it
 BYTE SPI_wr(BYTE data) {
 	//This function is never used by the code, so you do not need to fill it in
+	return 0;
 }
 //writes register to MAX3421E via SPI
 void MAXreg_wr(BYTE reg, BYTE val) {

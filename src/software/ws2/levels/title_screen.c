@@ -17,105 +17,81 @@ void run_title_screen() {
     scene_t scene;
     clear_scene(&scene);
 
-    scene.scroll.max.x  = 0;
-    scene.scroll.max.y  = 0;
-    scene.max.x         = SCREEN_WIDTH;
-    scene.max.y         = SCREEN_HEIGHT;
+    scene.max.x = SCREEN_WIDTH;
+    scene.max.y = SCREEN_HEIGHT;
     
-    int background              = allocate_object(&scene, BACKGROUND, 1);
-    int ship                    = allocate_object(&scene, EFFECTS, 1);
-    int title_text              = allocate_object(&scene, EFFECTS, 1);
-    int start_button_unpressed  = allocate_object(&scene, SHIPS, 1);
-    int start_button_pressed    = allocate_object(&scene, SHIPS, 0);
-    int cursor                  = allocate_object(&scene, CURSOR, 1);
+    int background              = allocate_object(&scene, BACKGROUND, 1, 0);
+    int ship                    = allocate_object(&scene, EFFECTS, 1, 0);
+    int title_text              = allocate_object(&scene, EFFECTS, 1, 0);
+    int start_button_unpressed  = allocate_object(&scene, SHIPS, 1, 0);
+    int start_button_pressed    = allocate_object(&scene, SHIPS, 0, 0);
+    int cursor                  = allocate_object(&scene, CURSOR, 1, 0);
     
-    scene.objects[background            ].sprite = lightspeed_background_sprite;
-    scene.objects[ship                  ].sprite = title_screen_ship_sprite;
-    scene.objects[title_text            ].sprite = WAR_STARS_II_sprite;
-    scene.objects[start_button_unpressed].sprite = start_button_unpressed_sprite;
-    scene.objects[start_button_pressed  ].sprite = start_button_pressed_sprite;
-    scene.objects[cursor                ].sprite = cursor_sprite;
+    scene.objects.untyped[background            ].sprite = lightspeed_background_sprite;
+    scene.objects.untyped[ship                  ].sprite = title_screen_ship_sprite;
+    scene.objects.untyped[title_text            ].sprite = WAR_STARS_II_sprite;
+    scene.objects.untyped[start_button_unpressed].sprite = start_button_unpressed_sprite;
+    scene.objects.untyped[start_button_pressed  ].sprite = start_button_pressed_sprite;
+    scene.objects.untyped[cursor                ].sprite = cursor_sprite;
 
-    scene.objects[ship].pos.x = ((scene.max.x / 2) - scene.objects[ship].sprite.width) / 2;
-    scene.objects[ship].pos.y = scene.max.y / 2;
+    scene.objects.untyped[ship].pos.x = 50;
+    scene.objects.untyped[ship].pos.y = (scene.max.y - scene.objects.untyped[ship].sprite.height) / 2;
 
-    scene.objects[title_text].sprite.screen_x = (scene.max.x - scene.objects[title_text].sprite.width) / 2;
-    scene.objects[title_text].sprite.screen_y = 100;
+    scene.objects.untyped[title_text].pos.x = (scene.max.x - scene.objects.untyped[title_text].sprite.width) / 2;
+    scene.objects.untyped[title_text].pos.y = 100;
 
-    scene.objects[start_button_unpressed].sprite.screen_x = SCREEN_WIDTH - SCREEN_WIDTH / 4 - scene.objects[start_button_unpressed].sprite.width / 2;
-    scene.objects[start_button_unpressed].sprite.screen_y = SCREEN_HEIGHT - 50 - scene.objects[start_button_unpressed].sprite.height;
+    scene.objects.untyped[start_button_unpressed].pos.x = 3 * scene.max.x / 4 - scene.objects.untyped[start_button_unpressed].sprite.width / 2;
+    scene.objects.untyped[start_button_unpressed].pos.y = scene.max.y - scene.objects.untyped[start_button_unpressed].sprite.height - 50;
 
-    scene.objects[start_button_pressed].sprite.screen_x = scene.objects[start_button_unpressed].sprite.screen_x;
-    scene.objects[start_button_pressed].sprite.screen_y = scene.objects[start_button_unpressed].sprite.screen_y;
+    scene.objects.untyped[start_button_pressed].pos = scene.objects.untyped[start_button_unpressed].pos;
 
     float dx = 0;
-    float x = scene.objects[ship].sprite.screen_x;
+    float x = scene.objects.untyped[ship].pos.x;
 
     int start_fading = 0;
     int fading = 0;
     int exiting = 0;
 
-    fade_t fade_out;
+    fade_t fade;
+
+    mouse_t mouse = new_mouse(scene.max.x / 2, scene.max.y / 2);
 
     int running = 1;
-
-    mouse_t mouse       = new_mouse();
-    mouse_t last_mouse  = new_mouse();
-    mouse_t game_mouse  = new_mouse();
-    game_mouse.x = SCREEN_WIDTH / 2;
-    game_mouse.y = SCREEN_HEIGHT / 2;
-
     while (running) {
-        poll_mouse(&mouse);
-        
+        poll_mouse(&mouse, 0, 1);
+
         if (is_ready(&frame_rate)) {
-            scene.objects[background].sprite.start_x += 2;
-            if (scene.objects[background].sprite.start_x >= scene.objects[background].sprite.width - SCREEN_WIDTH)
-                scene.objects[background].sprite.start_x = 0;
-            scene.objects[background].sprite.end_x = scene.objects[background].sprite.start_x + SCREEN_WIDTH;
+            handle_mouse(&mouse, &scene, 0, 0); 
+            scene.objects.untyped[cursor].pos = mouse.pos;
 
-            game_mouse.x += mouse.x - last_mouse.x;
-            game_mouse.y -= mouse.y - last_mouse.y;
-            last_mouse = mouse;
+            scene.objects.untyped[background].sprite.start_x += 2;
+            if (scene.objects.untyped[background].sprite.start_x >= scene.objects.untyped[background].sprite.width - SCREEN_WIDTH)
+                scene.objects.untyped[background].sprite.start_x = 0;
+            scene.objects.untyped[background].sprite.end_x = scene.objects.untyped[background].sprite.start_x + SCREEN_WIDTH;
 
-            if (game_mouse.x < 0)
-                game_mouse.x = 0;
-            else if (game_mouse.x > SCREEN_WIDTH)
-                game_mouse.x = SCREEN_WIDTH;
-            if (game_mouse.y < 0)
-                game_mouse.y = 0;
-            else if (game_mouse.y > SCREEN_HEIGHT)
-                game_mouse.y = SCREEN_HEIGHT;    
-
-            scene.objects[cursor].sprite.screen_x = game_mouse.x;
-            scene.objects[cursor].sprite.screen_y = game_mouse.y;
-
-            if (mouse.left_click) {
-                if (is_clicked(&game_mouse, &scene.objects[start_button_unpressed])) {
-                    scene.objects[start_button_unpressed].visable = 0;
-                    scene.objects[start_button_pressed  ].visable = 1;
+            if (mouse.buttons.left) {
+                if (is_clicked(&mouse, &scene.objects.untyped[start_button_unpressed])) {
+                    scene.objects.untyped[start_button_unpressed].visable = 0;
+                    scene.objects.untyped[start_button_pressed  ].visable = 1;
                     exiting = 1;
                 }
             }
 
             if (exiting) {
-                scene.objects[start_button_unpressed].visable   = 0;
-                scene.objects[start_button_pressed].visable     = 1;
-
                 dx += 0.35f;
                 x += dx;
-                scene.objects[ship].sprite.screen_x = (uint32_t) x;
+                scene.objects.untyped[ship].pos.x = x;
             }
 
-            fading = scene.objects[ship].sprite.screen_x > SCREEN_WIDTH;
+            fading = scene.objects.untyped[ship].pos.x > scene.max.x;
 
-            if (!start_fading && fading) {
-                fade_out = create_fade(0x0000, 2);
-                start_fading = 1;
+            if (fading) {
+                if (!start_fading) {
+                    fade = create_fade(0x0000, 2);
+                    start_fading = 1;
+                }
+                running = !fade_to(&fade);
             }
-
-            if (fading)
-                running = !fade_to(&fade_out);
             
             while (gdu_is_running());
             push_scene(&scene);

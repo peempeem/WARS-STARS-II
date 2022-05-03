@@ -1,6 +1,9 @@
 #ifndef DISPLAY_H
 #define DISPLAY_H
 
+#include "mouse.h"
+#include "game.h"
+
 typedef struct FADE {
     float       start;
     float       end;

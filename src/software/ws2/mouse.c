@@ -58,16 +58,15 @@ void init_mouse() {
     USB_init();
 }
 
-mouse_t new_mouse() {
+mouse_t new_mouse(int x, int y) {
     mouse_t mouse = {
-        0, 0,
-        0, 0,
-        0, 0        
+        {x, y},
+        {0, 0}
     };
     return mouse;
 }
 
-int poll_mouse(mouse_t* mouse) {
+int poll_mouse(mouse_t* mouse, int reverse_x, int reverse_y) {
     static BOOT_MOUSE_REPORT buf;
     static BYTE device;
     static BYTE runningdebugflag = 0;
@@ -90,12 +89,17 @@ int poll_mouse(mouse_t* mouse) {
                 return 0;
             }
 
-            mouse->dx = (signed char) buf.x;
-            mouse->dy = (signed char) buf.y;
-            mouse->x += (signed char) buf.x;
-            mouse->y += (signed char) buf.y;
-            mouse->left_click = buf.button & 0x01;
-            mouse->right_click = buf.button & 0x02;
+            if (reverse_x)
+                mouse->pos.x -= (signed char) buf.x;
+            else
+                mouse->pos.x += (signed char) buf.x;
+            if (reverse_y)
+                mouse->pos.y -= (signed char) buf.y;
+            else
+                mouse->pos.y += (signed char) buf.y;
+                
+            mouse->buttons.left	= buf.button & 0x01;
+            mouse->buttons.right = buf.button & 0x02;
             return 1;
         }
     } else {

@@ -60,7 +60,7 @@ int is_clicked(mouse_t* mouse, game_object_t* object) {
 void handle_mouse(mouse_t* mouse, scene_t* scene, int h_scroll, int v_scroll) {
     if (mouse->pos.x < 0) {
         if (h_scroll) {
-            scene->scroll.pos.x -= mouse->pos.x;
+            scene->scroll.pos.x += mouse->pos.x;
             if (scene->scroll.pos.x < 0)
                 scene->scroll.pos.x = 0;
         }
@@ -68,14 +68,14 @@ void handle_mouse(mouse_t* mouse, scene_t* scene, int h_scroll, int v_scroll) {
     } else if (mouse->pos.x > SCREEN_WIDTH) {
         if (h_scroll) {
             scene->scroll.pos.x += mouse->pos.x - SCREEN_WIDTH;
-            if (scene->scroll.pos.x > scene->scroll.pos.x)
-                scene->scroll.pos.x = scene->scroll.pos.x;
+            if (scene->scroll.pos.x > scene->scroll.max.x)
+                scene->scroll.pos.x = scene->scroll.max.x;
         }
         mouse->pos.x = SCREEN_WIDTH;
     }       
     if (mouse->pos.y < 0) {
         if (v_scroll) {
-            scene->scroll.pos.y -= mouse->pos.y;
+            scene->scroll.pos.y += mouse->pos.y;
             if (scene->scroll.pos.y < 0)
                 scene->scroll.pos.y = 0;
         }
@@ -83,8 +83,8 @@ void handle_mouse(mouse_t* mouse, scene_t* scene, int h_scroll, int v_scroll) {
     } else if (mouse->pos.y > SCREEN_HEIGHT) {
         if (v_scroll) {
             scene->scroll.pos.y += mouse->pos.y - SCREEN_HEIGHT;
-            if (scene->scroll.pos.y > scene->scroll.pos.y)
-                scene->scroll.pos.y = scene->scroll.pos.y;
+            if (scene->scroll.pos.y > scene->scroll.max.y)
+                scene->scroll.pos.y = scene->scroll.max.y;
         }
         mouse->pos.y = SCREEN_HEIGHT;
     }

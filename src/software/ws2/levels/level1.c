@@ -8,6 +8,7 @@
 #include "../sprites/level1_background.h"
 #include "../sprites/level1_player_planet.h"
 #include "../sprites/level1_enemy_planet.h"
+#include "../sprites/statusbar.h"
 #include "../sprites/cursor.h"
 
 int run_level1() {
@@ -16,46 +17,54 @@ int run_level1() {
     clear_scene(&scene);
 
     scene.scroll.max.x  = 3 * (level1_background_sprite.width - SCREEN_WIDTH);
-    scene.scroll.max.y  = 0;
-    scene.max.x         = 3 * level1_background_sprite.width;
+    scene.max.x         = scene.scroll.max.x + SCREEN_WIDTH;
     scene.max.y         = SCREEN_HEIGHT;
 
-    int background      = allocate_object(&scene, BACKGROUND, 1);
-    int player_planet   = allocate_object(&scene, BACKGROUND, 1);
-    int enemy_planet    = allocate_object(&scene, BACKGROUND, 1);
-    int cursor          = allocate_object(&scene, CURSOR, 1);
+    int background      = allocate_object(&scene, BACKGROUND, 1, 0);
+    int player_planet   = allocate_object(&scene, BACKGROUND, 1, 1);
+    int enemy_planet    = allocate_object(&scene, BACKGROUND, 1, 1);
+    int statusbar       = allocate_object(&scene, EFFECTS, 1, 0);
+    int cursor          = allocate_object(&scene, CURSOR, 1, 0);
 
-    scene.objects[background    ].sprite = level1_background_sprite;
-    scene.objects[player_planet ].sprite = level1_player_planet_sprite;
-    scene.objects[enemy_planet  ].sprite = level1_enemy_planet_sprite;
-    scene.objects[cursor        ].sprite = cursor_sprite;
+    scene.objects.untyped[background    ].sprite = level1_background_sprite;
+    scene.objects.untyped[player_planet ].sprite = level1_player_planet_sprite;
+    scene.objects.untyped[enemy_planet  ].sprite = level1_enemy_planet_sprite;
+    scene.objects.untyped[statusbar     ].sprite = statusbar_sprite;
+    scene.objects.untyped[cursor        ].sprite = cursor_sprite;
 
-    scene.objects[player_planet].pos.x = 50;
-    scene.objects[player_planet].pos.y = (scene.max.y - scene.objects[player_planet].sprite.height) / 2;
+    scene.objects.untyped[player_planet].pos.x = 50;
+    scene.objects.untyped[player_planet].pos.y = (scene.max.y - scene.objects.untyped[player_planet].sprite.height) / 2;
 
-    scene.objects[enemy_planet].pos.x = scene.max.x - 50;
-    scene.objects[enemy_planet].pos.y = (scene.max.y - scene.objects[enemy_planet].sprite.height) / 2;
+    scene.objects.untyped[enemy_planet].pos.x = scene.max.x - 50 - scene.objects.untyped[enemy_planet].sprite.width;
+    scene.objects.untyped[enemy_planet].pos.y = (scene.max.y - scene.objects.untyped[enemy_planet].sprite.height) / 2;
 
-    mouse_t mouse = new_mouse();
-    mouse.pos.x = SCREEN_WIDTH / 2;
-    mouse.pos.y = SCREEN_HEIGHT / 2;
+    scene.objects.untyped[statusbar].pos.y = SCREEN_HEIGHT - scene.objects.untyped[statusbar].sprite.height;
 
-    fade_t fade_in = create_fade(0x0000, 1);
+    mouse_t mouse = new_mouse(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+
+    fade_t fade = create_fade(0x0000, 1);
 
     int running = 1;
     while (running) {
-        poll_mouse(&mouse);
+        poll_mouse(&mouse, 0, 1);
 
         if (is_ready(&frame_rate)) {
-            fade_from(&fade_in);
-            
-            scene.objects[background].sprite.start_x = scene.scroll.pos.x / 3;
+            handle_mouse(&mouse, &scene, 1, 0); 
+            scene.objects.untyped[cursor].pos = mouse.pos;
 
-            scene.objects[cursor].pos = mouse.pos;
+            printf("%d, %d\n", mouse.pos.x, mouse.pos.y);
+
+            fade_from(&fade);
+            
+            scene.objects.untyped[background].sprite.start_x = scene.scroll.pos.x / 3;
+            scene.objects.untyped[background].sprite.end_x = scene.objects.untyped[background].sprite.start_x + SCREEN_WIDTH;
+
+            scene.objects.untyped[cursor].pos = mouse.pos;
 
             while (gdu_is_running());
-                push_scene(&scene);
-                start_render();
+            push_scene(&scene);
+            start_render();
         }
     }
+    return 0;
 }

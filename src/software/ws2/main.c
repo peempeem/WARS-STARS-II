@@ -27,8 +27,8 @@ int main() {
     
     init_mouse();
     mouse_t mouse;
-    while (!poll_mouse(&mouse));
-
+    while (!poll_mouse(&mouse, 0, 0));
+    
     run_title_screen();
     run_level1();
     

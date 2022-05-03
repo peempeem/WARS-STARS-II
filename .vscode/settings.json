@@ -20,6 +20,8 @@
         "alt_alarm.h": "c",
         "usb_ch9.h": "c",
         "title_screen.h": "c",
-        "common.h": "c"
+        "common.h": "c",
+        "limits": "c",
+        "level1_enemy_planet.h": "c"
     }
 }

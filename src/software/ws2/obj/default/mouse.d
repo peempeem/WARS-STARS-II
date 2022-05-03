@@ -1,4 +1,4 @@
-obj/default/mouse.o: mouse.c mouse.h ../ws2_bsp/system.h \
+obj/default/mouse.o: mouse.c mouse.h common.h ../ws2_bsp/system.h \
  ../ws2_bsp/linker.h ../ws2_bsp//drivers/inc/altera_avalon_spi.h \
  ../ws2_bsp//HAL/inc/alt_types.h \
  ../ws2_bsp//drivers/inc/altera_avalon_spi_regs.h \
@@ -9,6 +9,8 @@ obj/default/mouse.o: mouse.c mouse.h ../ws2_bsp/system.h \
  timer.h
 
 mouse.h:
+
+common.h:
 
 ../ws2_bsp/system.h:
 
