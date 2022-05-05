@@ -3,6 +3,7 @@
 
 #include "gdu.h"
 #include "common.h"
+#include "ships.h"
 
 #define BACKGROUND  0
 #define SHIPS       1
@@ -13,21 +14,37 @@
 #define SHIP_SPRITES        24
 #define EFFECT_SPRITES      31
 
+#define USER_SHIPS SHIP_SPRITES / 2
+
+#define PLAYER  0
+#define ENEMY   1
+
 typedef struct GAME_OBJECT {
     int used,
         visable,
-        scroll,
-        hp;
+        scroll;
     position_t pos;
     sprite_t sprite;
 } game_object_t;
 
+typedef struct SHIP_DATA {
+    int     index,
+            hp,
+            speed;
+    float   last_fire,
+            firerate;
+} ship_data_t;
+
 typedef struct SCENE {
-    struct SCROLL {
+    struct {
         position_t  pos,
                     max;
     } scroll;
     position_t  max;
+    struct {
+        ship_data_t player  [USER_SHIPS];
+        ship_data_t enemy   [USER_SHIPS];
+    } ships;
     union {
         struct {
             game_object_t background    [BACKGROUND_SPRITES];
@@ -40,8 +57,13 @@ typedef struct SCENE {
 } scene_t;
 
 int     allocate_object(scene_t* scene, int type, int visable, int scrolling);
-void    deallocate_object(game_object_t* object);
+void    deallocate_object(scene_t* scene, uint32_t object);
 void    push_scene(scene_t* scene);
 void    clear_scene(scene_t* scene);
+
+int     spawn_ship(scene_t* scene, const ship_t* ship, int user, position_t pos);
+void    destroy_ship(scene_t* scene, int user, uint32_t ship);
+
+void    update_game(scene_t* scene);
 
 #endif

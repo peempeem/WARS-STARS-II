@@ -21,31 +21,31 @@ void double_render() {
     while (gdu_is_running());
 }
 
-fade_t create_fade(uint16_t color, float seconds) {
-    float time = get_time();
+fade_t create_fade(uint16_t color, int dir) {
     fade_t fade = {
-        time,
-        time + seconds,
+        0,
+        0,
+        dir,
         color
     };
     return fade;
 }
 
-int fade_to(fade_t* fade) {
-    float bias = (get_time() - fade->start) / (fade->end - fade->start);
-    int done = bias > 1;
-    if (done)
-        bias = 1;
-    set_aura(fade->color, (uint32_t) (64 * bias));
-    return done;
+void start_fade(fade_t* fade, float seconds) {
+    float time  = get_time();
+    fade->start = time;
+    fade->end   = time + seconds;
 }
 
-int fade_from(fade_t* fade) {
+int is_fade_done(fade_t* fade) { return (get_time() - fade->start >= fade->end); }
+
+int show_fade(fade_t* fade) {
     float bias = (get_time() - fade->start) / (fade->end - fade->start);
     int done = bias > 1;
     if (done)
         bias = 1;
-    bias = 1 - bias;
+    if (fade->dir == FADE_FROM)
+        bias = 1 - bias;
     set_aura(fade->color, (uint32_t) (64 * bias));
     return done;
 }

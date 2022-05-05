@@ -89,6 +89,8 @@ int poll_mouse(mouse_t* mouse, int reverse_x, int reverse_y) {
                 return 0;
             }
 
+            
+
             if (reverse_x)
                 mouse->pos.x -= (signed char) buf.x;
             else
@@ -97,9 +99,17 @@ int poll_mouse(mouse_t* mouse, int reverse_x, int reverse_y) {
                 mouse->pos.y -= (signed char) buf.y;
             else
                 mouse->pos.y += (signed char) buf.y;
-                
-            mouse->buttons.left	= buf.button & 0x01;
-            mouse->buttons.right = buf.button & 0x02;
+
+            mouse_buttons_t buttons;
+            buttons.left    = buf.button & 0x01;
+            buttons.right   = buf.button & 0x02;
+
+            if (mouse->buttons.left && !buttons.left)
+                mouse->clicked.left = 1;
+            if (mouse->buttons.right && !buttons.right)
+                mouse->clicked.right = 1;
+            
+            mouse->buttons = buttons;
             return 1;
         }
     } else {

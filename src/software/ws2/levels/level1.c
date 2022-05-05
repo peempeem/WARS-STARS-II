@@ -11,6 +11,8 @@
 #include "../sprites/statusbar.h"
 #include "../sprites/cursor.h"
 
+#include "../ships.h"
+
 int run_level1() {
     rate_t frame_rate = create_rate(20);
     scene_t scene;
@@ -42,7 +44,8 @@ int run_level1() {
 
     mouse_t mouse = new_mouse(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
 
-    fade_t fade = create_fade(0x0000, 1);
+    fade_t fade = create_fade(0x0000, FADE_FROM);
+    start_fade(&fade, 1);
 
     int running = 1;
     while (running) {
@@ -52,14 +55,29 @@ int run_level1() {
             handle_mouse(&mouse, &scene, 1, 0); 
             scene.objects.untyped[cursor].pos = mouse.pos;
 
-            printf("%d, %d\n", mouse.pos.x, mouse.pos.y);
-
-            fade_from(&fade);
+            if (!is_fade_done(&fade))
+                show_fade(&fade);
             
             scene.objects.untyped[background].sprite.start_x = scene.scroll.pos.x / 3;
             scene.objects.untyped[background].sprite.end_x = scene.objects.untyped[background].sprite.start_x + SCREEN_WIDTH;
 
             scene.objects.untyped[cursor].pos = mouse.pos;
+
+            if (mouse.clicked.right) {
+                position_t pos = mouse.pos;
+                pos.x += scene.scroll.pos.x;
+                spawn_ship(&scene, &player_fighter, PLAYER, pos);
+                mouse.clicked.right = 0;
+            }
+
+            if (mouse.clicked.left) {
+                position_t pos = mouse.pos;
+                pos.x += scene.scroll.pos.x;
+                spawn_ship(&scene, &player_cruiser, PLAYER, pos);
+                mouse.clicked.left = 0;
+            }
+
+            update_game(&scene);
 
             while (gdu_is_running());
             push_scene(&scene);

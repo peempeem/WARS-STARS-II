@@ -11,6 +11,7 @@ typedef struct MOUSE_BUTTONS {
 typedef struct MOUSE {
     position_t      pos;
     mouse_buttons_t buttons;
+    mouse_buttons_t clicked;
 } mouse_t;
 
 void    init_mouse();

@@ -1,0 +1,77 @@
+#include "level1.h"
+#include "../mouse.h"
+#include "../timer.h"
+#include "../game.h"
+#include "../display.h"
+#include "../vga.h"
+
+#include "../sprites/level1_background.h"
+#include "../sprites/level1_player_planet.h"
+#include "../sprites/level1_enemy_planet.h"
+#include "../sprites/statusbar.h"
+#include "../sprites/cursor.h"
+
+#include "../ships.h"
+
+int run_level1() {
+    rate_t frame_rate = create_rate(20);
+    scene_t scene;
+    clear_scene(&scene);
+
+    scene.scroll.max.x  = 3 * (level1_background_sprite.width - SCREEN_WIDTH);
+    scene.max.x         = scene.scroll.max.x + SCREEN_WIDTH;
+    scene.max.y         = SCREEN_HEIGHT;
+
+    int background      = allocate_object(&scene, BACKGROUND, 1, 0);
+    int player_planet   = allocate_object(&scene, BACKGROUND, 1, 1);
+    int enemy_planet    = allocate_object(&scene, BACKGROUND, 1, 1);
+    int statusbar       = allocate_object(&scene, EFFECTS, 1, 0);
+    int cursor          = allocate_object(&scene, CURSOR, 1, 0);
+
+    scene.objects.untyped[background    ].sprite = level1_background_sprite;
+    scene.objects.untyped[player_planet ].sprite = level1_player_planet_sprite;
+    scene.objects.untyped[enemy_planet  ].sprite = level1_enemy_planet_sprite;
+    scene.objects.untyped[statusbar     ].sprite = statusbar_sprite;
+    scene.objects.untyped[cursor        ].sprite = cursor_sprite;
+
+    scene.objects.untyped[player_planet].pos.x = 50;
+    scene.objects.untyped[player_planet].pos.y = (scene.max.y - scene.objects.untyped[player_planet].sprite.height) / 2;
+
+    scene.objects.untyped[enemy_planet].pos.x = scene.max.x - 50 - scene.objects.untyped[enemy_planet].sprite.width;
+    scene.objects.untyped[enemy_planet].pos.y = (scene.max.y - scene.objects.untyped[enemy_planet].sprite.height) / 2;
+
+    scene.objects.untyped[statusbar].pos.y = SCREEN_HEIGHT - scene.objects.untyped[statusbar].sprite.height;
+
+    mouse_t mouse = new_mouse(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+
+    fade_t fade = create_fade(0x0000, FADE_FROM);
+    start_fade(&fade, 1);
+
+    int running = 1;
+    while (running) {
+        poll_mouse(&mouse, 0, 1);
+
+        if (is_ready(&frame_rate)) {
+            handle_mouse(&mouse, &scene, 1, 0); 
+            scene.objects.untyped[cursor].pos = mouse.pos;
+
+            if (!is_fade_done(&fade))
+                show_fade(&fade);
+            
+            scene.objects.untyped[background].sprite.start_x = scene.scroll.pos.x / 3;
+            scene.objects.untyped[background].sprite.end_x = scene.objects.untyped[background].sprite.start_x + SCREEN_WIDTH;
+
+            scene.objects.untyped[cursor].pos = mouse.pos;
+
+            if (mouse.buttons.right)
+                spawn_ship(&scene, &player_fighter, PLAYER, mouse.pos);
+
+            //update_game(&scene);
+
+            while (gdu_is_running());
+            push_scene(&scene);
+            start_render();
+        }
+    }
+    return 0;
+}

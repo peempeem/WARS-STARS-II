@@ -52,7 +52,7 @@ void run_title_screen() {
     int fading = 0;
     int exiting = 0;
 
-    fade_t fade;
+    fade_t fade = create_fade(0x0000, FADE_TO);
 
     mouse_t mouse = new_mouse(scene.max.x / 2, scene.max.y / 2);
 
@@ -87,10 +87,10 @@ void run_title_screen() {
 
             if (fading) {
                 if (!start_fading) {
-                    fade = create_fade(0x0000, 2);
+                    start_fade(&fade, 1);
                     start_fading = 1;
                 }
-                running = !fade_to(&fade);
+                running = !show_fade(&fade);
             }
             
             while (gdu_is_running());
