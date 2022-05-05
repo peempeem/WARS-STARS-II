@@ -89,8 +89,6 @@ int poll_mouse(mouse_t* mouse, int reverse_x, int reverse_y) {
                 return 0;
             }
 
-            
-
             if (reverse_x)
                 mouse->pos.x -= (signed char) buf.x;
             else
@@ -119,7 +117,24 @@ int poll_mouse(mouse_t* mouse, int reverse_x, int reverse_y) {
             init_mouse();
         }
     }
-
     
+    return 0;
+}
+
+int is_clicked(mouse_t* mouse, int button) {
+    switch (button) {
+        case MOUSE_BUTTON_LEFT:
+            if (mouse->clicked.left) {
+                mouse->clicked.left = 0;
+                return 1;
+            }
+            break;
+        case MOUSE_BUTTON_RIGHT:
+            if (mouse->clicked.right) {
+                mouse->clicked.right = 0;
+                return 1;
+            }
+            break;
+    }
     return 0;
 }

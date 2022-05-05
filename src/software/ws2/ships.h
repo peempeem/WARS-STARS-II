@@ -28,4 +28,21 @@ const static ship_t player_cruiser = {
     &playership1_sprite
 };
 
+const static ship_t enemy_fighter = {
+100,
+4,
+100,
+.5f,
+&playership0_sprite   //need to change this to the enemy sprite later
+
+};
+
+const static ship_t enemy_cruiser = {
+150,
+1,
+200,
+2.0f,
+&playership1_sprite  //need to change this to the enemy sprite later
+};
+
 #endif

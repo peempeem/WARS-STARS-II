@@ -19,12 +19,15 @@
 #define PLAYER  0
 #define ENEMY   1
 
+#define USED        0x01
+#define VISABLE     0x02
+#define SCROLL      0x04
+#define CENTERED    0x08
+
 typedef struct GAME_OBJECT {
-    int used,
-        visable,
-        scroll;
-    position_t pos;
-    sprite_t sprite;
+    int         flags;
+    position_t  pos;
+    sprite_t    sprite;
 } game_object_t;
 
 typedef struct SHIP_DATA {
@@ -56,7 +59,7 @@ typedef struct SCENE {
     } objects;
 } scene_t;
 
-int     allocate_object(scene_t* scene, int type, int visable, int scrolling);
+int     allocate_object(scene_t* scene, int type, int flags);
 void    deallocate_object(scene_t* scene, uint32_t object);
 void    push_scene(scene_t* scene);
 void    clear_scene(scene_t* scene);

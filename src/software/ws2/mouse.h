@@ -3,6 +3,9 @@
 
 #include "common.h"
 
+#define MOUSE_BUTTON_LEFT   0
+#define MOUSE_BUTTON_RIGHT  1
+
 typedef struct MOUSE_BUTTONS {
     int left,
         right;
@@ -17,5 +20,6 @@ typedef struct MOUSE {
 void    init_mouse();
 mouse_t new_mouse();
 int     poll_mouse(mouse_t* mouse, int reverse_x, int reverse_y);
+int     is_clicked(mouse_t* mouse, int button);
 
 #endif

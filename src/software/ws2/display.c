@@ -50,11 +50,31 @@ int show_fade(fade_t* fade) {
     return done;
 }
 
-int is_clicked(mouse_t* mouse, game_object_t* object) {
-    return (mouse->pos.x >= object->pos.x && 
-        mouse->pos.x <= object->pos.x + (object->sprite.end_x - object->sprite.start_x) &&
-        mouse->pos.y >= object->pos.y && 
-        mouse->pos.y <= object->pos.y + (object->sprite.end_y - object->sprite.start_y));
+int mouse_over_object(scene_t* scene, mouse_t* mouse, int object) {
+    game_object_t* obj = &scene->objects.untyped[object];
+    int x = mouse->pos.x;
+    int y = mouse->pos.y;
+    if (obj->flags & SCROLL) {
+        x += scene->scroll.pos.x;
+        y += scene->scroll.pos.y;
+    }
+    int w = obj->sprite.end_x - obj->sprite.start_x;
+    int h = obj->sprite.end_y - obj->sprite.start_y;
+    if (obj->flags & CENTERED) {
+        return (x >= obj->pos.x - w / 2 &&
+                x <= obj->pos.x + w / 2 &&
+                y >= obj->pos.y - h / 2 &&
+                y <= obj->pos.y + h / 2);
+    }
+    return (x >= obj->pos.x && 
+            x <= obj->pos.x + w &&
+            y >= obj->pos.y && 
+            y <= obj->pos.y + h);
+}
+
+position_t mouse_to_game(scene_t* scene, mouse_t* mouse) {
+    position_t pos = {scene->scroll.pos.x + mouse->pos.x, scene->scroll.pos.y + mouse->pos.y};
+    return pos;
 }
 
 void handle_mouse(mouse_t* mouse, scene_t* scene, int h_scroll, int v_scroll) {

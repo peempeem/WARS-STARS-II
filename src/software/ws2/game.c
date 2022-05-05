@@ -3,19 +3,17 @@
 #include <string.h>
 #include <math.h>
 
-void init_object(game_object_t* object, int visable, int scrolling) {
+void init_object(game_object_t* object, int flags) {
     memset(object, 0, sizeof(game_object_t));
-    object->used    = 1;
-    object->visable = visable;
-    object->scroll  = scrolling;
+    object->flags = flags;
 }
 
-int allocate_object(scene_t* scene, int type, int visable, int scrolling) {
+int allocate_object(scene_t* scene, int type, int flags) {
     switch (type) {
         case BACKGROUND:
             for (int i = 0; i < BACKGROUND_SPRITES; i++) {
-                if (!scene->objects.typed.background[i].used) {
-                    init_object(&scene->objects.typed.background[i], visable, scrolling);
+                if (!(scene->objects.typed.background[i].flags & USED)) {
+                    init_object(&scene->objects.typed.background[i], flags);
                     return i;
                 }
             }
@@ -23,8 +21,8 @@ int allocate_object(scene_t* scene, int type, int visable, int scrolling) {
         
         case SHIPS:
             for (int i = 0; i < SHIP_SPRITES; i++) {
-                if (!scene->objects.typed.ships[i].used) {
-                    init_object(&scene->objects.typed.ships[i], visable, scrolling);
+                if (!(scene->objects.typed.ships[i].flags & USED)) {
+                    init_object(&scene->objects.typed.ships[i], flags);
                     return i + BACKGROUND_SPRITES;
                 }
             }
@@ -32,16 +30,16 @@ int allocate_object(scene_t* scene, int type, int visable, int scrolling) {
         
         case EFFECTS:
             for (int i = 0 + SHIP_SPRITES; i < EFFECT_SPRITES; i++) {
-                if (!scene->objects.typed.effects[i].used) {
-                    init_object(&scene->objects.typed.effects[i], visable, scrolling);
+                if (!(scene->objects.typed.effects[i].flags & USED)) {
+                    init_object(&scene->objects.typed.effects[i], flags);
                     return i + BACKGROUND_SPRITES + SHIP_SPRITES;
                 }
             }
             break;
         
         case CURSOR:
-            if (!scene->objects.typed.cursor.used) {
-                init_object(&scene->objects.typed.cursor, visable, scrolling);
+            if (!(scene->objects.typed.cursor.flags & USED)) {
+                init_object(&scene->objects.typed.cursor, flags);
                 return MAX_SPRITES - 1;
             }
             break;
@@ -51,7 +49,7 @@ int allocate_object(scene_t* scene, int type, int visable, int scrolling) {
 
 void deallocate_object(scene_t* scene, uint32_t object) {
     if (object < MAX_SPRITES)
-        scene->objects.untyped[object].used = 0;
+        scene->objects.untyped[object].flags = 0;
 }
 
 void push_scene(scene_t* scene) {
@@ -59,20 +57,28 @@ void push_scene(scene_t* scene) {
         game_object_t* obj = &scene->objects.untyped[i];
         int pop = 1;
         
-        if (obj->used && obj->visable) {
-            obj->sprite.screen_x = obj->pos.x;
-            obj->sprite.screen_y = obj->pos.y;
+        if ((obj->flags & USED) && (obj->flags & VISABLE)) {
+            int x = obj->pos.x;
+            int y = obj->pos.y;
 
-            if (obj->scroll) {
-                obj->sprite.screen_x -= scene->scroll.pos.x;
-                obj->sprite.screen_y -= scene->scroll.pos.y;
+            if (obj->flags & SCROLL) {
+                x -= scene->scroll.pos.x;
+                y -= scene->scroll.pos.y;
             }
 
-            if (obj->sprite.screen_x >= -(obj->sprite.end_x - obj->sprite.start_x) &&
-                obj->sprite.screen_x < SCREEN_WIDTH &&
-                obj->sprite.screen_y >= -(obj->sprite.end_y - obj->sprite.start_y) &&
-                obj->sprite.screen_y < SCREEN_HEIGHT)
+            int w = obj->sprite.end_x - obj->sprite.start_x;
+            int h = obj->sprite.end_y - obj->sprite.start_y;
+
+            if (obj->flags & CENTERED) {
+                x -= w / 2;
+                y -= h / 2;
+            }
+
+            if (x >= -w && x < SCREEN_WIDTH && y >= -h && y < SCREEN_HEIGHT) {
+                obj->sprite.screen_x = x;
+                obj->sprite.screen_y = y;
                 pop = 0;
+            }
         }
 
         if (pop)
@@ -143,7 +149,7 @@ int spawn_ship(scene_t* scene, const ship_t* ship, int user, position_t pos) {
     if (sd_idx == -1)
         return -1;
     
-    int obj_idx = allocate_object(scene, SHIPS, 1, 1);
+    int obj_idx = allocate_object(scene, SHIPS, USED | VISABLE | SCROLL | CENTERED);
     if (obj_idx == -1)
         return -1;
 
@@ -188,6 +194,7 @@ int closest_ship(scene_t* scene, int user, position_t pos) {
             }
         }
     }
+    return idx;
 }
 
 void update_game(scene_t* scene) {
