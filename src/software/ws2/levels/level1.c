@@ -9,12 +9,15 @@
 #include "../sprites/level1_player_planet.h"
 #include "../sprites/level1_enemy_planet.h"
 #include "../sprites/statusbar.h"
+#include "../sprites/greenhealth.h"
+#include "../sprites/redhealth.h"
 #include "../sprites/playership0.h"
 #include "../sprites/playership1.h"
 #include "../sprites/warning.h"
 #include "../sprites/cursor.h"
-
 #include "../ships.h"
+
+#include <stdlib.h>
 
 #define SPAWN_CUTOFF 250
 
@@ -31,6 +34,8 @@ int run_level1() {
     game_object_t* player_planet    = allocate_object(&scene, BACKGROUND,   USED | VISABLE | SCROLL | CENTERED);
     game_object_t* enemy_planet     = allocate_object(&scene, BACKGROUND,   USED | VISABLE | SCROLL | CENTERED);
     game_object_t* statusbar        = allocate_object(&scene, EFFECTS,      USED | VISABLE);
+    game_object_t* playerbar        = allocate_object(&scene, EFFECTS,      USED | VISABLE);
+    game_object_t* enemybar         = allocate_object(&scene, EFFECTS,      USED | VISABLE);
     game_object_t* spawnship1       = allocate_object(&scene, EFFECTS,      USED | VISABLE | CENTERED);
     game_object_t* spawnship2       = allocate_object(&scene, EFFECTS,      USED | VISABLE | CENTERED);
     game_object_t* spawnwarning     = allocate_object(&scene, EFFECTS,      USED | CENTERED);
@@ -40,6 +45,8 @@ int run_level1() {
     player_planet->sprite   = level1_player_planet_sprite;
     enemy_planet->sprite    = level1_enemy_planet_sprite;
     statusbar->sprite       = statusbar_sprite;
+    playerbar->sprite       = greenhealth_sprite;
+    enemybar->sprite        = redhealth_sprite;
     spawnship1->sprite      = playership0_sprite;
     spawnship2->sprite      = playership1_sprite;
     spawnwarning->sprite    = warning_sprite;
@@ -52,6 +59,12 @@ int run_level1() {
     enemy_planet->pos.y = scene.max.y / 2;
 
     statusbar->pos.y = SCREEN_HEIGHT - statusbar->sprite.height;
+
+    playerbar->pos.x = 36;
+    playerbar->pos.y = SCREEN_HEIGHT - 46;
+    enemybar->pos.x = 450;
+    enemybar->pos.y = SCREEN_HEIGHT - 46;
+    
 
     position_t spawnship1_default = statusbar->pos;
     spawnship1_default.x += 270;
@@ -67,7 +80,13 @@ int run_level1() {
     fade_t fade = create_fade(0x0000, FADE_FROM);
     start_fade(&fade, 1);
 
+    spawn_ship(&scene, &enemy_cruiser, ENEMY, enemy_planet->pos);
+
+    int player_health = 1000;
+    int enemy_health = 1000;    
+
     int placing_ship = 0;
+    int shipcountc = 0, shipcountf = 0, eshipcount = 0;
     int running = 1;
     while (running) {
         poll_mouse(&mouse, 0, 1);
@@ -81,6 +100,9 @@ int run_level1() {
             
             background->sprite.start_x = scene.scroll.pos.x / 3;
             background->sprite.end_x = background->sprite.start_x + SCREEN_WIDTH;
+
+            playerbar->sprite.end_x = (playerbar->sprite.width * player_health) / 1000;
+            enemybar->sprite.end_x = (enemybar->sprite.width * enemy_health) / 1000;
 
             position_t place_pos = mouse_to_game(&scene, &mouse);
             if (place_pos.x > SPAWN_CUTOFF)
@@ -98,11 +120,13 @@ int run_level1() {
                         spawn_ship(&scene, &player_fighter, PLAYER, place_pos);
                         spawnship1->pos = spawnship1_default;
                         placing_ship = 0;
+                        shipcountf++;
                         break;
                     case 2:
                         spawn_ship(&scene, &player_cruiser, PLAYER, place_pos);
                         spawnship2->pos = spawnship2_default;
                         placing_ship = 0;
+                        shipcountc++;
                         break;
                 }
             }
@@ -125,6 +149,35 @@ int run_level1() {
                 case 2:
                     spawnship2->pos = mouse.pos;
                     break;
+            }
+
+            int r = rand() % 4;
+            int yr = ((rand() % 400));
+            if (eshipcount <= shipcountc + shipcountf) {
+                position_t epos;
+                epos.y = yr;
+                epos.x = 1200;
+
+                switch(r)  {
+                    case 0:
+                        spawn_ship(&scene, &enemy_cruiser, ENEMY, epos);
+                        eshipcount++;
+                        break;
+
+                    case 1:
+                        spawn_ship(&scene, &enemy_fighter, ENEMY, epos);
+                        eshipcount++;
+                        break;
+
+                    case 2:
+                    break;
+
+                    case 3:
+                        spawn_ship(&scene, &enemy_fighter, ENEMY, epos);
+                        spawn_ship(&scene, &enemy_cruiser, ENEMY, epos);
+                        eshipcount += 2;
+                        break;
+                }
             }
 
             update_game(&scene);

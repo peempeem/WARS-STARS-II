@@ -24,7 +24,8 @@
         "limits": "c",
         "level1_enemy_planet.h": "c",
         "ships.h": "c",
-        "timer.h": "c"
+        "timer.h": "c",
+        "warning.h": "c"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }

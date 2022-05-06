@@ -168,18 +168,32 @@ void destroy_ship(ship_t* ship) {
     // todo: spawn exposion??
 }
 
-float distance(fposition_t p1, fposition_t p2) { return sqrtf(pow(p2.x - p1.x, 2) + pow(p2.y - p1.y, 2)); }
+int isqrt(int x) {
+    int temp, g = 0, b = 0x8000, shft = 15;
+    do {
+        if (x >= (temp = (((g << 1) + b) << shft--))) {
+           g += b;
+           x -= temp;
+        }
+    } while (b >>= 1);
+    return g;
+}
+
+int distance(position_t p1, position_t p2) { return isqrt((p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y) * (p2.y - p1.y)); }
 
 ship_t* closest_ship(scene_t* scene, int user, fposition_t pos) {
     ship_t* ships = ship_select(scene, user);
     if (ships == NULL)
         return NULL;
     
+    position_t p = { pos.x, pos.y };
+    
     int idx = -1;
-    float lowest, dist;
+    int lowest, dist;
     for (int i = 0; i < USER_SHIPS; i++) {
         if (ships[i].ptr != NULL) {
-            dist = distance(pos, ships[i].physics.p);
+            position_t sp = { ships[i].physics.p.x, ships[i].physics.p.y };
+            dist = distance(p, sp);
             if (idx == -1 || dist < lowest) {
                 idx = i;
                 lowest = dist;
@@ -193,17 +207,17 @@ ship_t* closest_ship(scene_t* scene, int user, fposition_t pos) {
 
 void update_ships(scene_t* scene, int user, float dt) {
     ship_t* ships;
-    fposition_t enemy_planet_pos;
+    position_t enemy_planet_pos;
     switch (user) {
         case PLAYER:
             ships = scene->ships.player;
-            enemy_planet_pos.x = scene->objects.typed.background[2].pos.x;
-            enemy_planet_pos.y = scene->objects.typed.background[2].pos.y;
+            enemy_planet_pos.x = (int) scene->objects.typed.background[2].pos.x;
+            enemy_planet_pos.y = (int) scene->objects.typed.background[2].pos.y;
             break;
         case ENEMY:
             ships = scene->ships.enemy;
-            enemy_planet_pos.x = scene->objects.typed.background[1].pos.x;
-            enemy_planet_pos.y = scene->objects.typed.background[1].pos.y;
+            enemy_planet_pos.x = (int) scene->objects.typed.background[1].pos.x;
+            enemy_planet_pos.y = (int) scene->objects.typed.background[1].pos.y;
             break;
         default:
             return;
@@ -213,21 +227,26 @@ void update_ships(scene_t* scene, int user, float dt) {
             update_physics(&ships[i].physics, dt);
             cap_velocity(&ships[i].physics, ships[i].max_v);
 
-            if (distance(ships[i].physics.p, enemy_planet_pos) < ships[i].range)
+            position_t p = { ships[i].physics.p.x, ships[i].physics.p.y };
+
+            if (distance(p, enemy_planet_pos) < ships[i].range)
                 slow_down(&ships[i].physics, ships[i].accel);
             else {
                 ship_t* enemy = closest_ship(scene, !user, ships[i].physics.p);
-                if (enemy == NULL) {
+                position_t epos = { enemy->physics.p.x, enemy->physics.p.y };
+                if (enemy == NULL || distance(p, epos) > ships[i].range) {
                     ships[i].physics.a.x = ships[i].accel;
                     ships[i].physics.a.y = 0;
-                } else if (distance(ships[i].physics.p, enemy->physics.p) <= ships[i].range)
+                } else {
                     slow_down(&ships[i].physics, ships[i].accel);
+                }
+                    
             }
             
             ships[i].ptr->pos.x = (int) ships[i].physics.p.x;
             ships[i].ptr->pos.y = (int) ships[i].physics.p.y;
 
-            if (ships[i].physics.p.x > scene->max.x)
+            if (ships[i].physics.p.x > scene->max.x || ships[i].physics.p.x < 0)
                 destroy_ship(&ships[i]);
         }
     }

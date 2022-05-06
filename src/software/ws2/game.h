@@ -13,7 +13,7 @@
 #define SHIP_SPRITES        24
 #define EFFECT_SPRITES      31
 
-#define USER_SHIPS      SHIP_SPRITES / 2
+#define USER_SHIPS      6
 #define USER_WEAPONS    10
 
 #define PLAYER  0

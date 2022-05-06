@@ -10,6 +10,7 @@ obj/default/levels/level1.o: levels/level1.c levels/level1.h \
  levels/../sprites/level1_background.h \
  levels/../sprites/level1_player_planet.h \
  levels/../sprites/level1_enemy_planet.h levels/../sprites/statusbar.h \
+ levels/../sprites/greenhealth.h levels/../sprites/redhealth.h \
  levels/../sprites/playership0.h levels/../sprites/playership1.h \
  levels/../sprites/warning.h levels/../sprites/cursor.h levels/../ships.h
 
@@ -64,6 +65,10 @@ levels/../sprites/level1_player_planet.h:
 levels/../sprites/level1_enemy_planet.h:
 
 levels/../sprites/statusbar.h:
+
+levels/../sprites/greenhealth.h:
+
+levels/../sprites/redhealth.h:
 
 levels/../sprites/playership0.h:
 

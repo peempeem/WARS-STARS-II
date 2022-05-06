@@ -23,7 +23,7 @@ typedef struct SHIP {
 const static ship_t player_fighter = {
     0,                          // ptr
     100,                        // hp
-    150.0f,                     // range
+    125.0f,                     // range
     48.0f,                      // accel
     48.0f,                      // max_v
     {0, 0},                     // fire_pos
@@ -39,7 +39,7 @@ const static ship_t player_fighter = {
 const static ship_t player_cruiser = {
     0,                          // ptr
     100,                        // hp
-    75.0f,                      // range
+    300.0f,                     // range
     28.0f,                      // accel
     28.0f,                      // max_v
     {0, 0},                     // fire_pos
@@ -55,9 +55,9 @@ const static ship_t player_cruiser = {
 const static ship_t enemy_fighter = {
     0,                          // ptr
     100,                        // hp
-    75.0f,                      // range
-    16.0f,                      // accel
-    32.0f,                      // max_v
+    125.0f,                     // range
+    -48.0f,                     // accel
+    48.0f,                      // max_v
     {0, 0},                     // fire_pos
     {                       
         {0.0f, 0.0f}, 
@@ -71,9 +71,9 @@ const static ship_t enemy_fighter = {
 const static ship_t enemy_cruiser = {
     0,                          // ptr
     100,                        // hp
-    75.0f,                      // range
-    8.0f,                       // accel
-    16.0f,                      // max_v
+    300.0f,                     // range
+    -28.0f,                     // accel
+    28.0f,                      // max_v
     {0, 0},                     // fire_pos
     {                       
         {0.0f, 0.0f}, 

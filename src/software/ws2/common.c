@@ -20,14 +20,15 @@ void cap_velocity(physics_t* phys, float max_v) {
 }
 
 void slow_down(physics_t* phys, float accel) {
+    float a = fabs(accel);
     if (fabsf(phys->v.x) < 1) {
         phys->v.x = 0;
         phys->a.x = 0;
     } else {
         if (phys->v.x > 0)
-            phys->a.x = -accel;
+            phys->a.x = -a;
         else if (phys->v.x < 0)
-            phys->a.x = accel;
+            phys->a.x = a;
     }
 
     if (fabsf(phys->v.y) < 1) {
@@ -35,8 +36,8 @@ void slow_down(physics_t* phys, float accel) {
         phys->a.y = 0;
     } else {
         if (phys->v.y > 0)
-            phys->a.y = -accel;
+            phys->a.y = -a;
         else if (phys->v.y < 0)
-            phys->a.y = accel;
+            phys->a.y = a;
     }
 }
