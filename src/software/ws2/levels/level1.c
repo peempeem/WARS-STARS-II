@@ -157,9 +157,10 @@ int run_level1() {
                     break;
             }
 
-            int r = rand() % 4;
-            int yr = ((rand() % 400));
-            if (scene.eshipcount <= scene.shipcountc + scene.shipcountf) {
+            int r = rand() % 7;
+            int yr = ((rand() % 390)+15);
+
+            if ((scene.eshipcount <= (3 + scene.shipcountc + scene.shipcountf)) || enemy_health <= 150) {
                 position_t epos;
                 epos.y = yr;
                 epos.x = 1200;
@@ -183,6 +184,20 @@ int run_level1() {
                         spawn_ship(&scene, &enemy_cruiser, ENEMY, epos);
                         scene.eshipcount += 2;
                         break;
+                    case 4:
+                    	epos.y += 12;
+                    	spawn_ship(&scene, &enemy_cruiser, ENEMY, epos );
+                    	epos.y -= 24;
+                    	spawn_ship(&scene, &enemy_cruiser, ENEMY, epos );
+                    	break;
+                    case 5:
+                    	epos.y += 8;
+                    	spawn_ship(&scene, &enemy_fighter, ENEMY, epos);
+                    	epos.y -= 16;
+                    	spawn_ship(&scene, &enemy_fighter, ENEMY, epos);
+                    	break;
+                    case 6:
+                    break;
                 }
             }
 
