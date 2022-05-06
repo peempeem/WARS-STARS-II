@@ -92,7 +92,7 @@ int run_level1() {
     int start_fading = 0;
 
     int placing_ship = 0;
-    int shipcountc = 0, shipcountf = 0, eshipcount = 0;
+    
     int running = 1;
     while (running) {
         poll_mouse(&mouse, 0, 1);
@@ -126,15 +126,13 @@ int run_level1() {
                         spawn_ship(&scene, &player_fighter, PLAYER, place_pos);
                         spawnship1->pos = spawnship1_default;
                         placing_ship = 0;
-                        shipcountf++;
-                        player_health = player_health -1000;
+                        scene.shipcountf++;
                         break;
                     case 2:
                         spawn_ship(&scene, &player_cruiser, PLAYER, place_pos);
                         spawnship2->pos = spawnship2_default;
                         placing_ship = 0;
-                        shipcountc++;
-                        enemy_health = enemy_health -1000;
+                        scene.shipcountc++;
                         break;
                 }
             }
@@ -161,7 +159,7 @@ int run_level1() {
 
             int r = rand() % 4;
             int yr = ((rand() % 400));
-            if (eshipcount <= shipcountc + shipcountf) {
+            if (scene.eshipcount <= scene.shipcountc + scene.shipcountf) {
                 position_t epos;
                 epos.y = yr;
                 epos.x = 1200;
@@ -169,12 +167,12 @@ int run_level1() {
                 switch(r)  {
                     case 0:
                         spawn_ship(&scene, &enemy_cruiser, ENEMY, epos);
-                        eshipcount++;
+                        scene.eshipcount++;
                         break;
 
                     case 1:
                         spawn_ship(&scene, &enemy_fighter, ENEMY, epos);
-                        eshipcount++;
+                        scene.eshipcount++;
                         break;
 
                     case 2:
@@ -183,7 +181,7 @@ int run_level1() {
                     case 3:
                         spawn_ship(&scene, &enemy_fighter, ENEMY, epos);
                         spawn_ship(&scene, &enemy_cruiser, ENEMY, epos);
-                        eshipcount += 2;
+                        scene.eshipcount += 2;
                         break;
                 }
             }

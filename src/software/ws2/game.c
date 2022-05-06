@@ -31,7 +31,7 @@ game_object_t* allocate_object(scene_t* scene, int type, int flags) {
             break;
         
         case EFFECTS:
-            for (int i = 0 + SHIP_SPRITES; i < EFFECT_SPRITES; i++) {
+            for (int i = 0; i < EFFECT_SPRITES; i++) {
                 game_object_t* obj = &scene->objects.typed.effects[i];
                 if (!(obj->flags & USED)) {
                     init_object(obj, flags);
@@ -158,14 +158,22 @@ ship_t* spawn_ship(scene_t* scene, const ship_t* spawn, int user, position_t pos
     obj->pos    = pos;
     ship->physics.p.x = pos.x;
     ship->physics.p.y = pos.y;
+    ship->firerate_data = create_rate(ship->firerate);
     return ship;
 }
 
-void destroy_ship(ship_t* ship) {
+void destroy_ship(scene_t* scene, ship_t* ship) {
+    if (ship->sprite->address == player_cruiser.sprite->address)
+        scene->shipcountc--;
+    if (ship->sprite->address == player_fighter.sprite->address)
+        scene->shipcountf--;
+    if (ship->sprite->address == enemy_cruiser.sprite->address ||
+        ship->sprite->address == enemy_fighter.sprite->address)
+        scene->eshipcount--;
     deallocate_object(ship->ptr);
     ship->ptr = NULL;
 
-    // todo: spawn exposion??
+    // todo: spawn ship exposion??
 }
 
 int isqrt(int x) {
@@ -179,7 +187,11 @@ int isqrt(int x) {
     return g;
 }
 
-int distance(position_t p1, position_t p2) { return isqrt((p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y) * (p2.y - p1.y)); }
+int distance(position_t p1, position_t p2) {
+    int dx = p2.x - p1.x;
+    int dy = p2.y - p1.y;
+    return isqrt(dx * dx + dy * dy);
+}
 
 ship_t* closest_ship(scene_t* scene, int user, fposition_t pos) {
     ship_t* ships = ship_select(scene, user);
@@ -205,17 +217,71 @@ ship_t* closest_ship(scene_t* scene, int user, fposition_t pos) {
     return &ships[idx];
 }
 
+weapon_t* weapon_select(scene_t* scene, int user) {
+    switch (user) {
+        case PLAYER:
+            return scene->weapons.player;
+        case ENEMY:
+            return scene->weapons.enemy;
+    }
+    return NULL;
+}
+
+weapon_t* allocate_weapon(scene_t* scene, int user) {
+    weapon_t* weapons = weapon_select(scene, user);
+    if (weapons == NULL)
+        return NULL;
+    
+    for (int i = 0; i < USER_WEAPONS; i++) {
+        if (weapons[i].ptr == NULL)
+            return &weapons[i];
+    }
+    return 0;
+}
+
+void destroy_weapon(weapon_t* weapon) {
+    deallocate_object(weapon->ptr);
+    weapon->ptr = NULL;
+
+    // todo: spawn weapon exposion??
+}
+
+weapon_t* spawn_weapon(scene_t* scene, ship_t* ship, ship_t* target, fposition_t v, int user) {
+    weapon_t* weapon = allocate_weapon(scene, user);
+    if (weapon == NULL)
+        return NULL;
+        
+    game_object_t* obj = allocate_object(scene, EFFECTS, USED | VISABLE | SCROLL | CENTERED);
+    if (obj == NULL)
+        return NULL;
+        
+    weapon->ptr     = obj;
+    weapon->data    = (weapon_data_t*) ship->weapon;
+    weapon->target  = target;
+
+    weapon->physics.a.x = 0;
+    weapon->physics.a.y = 0;
+    weapon->physics.v.x = v.x;
+    weapon->physics.v.y = v.y;
+    weapon->physics.p.x = ship->physics.p.x + ship->fire_pos.x;
+    weapon->physics.p.y = ship->physics.p.y + ship->fire_pos.y;
+    weapon->timeout = get_time() + ship->weapon->timeout;
+
+    obj->pos.x  = (int) weapon->physics.p.x;
+    obj->pos.y  = (int) weapon->physics.p.y;
+    obj->sprite = *weapon->data->sprites[0];
+    return weapon;
+}
+
 void update_ships(scene_t* scene, int user, float dt) {
-    ship_t* ships;
+    ship_t* ships = ship_select(scene, user);
     position_t enemy_planet_pos;
     switch (user) {
         case PLAYER:
-            ships = scene->ships.player;
             enemy_planet_pos.x = (int) scene->objects.typed.background[2].pos.x;
             enemy_planet_pos.y = (int) scene->objects.typed.background[2].pos.y;
             break;
         case ENEMY:
-            ships = scene->ships.enemy;
             enemy_planet_pos.x = (int) scene->objects.typed.background[1].pos.x;
             enemy_planet_pos.y = (int) scene->objects.typed.background[1].pos.y;
             break;
@@ -238,16 +304,63 @@ void update_ships(scene_t* scene, int user, float dt) {
                     ships[i].physics.a.x = ships[i].accel;
                     ships[i].physics.a.y = 0;
                 } else {
+                    fposition_t v = { 32.0f, 0.0f };
+                    if (user == ENEMY)
+                        v.x = -v.x;
+                    if (is_ready(&ships[i].firerate_data))
+                        spawn_weapon(scene, &ships[i], enemy, v, user);
                     slow_down(&ships[i].physics, ships[i].accel);
                 }
-                    
             }
             
             ships[i].ptr->pos.x = (int) ships[i].physics.p.x;
             ships[i].ptr->pos.y = (int) ships[i].physics.p.y;
 
             if (ships[i].physics.p.x > scene->max.x || ships[i].physics.p.x < 0)
-                destroy_ship(&ships[i]);
+                destroy_ship(scene, &ships[i]);
+        }
+    }
+}
+
+void update_weapons(scene_t* scene, int user, float dt) {
+    weapon_t* weapons = weapon_select(scene, user);
+    float time = get_time();
+    for (int i = 0; i < USER_WEAPONS; i++) {
+        if (weapons[i].ptr != NULL) {
+            if (weapons[i].target->physics.p.x - weapons[i].physics.p.x > 0)
+                weapons[i].physics.a.x = 200.0f;
+            else
+                weapons[i].physics.a.x = -200.0f;
+            
+            if (weapons[i].target->physics.p.y - weapons[i].physics.p.y > 0)
+                weapons[i].physics.a.y = 200.0f;
+            else
+                weapons[i].physics.a.y = -200.0f;
+            
+            cap_velocity(&weapons[i].physics, 100.0f);
+
+            update_physics(&weapons[i].physics, dt);
+
+            weapons[i].ptr->pos.x = (int) weapons[i].physics.p.x;
+            weapons[i].ptr->pos.y = (int) weapons[i].physics.p.y;
+
+            position_t pos = { weapons[i].physics.p.x, weapons[i].physics.p.y };
+            position_t tpos = { weapons[i].target->physics.p.x, weapons[i].target->physics.p.y };
+
+            if (weapons[i].physics.p.x < 0 ||
+                weapons[i].physics.p.x > scene->max.x ||
+                weapons[i].physics.p.y < 0 ||
+                weapons[i].physics.p.y > scene->max.y ||
+                weapons[i].timeout < time ||
+                weapons[i].target->ptr == NULL)
+                destroy_weapon(&weapons[i]);
+            
+            if (distance(pos, tpos) < weapons[i].target->hitradius) {
+                printf("%d\n", weapons[i].target->hp);
+                weapons[i].target->hp -= weapons[i].data->damage;
+                if (weapons[i].target->hp < 0) 
+                    destroy_ship(scene, weapons[i].target);
+            }
         }
     }
 }
@@ -258,5 +371,6 @@ void update_game(scene_t* scene) {
     scene->last_update = time;
     update_ships(scene, PLAYER, dt);
     update_ships(scene, ENEMY, dt);
+    update_weapons(scene, PLAYER, dt);
+    update_weapons(scene, ENEMY, dt);
 }
-

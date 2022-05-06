@@ -25,7 +25,8 @@
         "level1_enemy_planet.h": "c",
         "ships.h": "c",
         "timer.h": "c",
-        "warning.h": "c"
+        "warning.h": "c",
+        "weapon1_0.h": "c"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }

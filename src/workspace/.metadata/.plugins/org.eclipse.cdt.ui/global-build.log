@@ -22952,3 +22952,1176 @@ Info:           60899 KBytes free for stack + heap.
 Info: Creating ws2.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
 [ws2 build complete]
+22:11:21 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling common.c to obj/default/common.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/common.o common.c
+In file included from common.c:1:0:
+common.h:38:11: error: unknown type name 'weapon_data_t'
+     const weapon_data_t* weapon;
+           ^
+common.h:43:5: error: unknown type name 'weapon_data_t'
+     weapon_data_t* data;
+     ^
+make: *** [obj/default/common.o] Error 1
+22:11:52 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling common.c to obj/default/common.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/common.o common.c
+In file included from common.c:1:0:
+common.h:38:11: error: unknown type name 'weapon_data_t'
+     const weapon_data_t* weapon;
+           ^
+make: *** [obj/default/common.o] Error 1
+22:11:53 **** Incremental Build of configuration Nios II for project ws2_bsp ****
+make all 
+[BSP build complete]
+22:12:30 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling common.c to obj/default/common.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/common.o common.c
+Info: Compiling display.c to obj/default/display.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/display.o display.c
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:240:16: warning: 'return' with a value, in function returning void
+         return NULL;
+                ^
+game.c:244:16: warning: 'return' with a value, in function returning void
+         return NULL;
+                ^
+game.c:247:21: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     weapon->data    = ship->weapon;
+                     ^
+Info: Compiling levels/level1.c to obj/default/levels/level1.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/level1.o levels/level1.c
+Info: Compiling levels/title_screen.c to obj/default/levels/title_screen.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/title_screen.o levels/title_screen.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:15:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Compiling mouse.c to obj/default/mouse.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/mouse.o mouse.c
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4630 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+22:12:38 **** Incremental Build of configuration Nios II for project ws2_bsp ****
+make all 
+[BSP build complete]
+22:12:55 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:247:21: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     weapon->data    = ship->weapon;
+                     ^
+game.c:260:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4630 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+22:12:58 **** Incremental Build of configuration Nios II for project ws2_bsp ****
+make all 
+[BSP build complete]
+22:13:38 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:260:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4630 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+22:13:41 **** Incremental Build of configuration Nios II for project ws2_bsp ****
+make all 
+[BSP build complete]
+22:13:57 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4630 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+22:14:00 **** Incremental Build of configuration Nios II for project ws2_bsp ****
+make all 
+[BSP build complete]
+22:14:03 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+[ws2 build complete]
+22:25:06 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling common.c to obj/default/common.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/common.o common.c
+Info: Compiling display.c to obj/default/display.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/display.o display.c
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'update_ships':
+game.c:300:29: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+                             printf("player shoot\n");
+                             ^
+game.c:300:29: warning: incompatible implicit declaration of built-in function 'printf'
+game.c:300:29: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c:302:29: warning: incompatible implicit declaration of built-in function 'printf'
+                             printf("enemy shoot\n");
+                             ^
+game.c:302:29: note: include '<stdio.h>' or provide a declaration of 'printf'
+Info: Compiling levels/level1.c to obj/default/levels/level1.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/level1.o levels/level1.c
+Info: Compiling levels/title_screen.c to obj/default/levels/title_screen.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/title_screen.o levels/title_screen.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:15:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Compiling mouse.c to obj/default/mouse.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/mouse.o mouse.c
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+22:28:17 **** Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'update_ships':
+game.c:301:33: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+                                 printf("player shoot\n");
+                                 ^
+game.c:301:33: warning: incompatible implicit declaration of built-in function 'printf'
+game.c:301:33: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c:303:33: warning: incompatible implicit declaration of built-in function 'printf'
+                                 printf("enemy shoot\n");
+                                 ^
+game.c:303:33: note: include '<stdio.h>' or provide a declaration of 'printf'
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+22:32:27 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:243:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+     printf("bruh?\n");
+     ^
+game.c:243:5: warning: incompatible implicit declaration of built-in function 'printf'
+game.c:243:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c: In function 'update_ships':
+game.c:303:33: warning: incompatible implicit declaration of built-in function 'printf'
+                                 printf("player shoot\n");
+                                 ^
+game.c:303:33: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c:305:33: warning: incompatible implicit declaration of built-in function 'printf'
+                                 printf("enemy shoot\n");
+                                 ^
+game.c:305:33: note: include '<stdio.h>' or provide a declaration of 'printf'
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+22:38:11 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'allocate_weapon':
+game.c:232:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+     printf("bruh?\n");
+     ^
+game.c:232:5: warning: incompatible implicit declaration of built-in function 'printf'
+game.c:232:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c: In function 'update_ships':
+game.c:306:33: warning: incompatible implicit declaration of built-in function 'printf'
+                                 printf("player shoot\n");
+                                 ^
+game.c:306:33: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c:308:33: warning: incompatible implicit declaration of built-in function 'printf'
+                                 printf("enemy shoot\n");
+                                 ^
+game.c:308:33: note: include '<stdio.h>' or provide a declaration of 'printf'
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+22:39:38 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'allocate_weapon':
+game.c:228:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+     printf("bruh?\n");
+     ^
+game.c:228:5: warning: incompatible implicit declaration of built-in function 'printf'
+game.c:228:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c: In function 'update_ships':
+game.c:307:33: warning: incompatible implicit declaration of built-in function 'printf'
+                                 printf("player shoot\n");
+                                 ^
+game.c:307:33: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c:309:33: warning: incompatible implicit declaration of built-in function 'printf'
+                                 printf("enemy shoot\n");
+                                 ^
+game.c:309:33: note: include '<stdio.h>' or provide a declaration of 'printf'
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+22:41:15 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:247:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+     printf("bruh?\n");
+     ^
+game.c:247:5: warning: incompatible implicit declaration of built-in function 'printf'
+game.c:247:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c: In function 'update_ships':
+game.c:309:33: warning: incompatible implicit declaration of built-in function 'printf'
+                                 printf("player shoot\n");
+                                 ^
+game.c:309:33: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c:311:33: warning: incompatible implicit declaration of built-in function 'printf'
+                                 printf("enemy shoot\n");
+                                 ^
+game.c:311:33: note: include '<stdio.h>' or provide a declaration of 'printf'
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+22:43:02 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'update_ships':
+game.c:305:33: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+                                 printf("player shoot\n");
+                                 ^
+game.c:305:33: warning: incompatible implicit declaration of built-in function 'printf'
+game.c:305:33: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c:307:33: warning: incompatible implicit declaration of built-in function 'printf'
+                                 printf("enemy shoot\n");
+                                 ^
+game.c:307:33: note: include '<stdio.h>' or provide a declaration of 'printf'
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+22:46:23 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+22:50:12 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:260:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+     printf("%d\n", get_used(scene));
+     ^
+game.c:260:5: warning: incompatible implicit declaration of built-in function 'printf'
+game.c:260:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+22:52:32 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:260:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+     printf("%d\n", get_used(scene));
+     ^
+game.c:260:5: warning: incompatible implicit declaration of built-in function 'printf'
+game.c:260:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+22:56:31 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:260:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+     printf("%d\n", get_used(scene));
+     ^
+game.c:260:5: warning: incompatible implicit declaration of built-in function 'printf'
+game.c:260:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c:263:5: error: expected ';' before 'weapon'
+     weapon->ptr     = obj;
+     ^
+make: *** [obj/default/game.o] Error 1
+22:56:41 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:260:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+     printf("%d\n", get_used(scene));
+     ^
+game.c:260:5: warning: incompatible implicit declaration of built-in function 'printf'
+game.c:260:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+22:57:57 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:260:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+     printf("%d\n", get_used(scene));
+     ^
+game.c:260:5: warning: incompatible implicit declaration of built-in function 'printf'
+game.c:260:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+23:05:31 **** Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:260:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+     printf("%d\n", get_used(scene));
+     ^
+game.c:260:5: warning: incompatible implicit declaration of built-in function 'printf'
+game.c:260:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c:263:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+         printf("p: %d\n", ((uint32_t) weapon - (uint32_t) scene->weapons.player) / sizeof(weapon_t));
+                ^
+game.c:265:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+         printf("e: %d\n", ((uint32_t) weapon - (uint32_t) scene->weapons.enemy) / sizeof(weapon_t));
+                ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+23:08:39 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:264:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+     printf("%d\n", get_used(scene));
+     ^
+game.c:264:5: warning: incompatible implicit declaration of built-in function 'printf'
+game.c:264:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c:267:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+         printf("p: %d\n", ((uint32_t) weapon - (uint32_t) scene->weapons.player) / sizeof(weapon_t));
+                ^
+game.c:269:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+         printf("e: %d\n", ((uint32_t) weapon - (uint32_t) scene->weapons.enemy) / sizeof(weapon_t));
+                ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+23:10:46 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'allocate_weapon':
+game.c:230:13: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+             printf("found %d\n", i);
+             ^
+game.c:230:13: warning: incompatible implicit declaration of built-in function 'printf'
+game.c:230:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c: In function 'spawn_weapon':
+game.c:263:5: warning: incompatible implicit declaration of built-in function 'printf'
+     printf("%d\n", get_used(scene));
+     ^
+game.c:263:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c:266:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+         printf("p: %d\n", ((uint32_t) weapon - (uint32_t) scene->weapons.player) / sizeof(weapon_t));
+                ^
+game.c:268:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+         printf("e: %d\n", ((uint32_t) weapon - (uint32_t) scene->weapons.enemy) / sizeof(weapon_t));
+                ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+23:12:29 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'allocate_weapon':
+game.c:230:13: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+             printf("found %d\n", i);
+             ^
+game.c:230:13: warning: incompatible implicit declaration of built-in function 'printf'
+game.c:230:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c: In function 'spawn_weapon':
+game.c:263:5: warning: incompatible implicit declaration of built-in function 'printf'
+     printf("%d\n", get_used(scene));
+     ^
+game.c:263:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c:266:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+         printf("p: %d\n", ((uint32_t) weapon - (uint32_t) scene->weapons.player) / sizeof(weapon_t));
+                ^
+game.c:268:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+         printf("e: %d\n", ((uint32_t) weapon - (uint32_t) scene->weapons.enemy) / sizeof(weapon_t));
+                ^
+game.c:271:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+23:15:52 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'allocate_weapon':
+game.c:230:13: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+             printf("found %d\n", i);
+             ^
+game.c:230:13: warning: incompatible implicit declaration of built-in function 'printf'
+game.c:230:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c:235:5: warning: incompatible implicit declaration of built-in function 'printf'
+     printf("didnt find\n");
+     ^
+game.c:235:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c: In function 'spawn_weapon':
+game.c:264:5: warning: incompatible implicit declaration of built-in function 'printf'
+     printf("%d\n", get_used(scene));
+     ^
+game.c:264:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+game.c:267:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+         printf("p: %d\n", ((uint32_t) weapon - (uint32_t) scene->weapons.player) / sizeof(weapon_t));
+                ^
+game.c:269:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+         printf("e: %d\n", ((uint32_t) weapon - (uint32_t) scene->weapons.enemy) / sizeof(weapon_t));
+                ^
+game.c:272:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+23:19:08 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:251:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+23:25:48 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:251:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60898 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+23:27:43 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:251:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60897 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+23:29:10 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:251:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60897 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+23:31:57 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:251:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60897 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+23:33:27 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:251:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4631 KBytes program size (code + initialized data).
+Info:           60897 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+23:37:28 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:251:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4632 KBytes program size (code + initialized data).
+Info:           60897 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+23:39:12 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:251:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4632 KBytes program size (code + initialized data).
+Info:           60897 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+23:45:42 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling common.c to obj/default/common.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/common.o common.c
+Info: Compiling display.c to obj/default/display.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/display.o display.c
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:251:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Compiling levels/level1.c to obj/default/levels/level1.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/level1.o levels/level1.c
+Info: Compiling levels/title_screen.c to obj/default/levels/title_screen.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/title_screen.o levels/title_screen.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:15:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Compiling mouse.c to obj/default/mouse.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/mouse.o mouse.c
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4632 KBytes program size (code + initialized data).
+Info:           60897 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+23:47:19 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling display.c to obj/default/display.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/display.o display.c
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:251:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Compiling levels/level1.c to obj/default/levels/level1.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/level1.o levels/level1.c
+Info: Compiling levels/title_screen.c to obj/default/levels/title_screen.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/title_screen.o levels/title_screen.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:15:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4632 KBytes program size (code + initialized data).
+Info:           60897 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+23:49:00 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:251:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4632 KBytes program size (code + initialized data).
+Info:           60897 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+00:01:46 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling common.c to obj/default/common.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/common.o common.c
+Info: Compiling display.c to obj/default/display.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/display.o display.c
+In file included from ships.h:8:0,
+                 from game.h:5,
+                 from display.h:5,
+                 from display.c:1:
+weapons.h:15:9: error: expected '}' before ';' token
+     5.0f;
+         ^
+make: *** [obj/default/display.o] Error 1
+00:02:41 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling display.c to obj/default/display.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/display.o display.c
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:251:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Compiling levels/level1.c to obj/default/levels/level1.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/level1.o levels/level1.c
+Info: Compiling levels/title_screen.c to obj/default/levels/title_screen.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/title_screen.o levels/title_screen.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:15:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Compiling mouse.c to obj/default/mouse.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/mouse.o mouse.c
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4634 KBytes program size (code + initialized data).
+Info:           60895 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+00:05:39 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling display.c to obj/default/display.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/display.o display.c
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:251:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Compiling levels/level1.c to obj/default/levels/level1.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/level1.o levels/level1.c
+Info: Compiling levels/title_screen.c to obj/default/levels/title_screen.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/title_screen.o levels/title_screen.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:15:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4634 KBytes program size (code + initialized data).
+Info:           60895 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+00:10:39 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:251:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4634 KBytes program size (code + initialized data).
+Info:           60895 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+00:13:46 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling display.c to obj/default/display.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/display.o display.c
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:251:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+game.c: In function 'update_weapons':
+game.c:350:32: warning: passing argument 1 of 'destroy_weapon' makes pointer from integer without a cast [-Wint-conversion]
+                 destroy_weapon(&weapons[i] ||
+                                ^
+game.c:235:6: note: expected 'weapon_t * {aka struct WEAPON *}' but argument is of type 'int'
+ void destroy_weapon(weapon_t* weapon) {
+      ^
+Info: Compiling levels/level1.c to obj/default/levels/level1.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/level1.o levels/level1.c
+Info: Compiling levels/title_screen.c to obj/default/levels/title_screen.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/title_screen.o levels/title_screen.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:15:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4632 KBytes program size (code + initialized data).
+Info:           60897 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+00:13:54 **** Build of configuration Nios II for project ws2_bsp ****
+make all 
+[BSP build complete]
+00:23:54 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling display.c to obj/default/display.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/display.o display.c
+In file included from display.c:1:0:
+display.h: In function 'destroy_ship':
+display.h:15:3: error: storage class specified for parameter 'fade_t'
+ } fade_t;
+   ^
+display.h:19:1: error: expected declaration specifiers before 'fade_t'
+ fade_t      create_fade(uint16_t color, int dir);
+ ^
+display.h:20:24: error: expected declaration specifiers or '...' before 'fade_t'
+ void        start_fade(fade_t* fade, float seconds);
+                        ^
+display.h:21:26: error: expected declaration specifiers or '...' before 'fade_t'
+ int         is_fade_done(fade_t* fade);
+                          ^
+display.h:22:23: error: expected declaration specifiers or '...' before 'fade_t'
+ int         show_fade(fade_t* fade);
+                       ^
+display.c:8:21: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void start_render() {
+                     ^
+display.c:17:22: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void double_render() {
+                      ^
+display.c:24:1: error: expected declaration specifiers before 'fade_t'
+ fade_t create_fade(uint16_t color, int dir) {
+ ^
+display.c:34:17: error: expected declaration specifiers or '...' before 'fade_t'
+ void start_fade(fade_t* fade, float seconds) {
+                 ^
+display.c:40:18: error: expected declaration specifiers or '...' before 'fade_t'
+ int is_fade_done(fade_t* fade) { return (get_time() - fade->start >= fade->end); }
+                  ^
+display.c:42:15: error: expected declaration specifiers or '...' before 'fade_t'
+ int show_fade(fade_t* fade) {
+               ^
+display.c:53:75: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int mouse_over_object(scene_t* scene, mouse_t* mouse, game_object_t* obj) {
+                                                                           ^
+display.c:74:58: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ position_t mouse_to_game(scene_t* scene, mouse_t* mouse) {
+                                                          ^
+display.c:79:79: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void handle_mouse(mouse_t* mouse, scene_t* scene, int h_scroll, int v_scroll) {
+                                                                               ^
+In file included from display.h:5:0,
+                 from display.c:1:
+game.h:62:17: error: old-style parameter declarations in prototyped function definition
+ void            destroy_ship(scene_t* scene, ship_t* ship)
+                 ^
+display.c:110:1: error: expected '{' at end of input
+ }
+ ^
+make: *** [obj/default/display.o] Error 1
+00:23:55 **** Incremental Build of configuration Nios II for project ws2_bsp ****
+make all 
+[BSP build complete]
+00:24:28 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling display.c to obj/default/display.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/display.o display.c
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+game.c: In function 'spawn_weapon':
+game.c:258:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Compiling levels/level1.c to obj/default/levels/level1.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/level1.o levels/level1.c
+Info: Compiling levels/title_screen.c to obj/default/levels/title_screen.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/title_screen.o levels/title_screen.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:15:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4632 KBytes program size (code + initialized data).
+Info:           60897 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+00:24:44 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4632 KBytes program size (code + initialized data).
+Info:           60897 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+00:24:46 **** Incremental Build of configuration Nios II for project ws2_bsp ****
+make all 
+[BSP build complete]
+00:34:29 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4632 KBytes program size (code + initialized data).
+Info:           60897 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+00:44:17 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+Info: Compiling display.c to obj/default/display.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/display.o display.c
+Info: Compiling game.c to obj/default/game.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
+Info: Compiling levels/level1.c to obj/default/levels/level1.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/level1.o levels/level1.c
+Info: Compiling levels/title_screen.c to obj/default/levels/title_screen.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/title_screen.o levels/title_screen.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:15:5: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+     usleep(1000);
+     ^
+Info: Linking ws2.elf
+nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
+nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
+Info: (ws2.elf) 4632 KBytes program size (code + initialized data).
+Info:           60897 KBytes free for stack + heap.
+Info: Creating ws2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
+[ws2 build complete]
+00:44:25 **** Incremental Build of configuration Nios II for project ws2_bsp ****
+make all 
+[BSP build complete]
+00:44:43 **** Incremental Build of configuration Nios II for project ws2 ****
+make all 
+Info: Building ../ws2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
+[BSP build complete]
+[ws2 build complete]

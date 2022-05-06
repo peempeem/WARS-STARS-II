@@ -26,6 +26,9 @@
 
 typedef struct SCENE {
     float last_update;
+    int shipcountc;
+    int shipcountf;
+    int eshipcount;
     struct {
         position_t  pos,
                     max;
@@ -56,7 +59,7 @@ void            push_scene(scene_t* scene);
 void            clear_scene(scene_t* scene);
 
 ship_t*         spawn_ship(scene_t* scene, const ship_t* spawn, int user, position_t pos);
-void            destroy_ship(ship_t* ship);
+void            destroy_ship(scene_t* scene, ship_t* ship);
 
 void            update_game(scene_t* scene);
 

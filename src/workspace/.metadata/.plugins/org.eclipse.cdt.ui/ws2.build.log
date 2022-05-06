@@ -1,20 +1,9 @@
-21:38:56 **** Incremental Build of configuration Nios II for project ws2 ****
+00:44:43 **** Incremental Build of configuration Nios II for project ws2 ****
 make all 
 Info: Building ../ws2_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ws2_bsp/
 [BSP build complete]
-Info: Compiling game.c to obj/default/game.o
-nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/game.o game.c
-Info: Compiling levels/level1.c to obj/default/levels/level1.o
-nios2-elf-gcc -xc -MP -MMD -c -I../ws2_bsp//HAL/inc -I../ws2_bsp/ -I../ws2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/levels/level1.o levels/level1.c
-Info: Linking ws2.elf
-nios2-elf-g++  -T'../ws2_bsp//linker.x' -msys-crt0='../ws2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ws2_bsp/   -Wl,-Map=ws2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o ws2.elf obj/default/common.o obj/default/display.o obj/default/game.o obj/default/gdu.o obj/default/levels/level1.o obj/default/levels/title_screen.o obj/default/main.o obj/default/mouse.o obj/default/timer.o obj/default/usb_kb/HID.o obj/default/usb_kb/MAX3421E.o obj/default/usb_kb/transfer.o obj/default/vga.o -lm -msys-lib=m
-nios2-elf-insert ws2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x2190 --timestamp 1651386187 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name soc --quartus_project_dir "C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src" --jdi ../..//output_files/WS2.jdi --sopcinfo C:/Users/James/LOCAL/ece385/final/WARS-STARS-II/src/software/ws2_bsp/../../soc.sopcinfo
-Info: (ws2.elf) 4630 KBytes program size (code + initialized data).
-Info:           60899 KBytes free for stack + heap.
-Info: Creating ws2.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source ws2.elf >ws2.objdump
 [ws2 build complete]
 
-21:39:00 Build Finished (took 4s.768ms)
+00:44:44 Build Finished (took 791ms)
 
