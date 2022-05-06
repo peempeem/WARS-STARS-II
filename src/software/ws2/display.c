@@ -50,8 +50,7 @@ int show_fade(fade_t* fade) {
     return done;
 }
 
-int mouse_over_object(scene_t* scene, mouse_t* mouse, int object) {
-    game_object_t* obj = &scene->objects.untyped[object];
+int mouse_over_object(scene_t* scene, mouse_t* mouse, game_object_t* obj) {
     int x = mouse->pos.x;
     int y = mouse->pos.y;
     if (obj->flags & SCROLL) {

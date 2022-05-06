@@ -27,40 +27,40 @@ int run_level1() {
     scene.max.x         = scene.scroll.max.x + SCREEN_WIDTH;
     scene.max.y         = SCREEN_HEIGHT;
 
-    int background      = allocate_object(&scene, BACKGROUND,   USED | VISABLE);
-    int player_planet   = allocate_object(&scene, BACKGROUND,   USED | VISABLE | SCROLL);
-    int enemy_planet    = allocate_object(&scene, BACKGROUND,   USED | VISABLE | SCROLL);
-    int statusbar       = allocate_object(&scene, EFFECTS,      USED | VISABLE);
-    int spawnship1      = allocate_object(&scene, EFFECTS,      USED | VISABLE | CENTERED);
-    int spawnship2      = allocate_object(&scene, EFFECTS,      USED | VISABLE | CENTERED);
-    int spawnwarning    = allocate_object(&scene, EFFECTS,      USED | CENTERED);
-    int cursor          = allocate_object(&scene, CURSOR,       USED | VISABLE);
+    game_object_t* background       = allocate_object(&scene, BACKGROUND,   USED | VISABLE);
+    game_object_t* player_planet    = allocate_object(&scene, BACKGROUND,   USED | VISABLE | SCROLL | CENTERED);
+    game_object_t* enemy_planet     = allocate_object(&scene, BACKGROUND,   USED | VISABLE | SCROLL | CENTERED);
+    game_object_t* statusbar        = allocate_object(&scene, EFFECTS,      USED | VISABLE);
+    game_object_t* spawnship1       = allocate_object(&scene, EFFECTS,      USED | VISABLE | CENTERED);
+    game_object_t* spawnship2       = allocate_object(&scene, EFFECTS,      USED | VISABLE | CENTERED);
+    game_object_t* spawnwarning     = allocate_object(&scene, EFFECTS,      USED | CENTERED);
+    game_object_t* cursor           = allocate_object(&scene, CURSOR,       USED | VISABLE);
 
-    scene.objects.untyped[background    ].sprite = level1_background_sprite;
-    scene.objects.untyped[player_planet ].sprite = level1_player_planet_sprite;
-    scene.objects.untyped[enemy_planet  ].sprite = level1_enemy_planet_sprite;
-    scene.objects.untyped[statusbar     ].sprite = statusbar_sprite;
-    scene.objects.untyped[spawnship1    ].sprite = playership0_sprite;
-    scene.objects.untyped[spawnship2    ].sprite = playership1_sprite;
-    scene.objects.untyped[spawnwarning  ].sprite = warning_sprite;
-    scene.objects.untyped[cursor        ].sprite = cursor_sprite;
+    background->sprite      = level1_background_sprite;
+    player_planet->sprite   = level1_player_planet_sprite;
+    enemy_planet->sprite    = level1_enemy_planet_sprite;
+    statusbar->sprite       = statusbar_sprite;
+    spawnship1->sprite      = playership0_sprite;
+    spawnship2->sprite      = playership1_sprite;
+    spawnwarning->sprite    = warning_sprite;
+    cursor->sprite          = cursor_sprite;
 
-    scene.objects.untyped[player_planet].pos.x = 50;
-    scene.objects.untyped[player_planet].pos.y = (scene.max.y - scene.objects.untyped[player_planet].sprite.height) / 2;
+    player_planet->pos.x = 50 + player_planet->sprite.width / 2;
+    player_planet->pos.y = scene.max.y / 2;
 
-    scene.objects.untyped[enemy_planet].pos.x = scene.max.x - 50 - scene.objects.untyped[enemy_planet].sprite.width;
-    scene.objects.untyped[enemy_planet].pos.y = (scene.max.y - scene.objects.untyped[enemy_planet].sprite.height) / 2;
+    enemy_planet->pos.x = scene.max.x - 50 - enemy_planet->sprite.width / 2;
+    enemy_planet->pos.y = scene.max.y / 2;
 
-    scene.objects.untyped[statusbar].pos.y = SCREEN_HEIGHT - scene.objects.untyped[statusbar].sprite.height;
+    statusbar->pos.y = SCREEN_HEIGHT - statusbar->sprite.height;
 
-    position_t spawnship1_default = scene.objects.untyped[statusbar].pos;
+    position_t spawnship1_default = statusbar->pos;
     spawnship1_default.x += 270;
     spawnship1_default.y += 30;
-    scene.objects.untyped[spawnship1].pos = spawnship1_default;
+    spawnship1->pos = spawnship1_default;
 
     position_t spawnship2_default = spawnship1_default;
     spawnship2_default.x = 370;
-    scene.objects.untyped[spawnship2].pos = spawnship2_default;
+    spawnship2->pos = spawnship2_default;
 
     mouse_t mouse = new_mouse(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
 
@@ -68,22 +68,19 @@ int run_level1() {
     start_fade(&fade, 1);
 
     int placing_ship = 0;
-    int shipcountc, shipcountf, eshipcount = 0; //declare counters
     int running = 1;
     while (running) {
         poll_mouse(&mouse, 0, 1);
 
         if (is_ready(&frame_rate)) {
             handle_mouse(&mouse, &scene, 1, 0); 
-            scene.objects.untyped[cursor].pos = mouse.pos;
+            cursor->pos = mouse.pos;
 
             if (!is_fade_done(&fade))
                 show_fade(&fade);
             
-            scene.objects.untyped[background].sprite.start_x = scene.scroll.pos.x / 3;
-            scene.objects.untyped[background].sprite.end_x = scene.objects.untyped[background].sprite.start_x + SCREEN_WIDTH;
-
-            scene.objects.untyped[cursor].pos = mouse.pos;
+            background->sprite.start_x = scene.scroll.pos.x / 3;
+            background->sprite.end_x = background->sprite.start_x + SCREEN_WIDTH;
 
             position_t place_pos = mouse_to_game(&scene, &mouse);
             if (place_pos.x > SPAWN_CUTOFF)
@@ -99,60 +96,36 @@ int run_level1() {
                         break;
                     case 1:
                         spawn_ship(&scene, &player_fighter, PLAYER, place_pos);
-                        scene.objects.untyped[spawnship1].pos = spawnship1_default;
+                        spawnship1->pos = spawnship1_default;
                         placing_ship = 0;
-                        shipcountf++;
                         break;
                     case 2:
                         spawn_ship(&scene, &player_cruiser, PLAYER, place_pos);
-                        scene.objects.untyped[spawnship2].pos = spawnship2_default;
+                        spawnship2->pos = spawnship2_default;
                         placing_ship = 0;
-                        shipcountc++;
                         break;
                 }
             }
 
             position_t warn_pos = place_pos;
             warn_pos.x -= scene.scroll.pos.x;
-            if (warn_pos.x < scene.objects.untyped[spawnwarning].sprite.width / 2)
-                warn_pos.x = scene.objects.untyped[spawnwarning].sprite.width / 2;
+            if (warn_pos.x < spawnwarning->sprite.width / 2)
+                warn_pos.x = spawnwarning->sprite.width / 2;
 
-            if (placing_ship && warn_pos.x >= SPAWN_CUTOFF) {
-                scene.objects.untyped[spawnwarning  ].flags |= VISABLE;
-                scene.objects.untyped[spawnwarning  ].pos   = warn_pos;
+            if (placing_ship && warn_pos.x >= SPAWN_CUTOFF + scene.scroll.pos.x) {
+                spawnwarning->flags |= VISABLE;
+                spawnwarning->pos   = warn_pos;
             } else
-                scene.objects.untyped[spawnwarning].flags &= ~VISABLE;
+                spawnwarning->flags &= ~VISABLE;
 
             switch (placing_ship) {
                 case 1:
-                    scene.objects.untyped[spawnship1    ].pos   = mouse.pos;
+                    spawnship1->pos = mouse.pos;
                     break;
                 case 2:
-                    scene.objects.untyped[spawnship2    ].pos = mouse.pos;
+                    spawnship2->pos = mouse.pos;
                     break;
             }
-
-
-            int r = rand() % 3;
-                   int yr = ((rand() % 400)+ 60);
-                       if (eshipcount < (2 + shipcountc + shipcountf)) {
-
-                        position_t pos;
-
-                        pos.y = yr;
-                        pos.x =1200 - scene.scroll.pos.x;
-                        if(r == 0){
-                        spawn_ship(&scene, &enemy_cruiser, ENEMY, pos);
-                        eshipcount++;
-                        }
-                        else if(r==1){
-                        spawn_ship(&scene, &enemy_fighter, ENEMY, pos);
-                        eshipcount++;
-                        }
-
-                       }
-
-
 
             update_game(&scene);
 

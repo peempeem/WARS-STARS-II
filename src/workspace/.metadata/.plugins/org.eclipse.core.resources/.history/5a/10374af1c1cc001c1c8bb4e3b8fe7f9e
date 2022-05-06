@@ -1,0 +1,60 @@
+#ifndef SHIPS_H
+#define SHIPS_H
+
+#include "sprites/playership0.h"
+#include "sprites/playership1.h"
+#include "sprites/enemyship0.h"
+#include "sprites/enemyship1.h"
+#include "weapons.h"
+
+typedef struct SHIP {
+    game_object_t* ptr;
+    int hp;
+    float speed;
+    float range;
+    position_t fire_pos;
+    const sprite_t* sprite;
+    const weapon_data_t* weapon;
+} ship_t;
+
+const static ship_t player_fighter = {
+    NULL,
+    100,
+    2.5f,
+	75.0f,
+    {0, 0},
+    &playership0_sprite,
+    &missle_data
+};
+
+const static ship_t player_cruiser = {
+    NULL,
+    200,
+    1.25f,
+	200.0f,
+    {0, 0},
+    &playership1_sprite,
+    &missle_data
+};
+
+const static ship_t enemy_fighter = {
+    NULL,
+    100,
+    2.5f,
+	75.0f,
+    {0, 0},
+    &playership0_sprite,
+    &missle_data
+};
+
+const static ship_t enemy_cruiser = {
+    NULL,
+    200,
+    1.25f,
+	200.0f,
+    {0, 0},
+    &playership1_sprite,
+    &missle_data
+};
+
+#endif

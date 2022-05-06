@@ -154,6 +154,7 @@ C_SRCS += usb_kb/HID.c
 C_SRCS += usb_kb/MAX3421E.c
 C_SRCS += usb_kb/transfer.c
 C_SRCS += display.c
+C_SRCS += common.c
 CXX_SRCS :=
 ASM_SRCS :=
 

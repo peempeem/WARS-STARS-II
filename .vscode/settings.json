@@ -22,6 +22,9 @@
         "title_screen.h": "c",
         "common.h": "c",
         "limits": "c",
-        "level1_enemy_planet.h": "c"
-    }
+        "level1_enemy_planet.h": "c",
+        "ships.h": "c",
+        "timer.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
 }

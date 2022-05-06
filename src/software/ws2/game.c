@@ -8,31 +8,34 @@ void init_object(game_object_t* object, int flags) {
     object->flags = flags;
 }
 
-int allocate_object(scene_t* scene, int type, int flags) {
+game_object_t* allocate_object(scene_t* scene, int type, int flags) {
     switch (type) {
         case BACKGROUND:
             for (int i = 0; i < BACKGROUND_SPRITES; i++) {
-                if (!(scene->objects.typed.background[i].flags & USED)) {
-                    init_object(&scene->objects.typed.background[i], flags);
-                    return i;
+                game_object_t* obj = &scene->objects.typed.background[i];
+                if (!(obj->flags & USED)) {
+                    init_object(obj, flags);
+                    return obj;
                 }
             }
             break;
         
         case SHIPS:
             for (int i = 0; i < SHIP_SPRITES; i++) {
-                if (!(scene->objects.typed.ships[i].flags & USED)) {
-                    init_object(&scene->objects.typed.ships[i], flags);
-                    return i + BACKGROUND_SPRITES;
+                game_object_t* obj = &scene->objects.typed.ships[i];
+                if (!(obj->flags & USED)) {
+                    init_object(obj, flags);
+                    return obj;
                 }
             }
             break;
         
         case EFFECTS:
             for (int i = 0 + SHIP_SPRITES; i < EFFECT_SPRITES; i++) {
-                if (!(scene->objects.typed.effects[i].flags & USED)) {
-                    init_object(&scene->objects.typed.effects[i], flags);
-                    return i + BACKGROUND_SPRITES + SHIP_SPRITES;
+                game_object_t* obj = &scene->objects.typed.effects[i];
+                if (!(obj->flags & USED)) {
+                    init_object(obj, flags);
+                    return obj;
                 }
             }
             break;
@@ -40,16 +43,16 @@ int allocate_object(scene_t* scene, int type, int flags) {
         case CURSOR:
             if (!(scene->objects.typed.cursor.flags & USED)) {
                 init_object(&scene->objects.typed.cursor, flags);
-                return MAX_SPRITES - 1;
+                return &scene->objects.typed.cursor;
             }
             break;
     }
-    return -1;
+    return NULL;
 }
 
-void deallocate_object(scene_t* scene, uint32_t object) {
-    if (object < MAX_SPRITES)
-        scene->objects.untyped[object].flags = 0;
+void deallocate_object(game_object_t* obj) {
+    if (obj != NULL)
+        obj->flags = 0;
 }
 
 void push_scene(scene_t* scene) {
@@ -91,14 +94,10 @@ void push_scene(scene_t* scene) {
 
 void clear_scene(scene_t* scene) {
     memset(scene, 0, sizeof(scene_t));
-
-    for (int i = 0; i < SHIP_SPRITES; i++) {
-        scene->ships.player[i].index    = -1;
-        scene->ships.enemy[i].index     = -1;
-    }
+    scene->last_update = 0.0f;
 }
 
-ship_data_t* ship_select(scene_t* scene, int user) {
+ship_t* ship_select(scene_t* scene, int user) {
     switch (user) {
         case PLAYER:
             return scene->ships.player;
@@ -108,20 +107,20 @@ ship_data_t* ship_select(scene_t* scene, int user) {
     return NULL;
 }
 
-int allocate_ship(scene_t* scene, int user) {
-    ship_data_t* ships = ship_select(scene, user);
+ship_t* allocate_ship(scene_t* scene, int user) {
+    ship_t* ships = ship_select(scene, user);
     if (ships == NULL)
-        return -1;
+        return NULL;
     
     for (int i = 0; i < USER_SHIPS; i++) {
-        if (ships[i].index == -1)
-            return i;
+        if (ships[i].ptr == NULL)
+            return &ships[i];
     }
-    return -1;
+    return NULL;
 }
 
 int ship_count(scene_t* scene, int user) {
-    ship_data_t* ships = NULL;
+    ship_t* ships = NULL;
 
     switch (user) {
         case PLAYER:
@@ -137,75 +136,108 @@ int ship_count(scene_t* scene, int user) {
     
     int count = 0;
     for (int i = 0; i < USER_SHIPS; i++) {
-        if (scene->ships.player[i].index != -1)
+        if (scene->ships.player[i].ptr != NULL)
             count++;
     }
     
     return count;
 }
 
-int spawn_ship(scene_t* scene, const ship_t* ship, int user, position_t pos) {
-    int sd_idx  = allocate_ship(scene, user);
-    if (sd_idx == -1)
-        return -1;
+ship_t* spawn_ship(scene_t* scene, const ship_t* spawn, int user, position_t pos) {
+    ship_t* ship = allocate_ship(scene, user);
+    if (ship == NULL)
+        return NULL;
     
-    int obj_idx = allocate_object(scene, SHIPS, USED | VISABLE | SCROLL | CENTERED);
-    if (obj_idx == -1)
-        return -1;
+    game_object_t* obj = allocate_object(scene, SHIPS, USED | VISABLE | SCROLL | CENTERED);
+    if (obj == NULL)
+        return NULL;
 
-    ship_data_t* ships = ship_select(scene, user);
-
-    ships[sd_idx].index     = obj_idx;
-    ships[sd_idx].hp        = ship->hp;
-    ships[sd_idx].speed     = ship->speed;
-    ships[sd_idx].firerate  = ship->firerate;
-    
-    scene->objects.untyped[obj_idx].sprite  = *ship->sprite;
-    scene->objects.untyped[obj_idx].pos     = pos;
-    return sd_idx;
+    *ship       = *spawn;
+    ship->ptr   = obj;
+    obj->sprite = *ship->sprite;
+    obj->pos    = pos;
+    ship->physics.p.x = pos.x;
+    ship->physics.p.y = pos.y;
+    return ship;
 }
 
-void destroy_ship(scene_t* scene, int user, uint32_t ship) {
-    ship_data_t* ships = ship_select(scene, user);
-    if (ships == NULL || ship >= USER_SHIPS)
-        return;
-    
-    deallocate_object(scene, ships[ship].index);
-    ships[ship].index = -1;
+void destroy_ship(ship_t* ship) {
+    deallocate_object(ship->ptr);
+    ship->ptr = NULL;
 
     // todo: spawn exposion??
 }
 
-float distance(position_t p1, position_t p2) { return sqrtf(pow(p2.x - p1.x, 2) + pow(p2.y - p1.y, 2)); }
+float distance(fposition_t p1, fposition_t p2) { return sqrtf(pow(p2.x - p1.x, 2) + pow(p2.y - p1.y, 2)); }
 
-int closest_ship(scene_t* scene, int user, position_t pos) {
-    ship_data_t* ships = ship_select(scene, user);
+ship_t* closest_ship(scene_t* scene, int user, fposition_t pos) {
+    ship_t* ships = ship_select(scene, user);
     if (ships == NULL)
-        return -1;
+        return NULL;
     
     int idx = -1;
     float lowest, dist;
     for (int i = 0; i < USER_SHIPS; i++) {
-        if (ships[i].index != -1) {
-            dist = distance(pos, scene->objects.untyped[ships[i].index].pos);
+        if (ships[i].ptr != NULL) {
+            dist = distance(pos, ships[i].physics.p);
             if (idx == -1 || dist < lowest) {
                 idx = i;
                 lowest = dist;
             }
         }
     }
-    return idx;
+    if (idx == -1)
+    	return NULL;
+    return &ships[idx];
+}
+
+void update_ships(scene_t* scene, int user, float dt) {
+    ship_t* ships;
+    fposition_t enemy_planet_pos;
+    switch (user) {
+        case PLAYER:
+            ships = scene->ships.player;
+            enemy_planet_pos.x = scene->objects.typed.background[2].pos.x;
+            enemy_planet_pos.y = scene->objects.typed.background[2].pos.y;
+            break;
+        case ENEMY:
+            ships = scene->ships.enemy;
+            enemy_planet_pos.x = scene->objects.typed.background[1].pos.x;
+            enemy_planet_pos.y = scene->objects.typed.background[1].pos.y;
+            break;
+        default:
+            return;
+    }
+    for (int i = 0; i < USER_SHIPS; i++) {
+        if (ships[i].ptr != NULL) {
+            update_physics(&ships[i].physics, dt);
+            cap_velocity(&ships[i].physics, ships[i].max_v);
+
+            if (distance(ships[i].physics.p, enemy_planet_pos) < ships[i].range)
+                slow_down(&ships[i].physics, ships[i].accel);
+            else {
+                ship_t* enemy = closest_ship(scene, !user, ships[i].physics.p);
+                if (enemy == NULL) {
+                    ships[i].physics.a.x = ships[i].accel;
+                    ships[i].physics.a.y = 0;
+                } else if (distance(ships[i].physics.p, enemy->physics.p) <= ships[i].range)
+                    slow_down(&ships[i].physics, ships[i].accel);
+            }
+            
+            ships[i].ptr->pos.x = (int) ships[i].physics.p.x;
+            ships[i].ptr->pos.y = (int) ships[i].physics.p.y;
+
+            if (ships[i].physics.p.x > scene->max.x)
+                destroy_ship(&ships[i]);
+        }
+    }
 }
 
 void update_game(scene_t* scene) {
-    ship_data_t* ships = scene->ships.player;
-    for (int i = 0; i < USER_SHIPS; i++) {
-        if (ships[i].index != -1) {
-            scene->objects.untyped[ships[i].index].pos.x += ships[i].speed;
-
-            if (scene->objects.untyped[ships[i].index].pos.x >= 1000)
-                destroy_ship(scene, PLAYER, i);
-        }
-    }
+    float time = get_time();
+    float dt = time - scene->last_update;
+    scene->last_update = time;
+    update_ships(scene, PLAYER, dt);
+    update_ships(scene, ENEMY, dt);
 }
 
