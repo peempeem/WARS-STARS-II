@@ -29,6 +29,8 @@ typedef struct SCENE {
     int shipcountc;
     int shipcountf;
     int eshipcount;
+    ship_t playerplanet;
+    ship_t enemyplanet;
     struct {
         position_t  pos,
                     max;

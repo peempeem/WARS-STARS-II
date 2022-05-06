@@ -65,7 +65,6 @@ int run_level1() {
     enemybar->pos.x = 450;
     enemybar->pos.y = SCREEN_HEIGHT - 46;
     
-
     position_t spawnship1_default = statusbar->pos;
     spawnship1_default.x += 270;
     spawnship1_default.y += 30;
@@ -82,13 +81,22 @@ int run_level1() {
 
     spawn_ship(&scene, &enemy_cruiser, ENEMY, enemy_planet->pos);
 
-    fade_t fader = create_fade(0xFFFF, FADE_TO);
-    fade_t fadew = create_fade(0xFF00, FADE_TO);
+    fade_t fader = create_fade(0x0F00, FADE_TO);
+    fade_t fadew = create_fade(0x0FFF, FADE_TO);
 
-    int player_health = 1000;
-    int enemy_health = 1000;    
+    scene.playerplanet.physics.p.x = (float) player_planet->pos.x;
+    scene.playerplanet.physics.p.y = (float) player_planet->pos.y;
+    scene.playerplanet.hp = 1000;
+    scene.playerplanet.hitradius = 100;
+    scene.playerplanet.ptr = player_planet;
 
-    int lose = 0, win = 0;				//fade out final screens
+    scene.enemyplanet.physics.p.x = (float) enemy_planet->pos.x;
+    scene.enemyplanet.physics.p.y = (float) enemy_planet->pos.y;
+    scene.enemyplanet.hp = 1000;
+    scene.enemyplanet.hitradius = 100;
+    scene.enemyplanet.ptr = enemy_planet;
+
+    int win = 0;
     int start_fading = 0;
 
     int placing_ship = 0;
@@ -107,8 +115,8 @@ int run_level1() {
             background->sprite.start_x = scene.scroll.pos.x / 3;
             background->sprite.end_x = background->sprite.start_x + SCREEN_WIDTH;
 
-            playerbar->sprite.end_x = (playerbar->sprite.width * player_health) / 1000;
-            enemybar->sprite.end_x = (enemybar->sprite.width * enemy_health) / 1000;
+            playerbar->sprite.end_x = (playerbar->sprite.width * scene.playerplanet.hp) / 1000;
+            enemybar->sprite.end_x = (enemybar->sprite.width * scene.enemyplanet.hp) / 1000;
 
             position_t place_pos = mouse_to_game(&scene, &mouse);
             if (place_pos.x > SPAWN_CUTOFF)
@@ -177,7 +185,7 @@ int run_level1() {
                         break;
 
                     case 2:
-                    break;
+                        break;
 
                     case 3:
                         spawn_ship(&scene, &enemy_fighter, ENEMY, epos);
@@ -201,46 +209,36 @@ int run_level1() {
                 }
             }
 
-
-            if(enemy_health <= 0){
-            	if (!start_fading) {
-            	start_fade(&fader, 3);
-            	start_fading = 1;
-            	lose = 1;
-
-
-            	}
-            	running =  !show_fade(&fader);
+            if (scene.enemyplanet.hp <= 0) {
+                if (!start_fading) {
+                    start_fade(&fadew, 1);
+                    start_fading = 1;
+                }
+                running =  !show_fade(&fadew);
             }
 
 
-            if(player_health <= 0){
-            	if (!start_fading) {
-            	start_fade(&fadew, 3);
-            	start_fading = 1;
-            	win= 1;
-
-
-                        }
-            	running = !show_fade(&fadew);
+            if (scene.playerplanet.hp <= 0) {
+                if (!start_fading) {
+                    start_fade(&fader, 1);
+                    start_fading = 1;
+                    win= 1;
+                }
+                running = !show_fade(&fader);
             }
 
 
 
-            if (!start_fading) {
-            	update_game(&scene);
+            update_game(&scene);
 
-				while (gdu_is_running());
-				push_scene(&scene);
-				start_render();
-            }
+            while (gdu_is_running());
+            push_scene(&scene);
+            start_render();
 
         }
     }
 
-
     if (win)
-    return 0;
-    else
+        return 0;
     return 1;
 }

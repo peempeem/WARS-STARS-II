@@ -275,13 +275,16 @@ weapon_t* spawn_weapon(scene_t* scene, ship_t* ship, ship_t* target, fposition_t
 
 void update_ships(scene_t* scene, int user, float dt) {
     ship_t* ships = ship_select(scene, user);
+    ship_t* planet;
     position_t enemy_planet_pos;
     switch (user) {
         case PLAYER:
+            planet = &scene->enemyplanet;
             enemy_planet_pos.x = (int) scene->objects.typed.background[2].pos.x;
             enemy_planet_pos.y = (int) scene->objects.typed.background[2].pos.y;
             break;
         case ENEMY:
+            planet = &scene->playerplanet;
             enemy_planet_pos.x = (int) scene->objects.typed.background[1].pos.x;
             enemy_planet_pos.y = (int) scene->objects.typed.background[1].pos.y;
             break;
@@ -294,19 +297,21 @@ void update_ships(scene_t* scene, int user, float dt) {
             cap_velocity(&ships[i].physics, ships[i].max_v);
 
             position_t p = { ships[i].physics.p.x, ships[i].physics.p.y };
+            fposition_t v = { 32.0f, 0.0f };
+            if (user == ENEMY)
+                v.x = -v.x;
 
-            if (distance(p, enemy_planet_pos) < ships[i].range)
+            if (distance(p, enemy_planet_pos) < ships[i].range) {
+                if (is_ready(&ships[i].firerate_data))
+                    spawn_weapon(scene, &ships[i], planet, v, user);
                 slow_down(&ships[i].physics, ships[i].accel);
-            else {
+            } else {
                 ship_t* enemy = closest_ship(scene, !user, ships[i].physics.p);
                 position_t epos = { enemy->physics.p.x, enemy->physics.p.y };
                 if (enemy == NULL || distance(p, epos) > ships[i].range) {
                     ships[i].physics.a.x = ships[i].accel;
                     ships[i].physics.a.y = 0;
                 } else {
-                    fposition_t v = { 32.0f, 0.0f };
-                    if (user == ENEMY)
-                        v.x = -v.x;
                     if (is_ready(&ships[i].firerate_data))
                         spawn_weapon(scene, &ships[i], enemy, v, user);
                     slow_down(&ships[i].physics, ships[i].accel);
@@ -356,10 +361,10 @@ void update_weapons(scene_t* scene, int user, float dt) {
                 destroy_weapon(&weapons[i]);
             
             if (distance(pos, tpos) < weapons[i].target->hitradius) {
-                printf("%d\n", weapons[i].target->hp);
                 weapons[i].target->hp -= weapons[i].data->damage;
-                if (weapons[i].target->hp < 0) 
+                if (weapons[i].target->hp < 0)
                     destroy_ship(scene, weapons[i].target);
+                destroy_weapon(&weapons[i]);
             }
         }
     }

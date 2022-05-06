@@ -7,6 +7,7 @@
 
 #include "levels/title_screen.h"
 #include "levels/level1.h"
+#include "levels/end.h"
 #include "sprites/mouse.h"
 
 int main() {

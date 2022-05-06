@@ -22,7 +22,7 @@ const static ship_t player_fighter = {
         {0.0f, 0.0f}
     },                          // physics
     &playership0_sprite,        // sprite
-    &missle_data,               // weapon
+    &player_missle_data,        // weapon
     1.5f,                       // firerate
     {0, 0}                      // firerate_data
 };
@@ -41,7 +41,7 @@ const static ship_t player_cruiser = {
         {0.0f, 0.0f}
     },                          // physics
     &playership1_sprite,        // sprite
-    &missle_data,               // weapon
+    &player_missle_data,        // weapon
     0.75f,                      // firerate
     {0, 0}                      // firerate_data
 };
@@ -60,7 +60,7 @@ const static ship_t enemy_fighter = {
         {0.0f, 0.0f}
     },                          // physics
     &enemyship0_sprite,         // sprite
-    &missle_data,               // weapon
+    &enemy_missle_data,         // weapon
     1.5f,                       // firerate
     {0, 0}                      // firerate_data
 };
@@ -79,7 +79,7 @@ const static ship_t enemy_cruiser = {
         {0.0f, 0.0f}
     },                          // physics
     &enemyship1_sprite,         // sprite
-    &missle_data,               // weapon
+    &enemy_missle_data,         // weapon
     0.75f,                      // firerate
     {0, 0}                      // firerate_data
 };

@@ -5,6 +5,7 @@
  *      Author: macra
  */
 
+#include "end.h"
 #include "../sprites/lightspeed_background.h"
 #include "../mouse.h"
 #include "../timer.h"
@@ -15,33 +16,30 @@
 
 void run_lose()	{
 
-	rate_t frame_rate = create_rate(20);
-	scene_t scene;
-	clear_scene(&scene);
+    scene_t scene;
+    clear_scene(&scene);
 
 
-	game_object_t* background               = allocate_object(&scene, BACKGROUND,   USED | VISABLE);
-	background->sprite              = lightspeed_background_sprite; 	//to be added
+    game_object_t* background               = allocate_object(&scene, BACKGROUND,   USED | VISABLE);
+    background->sprite              = lightspeed_background_sprite; 	//to be added
 
-	scene.max.x = SCREEN_WIDTH;
-	scene.max.y = SCREEN_HEIGHT;
+    scene.max.x = SCREEN_WIDTH;
+    scene.max.y = SCREEN_HEIGHT;
 
-	fade_t fader = create_fade(0xFFFF, FADE_FROM);
-	    start_fade(&fader, 3);
+    fade_t fader = create_fade(0xFFFF, FADE_FROM);
+        start_fade(&fader, 3);
 
-	    mouse_t mouse = new_mouse(scene.max.x / 2, scene.max.y / 2);
+        int running = 1;
+    while(running){
 
-	    int running = 1;
-	while(running){
+    if (!is_fade_done(&fader))
+        show_fade(&fader);
 
-	if (!is_fade_done(&fader))
-	    show_fade(&fader);
+    while (gdu_is_running());
+                push_scene(&scene);
+                start_render();
 
-	while (gdu_is_running());
-	            push_scene(&scene);
-	            start_render();
-
-	}
+    }
 }
 
 

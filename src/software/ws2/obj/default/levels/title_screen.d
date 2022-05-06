@@ -5,8 +5,7 @@ obj/default/levels/title_screen.o: levels/title_screen.c \
  levels/../sprites/../gdu.h levels/../sprites/playership1.h \
  levels/../sprites/enemyship0.h levels/../sprites/enemyship1.h \
  levels/../weapons.h levels/../sprites/weapon1_0.h \
- levels/../sprites/weapon1_1.h levels/../sprites/weapon1_2.h \
- levels/../sprites/weapon1_3.h levels/../display.h levels/../mouse.h \
+ levels/../sprites/weapon2_0.h levels/../display.h levels/../mouse.h \
  levels/../game.h levels/../vga.h \
  levels/../sprites/lightspeed_background.h \
  levels/../sprites/title_screen_ship.h levels/../sprites/WAR_STARS_II.h \
@@ -43,11 +42,7 @@ levels/../weapons.h:
 
 levels/../sprites/weapon1_0.h:
 
-levels/../sprites/weapon1_1.h:
-
-levels/../sprites/weapon1_2.h:
-
-levels/../sprites/weapon1_3.h:
+levels/../sprites/weapon2_0.h:
 
 levels/../display.h:
 

@@ -5,6 +5,7 @@
  *      Author: macra
  */
 
+#include "end.h"
 #include "../sprites/lightspeed_background.h"
 #include "../sprites/title_screen_ship.h"
 #include "../mouse.h"
@@ -14,11 +15,10 @@
 #include "../vga.h"
 #include "../sprites/cursor.h"
 
-void run_win()	{
+void run_win() {
 
-	rate_t frame_rate = create_rate(20);
-	scene_t scene;
-	clear_scene(&scene);
+    scene_t scene;
+    clear_scene(&scene);
 
 	game_object_t* ship                     = allocate_object(&scene, EFFECTS,      USED | VISABLE | CENTERED);
 	game_object_t* background               = allocate_object(&scene, BACKGROUND,   USED | VISABLE);
@@ -26,16 +26,15 @@ void run_win()	{
 	ship->sprite                    = title_screen_ship_sprite;
 
 
-	scene.max.x = SCREEN_WIDTH;
-	scene.max.y = SCREEN_HEIGHT;
+    scene.max.x = SCREEN_WIDTH;
+    scene.max.y = SCREEN_HEIGHT;
 
-	fade_t fader = create_fade(0xFF00, FADE_FROM);
-	    start_fade(&fader, 3);
+    fade_t fader = create_fade(0xFF00, FADE_FROM);
+        start_fade(&fader, 3);
 
-	    mouse_t mouse = new_mouse(scene.max.x / 2, scene.max.y / 2);
 
-	    int running = 1;
-	while(running){
+        int running = 1;
+    while(running){
 
 	if (!is_fade_done(&fader))
 	    show_fade(&fader);
@@ -46,10 +45,10 @@ void run_win()	{
 	  x += dx;
 	  ship->pos.x = x;
 
-	while (gdu_is_running());
-	            push_scene(&scene);
-	            start_render();
-	}
+    while (gdu_is_running());
+                push_scene(&scene);
+                start_render();
+    }
 }
 
 

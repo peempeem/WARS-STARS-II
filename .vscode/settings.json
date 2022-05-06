@@ -26,7 +26,8 @@
         "ships.h": "c",
         "timer.h": "c",
         "warning.h": "c",
-        "weapon1_0.h": "c"
+        "weapon1_0.h": "c",
+        "weapon2_0.h": "c"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }

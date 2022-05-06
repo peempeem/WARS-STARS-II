@@ -186,9 +186,13 @@ module vga_display (
                     bias_color;
     logic   [ 7:0]  rgb_bias;
     logic   [ 3:0]  rgb [3];
-    
-    assign bias_color   = registers[2][15:0];
-    assign rgb_bias     = registers[3][ 7:0];
+
+    always_ff @(posedge clk) begin
+        if (DrawY >= 479) begin
+            bias_color  <= registers[2][15:0];
+            rgb_bias    <= registers[3][ 7:0];
+        end
+    end
 
     always_comb  begin
         lb_addr_b = 0;

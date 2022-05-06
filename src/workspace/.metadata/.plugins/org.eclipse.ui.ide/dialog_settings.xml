@@ -14,6 +14,8 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\James\LOCAL\ece385\final\WARS-STARS-II\src\software\ws2_bsp"/>
+			<item value="C:\Users\James\LOCAL\ece385\final\WARS-STARS-II\src\software\ws2"/>
 			<item value="C:\Users\James\LOCAL\ece385\final\WARS-STARS-II\src\software"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
