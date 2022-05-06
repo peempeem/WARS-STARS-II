@@ -82,8 +82,14 @@ int run_level1() {
 
     spawn_ship(&scene, &enemy_cruiser, ENEMY, enemy_planet->pos);
 
+    fade_t fader = create_fade(0xFFFF, FADE_TO);
+    fade_t fadew = create_fade(0xFF00, FADE_TO);
+
     int player_health = 1000;
     int enemy_health = 1000;    
+
+    int lose = 0, win = 0;				//fade out final screens
+    int start_fading = 0;
 
     int placing_ship = 0;
     int shipcountc = 0, shipcountf = 0, eshipcount = 0;
@@ -121,12 +127,14 @@ int run_level1() {
                         spawnship1->pos = spawnship1_default;
                         placing_ship = 0;
                         shipcountf++;
+                        player_health = player_health -1000;
                         break;
                     case 2:
                         spawn_ship(&scene, &player_cruiser, PLAYER, place_pos);
                         spawnship2->pos = spawnship2_default;
                         placing_ship = 0;
                         shipcountc++;
+                        enemy_health = enemy_health -1000;
                         break;
                 }
             }
@@ -180,12 +188,46 @@ int run_level1() {
                 }
             }
 
-            update_game(&scene);
 
-            while (gdu_is_running());
-            push_scene(&scene);
-            start_render();
+            if(enemy_health <= 0){
+            	if (!start_fading) {
+            	start_fade(&fader, 3);
+            	start_fading = 1;
+            	lose = 1;
+
+
+            	}
+            	running =  !show_fade(&fader);
+            }
+
+
+            if(player_health <= 0){
+            	if (!start_fading) {
+            	start_fade(&fadew, 3);
+            	start_fading = 1;
+            	win= 1;
+
+
+                        }
+            	running = !show_fade(&fadew);
+            }
+
+
+
+            if (!start_fading) {
+            	update_game(&scene);
+
+				while (gdu_is_running());
+				push_scene(&scene);
+				start_render();
+            }
+
         }
     }
+
+
+    if (win)
     return 0;
+    else
+    return 1;
 }

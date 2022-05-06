@@ -30,7 +30,10 @@ int main() {
     while (!poll_mouse(&mouse, 0, 0));
     
     run_title_screen();
-    run_level1();
+   if(run_level1())
+    run_lose();
+   else
+	run_win();
     
     printf("Done!\n");
     return 0;
