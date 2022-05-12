@@ -362,7 +362,7 @@ void update_weapons(scene_t* scene, int user, float dt) {
             
             if (distance(pos, tpos) < weapons[i].target->hitradius) {
                 weapons[i].target->hp -= weapons[i].data->damage;
-                if (weapons[i].target->hp < 0)
+                if (weapons[i].target->hp <= 0)
                     destroy_ship(scene, weapons[i].target);
                 destroy_weapon(&weapons[i]);
             }

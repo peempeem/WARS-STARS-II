@@ -1,5 +1,5 @@
 Timing Analyzer report for WS2
-Fri May 06 01:23:08 2022
+Wed May 11 22:45:08 2022
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -94,15 +94,15 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
-; Average used               ; 2.34        ;
+; Average used               ; 2.39        ;
 ; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  29.6%      ;
-;     Processor 3            ;  26.8%      ;
-;     Processor 4            ;  26.1%      ;
-;     Processors 5-6         ;  25.9%      ;
+;     Processor 2            ;  31.9%      ;
+;     Processor 3            ;  27.8%      ;
+;     Processor 4            ;  26.7%      ;
+;     Processors 5-6         ;  26.5%      ;
 +----------------------------+-------------+
 
 
@@ -111,10 +111,10 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                                         ; Status ; Read at                  ;
 +-----------------------------------------------------------------------+--------+--------------------------+
-; timing.sdc                                                            ; OK     ; Fri May 06 01:23:03 2022 ;
-; soc/synthesis/submodules/altera_reset_controller.sdc                  ; OK     ; Fri May 06 01:23:03 2022 ;
-; soc/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc ; OK     ; Fri May 06 01:23:03 2022 ;
-; soc/synthesis/submodules/soc_nios2_gen2_0_cpu.sdc                     ; OK     ; Fri May 06 01:23:03 2022 ;
+; timing.sdc                                                            ; OK     ; Wed May 11 22:45:01 2022 ;
+; soc/synthesis/submodules/altera_reset_controller.sdc                  ; OK     ; Wed May 11 22:45:01 2022 ;
+; soc/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc ; OK     ; Wed May 11 22:45:01 2022 ;
+; soc/synthesis/submodules/soc_nios2_gen2_0_cpu.sdc                     ; OK     ; Wed May 11 22:45:01 2022 ;
 +-----------------------------------------------------------------------+--------+--------------------------+
 
 
@@ -1240,7 +1240,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri May 06 01:23:02 2022
+    Info: Processing started: Wed May 11 22:44:59 2022
 Info: Command: quartus_sta WS2 -c WS2
 Info: qsta_default_script.tcl version: #1
 Warning (20013): Ignored 209 assignments for entity "DE10_LITE_Default" -- entity does not exist in design
@@ -1682,9 +1682,9 @@ Info (332114): Report Metastability: Found 28 synchronizer chains.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 217 warnings
-    Info: Peak virtual memory: 4935 megabytes
-    Info: Processing ended: Fri May 06 01:23:08 2022
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Peak virtual memory: 4934 megabytes
+    Info: Processing ended: Wed May 11 22:45:08 2022
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:18
 
 

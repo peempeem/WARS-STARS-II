@@ -5,8 +5,8 @@
  *      Author: macra
  */
 
-#include "end.h"
-#include "../sprites/lightspeed_background.h"
+#include "lose.h"
+#include "../sprites/loser.h"
 #include "../mouse.h"
 #include "../timer.h"
 #include "../game.h"
@@ -20,24 +20,23 @@ void run_lose()	{
     clear_scene(&scene);
 
 
-    game_object_t* background               = allocate_object(&scene, BACKGROUND,   USED | VISABLE);
-    background->sprite              = lightspeed_background_sprite; 	//to be added
+    game_object_t* background = allocate_object(&scene, BACKGROUND, USED | VISABLE);
+    background->sprite        = loser_sprite;
 
     scene.max.x = SCREEN_WIDTH;
     scene.max.y = SCREEN_HEIGHT;
 
-    fade_t fader = create_fade(0xFFFF, FADE_FROM);
-        start_fade(&fader, 3);
+    fade_t fader = create_fade(0x0F00, FADE_FROM);
+    start_fade(&fader, 3);
 
-        int running = 1;
-    while(running){
+    int running = 1;
+    while (running) {
 
-    if (!is_fade_done(&fader))
         show_fade(&fader);
 
-    while (gdu_is_running());
-                push_scene(&scene);
-                start_render();
+        while (gdu_is_running());
+        push_scene(&scene);
+        start_render();
 
     }
 }

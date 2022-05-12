@@ -1,5 +1,5 @@
-obj/default/levels/win.o: levels/win.c levels/end.h \
- levels/../sprites/lightspeed_background.h levels/../sprites/../gdu.h \
+obj/default/levels/win.o: levels/win.c levels/../sprites/win.h \
+ levels/../sprites/../gdu.h levels/../sprites/title_screen_ship.h \
  levels/../mouse.h levels/../common.h levels/../gdu.h levels/../timer.h \
  levels/../timer.h levels/../game.h levels/../ships.h \
  levels/../sprites/playership0.h levels/../sprites/playership1.h \
@@ -8,11 +8,11 @@ obj/default/levels/win.o: levels/win.c levels/end.h \
  levels/../sprites/weapon2_0.h levels/../display.h levels/../mouse.h \
  levels/../game.h levels/../vga.h levels/../sprites/cursor.h
 
-levels/end.h:
-
-levels/../sprites/lightspeed_background.h:
+levels/../sprites/win.h:
 
 levels/../sprites/../gdu.h:
+
+levels/../sprites/title_screen_ship.h:
 
 levels/../mouse.h:
 

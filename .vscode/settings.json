@@ -27,7 +27,10 @@
         "timer.h": "c",
         "warning.h": "c",
         "weapon1_0.h": "c",
-        "weapon2_0.h": "c"
+        "weapon2_0.h": "c",
+        "lose.h": "c",
+        "loser.h": "c",
+        "win.h": "c"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }

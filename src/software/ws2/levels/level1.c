@@ -100,6 +100,12 @@ int run_level1() {
     int start_fading = 0;
 
     int placing_ship = 0;
+
+    game_object_t cpy = *spawnship1;
+    cpy.sprite.width *= 2;
+    cpy.sprite.height *= 2;
+    cpy.sprite.end_x *= 2;
+    cpy.sprite.start_x *= 2;
     
     int running = 1;
     while (running) {
@@ -125,7 +131,7 @@ int run_level1() {
             if (is_clicked(&mouse, MOUSE_BUTTON_LEFT)) {
                 switch (placing_ship) {
                     case 0:
-                        if (mouse_over_object(&scene, &mouse, spawnship1))
+                        if (mouse_over_object(&scene, &mouse, &cpy))
                             placing_ship = 1;
                         else if (mouse_over_object(&scene, &mouse, spawnship2))
                             placing_ship = 2;
@@ -167,9 +173,17 @@ int run_level1() {
 
             int r = rand() % 7;
             int yr = ((rand() % 390)+15);
+             position_t epos;
+            if (scene.enemyplanet.hp == 800) {
+                epos.x=1250;
+                epos.y=260;
+                spawn_ship(&scene, &enemy_fighter, ENEMY, epos);
+                epos.y=220;
+                spawn_ship(&scene, &enemy_cruiser, ENEMY, epos);
+            }
 
-            if ((scene.eshipcount <= (3 + scene.shipcountc + scene.shipcountf)) || enemy_health <= 150) {
-                position_t epos;
+            if ((scene.eshipcount <= (2 + scene.shipcountc + scene.shipcountf)) || scene.enemyplanet.hp <= 200) {
+               
                 epos.y = yr;
                 epos.x = 1200;
 
@@ -193,15 +207,15 @@ int run_level1() {
                         scene.eshipcount += 2;
                         break;
                     case 4:
-                    	epos.y += 12;
+                    	epos.y += 15;
                     	spawn_ship(&scene, &enemy_cruiser, ENEMY, epos );
-                    	epos.y -= 24;
+                    	epos.y -= 30;
                     	spawn_ship(&scene, &enemy_cruiser, ENEMY, epos );
                     	break;
                     case 5:
-                    	epos.y += 8;
+                    	epos.y += 10;
                     	spawn_ship(&scene, &enemy_fighter, ENEMY, epos);
-                    	epos.y -= 16;
+                    	epos.y -= 20;
                     	spawn_ship(&scene, &enemy_fighter, ENEMY, epos);
                     	break;
                     case 6:
@@ -213,8 +227,9 @@ int run_level1() {
                 if (!start_fading) {
                     start_fade(&fadew, 1);
                     start_fading = 1;
+                    win = 1;
                 }
-                running =  !show_fade(&fadew);
+                running = !show_fade(&fadew);
             }
 
 
@@ -222,7 +237,6 @@ int run_level1() {
                 if (!start_fading) {
                     start_fade(&fader, 1);
                     start_fading = 1;
-                    win= 1;
                 }
                 running = !show_fade(&fader);
             }
@@ -237,6 +251,8 @@ int run_level1() {
 
         }
     }
+
+    while (gdu_is_running());
 
     if (win)
         return 0;

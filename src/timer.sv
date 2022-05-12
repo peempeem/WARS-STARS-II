@@ -15,8 +15,8 @@ module Timer (
     logic   [31:0]  count_high;
     logic   [63:0]  counter;
 
-    assign count_low = counter[31: 0];
-    assign count_high = counter[63:32];
+    assign count_low    = counter[31: 0];
+    assign count_high   = counter[63:32];
 
     always_ff @(posedge clk1) begin
         if (enable[0])

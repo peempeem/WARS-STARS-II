@@ -7,7 +7,8 @@
 
 #include "levels/title_screen.h"
 #include "levels/level1.h"
-#include "levels/end.h"
+#include "levels/win.h"
+#include "levels/lose.h"
 #include "sprites/mouse.h"
 
 int main() {
@@ -31,10 +32,13 @@ int main() {
     while (!poll_mouse(&mouse, 0, 0));
     
     run_title_screen();
-   if(run_level1())
-    run_lose();
-   else
-	run_win();
+    if (run_level1()) {
+        printf("you lost\n");
+        run_lose();
+    } else {
+        printf("you won\n");
+        run_win();
+    }	    
     
     printf("Done!\n");
     return 0;
